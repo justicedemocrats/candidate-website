@@ -8,8 +8,6 @@ const autoprefixer = require("autoprefixer");
 const env = process.env.MIX_ENV || 'dev';
 const srcDir = path.join(__dirname, 'web/static');
 
-console.log(env);
-
 // Configuration
 const config = {
   devtool: 'cheap-module-eval-source-map',
