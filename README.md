@@ -33,7 +33,7 @@ cd weppacker
 ```
 Then get the dependencies and build webpacker in dev mode using this cute little one-liner:
 ```
-mix do deps.get, deps.update --all, ecto.create && npm install && iex -S mix phoenix.server
+mix do webpacker.setup && npm install && iex -S mix phoenix.server
 ```
 
 ----
