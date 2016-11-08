@@ -14,7 +14,9 @@ This guy: [Letmecode](https://twitter.com/designingcode)
 
 ##Why Webpacker?
 Several reasons.
+
 1. **Brunch**, the default Phoenix build-tool, is about as useful as a sandbox in the desert. But hey, at least it's also annoying.
+
 2. **React** and **Phoenix** are a golden match, but the former seems to work best with a proper **Webpack** setup. I was sick of building one for each project, so I build a general setup to start from.
 
 ##Your setup sucks!!11eleven
