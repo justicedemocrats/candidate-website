@@ -23,12 +23,20 @@ Several reasons.
 Fair enough, don't use it then. Oh, and don't forget to light yourself on fire. <sup id="a1">[‡](#f1)</sup>
 
 ##Installation
-Here's a one-liner:
+Clone the repository:
 ```
-npm install && mix do mix deps.get, deps.update --all, phoenix.server
+git clone https://github.com/odiumediae/webpacker.git
+```
+Change directory to the project:
+```
+cd weppacker
+```
+Then get the dependencies and build webpacker in dev mode using this cute little one-liner:
+```
+mix do deps.get, deps.update --all && npm install && iex -S mix phoenix.server
 ```
 
 ----
 
 ######Footnotes
-<b id="f1">‡</b> Don't actually do that, it freaking hurts! [↩](#a1)
+<sup id="f1">‡</sup> Don't actually do that, it freaking hurts! [↩](#a1)
