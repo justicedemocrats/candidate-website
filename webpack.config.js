@@ -8,6 +8,8 @@ const autoprefixer = require("autoprefixer");
 const env = process.env.MIX_ENV || 'dev';
 const srcDir = path.join(__dirname, 'web/static');
 
+console.log(env);
+
 // Configuration
 const config = {
   devtool: 'cheap-module-eval-source-map',
@@ -35,12 +37,9 @@ const config = {
 
       {
         test: /\.styl$|\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
-        /*
         loader: env === 'dev' ?
                 "style!css!postcss!stylus" :
                 ExtractTextPlugin.extract("style", "css!postcss!stylus")
-        */
       },
 
       {
@@ -64,7 +63,7 @@ const config = {
   plugins: env === 'dev' ? [
     new ExtractTextPlugin("css/[name].css")
   ] : [
-    new ExtractTextPlugin("css/app.css"),
+    new ExtractTextPlugin("css/[name].css"),
     new webpack.optimize.UglifyJsPlugin({ 
       compress: { warnings: false },
       output: { comments: false }

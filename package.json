@@ -5,8 +5,8 @@
     "start": "npm run prebuild && npm run watch",
     "prebuild": "npm run copy",
     "copy": "cp -R ./web/static/assets/* ./priv/static",
-    "watch": "MIX_ENV=dev webpack-dev-server --inline --hot --stdin --colors --public localhost:8080",
-    "deploy": "MIX_ENV=prod npm run prebuild && webpack -p"
+    "watch": "MIX_ENV=ficki webpack-dev-server --inline --hot --stdin --colors --public localhost:8080",
+    "deploy": "npm run prebuild && MIX_ENV=prod webpack -p"
   },
   "dependencies": {
     "react": "^15.3.2",
