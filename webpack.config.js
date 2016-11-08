@@ -6,7 +6,7 @@ const autoprefixer = require("autoprefixer");
 
 // Constants
 const env = process.env.MIX_ENV || 'dev';
-const srcDir = path.join(__dirname, 'web/static');
+const dev = env === "dev";
 
 // Configuration
 const config = {
@@ -35,9 +35,7 @@ const config = {
 
       {
         test: /\.styl$|\.css$/,
-        loader: env === 'dev' ?
-                "style!css!postcss!stylus" :
-                ExtractTextPlugin.extract("style", "css!postcss!stylus")
+        loader: dev ? "style!css!postcss!stylus" : ExtractTextPlugin.extract("style", "css!postcss!stylus")
       },
 
       {
@@ -58,7 +56,7 @@ const config = {
     extensions: ["", ".js", ".jsx", ".css", ".styl"]
   },
 
-  plugins: env === 'dev' ? [
+  plugins: dev ? [
     new ExtractTextPlugin("css/[name].css")
   ] : [
     new ExtractTextPlugin("css/[name].css"),
