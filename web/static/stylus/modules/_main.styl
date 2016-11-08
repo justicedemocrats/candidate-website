@@ -1,0 +1,63 @@
+body {
+  background-color: $color-background;
+  color: $color-black;
+  font-family: "PT Sans", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+hr {
+  margin: 1.5em 0;
+  height: 2px;
+  border: 0;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.15), inset 0px -1px 0px rgba(255, 255, 255, 0.15)
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.greeting {
+  width: 100%;
+  max-width: 540px;
+  background-color: $color-primary;
+  color: $color-white;
+  text-align: center;
+  padding: 2em 2em 5em;
+  border-radius: 2px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.greeting h1,
+.greeting h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+  font-weight: 400;
+}
+
+.greeting h1 {
+  margin-bottom: 0.125em;
+  font-size: 1.25em;
+}
+
+.greeting h2 {
+  margin-bottom: 0.125em;
+  font-size: 1em;
+}
+
+.greeting p {
+  font-style: italic;
+  color: lighten($color-secondary, 25%);
+}
+
+a {
+  color: $color-white;
+}
+
+a:hover {
+  color: lighten($color-secondary, 50%);
+}
