@@ -7,6 +7,7 @@ const autoprefixer = require("autoprefixer");
 // Constants
 const env = process.env.MIX_ENV || 'dev';
 const dev = env === "dev";
+const prod = !dev;
 
 // Configuration
 const config = {
@@ -69,7 +70,7 @@ const config = {
   postcss: [
     autoprefixer({
       browsers: [
-        "last 2 version",
+        "last 2 versions",
         "> 5%",
         "IE 9-11"
       ]
