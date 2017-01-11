@@ -9,7 +9,7 @@
 
     <title>Hello, Webpacker!</title>
 
-    <%= {:safe, css_link_tag } %>
+    <%= {:safe, css_link_tag() } %>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700" rel="stylesheet">
   </head>
 
@@ -18,6 +18,6 @@
       <%= render @view_module, @view_template, assigns %>
     </main>
 
-    <%= {:safe, js_script_tag } %>
+    <%= {:safe, js_script_tag() } %>
   </body>
 </html>
