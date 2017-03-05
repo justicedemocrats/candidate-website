@@ -23,17 +23,33 @@ Several reasons.
 Fair enough, don't use it then. Oh, and don't forget to light yourself on fire. <sup id="a1">[‡](#f1)</sup>
 
 ##Installation
-Clone the repository:
+
+##### Clone the repository:
 ```
 git clone https://github.com/odiumediae/webpacker.git
 ```
-Change directory to the project:
+
+##### Change directory to the project:
 ```
-cd weppacker
+cd webpacker
 ```
-Then get the dependencies and build webpacker in dev mode using this cute little one-liner:
+
+##### Do the Webpacker setup:
 ```
-mix do webpacker.setup && npm install && iex -S mix phoenix.server
+mix do webpacker.setup
+```
+
+##### Install the frontend dependencies:
+
+```
+cd assets
+npm install
+cd ..
+```
+
+##### Start your Phoenix app in IEx:
+```shell
+iex -S mix phoenix.server
 ```
 
 ----
