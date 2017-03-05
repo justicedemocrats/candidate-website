@@ -1,3 +1,3 @@
 defmodule Webpacker.PageViewTest do
-  use Webpacker.ConnCase, async: true
+  use Webpacker.Web.ConnCase, async: true
 end

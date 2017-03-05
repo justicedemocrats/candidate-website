@@ -11,7 +11,7 @@ defmodule Webpacker do
       # Start the Ecto repository
       supervisor(Webpacker.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(Webpacker.Endpoint, []),
+      supervisor(Webpacker.Web.Endpoint, []),
       # Start your own worker by calling: Webpacker.Worker.start_link(arg1, arg2, arg3)
       # worker(Webpacker.Worker, [arg1, arg2, arg3]),
     ]
@@ -20,12 +20,5 @@ defmodule Webpacker do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Webpacker.Supervisor]
     Supervisor.start_link(children, opts)
-  end
-
-  # Tell Phoenix to update the endpoint configuration
-  # whenever the application is updated.
-  def config_change(changed, _new, removed) do
-    Webpacker.Endpoint.config_change(changed, removed)
-    :ok
   end
 end

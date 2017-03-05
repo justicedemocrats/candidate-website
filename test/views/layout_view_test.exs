@@ -1,3 +1,3 @@
 defmodule Webpacker.LayoutViewTest do
-  use Webpacker.ConnCase, async: true
+  use Webpacker.Web.ConnCase, async: true
 end

@@ -10,10 +10,10 @@ config :webpacker,
   ecto_repos: [Webpacker.Repo]
 
 # Configures the endpoint
-config :webpacker, Webpacker.Endpoint,
+config :webpacker, Webpacker.Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "7VANMSCw6Ih6d/+KHngD4ORCw1bxhkdxuZ+8a7bD10qv9foa0ykGtl949oSw+Mug",
-  render_errors: [view: Webpacker.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: Webpacker.Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Webpacker.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

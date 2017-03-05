@@ -1,5 +1,5 @@
 defmodule Webpacker.PageControllerTest do
-  use Webpacker.ConnCase
+  use Webpacker.Web.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
