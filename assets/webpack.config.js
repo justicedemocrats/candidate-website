@@ -4,105 +4,125 @@
 const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const merge = require('webpack-merge');
-const validate = require('webpack-validator');
+
 
 /*
- * Environment
+ * Configuration
  **/
-const env = process.env.MIX_ENV || 'dev';
-const dev = env === "dev";
-const app_path = (...dirs) => path.join(__dirname, ...dirs);
-const paths = {
-  build: app_path("../priv/static"),
-  js: app_path("js"),
-  images: app_path("static/images"),
-  fonts: app_path("static/fonts"),
-  modules: [
-    app_path("node_modules/react"),
-    app_path("node_modules/react-dom"),
-    app_path("node_modules/phoenix"),
-    app_path("node_modules/phoenix_html")
-  ]
-};
+module.exports = (env) => {
+  const isDev = !(env && env.prod);
+  const devtool = isDev ? "eval" : "source-map";
 
-/*
- * Common Config
- **/
-const common = {
-  devtool: 'cheap-module-eval-source-map',
+  return {
+    devtool: devtool,
 
-  output: {
-    path: paths.build,
-    filename: 'js/[name].js',
-    publicPath: 'http://localhost:8080/'
-  },
+    context: __dirname,
 
-  module: {
-    loaders: [
-      {
-        test: /\.(jsx?)$/,
-        loaders: ["babel"],
-        exclude: /node_modules/,
-        include: paths.modules.concat(paths.js)
-      },
-
-      {
-        test: /\.styl$|\.css$/,
-        loader: dev ? "style!css!postcss!stylus" : ExtractTextPlugin.extract("style", "css!postcss!stylus")
-      },
-
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        loader: "file-loader",
-        query: { name: "images/[hash].[ext]" },
-        exclude: /node_modules/,
-        include: paths.images
-      },
-
-      {
-        test: /\.(ttf|woff2?|eot|svg)$/,
-        loader: "file-loader",
-        query: { name: "fonts/[hash].[ext]" },
-        exclude: /node_modules/,
-        include: paths.fonts
-      }
-    ]
-  },
-
-  resolve: {
-    extensions: ["", ".js", ".jsx", ".css", ".styl"]
-  },
-
-  plugins: dev ? [
-    new ExtractTextPlugin("css/[name].css")
-  ] : [
-    new ExtractTextPlugin("css/[name].css"),
-    new webpack.optimize.UglifyJsPlugin({ 
-      compress: { warnings: false },
-      output: { comments: false }
-    })
-  ],
-
-  postcss: [
-    autoprefixer({
-      browsers: ["last 2 versions"]
-    })
-  ]
-};
-
-const configs = [
-  {
     entry: {
       app: [
-        "./js/app.js",
-        "./stylus/app.styl"
+        "js/app.js",
+        "stylus/app.styl"
       ]
-    }
-  }
-];
+    },
 
-module.exports = configs.map(config => {
-  return validate(merge(common, config));
-});
+    output: {
+      path: path.resolve(__dirname, "../priv/static"),
+      filename: 'js/[name].js',
+      publicPath: 'http://localhost:8080/'
+    },
+
+    module: {
+      rules: [
+        {
+          test: /\.(jsx?)$/,
+          exclude: /node_modules/,
+          loader: "babel-loader",
+          options: {
+            presets: [
+              ['es2015', {modules: false}]
+            ]
+          }
+        },
+
+        {
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          exclude: /node_modules/,
+          loaders: [
+            'file-loader',
+            {
+              loader: 'image-webpack-loader',
+              query: {
+                progressive: true,
+                optimizationLevel: 7,
+                interlaced: false,
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          test: /\.(ttf|woff2?|eot|svg)$/,
+          exclude: /node_modules/,
+          query: { name: "fonts/[hash].[ext]" },
+          loader: "file-loader",
+        },
+
+        {
+          test: /\.(css|styl)$/,
+          exclude: /node_modules/,
+          use: isDev ? [
+            "style-loader",
+            "css-loader",
+            "postcss-loader",
+            "stylus-loader"
+          ] : ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: ["css-loader", "postcss-loader", "stylus-loader"]
+          })
+        }
+      ]
+    },
+
+    resolve: {
+      modules: ["node_modules", __dirname],
+      extensions: [".js", ".json", ".jsx", ".css", ".styl"]
+    },
+
+    plugins: isDev ? [
+      new CopyWebpackPlugin([{
+        from: "static"
+      }])
+    ] : [
+      new CopyWebpackPlugin([{
+        from: "static"
+      }]),
+
+      new ExtractTextPlugin({
+        filename: "css/[name].css",
+        allChunks: true
+      }),
+
+      new webpack.optimize.UglifyJsPlugin({ 
+        sourceMap: true,
+        beautify: false,
+        comments: false,
+        extractComments: false,
+        compress: {
+          warnings: false,
+          drop_console: true
+        },
+        mangle: {
+          except: ['$'],
+          screw_ie8 : true,
+          keep_fnames: true,
+        }
+      })
+    ]
+  };
+};
