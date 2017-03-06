@@ -1,4 +1,4 @@
-defmodule Webpacker do
+defmodule Webpacker.Application do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
