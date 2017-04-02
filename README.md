@@ -54,5 +54,5 @@ iex -S mix phoenix.server
 
 ----
 
-######Footnotes
+###### Footnotes
 <sup id="f1">‡</sup> Don't actually do that, it freaking hurts! [↩](#a1)
