@@ -16,24 +16,10 @@ defmodule Webpacker.Web do
   below.
   """
 
-  def model do
-    quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-    end
-  end
-
   def controller do
     quote do
       use Phoenix.Controller, namespace: Webpacker.Web
-
-      alias Webpacker.Repo
-      import Ecto
-      import Ecto.Query
-
+      import Plug.Conn
       import Webpacker.Web.Router.Helpers
       import Webpacker.Web.Gettext
     end
@@ -41,7 +27,8 @@ defmodule Webpacker.Web do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/webpacker/web/templates", namespace: Webpacker.Web
+      use Phoenix.View, root: "lib/webpacker/web/templates",
+                        namespace: Webpacker.Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
@@ -58,16 +45,14 @@ defmodule Webpacker.Web do
   def router do
     quote do
       use Phoenix.Router
+      import Plug.Conn
+      import Phoenix.Controller
     end
   end
 
   def channel do
     quote do
       use Phoenix.Channel
-
-      alias Webpacker.Repo
-      import Ecto
-      import Ecto.Query
       import Webpacker.Web.Gettext
     end
   end

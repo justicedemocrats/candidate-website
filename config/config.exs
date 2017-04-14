@@ -12,7 +12,7 @@ config :webpacker,
 # Configures the endpoint
 config :webpacker, Webpacker.Web.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "7VANMSCw6Ih6d/+KHngD4ORCw1bxhkdxuZ+8a7bD10qv9foa0ykGtl949oSw+Mug",
+  secret_key_base: "KTQKp0DVQOGhrnTMeCCN6JR7Dh1F5Kde08JfSkgW3Zcp0aCxacccbLJa2RZPGHQK",
   render_errors: [view: Webpacker.Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Webpacker.PubSub,
            adapter: Phoenix.PubSub.PG2]

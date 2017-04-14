@@ -36,7 +36,19 @@ defmodule Webpacker.Web.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_webpacker_key",
-    signing_salt: "2VisN+Jv"
+    signing_salt: "3YeizWAb"
 
   plug Webpacker.Web.Router
+
+  @doc """
+  Dynamically loads configuration from the system environment
+  on startup.
+
+  It receives the endpoint configuration from the config files
+  and must return the updated configuration.
+  """
+  def load_from_system_env(config) do
+    port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+    {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+  end
 end

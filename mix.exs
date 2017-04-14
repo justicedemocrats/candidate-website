@@ -3,11 +3,10 @@ defmodule Webpacker.Mixfile do
 
   def project do
     [app: :webpacker,
-     version: "0.1.1",
+     version: "0.1.2",
      elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-     build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
      deps: deps()]
@@ -18,8 +17,7 @@ defmodule Webpacker.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Webpacker.Application, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     extra_applications: [:logger, :runtime_tools]]
   end
 
   # Specifies which paths to compile per environment.
@@ -47,7 +45,7 @@ defmodule Webpacker.Mixfile do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    ["webpacker.setup": ["deps.get", "deps.update --all", "ecto.create"],
+    ["webpacker.setup": ["deps.get", "webpacker.frontend", "ecto.setup"],
      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
      "ecto.reset": ["ecto.drop", "ecto.setup"],
      "test": ["ecto.create --quiet", "ecto.migrate", "test"]]

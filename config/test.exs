@@ -10,7 +10,7 @@ config :webpacker, Webpacker.Web.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :webpacker, Webpacker.Web.Repo,
+config :webpacker, Webpacker.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

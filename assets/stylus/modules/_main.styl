@@ -1,16 +1,15 @@
 body {
+  font: 2rem/1.5 "PT Sans", sans-serif;
   background-color: $color-background;
   color: $color-black;
-  font-family: "PT Sans", sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
 }
 
 hr {
-  margin: 1.5em 0;
+  margin: 2.4rem 0;
   height: 2px;
   border: 0;
-  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.15), inset 0px -1px 0px rgba(255, 255, 255, 0.15)
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1),
+              inset 0px -1px 0px rgba(255, 255, 255, 0.1)
 }
 
 .main {
@@ -23,11 +22,11 @@ hr {
 
 .greeting {
   width: 100%;
-  max-width: 540px;
+  max-width: 54rem;
   background-color: $color-primary;
   color: $color-white;
   text-align: center;
-  padding: 2em 2em 5em;
+  padding: 4rem 4rem 10rem;
   border-radius: 2px;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
 }
@@ -40,18 +39,18 @@ hr {
 }
 
 .greeting h1 {
-  margin-bottom: 0.125em;
-  font-size: 1.25em;
+  margin-bottom: 0.2rem;
+  font-size: 2.8rem;
 }
 
 .greeting h2 {
-  margin-bottom: 0.125em;
-  font-size: 1em;
+  margin-bottom: 0.2rem;
+  font-size: 2rem;
 }
 
 .greeting p {
   font-style: italic;
-  color: lighten($color-secondary, 25%);
+  color: $color-secondary-light;
 }
 
 a {
@@ -59,5 +58,5 @@ a {
 }
 
 a:hover {
-  color: lighten($color-secondary, 50%);
+  color: $color-secondary-light;
 }

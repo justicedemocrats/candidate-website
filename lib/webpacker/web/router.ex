@@ -20,7 +20,7 @@ defmodule Webpacker.Web.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Webpacker do
+  # scope "/api", Webpacker.Web do
   #   pipe_through :api
   # end
 end
