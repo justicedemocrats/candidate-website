@@ -52,6 +52,9 @@ iex -S mix phoenix.server
 * added the mix task `webpacker.frontend` and plugged it into `webpacker.setup` in order to automatically install npm modules along with the rest of the setup. Just run `webpacker.setup` after cloning the repo and you can run `iex -S mix phx.server`
 * renamed the wrongly named `iex.exs` to .iex.exs` and added some aliases so you don't have to alias the most used modules when trying out how to do stuff iwthin the REPL. You can simply add or remove imports, etc. to cater your needs
 
+#### v0.1.3
+* removed superfluous copy of old assets folder
+* removed `ecto.migrate` from `webpacker.setup` task in mix.exs
 
 ----
 
