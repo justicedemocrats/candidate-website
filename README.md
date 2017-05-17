@@ -56,6 +56,9 @@ iex -S mix phoenix.server
 * removed superfluous copy of old assets folder
 * removed `ecto.migrate` from `webpacker.setup` task in mix.exs
 
+#### v0.1.4
+* removed copy-webpack-plugin@4.0.1 due to a bug that prevents assets being copied to priv/static correctly and used @2.1.6 instead
+
 ----
 
 ###### Footnotes
