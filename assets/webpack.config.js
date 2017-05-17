@@ -50,16 +50,24 @@ module.exports = (env) => {
           test: /\.(gif|png|jpe?g|svg)$/i,
           exclude: /node_modules/,
           loaders: [
-            'file-loader',
+            'file-loader?name=images/[name].[ext]',
             {
               loader: 'image-webpack-loader',
-              query: {
-                progressive: true,
-                optimizationLevel: 7,
-                interlaced: false,
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
+              options: {
+                query: {
+                  mozjpeg: {
+                    progressive: true,
+                  },
+                  gifsicle: {
+                    interlaced: true,
+                  },
+                  optipng: {
+                    optimizationLevel: 7,
+                  },
+                  pngquant: {
+                    quality: '65-90',
+                    speed: 4
+                  }
                 }
               }
             }
@@ -96,11 +104,13 @@ module.exports = (env) => {
 
     plugins: isDev ? [
       new CopyWebpackPlugin([{
-        from: "static"
+        from: "./static",
+        to: path.resolve(__dirname, "../priv/static")
       }])
     ] : [
       new CopyWebpackPlugin([{
-        from: "static"
+        from: "./static",
+        to: path.resolve(__dirname, "../priv/static")
       }]),
 
       new ExtractTextPlugin({
