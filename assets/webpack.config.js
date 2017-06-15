@@ -38,12 +38,7 @@ module.exports = (env) => {
         {
           test: /\.(jsx?)$/,
           exclude: /node_modules/,
-          loader: "babel-loader",
-          options: {
-            presets: [
-              ['es2015', {modules: false}]
-            ]
-          }
+          loader: "babel-loader"
         },
 
         {
