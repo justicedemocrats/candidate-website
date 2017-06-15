@@ -48,6 +48,10 @@ iex -S mix phoenix.server
 ## Changelog
 
 
+#### v0.1.6
+* remove redundant babel config settings from `webpack.config.js`
+* update `package.json`
+
 #### v0.1.5
 * bump Phoenix dependency from 1.3.0-rc.1 to 1.3.0-rc.2
 * reverse sequence of the version history, so the upmost is always the first one
