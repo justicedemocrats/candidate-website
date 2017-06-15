@@ -3,7 +3,7 @@ defmodule Webpacker.Mixfile do
 
   def project do
     [app: :webpacker,
-     version: "0.1.6",
+     version: "0.1.7",
      elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
