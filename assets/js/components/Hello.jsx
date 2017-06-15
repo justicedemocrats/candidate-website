@@ -5,7 +5,7 @@ class Hello extends Component {
   render() {
     return(
       <div className="greeting">
-        <h1>Ahoy-hoy!</h1>
+        <h1>Ahoy-hoy!!</h1>
         <p>This a basic bare-bone setup for new Phoenix projects.</p>
         <hr />
         <h2>What's inside?</h2>

@@ -33,6 +33,12 @@ module.exports = (env) => {
       publicPath: 'http://localhost:8080/'
     },
 
+    devServer: {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
+    },
+
     module: {
       rules: [
         {
