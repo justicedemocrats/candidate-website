@@ -47,6 +47,14 @@ iex -S mix phoenix.server
 
 ## Changelog
 
+#### v0.1.8
+* bump Webpack verion to 3.4.0
+* bump Phoenix version to v1.3.0-rc.3
+* bump Elixir version to 1.5
+
+#### v0.1.7
+* remove redundant exclamation mark
+* update "ebpack
 
 #### v0.1.6
 * remove redundant babel config settings from `webpack.config.js`
