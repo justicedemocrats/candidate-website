@@ -47,6 +47,10 @@ iex -S mix phoenix.server
 
 ## Changelog
 
+#### v0.1.9
+- Rebuild with Phoenix 1.3.0 final
+- Update some npm dependencies
+
 #### v0.1.8
 * bump Webpack verion to 3.4.0
 * bump Phoenix version to v1.3.0-rc.3
