@@ -50,6 +50,7 @@ iex -S mix phoenix.server
 #### v0.1.9
 - Rebuild with Phoenix 1.3.0 final
 - Update some npm dependencies
+- Use 'App' as main namespace module, as it is more generic
 
 #### v0.1.8
 * bump Webpack verion to 3.4.0
