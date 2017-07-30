@@ -1,4 +1,4 @@
-defmodule Webpacker.Web.ConnCase do
+defmodule AppWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule Webpacker.Web.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import Webpacker.Web.Router.Helpers
+      import AppWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Webpacker.Web.Endpoint
+      @endpoint AppWeb.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Webpacker.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(App.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Webpacker.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(App.Repo, {:shared, self()})
     end
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end

@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :webpacker, Webpacker.Web.Endpoint,
+config :app, AppWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :webpacker, Webpacker.Web.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :webpacker, Webpacker.Repo,
+config :app, App.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "webpacker_test",
+  database: "app_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

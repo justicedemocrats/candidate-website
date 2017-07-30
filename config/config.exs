@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :webpacker,
-  ecto_repos: [Webpacker.Repo]
+config :app,
+  ecto_repos: [App.Repo]
 
 # Configures the endpoint
-config :webpacker, Webpacker.Web.Endpoint,
+config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "KTQKp0DVQOGhrnTMeCCN6JR7Dh1F5Kde08JfSkgW3Zcp0aCxacccbLJa2RZPGHQK",
-  render_errors: [view: Webpacker.Web.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Webpacker.PubSub,
+  secret_key_base: "bfsqn9AcIMywYeFfFrwwtpRis6Jda9AQdRrc20qyXzQlB4oBV/FA+Isy4jDAB77n",
+  render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: App.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

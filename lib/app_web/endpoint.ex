@@ -1,14 +1,14 @@
-defmodule Webpacker.Web.Endpoint do
-  use Phoenix.Endpoint, otp_app: :webpacker
+defmodule AppWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :app
 
-  socket "/socket", Webpacker.Web.UserSocket
+  socket "/socket", AppWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :webpacker, gzip: false,
+    at: "/", from: :app, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,20 +35,23 @@ defmodule Webpacker.Web.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_webpacker_key",
-    signing_salt: "3YeizWAb"
+    key: "_app_key",
+    signing_salt: "3K/vcmaD"
 
-  plug Webpacker.Web.Router
+  plug AppWeb.Router
 
   @doc """
-  Dynamically loads configuration from the system environment
-  on startup.
+  Callback invoked for dynamically configuring the endpoint.
 
-  It receives the endpoint configuration from the config files
-  and must return the updated configuration.
+  It receives the endpoint configuration and checks if
+  configuration should be loaded from the system environment.
   """
-  def load_from_system_env(config) do
-    port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
-    {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+  def init(_key, config) do
+    if config[:load_from_system_env] do
+      port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+    else
+      {:ok, config}
+    end
   end
 end

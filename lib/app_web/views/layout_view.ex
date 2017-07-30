@@ -1,6 +1,6 @@
-defmodule Webpacker.Web.LayoutView do
-  use Webpacker.Web, :view
-
+defmodule AppWeb.LayoutView do
+  use AppWeb, :view
+  
   def js_script_tag do
     if Mix.env == :prod do
       ~s(<script src="/js/app.js"></script>)

@@ -1,5 +1,5 @@
-defmodule Webpacker.Repo do
-  use Ecto.Repo, otp_app: :webpacker
+defmodule App.Repo do
+  use Ecto.Repo, otp_app: :app
 
   @doc """
   Dynamically loads the repository url from the

@@ -1,44 +1,45 @@
-defmodule Webpacker.Web do
+defmodule AppWeb do
   @moduledoc """
-  A module that keeps using definitions for controllers,
-  views and so on.
+  The entrypoint for defining your web interface, such
+  as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use Webpacker.Web, :controller
-      use Webpacker.Web, :view
+      use AppWeb, :controller
+      use AppWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
   on imports, uses and aliases.
 
   Do NOT define functions inside the quoted expressions
-  below.
+  below. Instead, define any helper function in modules
+  and import those modules here.
   """
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: Webpacker.Web
+      use Phoenix.Controller, namespace: AppWeb
       import Plug.Conn
-      import Webpacker.Web.Router.Helpers
-      import Webpacker.Web.Gettext
+      import AppWeb.Router.Helpers
+      import AppWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/webpacker/web/templates",
-                        namespace: Webpacker.Web
+      use Phoenix.View, root: "lib/app_web/templates",
+                        namespace: AppWeb
 
       # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+      import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Webpacker.Web.Router.Helpers
-      import Webpacker.Web.ErrorHelpers
-      import Webpacker.Web.Gettext
+      import AppWeb.Router.Helpers
+      import AppWeb.ErrorHelpers
+      import AppWeb.Gettext
     end
   end
 
@@ -53,7 +54,7 @@ defmodule Webpacker.Web do
   def channel do
     quote do
       use Phoenix.Channel
-      import Webpacker.Web.Gettext
+      import AppWeb.Gettext
     end
   end
 

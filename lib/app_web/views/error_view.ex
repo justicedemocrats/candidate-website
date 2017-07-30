@@ -1,5 +1,5 @@
-defmodule Webpacker.Web.ErrorView do
-  use Webpacker.Web, :view
+defmodule AppWeb.ErrorView do
+  use AppWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"

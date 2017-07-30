@@ -1,5 +1,5 @@
-defmodule Webpacker.Web.Router do
-  use Webpacker.Web, :router
+defmodule AppWeb.Router do
+  use AppWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule Webpacker.Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Webpacker.Web do
+  scope "/", AppWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Webpacker.Web do
+  # scope "/api", AppWeb do
   #   pipe_through :api
   # end
 end
