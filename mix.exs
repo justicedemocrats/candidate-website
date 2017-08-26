@@ -4,7 +4,7 @@ defmodule App.Mixfile do
   def project do
     [
       app: :app,
-      version: "0.1.9",
+      version: "0.1.10",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -52,7 +52,7 @@ defmodule App.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-			"webpacker.setup": ["deps.get", "webpacker.frontend", "ecto.create", "run priv/repo/seeds.exs"],
+      "webpacker.setup": ["deps.get", "webpacker.frontend", "ecto.create", "run priv/repo/seeds.exs"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "test": ["ecto.create --quiet", "ecto.migrate", "test"]
