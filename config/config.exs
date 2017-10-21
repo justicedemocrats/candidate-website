@@ -6,21 +6,29 @@
 use Mix.Config
 
 # General application configuration
-config :app,
-  ecto_repos: [App.Repo]
+config :candidate_website,
+  ecto_repos: [Osdi.Repo]
 
 # Configures the endpoint
-config :app, AppWeb.Endpoint,
+config :candidate_website, CandidateWebsite.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "bfsqn9AcIMywYeFfFrwwtpRis6Jda9AQdRrc20qyXzQlB4oBV/FA+Isy4jDAB77n",
-  render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: App.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: CandidateWebsite.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: CandidateWebsite.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
+
+# Cipher
+config :cipher,
+  keyphrase: "testiekeyphraseforcipher",
+  ivphrase: "testieivphraseforcipher",
+  magic_token: "magictoken"
+
+# Cosmic
+config :cosmic, slug: "brand-new-congress"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

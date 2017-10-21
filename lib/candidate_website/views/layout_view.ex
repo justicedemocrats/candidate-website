@@ -1,6 +1,6 @@
-defmodule AppWeb.LayoutView do
-  use AppWeb, :view
-  
+defmodule CandidateWebsite.LayoutView do
+  use CandidateWebsite, :view
+
   def js_script_tag do
     if Mix.env == :prod do
       ~s(<script src="/js/app.js"></script>)

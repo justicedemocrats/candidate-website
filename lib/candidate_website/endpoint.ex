@@ -1,14 +1,14 @@
-defmodule AppWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :app
+defmodule CandidateWebsite.Endpoint do
+  use Phoenix.Endpoint, otp_app: :candidate_website
 
-  socket "/socket", AppWeb.UserSocket
+  # socket "/socket", CandidateWebsite.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :app, gzip: false,
+    at: "/", from: :candidate_website, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,10 +35,10 @@ defmodule AppWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_app_key",
+    key: "_candidate_website",
     signing_salt: "3K/vcmaD"
 
-  plug AppWeb.Router
+  plug CandidateWebsite.Router
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

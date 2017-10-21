@@ -1,4 +1,4 @@
-defmodule AppWeb.ErrorHelpers do
+defmodule CandidateWebsite.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule AppWeb.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(AppWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(CandidateWebsite.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(AppWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(CandidateWebsite.Gettext, "errors", msg, opts)
     end
   end
 end

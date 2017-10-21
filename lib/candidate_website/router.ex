@@ -1,5 +1,5 @@
-defmodule AppWeb.Router do
-  use AppWeb, :router
+defmodule CandidateWebsite.Router do
+  use CandidateWebsite, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,9 @@ defmodule AppWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AppWeb do
+  scope "/", CandidateWebsite do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", AppWeb do
-  #   pipe_through :api
-  # end
 end

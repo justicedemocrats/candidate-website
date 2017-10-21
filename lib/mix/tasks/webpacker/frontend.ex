@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Webpacker.Frontend do
+defmodule Mix.Tasks.CandidateWebsite.Frontend do
   use Mix.Task
 
   @shortdoc "Installs npm modules via yarn or npm."

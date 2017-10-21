@@ -1,4 +1,4 @@
-defmodule AppWeb.UserSocket do
+defmodule CandidateWebsite.UserSocket do
   use Phoenix.Socket
 
   ## Channels
