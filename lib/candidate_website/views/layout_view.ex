@@ -1,19 +1,9 @@
 defmodule CandidateWebsite.LayoutView do
   use CandidateWebsite, :view
+  @script_src Application.get_env(:candidate_website, :script_src, ~s(<script src="http://localhost:8080/js/app.js"></script>))
+  @css_src Application.get_env(:candidate_website, :css_src, "")
 
-  def js_script_tag do
-    if Mix.env == :prod do
-      ~s(<script src="/js/app.js"></script>)
-    else
-      ~s(<script src="http://localhost:8080/js/app.js"></script>)
-    end
-  end
+  def js_script_tag, do: @script_src
 
-  def css_link_tag do
-    if Mix.env == :prod do
-      ~s(<link rel="stylesheet" type="text/css" href="/css/app.css" media="screen,projection" />)
-    else
-      ""
-    end
-  end
+  def css_link_tag, do: @css_src
 end

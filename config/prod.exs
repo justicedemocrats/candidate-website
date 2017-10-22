@@ -26,5 +26,8 @@ config :candidate_website, CandidateWebsite.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :candidate_website,
+  script_src: ~s(<script src="/js/app.js"></script>),
+  css_src: ~s(<script src="http://localhost:8080/js/app.js"></script>)
 
 import_config "prod.secret.exs"
