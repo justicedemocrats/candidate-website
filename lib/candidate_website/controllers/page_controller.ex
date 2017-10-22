@@ -1,13 +1,9 @@
 defmodule CandidateWebsite.PageController do
   use CandidateWebsite, :controller
+  plug CandidateWebsite.RequirePlug
 
   def index(conn, params) do
-    global_opts = GlobalOpts.get(conn, params)
-    candidate = Keyword.get(global_opts, :candidate)
-
-    %{"title" => name, "metadata" => %{
-      "district" => district
-    }} = Cosmic.get(candidate)
+    %{name: name, district: district} = conn.assigns.data
 
     render conn, "index.html", [name: name, district: district]
   end
