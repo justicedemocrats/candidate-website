@@ -1,6 +1,6 @@
 defmodule CandidateWebsite.RequirePlug do
   import Plug.Conn, only: [fetch_query_params: 1]
-  @required ~w(district help_desk_email)
+  @required ~w(district)
   def init(default), do: default
 
   def call(conn, _opts) do
