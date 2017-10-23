@@ -6,4 +6,5 @@ defmodule CandidateWebsite.LayoutView do
   def js_script_tag, do: @script_src
 
   def css_link_tag, do: @css_src
+
 end
