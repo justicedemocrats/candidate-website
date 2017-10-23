@@ -1,6 +1,6 @@
 defmodule CandidateWebsite.RequirePlug do
   import Plug.Conn, only: [fetch_query_params: 1]
-  @required ~w(district)
+  @required ~w(district big_picture donate_url facebook twitter)
   def init(default), do: default
 
   def call(conn, _opts) do
@@ -10,7 +10,7 @@ defmodule CandidateWebsite.RequirePlug do
 
     %{"title" => name, "metadata" => metadata} = Cosmic.get(candidate)
 
-    case Enum.filter(@required, (& field_filled(metadata, &1))) do
+    case Enum.filter(@required, (& not field_filled(metadata, &1))) do
       [] ->
         data = Enum.reduce @required, %{name: name}, fn key, acc ->
           Map.put acc, String.to_atom(key), metadata[key]

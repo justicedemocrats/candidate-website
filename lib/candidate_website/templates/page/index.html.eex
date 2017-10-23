@@ -1,1 +1,45 @@
 <div id="app"></div>
+<div id="hero" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>)">
+  <div id="button-layer">
+    <div>
+      <a href="<%= @facebook %>"> <img src="<%= fb_share() %>" /> </a>
+      <a href="<%= @twitter %>"/> <img src="<%= twitter_share() %>" /> </a>
+    </div>
+
+    <div>
+      <a href="<%= @donate_url %>">
+        Donate
+      </a>
+    </div>
+  </div>
+
+  <div id="name"> <%= @name %> </div>
+  <div id="join">
+    <div id="join-prompt"> Join my Campaign </div>
+    <div id="join-subtitle"> For info and updates </div>
+    <form method="POST" action="/signup">
+      <input type="email" name="email" />
+      <input type="text" name="zip" />
+      <button type="submit"> Join Me </button>
+      I want to volunteer <input type="checkbox" checked="true" />
+    </form>
+  </div>
+</div>
+
+<div id="nav-bar">
+  <a class="nav-item contribute"> Contribute </a>
+  <a class="nav-item"> About </a>
+  <a class="nav-item"> Platform </a>
+  <a class="nav-item"> Our District </a>
+  <a class="nav-item"> Events </a>
+  <a class="nav-item"> News </a>
+  <a class="nav-item volunteer"> Volunteer </a>
+</div>
+
+<%= for chunk <- ["about", "donate", "endorsements", "events", "issues", "news", "quote", "store", "volunteer", "vote", "why"] do %>
+  <%= render "chunk-#{chunk}.html", assigns %>
+<% end %>
+
+<div id="footer">
+  <h1> Footer </h1>
+</div>
