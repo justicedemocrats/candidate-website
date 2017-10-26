@@ -1,1 +1,15 @@
-<h1> Quote </h1>
+<div style="display: flex;">
+  <div style="
+    width: 66%; min-height: 50vh;
+    background-image: url(<%= URI.encode(@action_shot["imgix_url"]) %>);
+    margin-right: 10px; background-size: cover;">
+  </div>
+  <div style="
+    background-color: <%= @primary_color %>; margin-left: 10px; color: white;
+    width: 33%; font-weight: bold; font-size: 80px;
+    font-family: 'Roboto Condensed';
+    padding: 10px;
+  ">
+    <%= @quote %>
+  </div>
+</div>

@@ -6,8 +6,7 @@
 use Mix.Config
 
 # General application configuration
-config :candidate_website,
-  ecto_repos: [Osdi.Repo]
+config :candidate_website, ecto_repos: [Osdi.Repo]
 
 # Configures the endpoint
 config :candidate_website, CandidateWebsite.Endpoint,
@@ -32,4 +31,4 @@ config :cosmic, slug: "brand-new-congress"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
