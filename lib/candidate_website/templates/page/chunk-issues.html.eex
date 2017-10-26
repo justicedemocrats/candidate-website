@@ -1,1 +1,5 @@
-<h1> Issues </h1>
+<h1 style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
+<p>
+  <%= raw(@issues_paragraph) %>
+  <a class="button button-danger more-about"> Read My Issues Platform </a>
+</p>

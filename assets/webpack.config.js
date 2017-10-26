@@ -100,7 +100,10 @@ module.exports = (env) => {
 
     resolve: {
       modules: ["node_modules", __dirname],
-      extensions: [".js", ".json", ".jsx", ".css", ".styl"]
+      extensions: [".js", ".json", ".jsx", ".css", ".styl"],
+      alias: {
+        'shoelace.css': path.join(__dirname, 'node_modules/shoelace-css/dist/shoelace.css'),
+      }
     },
 
     plugins: isDev ? [
@@ -119,7 +122,7 @@ module.exports = (env) => {
         allChunks: true
       }),
 
-      new webpack.optimize.UglifyJsPlugin({ 
+      new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
         beautify: false,
         comments: false,

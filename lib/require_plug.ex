@@ -1,6 +1,12 @@
 defmodule CandidateWebsite.RequirePlug do
   import Plug.Conn, only: [fetch_query_params: 1]
-  @required ~w(district big_picture donate_url facebook twitter)
+
+  @required ~w(
+    district big_picture donate_url facebook twitter intro_statement
+    intro_paragraph issues_header issues_paragraph why_suppport_header
+    why_support_body action_shot quote primary_color highlight_color
+  )
+
   def init(default), do: default
 
   def call(conn, _opts) do
@@ -10,16 +16,22 @@ defmodule CandidateWebsite.RequirePlug do
 
     %{"title" => name, "metadata" => metadata} = Cosmic.get(candidate)
 
-    case Enum.filter(@required, (& not field_filled(metadata, &1))) do
+    IO.inspect(metadata)
+
+    case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
-        data = Enum.reduce @required, %{name: name}, fn key, acc ->
-          Map.put acc, String.to_atom(key), metadata[key]
-        end
+        data =
+          Enum.reduce(@required, %{name: name}, fn key, acc ->
+            Map.put(acc, String.to_atom(key), metadata[key])
+          end)
 
         Plug.Conn.assign(conn, :data, data)
 
       non_empty ->
-        Phoenix.Controller.text conn, "Candidate #{name} is missing fields [#{Enum.join(non_empty, ", ")}] in cosmic"
+        Phoenix.Controller.text(
+          conn,
+          "Candidate #{name} is missing fields [#{Enum.join(non_empty, ", ")}] in cosmic"
+        )
     end
   end
 

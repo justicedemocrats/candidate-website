@@ -1,1 +1,1 @@
-<h1> Why </h1>
+<h1 style="color: <%=@primary_color %>"> Why </h1>

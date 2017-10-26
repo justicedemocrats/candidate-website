@@ -1,5 +1,5 @@
 <div id="app"></div>
-<div id="hero" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>)">
+<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>)">
   <div id="button-layer">
     <div>
       <a href="<%= @facebook %>"> <img src="<%= fb_share() %>" /> </a>
@@ -7,36 +7,53 @@
     </div>
 
     <div>
-      <a href="<%= @donate_url %>">
+      <a class="button button-light" href="<%= @donate_url %>">
         Donate
       </a>
     </div>
   </div>
 
-  <div id="name"> <%= @name %> </div>
-  <div id="join">
-    <div id="join-prompt"> Join my Campaign </div>
-    <div id="join-subtitle"> For info and updates </div>
-    <form method="POST" action="/signup">
-      <input type="email" name="email" />
-      <input type="text" name="zip" />
-      <button type="submit"> Join Me </button>
-      I want to volunteer <input type="checkbox" checked="true" />
-    </form>
+  <div id="hero-signup">
+    <div id="name"> <%= @name %> </div>
+    <div id="name-separator"></div>
+    <div id="district">
+      <div id="for-blank"> For <%= congress_or_senate(@district) %> </div>
+      <div id="district-spec"> <%= human_district(@district) %> </div>
+    </div>
+    <div id="join">
+      <form method="POST" action="/signup">
+        <fieldset>
+          <div id="join-prompt"> Join my Campaign </div>
+          <div id="join-subtitle"> For info and updates </div>
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email" />
+          </div>
+          <div class="form-row">
+            <div class="same-row">
+              <input type="text" name="zip" placeholder="Zip"/>
+              <input type="button" class="button" type="submit" value="Join Me" />
+            </div>
+          </div>
+          I want to volunteer <input type="checkbox" checked="true" />
+        </fieldset>
+      </form>
+    </div>
   </div>
 </div>
 
-<div id="nav-bar">
-  <a class="nav-item contribute"> Contribute </a>
-  <a class="nav-item"> About </a>
-  <a class="nav-item"> Platform </a>
-  <a class="nav-item"> Our District </a>
-  <a class="nav-item"> Events </a>
-  <a class="nav-item"> News </a>
-  <a class="nav-item volunteer"> Volunteer </a>
+<div class="tabs">
+  <nav class="tabs-nav">
+    <a class="nav-item contribute"> Contribute </a>
+    <a class="nav-item"> About </a>
+    <a class="nav-item"> Platform </a>
+    <a class="nav-item"> Our District </a>
+    <a class="nav-item"> Events </a>
+    <a class="nav-item"> News </a>
+    <a class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
+  </nav>
 </div>
 
-<%= for chunk <- ["about", "donate", "endorsements", "events", "issues", "news", "quote", "store", "volunteer", "vote", "why"] do %>
+<%= for chunk <- ["about", "quote", "donate", "vote", "why", "issues", "volunteer", "news", "events", "store", "endorsements"] do %>
   <%= render "chunk-#{chunk}.html", assigns %>
 <% end %>
 

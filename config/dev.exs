@@ -12,9 +12,21 @@ config :candidate_website, CandidateWebsite.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: ["node_modules/.bin/webpack-dev-server", "--inline", "--colors", "--hot", "--stdin", "--host", "localhost", "--port", "8080", "--public", "localhost:8080",
-    cd: Path.expand("../assets", __DIR__)
-  ]]
+    node: [
+      "node_modules/.bin/webpack-dev-server",
+      "--inline",
+      "--colors",
+      "--hot",
+      "--stdin",
+      "--host",
+      "localhost",
+      "--port",
+      "8080",
+      "--public",
+      "localhost:8080",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 # Watch static and templates for browser reloading.
 config :candidate_website, CandidateWebsite.Endpoint,

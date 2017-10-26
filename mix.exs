@@ -6,9 +6,9 @@ defmodule App.Mixfile do
       app: :candidate_website,
       version: "0.1.10",
       elixir: "~> 1.5",
-      elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-      start_permanent: Mix.env == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
     ]
@@ -22,7 +22,7 @@ defmodule App.Mixfile do
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 
   defp deps do
     [
@@ -42,10 +42,15 @@ defmodule App.Mixfile do
 
   defp aliases do
     [
-      "webpacker.setup": ["deps.get", "webpacker.frontend", "ecto.create", "run priv/repo/seeds.exs"],
+      "webpacker.setup": [
+        "deps.get",
+        "webpacker.frontend",
+        "ecto.create",
+        "run priv/repo/seeds.exs"
+      ],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end
