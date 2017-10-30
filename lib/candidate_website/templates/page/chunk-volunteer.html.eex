@@ -1,1 +1,11 @@
-<h1> Volunteer </h1>
+<div class="banner-header" style="background-color: <%= @highlight_color %>; margin-bottom: 50px;">
+  <h1> We Need You </h1>
+</div>
+<div style="display: flex;">
+  <div style="width: 60%">
+    <%= render "volunteer-form.html", assigns %>
+  </div>
+  <div style="padding: 50px; color: <%= @primary_color %>; font-size: 42px; font-weight: bold;">
+    Democracy is powered by volunteers like yourself.
+  </div>
+</div>

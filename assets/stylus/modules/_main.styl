@@ -1,8 +1,10 @@
 #hero
   width 100%
-  height 60vh
-  background-size cover
+  min-height 550px
+  background-size contain
   background-position center
+  background-repeat no-repeat
+  background-color rgba(100, 100, 100, 1)
   position relative
 
   #hero-signup
@@ -13,40 +15,65 @@
     text-align center
     color white
 
+    fieldset
+      border none
+
+    #name-separator
+      margin-top 10px
+      margin-bottom 10px
+      display flex
+      justify-content space-between
+
+      .half
+        border-bottom 2px solid white
+        width 45%
+        margin-bottom 15px
+
+      .star
+        font-size 22px
+
     #name
-      font-size 52px
-      border-bottom 5px solid white
+      font-size 46px
       text-transform uppercase
       font-family 'Montserrat'
-      font-weight bold
+      font-weight 900
+      display flex
+      flex-direction column
+      align-items center
 
   #district
     display flex
+    font-weight bolder
+    text-transform uppercase
 
     #for-blank, #district-spec
       width 50%
       text-align center
 
-    #for-blank
+    #separator
       border-right 1px solid white
+      margin-top 3px
+      margin-bottom 3px
 
   #join
-    text-align center
-    background-color rgba(255, 255, 255, .3)
+    margin-top 20px
+    background-color rgba(255, 255, 255, .1)
+    font-family 'Montserrat'
+
+    #join-prompt
+      text-align center
+      text-transform capitalize
+      font-size larger
+      font-family 'Montserrat'
+
+    #join-subtitle
+      font-size smaller
+      font-style italic
+      font-family 'Montserrat'
 
     .form-row
       margin-top 5px
       margin-bottom 5px
-
-      .same-row
-        display flex
-        justify-content space-between
-
-        input[name="zip"]
-          width 45%
-
-        input[type="button"]
-          width 45%
 
 .tabs
   .tabs-nav
@@ -58,11 +85,17 @@
     .nav-item
       color black
       text-transform uppercase
-      color #939393
+      color #A0A0A0
       padding 20px
       font-family Montserrat
-      font-size 23px
+      font-size 17px
       cursor pointer
+      font-weight lighter
+
+    .separator
+      margin-top 15px
+      margin-bottom 15px
+      border-right 1px solid #A0A0A0
 
 .contribute
 	border 2px solid #7ED321 !important
@@ -70,9 +103,34 @@
 	border-radius 103.68px !important
 	background-color rgba(126,211,33,0.1) !important
 
+.contribute
+  font-weight bold !important
+
 .volunteer
 	border 2px solid #F83A30
 	background-color rgba(248,58,48,0.1) !important
 
 h1
   font-family Montserrat
+
+.chunk
+  padding 10px
+
+.chunk[data-kind="about"],
+.chunk[data-kind="issues"],
+.chunk[data-kind="why"],
+.chunk[data-kind="vote"],
+.chunk[data-kind="volunteer"]
+  margin-left 50px
+  margin-right 50px
+
+.same-row
+  display flex
+  justify-content space-between
+
+
+  input[name="zip"]
+    width 45%
+
+  input[type="button"]
+    width 45%

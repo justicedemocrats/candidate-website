@@ -3,8 +3,10 @@ defmodule CandidateWebsite.RequirePlug do
 
   @required ~w(
     district big_picture donate_url facebook twitter intro_statement
-    intro_paragraph issues_header issues_paragraph why_suppport_header
-    why_support_body action_shot quote primary_color highlight_color
+    intro_paragraph issues_header issues_paragraph why_support_header
+    why_support_body why_support_picture action_shot quote primary_color highlight_color
+    vote_registration_url vote_registration_icon vote_instructions_url
+    vote_instructions_icon vote_location_url vote_location_icon
   )
 
   def init(default), do: default

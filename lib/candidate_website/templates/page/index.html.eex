@@ -1,5 +1,5 @@
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>)">
+<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>); background-position: center;">
   <div id="button-layer">
     <div>
       <a href="<%= @facebook %>"> <img src="<%= fb_share() %>" /> </a>
@@ -14,10 +14,18 @@
   </div>
 
   <div id="hero-signup">
-    <div id="name"> <%= @name %> </div>
-    <div id="name-separator"></div>
+    <div id="name">
+      <%= @name |> String.split(" ") |> List.first() %>
+      <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
+    </div>
+    <div id="name-separator">
+      <div class="half"></div>
+      <div class="star">&#9733;</div>
+      <div class="half"></div>
+    </div>
     <div id="district">
       <div id="for-blank"> For <%= congress_or_senate(@district) %> </div>
+      <div id="separator"></div>
       <div id="district-spec"> <%= human_district(@district) %> </div>
     </div>
     <div id="join">
@@ -34,7 +42,7 @@
               <input type="button" class="button" type="submit" value="Join Me" />
             </div>
           </div>
-          I want to volunteer <input type="checkbox" checked="true" />
+          <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span>
         </fieldset>
       </form>
     </div>
@@ -45,16 +53,22 @@
   <nav class="tabs-nav">
     <a class="nav-item contribute"> Contribute </a>
     <a class="nav-item"> About </a>
+    <div class="separator"></div>
     <a class="nav-item"> Platform </a>
+    <div class="separator"></div>
     <a class="nav-item"> Our District </a>
+    <div class="separator"></div>
     <a class="nav-item"> Events </a>
+    <div class="separator"></div>
     <a class="nav-item"> News </a>
     <a class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
   </nav>
 </div>
 
-<%= for chunk <- ["about", "quote", "donate", "vote", "why", "issues", "volunteer", "news", "events", "store", "endorsements"] do %>
-  <%= render "chunk-#{chunk}.html", assigns %>
+<%= for chunk <- ["about", "quote", "issues", "donate", "vote", "why", "volunteer", "news", "events", "store", "endorsements"] do %>
+  <div class="chunk" data-kind="<%= chunk %>">
+    <%= render "chunk-#{chunk}.html", assigns %>
+  </div>
 <% end %>
 
 <div id="footer">
