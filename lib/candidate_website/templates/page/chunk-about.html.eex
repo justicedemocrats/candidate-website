@@ -1,4 +1,4 @@
-<h1 style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
+<h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
 <div style="position: relative;">
   <%= raw(@intro_paragraph) %>
   <a class="button button-danger more-about"> More About Alexandria </a>

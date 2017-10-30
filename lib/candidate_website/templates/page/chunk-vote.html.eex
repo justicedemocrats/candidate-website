@@ -1,1 +1,29 @@
-<h1> Vote </h1>
+<div class="banner-header" style="background-color: <%= @primary_color %>;">
+  <h1> How to Vote </h1>
+</div>
+
+<div class="vote-actions-container">
+  <a class="vote-action" href="<%= @vote_registration_url %>">
+    <h2> Register to VOTE </h2>
+    <img src="<%= @vote_registration_icon["imgix_url"] %>"></img>
+    <button class="flag-button" style="background-color: <%= @highlight_color %>;">
+      Learn More
+    </button>
+  </a>
+
+  <a class="vote-action" href="<%= @vote_instructions_url %>">
+    <h2> How to VOTE </h2>
+    <img src="<%= @vote_instructions_icon["imgix_url"] %>"></img>
+    <button class="flag-button" style="background-color: <%= @highlight_color %>;">
+      Learn More
+    </button>
+  </a>
+
+  <a class="vote-action" href="<%= @vote_location_url %>">
+    <h2> Register to VOTE </h2>
+    <img src="<%= @vote_location_icon["imgix_url"] %>"></img>
+    <button class="flag-button" style="background-color: <%= @highlight_color %>;">
+      Learn More
+    </button>
+  </a>
+</div>

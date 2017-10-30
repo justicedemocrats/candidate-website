@@ -1,4 +1,4 @@
-<% title = assigns[:title] || "#{@name} for #{@district}" %>
+<% title = assigns[:title] || "#{@name |> String.split(" ") |> List.first()} for #{@district}" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= @name %> for <%= @district %>">
     <meta name="author" content="<%= @name %>">
+    <meta name="image" content="<%= @action_shot["imgix_url"] %>">
 
     <title><%= title %></title>
 
