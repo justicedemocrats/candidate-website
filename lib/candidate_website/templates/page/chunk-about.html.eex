@@ -8,5 +8,17 @@
       More About <%= @name |> String.split(" ") |> List.first() %>
     </a>
   </div>
-  <img style="height: 250px;" src="<%= @district_image["imgix_url"] %>" />
+  <div style="display: flex; justify-content: space-between; flex-direction: column; width: 100%;">
+    <!-- <div style="height: 10%;">
+      <%= raw(@target_html) %>
+    </div> -->
+    <div style="position: relative; height: 90%; display: flex; justify-content: center;">
+      <div style="position: absolute; height: 100%;">
+        <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, false) %>
+      </div>
+      <!-- <div id="filled-animate" data-height="<%= (@animation_fill_level / 2) %>" style="position: absolute; height: 0; overflow: hidden;">
+        <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, true)%>
+      </div> -->
+    </div>
+  </div>
 </div>

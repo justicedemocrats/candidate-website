@@ -23,4 +23,9 @@ defmodule CandidateWebsite.PageView do
       _dnum -> @states[abbrev] <> " " <> num
     end
   end
+
+  def state(district) do
+    [abbrev, num] = String.split(district, "-")
+    @states[abbrev]
+  end
 end

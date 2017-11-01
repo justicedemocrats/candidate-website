@@ -6,9 +6,9 @@
   </div>
   <div style="
     background-color: <%= @primary_color %>; margin-left: 10px; color: white;
-    width: 40%; font-weight: bold; font-size: 60px;
-    font-family: 'Roboto Condensed';
-    padding: 20px;
+    width: 40%; font-weight: bold; font-family: 'Roboto Condensed';
+    padding: 20px; display: flex; align-items: center;
+    font-size: <%= Float.ceil((@quote |> String.length()) / 4) %>px;
   ">
     <%= @quote %>
   </div>
