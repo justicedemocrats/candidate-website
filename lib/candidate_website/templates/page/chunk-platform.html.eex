@@ -1,0 +1,22 @@
+<h1 name="issues" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
+<div class="planks-container">
+  <%= for issue <- @issues do %>
+    <div class="plank-container">
+      <div class="plank-header-container" style="background-color: <%= @primary_color %>;">
+        <div class="lets"> Let's </div>
+        <div class="plank-header">
+          <%= issue.header %>
+        </div>
+        <a class="button" href="/platform" style="background-color: <%= @highlight_color %>;"> More </a>
+      </div>
+      <div class="plank-intro">
+        <p style="display: inline;">
+          <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+        </p>
+        <a class="more-about" style="color: <%= @highlight_color %>; ">
+          Read More
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
