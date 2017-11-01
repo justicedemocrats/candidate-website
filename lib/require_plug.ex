@@ -36,6 +36,8 @@ defmodule CandidateWebsite.RequirePlug do
           ~m(title header intro planks)a
         end)
 
+    mobile = is_mobile?(conn)
+
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
@@ -54,4 +56,11 @@ defmodule CandidateWebsite.RequirePlug do
   end
 
   defp field_filled(map, field), do: Map.has_key?(map, field) and map[field] != ""
+
+  defp is_mobile?(conn) do
+    case List.keyfind(conn.req_headers, "user-agent", 0, "") do
+      {_head, tail} -> Browser.mobile?(tail)
+      _ -> false
+    end
+  end
 end
