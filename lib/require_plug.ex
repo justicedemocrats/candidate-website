@@ -22,10 +22,10 @@ defmodule CandidateWebsite.RequirePlug do
     endorsements =
       Cosmic.get_type("endorsements", candidate)
       |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text)} ->
-        ~m(organization_name organization_logo endorsement_text)a
-      end)
+           ~m(organization_name organization_logo endorsement_text)a
+         end)
 
-    %{"content" => about_content, "image" => about_image} = Cosmic.get("about-en", candidate)
+    %{"content" => about_content, "metadata" => %{"image" => about_image}} = Cosmic.get("about-en", candidate)
     about = ~m(about_content about_image)
 
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do

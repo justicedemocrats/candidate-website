@@ -17,11 +17,11 @@ defmodule Cosmic.Migration do
       |> Map.get("metafields")
       |> Enum.map(fn field -> Map.drop(field, ["value"]) end)
 
-    Cosmic.Api.post("add-object-type", [body: %{
+    Cosmic.Api.post("add-object-type", body: %{
       write_key: "ifQygkWqctnCoWy3YnNZIFY9o3dHVDSB2QBeqwW3M7TW6eqk0Y",
       title: "Campaigns",
       metafields: metafields
-    }])
+    })
   end
 
   def clone_objects do
@@ -39,26 +39,29 @@ defmodule Cosmic.Migration do
   end
 
   def port_to(slug) do
-    %{body: %{"object" => %{"metafields" => metafields}}} = Cosmic.Api.get("alexandria-ocasio-cortez")
+    %{body: %{"object" => %{"metafields" => metafields}}} =
+      Cosmic.Api.get("alexandria-ocasio-cortez")
 
     metafields =
       metafields
       |> Enum.map(fn field -> Map.drop(field, ["value"]) end)
-      # |> exclude(MapSet.new(@campaign_attrs))
 
-    Cosmic.Api.post("add-object-type", [
+    # |> exclude(MapSet.new(@campaign_attrs))
+
+    Cosmic.Api.post(
+      "add-object-type",
       slug: slug,
       body: %{
         title: "Homepage",
         metafields: metafields
       }
-    ])
+    )
   end
 
   defp exclude(metafields, to_exclude) do
-    Enum.reject metafields, fn %{"key" => key} ->
-      IO.inspect key
+    Enum.reject(metafields, fn %{"key" => key} ->
+      IO.inspect(key)
       MapSet.member?(to_exclude, key)
-    end
+    end)
   end
 end

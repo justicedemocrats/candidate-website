@@ -14,9 +14,15 @@ defmodule CandidateWebsite.Router do
   end
 
   scope "/", CandidateWebsite do
-    # Use the default browser stack
     pipe_through(:browser)
 
     get("/", PageController, :index)
+  end
+
+  scope "/api", CandidateWebsite do
+    pipe_through(:api)
+
+    get("/update/cosmic", UpdateController, :cosmic)
+    post("/update/cosmic", UpdateController, :cosmic)
   end
 end
