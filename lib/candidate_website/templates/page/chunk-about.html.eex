@@ -16,9 +16,9 @@
       <div style="position: absolute; height: 100%;">
         <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, false) %>
       </div>
-      <!-- <div id="filled-animate" data-height="<%= (@animation_fill_level / 2) %>" style="position: absolute; height: 0; overflow: hidden;">
+      <div id="filled-animate" data-height="<%= (@animation_fill_level / 2) %>" style="position: absolute; height: 0; overflow: hidden;">
         <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, true)%>
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
