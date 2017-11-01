@@ -1,5 +1,9 @@
 <h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
 <div style="position: relative;">
-  <%= raw(@intro_paragraph) %>
-  <a class="button button-danger more-about"> More About Alexandria </a>
+  <p style="display: inline;">
+    <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+  </p>
+  <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
+    More About <%= @name |> String.split(" ") |> List.first() %>
+  </a>
 </div>

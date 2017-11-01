@@ -1,4 +1,4 @@
-<div class="banner-header" style="background-color: <%= @highlight_color %>; margin-bottom: 50px;">
+<div name="volunteer" class="banner-header" style="background-color: <%= @highlight_color %>; margin-bottom: 50px;">
   <h1> We Need You </h1>
 </div>
 <div style="display: flex;">

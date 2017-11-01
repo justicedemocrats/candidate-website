@@ -1,4 +1,4 @@
-<% title = assigns[:title] || "#{@name |> String.split(" ") |> List.first()} for #{@district}" %>
+<% title = assigns[:title] || "#{@name |> String.split(" ") |> List.first()} for #{after_for(@district)}" %>
 
 <!DOCTYPE html>
 <html lang="en">

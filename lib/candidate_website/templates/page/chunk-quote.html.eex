@@ -6,9 +6,9 @@
   </div>
   <div style="
     background-color: <%= @primary_color %>; margin-left: 10px; color: white;
-    width: 33%; font-weight: bold; font-size: 80px;
+    width: 40%; font-weight: bold; font-size: 60px;
     font-family: 'Roboto Condensed';
-    padding: 10px;
+    padding: 20px;
   ">
     <%= @quote %>
   </div>

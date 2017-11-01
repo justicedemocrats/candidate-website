@@ -8,4 +8,25 @@
       </a>
     <% end %>
   </div>
+  <div class="custom-donation-container" style="display: flex; justify-content: center;">
+    <div
+      style="background-color: <%= @primary_color %>; color: white;
+        width: 400px; margin-right: 30px; display: flex; align-items: center;
+        justify-content: center; font-family: 'Montserrat';">
+      <strong style="margin-right: 10px;">OR</strong> <span> Make A Custom Contribution</span>
+    </div>
+    <input id="custom-contribution" type="number" placeholder="27" style="width: 40px; margin-right: 10px;"/>
+    <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button"> Contribute </a>
+  </div>
+
+  <script>
+    const el = document.querySelector('#custom-contribution');
+    const go = document.querySelector('#custom-contribution-go');
+
+    el.addEventListener('input', function (ev) {
+      const amount = ev.target.value
+      go.setAttribute('href', '<%= @donate_url %>?amount=' + amount)
+    })
+
+  </script>
 </div>
