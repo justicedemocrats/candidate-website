@@ -1,6 +1,7 @@
 defmodule CandidateWebsite.PageView do
-  @states File.read!("./lib/candidate_website/views/states.json") |> Poison.decode!()
   use CandidateWebsite, :view
+
+  @states File.read!("./lib/candidate_website/views/states.json") |> Poison.decode!()
 
   def fb_share, do: "https://www.google.com"
   def twitter_share, do: "https://www.google.com"

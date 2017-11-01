@@ -1,4 +1,3 @@
-import React from 'react';
-import { render } from 'react-dom';
+import spa from './spa'
 
-render(<div />, document.getElementById('app'));
+spa.bind.all()
