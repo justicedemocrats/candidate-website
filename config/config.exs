@@ -27,7 +27,7 @@ config :cipher,
   magic_token: "magictoken"
 
 # Cosmic
-config :cosmic, slugs: ["alexandria-ocasio-cortez"]
+config :cosmic, slugs: ["alexandria-ocasio-cortez", "alison-hartson"]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
