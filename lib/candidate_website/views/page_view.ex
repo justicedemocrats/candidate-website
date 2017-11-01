@@ -3,8 +3,8 @@ defmodule CandidateWebsite.PageView do
 
   @states File.read!("./lib/candidate_website/views/states.json") |> Poison.decode!()
 
-  def fb_share, do: "https://www.google.com"
-  def twitter_share, do: "https://www.google.com"
+  def fb_share, do: "/images/facebook.svg"
+  def twitter_share, do: "/images/twitter.svg"
 
   def congress_or_senate(district),
     do: district
@@ -20,7 +20,7 @@ defmodule CandidateWebsite.PageView do
 
     case num do
       "SN" -> @states[abbrev]
-      dnum -> @states[abbrev] <> " " <> num
+      _dnum -> @states[abbrev] <> " " <> num
     end
   end
 end
