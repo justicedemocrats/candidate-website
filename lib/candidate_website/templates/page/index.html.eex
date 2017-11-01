@@ -38,7 +38,7 @@
           <div class="form-row">
             <div class="same-row">
               <input type="text" name="zip" placeholder="Zip"/>
-              <input type="button" class="button" type="submit" value="Join Me" />
+              <input type="button" style="background-color: <%= @primary_color %>;" class="button" type="submit" value="Join Me" />
             </div>
           </div>
           <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span>
