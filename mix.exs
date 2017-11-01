@@ -36,7 +36,8 @@ defmodule App.Mixfile do
       {:cowboy, "~> 1.0"},
       {:cosmic, git: "https://github.com/BrandNewCongress/cosmic_ex.git"},
       {:osdi, git: "https://github.com/BrandNewCongress/osdi_ex.git"},
-      {:distillery, "~> 1.0.0"}
+      {:distillery, "~> 1.0.0"},
+      {:short_maps, "~> 0.1.2"}
     ]
   end
 

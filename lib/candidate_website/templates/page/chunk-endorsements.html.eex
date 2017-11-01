@@ -1,1 +1,16 @@
-<h1> Endorsements </h1>
+<h1 style="text-align: center; color: <%= @primary_color %>">
+  Who's Endorsing Me?
+</h1>
+
+<div class="endorsement-container">
+  <%= for endorsement <- @endorsements do %>
+    <div class="endorsement">
+      <div class="logo-container">
+        <img src="<%= endorsement.organization_logo["imgix_url"] %>" />
+      </div>
+      <span class="organization-name">
+        <%= endorsement.organization_name %>
+      </span>
+    </div>
+  <% end %>
+</div>

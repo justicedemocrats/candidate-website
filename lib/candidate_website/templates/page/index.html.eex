@@ -1,5 +1,5 @@
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>); background-position: center;">
+<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>); background-position: center; background-color: <%= @header_background_color %>;">
   <div id="button-layer">
     <div>
       <a href="<%= @facebook %>"> <img src="<%= fb_share() %>" /> </a>
@@ -64,13 +64,33 @@
     <a class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
   </nav>
 </div>
-
-<%= for chunk <- ["about", "quote", "issues", "donate", "vote", "why", "volunteer", "news", "events", "store", "endorsements"] do %>
+<!--  Later add "vote, news, events, store, endorsements" -->
+<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "endorsements"] do %>
   <div class="chunk" data-kind="<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
 <% end %>
 
 <div id="footer">
-  <h1> Footer </h1>
+  <div class="tabs">
+    <nav class="tabs-nav">
+      <a class="nav-item contribute"> Contribute </a>
+      <a class="nav-item"> About </a>
+      <div class="separator"></div>
+      <a class="nav-item"> Platform </a>
+      <div class="separator"></div>
+      <a class="nav-item"> Our District </a>
+      <div class="separator"></div>
+      <a class="nav-item"> Events </a>
+      <div class="separator"></div>
+      <a class="nav-item"> News </a>
+      <a class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
+    </nav>
+  </div>
+
+  <div id="paid-for-container">
+    <div id="paid-for">
+      <%= @paid_for %>
+    </div>
+  </div>
 </div>
