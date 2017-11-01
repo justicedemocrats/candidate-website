@@ -1,9 +1,12 @@
-<h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
-<div style="position: relative;">
-  <p style="display: inline;">
-    <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-  </p>
-  <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
-    More About <%= @name |> String.split(" ") |> List.first() %>
-  </a>
+<div style="display: flex;">
+  <div>
+    <h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
+    <p style="display: inline;">
+      <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+    </p>
+    <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
+      More About <%= @name |> String.split(" ") |> List.first() %>
+    </a>
+  </div>
+  <img style="height: 250px;" src="<%= @district_image["imgix_url"] %>" />
 </div>
