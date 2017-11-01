@@ -8,7 +8,7 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_body why_support_picture action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    district_image
+    district_image platform_header
   )
 
   def init(default), do: default
@@ -27,12 +27,19 @@ defmodule CandidateWebsite.RequirePlug do
          end)
 
     %{"content" => about_content, "metadata" => %{"image" => about_image}} = Cosmic.get("about-en", candidate)
-    about = ~m(about_content about_image)
+    about = ~m(about_content about_image)a
+
+    issues =
+      Cosmic.get_type("issues", candidate)
+      |> Enum.map(fn %{"metadata" => ~m(title header intro planks)} ->
+          planks = planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
+          ~m(title header intro planks)a
+        end)
 
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
-          Enum.reduce(@required, ~m(endorsements about)a, fn key, acc ->
+          Enum.reduce(@required, ~m(endorsements about issues)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 

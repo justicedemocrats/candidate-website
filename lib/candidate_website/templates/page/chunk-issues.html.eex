@@ -1,5 +1,7 @@
 <h1 name="issues" style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
-<p>
-  <%= raw(@issues_paragraph) %>
-  <a class="button button-danger more-about"> My Platform </a>
+<p style="display: inline;">
+  <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
 </p>
+<a class="more-about" style="color: <%= @highlight_color %>; ">
+  Read My Full Platform Here
+</a>

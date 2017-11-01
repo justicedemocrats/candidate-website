@@ -64,8 +64,9 @@
     <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
   </nav>
 </div>
+
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "endorsements"] do %>
+<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "platform", "endorsements"] do %>
   <div class="chunk" data-kind="<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
