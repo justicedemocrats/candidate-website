@@ -1,12 +1,13 @@
 defmodule CandidateWebsite.RequirePlug do
   import Plug.Conn, only: [fetch_query_params: 1]
+  import ShortMaps
 
   @required ~w(
-    district big_picture donate_url facebook twitter intro_statement
-    intro_paragraph issues_header issues_paragraph why_support_header
+    name district big_picture donate_url facebook twitter intro_statement
+    intro_paragraph issues_header issues_paragraph why_support_header paid_for
     why_support_body why_support_picture action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
-    vote_instructions_icon vote_location_url vote_location_icon
+    vote_instructions_icon vote_location_url vote_location_icon header_background_color
   )
 
   def init(default), do: default
@@ -16,14 +17,21 @@ defmodule CandidateWebsite.RequirePlug do
     global_opts = GlobalOpts.get(conn, params)
     candidate = Keyword.get(global_opts, :candidate)
 
-    %{"title" => name, "metadata" => metadata} = Cosmic.get(candidate)
+    %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
-    IO.inspect(metadata)
+    endorsements =
+      Cosmic.get_type("endorsements", candidate)
+      |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text)} ->
+        ~m(organization_name organization_logo endorsement_text)a
+      end)
+
+    %{"content" => about_content, "image" => about_image} = Cosmic.get("about-en", candidate)
+    about = ~m(about_content about_image)
 
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
-          Enum.reduce(@required, %{name: name}, fn key, acc ->
+          Enum.reduce(@required, ~m(endorsements about)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 
@@ -32,7 +40,7 @@ defmodule CandidateWebsite.RequirePlug do
       non_empty ->
         Phoenix.Controller.text(
           conn,
-          "Candidate #{name} is missing fields [#{Enum.join(non_empty, ", ")}] in cosmic"
+          "Candidate #{candidate} is missing fields [#{Enum.join(non_empty, ", ")}] in cosmic"
         )
     end
   end
