@@ -21,6 +21,6 @@
           <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, true)%>
         </div>
       </div>
-    <% end %.
+    <% end %>
   </div>
 </div>
