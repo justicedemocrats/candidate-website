@@ -31,7 +31,7 @@ defmodule CandidateWebsite.RequirePlug do
 
     issues =
       Cosmic.get_type("issues", candidate)
-      |> Enum.map(fn %{"metadata" => ~m(title header intro planks)} ->
+      |> Enum.map(fn %{"title" => title, "metadata" => ~m(title header intro planks)} ->
           planks = planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
           ~m(title header intro planks)a
         end)
