@@ -36,4 +36,8 @@
 
     <%= {:safe, js_script_tag() } %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"/>
+  <script>
+    flexibility(document.documentElement);
+  </script>
 </html>

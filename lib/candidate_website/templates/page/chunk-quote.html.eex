@@ -1,15 +1,14 @@
 <% division_constant = if @mobile, do: 8, else: 4 %>
 
-<div style="display: flex;">
+<div class="flex">
   <div style="
     width: 66%; min-height: 50vh;
     background-image: url(<%= URI.encode(@action_shot["imgix_url"]) %>);
     margin-right: 10px; background-size: cover;">
   </div>
-  <div style="
+  <div class="full-center" style="
     background-color: <%= @primary_color %>; margin-left: 10px; color: white;
-    width: 40%; font-weight: bold; font-family: 'Roboto Condensed';
-    padding: 20px; display: flex; align-items: center;
+    width: 40%; font-weight: bold; font-family: 'Roboto Condensed'; padding: 20px;
     font-size: <%= Float.ceil((@quote |> String.length()) / division_constant) %>px;
   ">
     <%= @quote %>

@@ -1,4 +1,4 @@
-<div style="display: flex;">
+<div class="flex">
   <div>
     <h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
     <p style="display: inline;">
@@ -8,12 +8,12 @@
       More About <%= @name |> String.split(" ") |> List.first() %>
     </a> -->
   </div>
-  <div style="display: flex; justify-content: space-between; flex-direction: column; width: 100%;">
+  <div class="about-flex">
     <!-- <div style="height: 10%;">
       <%= raw(@target_html) %>
     </div> -->
     <%= if not @mobile do %>
-      <div style="position: relative; height: 90%; display: flex; justify-content: center;">
+      <div class="flex justify-center" style="position: relative; height: 90%;">
         <div style="position: absolute; height: 100%;">
           <%= render "z-#{@district |> state() |> String.downcase()}.html", assigns |> Map.put(:filled, false) %>
         </div>

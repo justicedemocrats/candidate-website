@@ -21,7 +21,7 @@
 .tabs
   .tabs-nav
     text-align center
-    display flex
+    flexbox(flex)
     justify-content space-around
     flex-wrap wrap
     margin-left 50px
@@ -80,7 +80,7 @@ h1
   margin-right auto
 
 .same-row
-  display flex
+  flexbox(flex)
   justify-content space-between
 
 
@@ -100,9 +100,9 @@ h1
 
   #paid-for-container
     width 100%
-    display flex
+    flexbox(flex)
     justify-content center
-    align-items center
+    align-items(center)
     min-height 110px
 
     #paid-for
@@ -118,11 +118,11 @@ h1
   text-transform uppercase
 
 #button-layer
-  display flex
+  flexbox(flex)
   justify-content space-between
   margin-left 50px
   margin-right 50px
-  align-items center
+  align-items(center)
 
   .button-light
     background-color transparent
@@ -148,7 +148,7 @@ h1
 #name-separator
   margin-top 10px
   margin-bottom 10px
-  display flex
+  flexbox(flex)
   justify-content space-between
 
   .half
@@ -163,12 +163,12 @@ h1
   text-transform uppercase
   font-family 'Montserrat'
   font-weight 900
-  display flex
-  flex-direction column
-  align-items center
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
 
 #district
-  display flex
+  flexbox(flex)
   font-weight bolder
   text-transform uppercase
 
@@ -199,3 +199,26 @@ h1
   .form-row
     margin-top 5px
     margin-bottom 5px
+
+.flex
+  flexbox(flex)
+
+.justify-center
+  justify-content(center)
+
+.full-center
+  flexbox(flex)
+  justify-content(center)
+  align-items(center)
+
+.about-flex
+  flexbox(flex)
+  justify-content(space-between)
+  flex-direction(column)
+  width 100%
+
+.column-center
+  flexbox(flex)
+  flex-direction(column)
+  justify-content(center)
+  align-items(center)
