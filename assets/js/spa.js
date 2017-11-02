@@ -107,7 +107,6 @@ const all = () => {
 
   setTimeout(() => {
     const hash = window.location.hash.substr(1)
-    console.log(hash)
 
     if (hash && hash != '') {
       const target =

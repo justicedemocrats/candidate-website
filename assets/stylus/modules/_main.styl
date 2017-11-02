@@ -3,6 +3,7 @@
   min-height 550px
   background-size contain
   background-position center
+  background-position center
   background-repeat no-repeat
   position relative
 
@@ -17,70 +18,14 @@
     fieldset
       border none
 
-    #name-separator
-      margin-top 10px
-      margin-bottom 10px
-      display flex
-      justify-content space-between
-
-      .half
-        border-bottom 2px solid white
-        width 45%
-        margin-bottom 15px
-
-      .star
-        font-size 22px
-
-    #name
-      font-size 46px
-      text-transform uppercase
-      font-family 'Montserrat'
-      font-weight 900
-      display flex
-      flex-direction column
-      align-items center
-
-  #district
-    display flex
-    font-weight bolder
-    text-transform uppercase
-
-    #for-blank, #district-spec
-      width 50%
-      text-align center
-
-    #separator
-      border-right 1px solid white
-      margin-top 3px
-      margin-bottom 3px
-
-  #join
-    margin-top 20px
-    background-color rgba(255, 255, 255, .1)
-    font-family 'Montserrat'
-
-    #join-prompt
-      text-align center
-      text-transform capitalize
-      font-size larger
-      font-family 'Montserrat'
-
-    #join-subtitle
-      font-size smaller
-      font-style italic
-      font-family 'Montserrat'
-
-    .form-row
-      margin-top 5px
-      margin-bottom 5px
-
 .tabs
   .tabs-nav
     text-align center
     display flex
-    justify-content space-between
-    margin-left 10px
-    margin-right 10px
+    justify-content space-around
+    flex-wrap wrap
+    margin-left 50px
+    margin-right 50px
 
     .nav-item
       color black
@@ -179,3 +124,71 @@ h1
 
 #filled-animate
   transition height ease-out 1s
+
+.mobile
+  #hero
+    background-size cover
+    min-height 250px
+    background-position center
+    background-repeat no-repeat
+
+  .tabs
+    .tabs-nav
+      .nav-item
+        font-size smaller
+
+
+#name-separator
+  margin-top 10px
+  margin-bottom 10px
+  display flex
+  justify-content space-between
+
+  .half
+    width 45%
+    margin-bottom 15px
+
+  .star
+    font-size 22px
+
+#name
+  font-size 46px
+  text-transform uppercase
+  font-family 'Montserrat'
+  font-weight 900
+  display flex
+  flex-direction column
+  align-items center
+
+#district
+  display flex
+  font-weight bolder
+  text-transform uppercase
+
+  #for-blank, #district-spec
+    width 50%
+    text-align center
+
+  #separator
+    margin-top 3px
+    margin-bottom 3px
+
+#join
+  margin-top 20px
+  background-color rgba(255, 255, 255, .1)
+  font-family 'Montserrat'
+
+  #join-prompt
+    text-align center
+    text-transform capitalize
+    font-size larger
+    font-family 'Montserrat'
+
+  #join-subtitle
+    font-size smaller
+    font-style italic
+    font-family 'Montserrat'
+
+  .form-row
+    margin-top 5px
+    margin-bottom 5px

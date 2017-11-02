@@ -1,0 +1,37 @@
+<% color = if @mobile, do: @primary_color, else: "white" %>
+
+<div id="hero-signup">
+  <div id="name">
+    <%= @name |> String.split(" ") |> List.first() %>
+    <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
+  </div>
+  <div id="name-separator">
+    <div class="half" style="border-bottom: 2px solid <%= color %>;"></div>
+    <div class="star">&#9733;</div>
+    <div class="half" style="border-bottom: 2px solid <%= color %>;"></div>
+  </div>
+  <div id="district">
+    <div id="for-blank"> For <%= congress_or_senate(@district) %> </div>
+    <div id="separator" style="border-right: 1px solid <%= color %>;"></div>
+    <div id="district-spec"> <%= human_district(@district) %> </div>
+  </div>
+  <div id="join">
+    <form method="POST" action="/signup?candidate=<%= @candidate %>">
+      <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
+      <fieldset>
+        <div id="join-prompt"> Join my Campaign </div>
+        <div id="join-subtitle"> For info and updates </div>
+        <div class="form-row">
+          <input type="email" name="email" placeholder="Email" required="required" />
+        </div>
+        <div class="form-row">
+          <div class="same-row">
+            <input type="text" name="zip" placeholder="Zip" required="required" />
+            <input type="submit" style="background-color: <%= @primary_color %>;" class="button" type="submit" value="Join Me" />
+          </div>
+        </div>
+        <!-- <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span> -->
+      </fieldset>
+    </form>
+  </div>
+</div>

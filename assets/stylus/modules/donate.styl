@@ -28,3 +28,33 @@
 
       .amount
         font-size 35px
+
+.custom-donation-container
+  display flex
+  justify-content center
+
+.mobile
+  .custom-donation-container
+    flex-direction column
+    align-items center
+    justify-content space-between
+    padding-left 50px
+    padding-right 50px
+    height 100px
+
+  #donate
+    #circles-container
+      flex-direction column
+
+      .circle
+        border-radius 0px
+        border none
+        height auto
+        flex-direction row
+        align-items center
+        justify-content space-around
+        margin-bottom 10px
+
+        .amount
+          width 40%
+          margin-right 10px

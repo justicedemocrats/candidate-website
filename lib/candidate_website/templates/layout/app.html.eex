@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <main class="main" role="main">
+    <main class="main <%= if @mobile, do: "mobile", else: "desktop" %>" role="main">
       <%= render @view_module, @view_template, assigns %>
     </main>
 
