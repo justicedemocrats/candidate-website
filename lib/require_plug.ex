@@ -31,10 +31,19 @@ defmodule CandidateWebsite.RequirePlug do
 
     issues =
       Cosmic.get_type("issues", candidate)
-      |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro planks)} ->
+      |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro planks priority)} ->
+          {priority, _} = case is_float(priority) or is_integer(priority) do
+            true -> {priority, true}
+            false -> case priority do
+              "." <> _rest -> Float.parse("0" <> priority)
+              _ -> Float.parse(priority)
+            end
+          end
+
           planks = planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
-          ~m(title header intro planks)a
+          ~m(title header intro planks priority)a
         end)
+      |> Enum.sort(fn (%{priority: a}, %{priority: b}) -> a <= b end)
 
     mobile = is_mobile?(conn)
 
@@ -63,4 +72,5 @@ defmodule CandidateWebsite.RequirePlug do
       _ -> false
     end
   end
+
 end
