@@ -31,4 +31,4 @@ function getQueryStringValue(key) {
   )
 }
 
-bind()
+setTimeout(bind, 100)
