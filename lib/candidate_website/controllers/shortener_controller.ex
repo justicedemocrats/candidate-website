@@ -3,7 +3,6 @@ defmodule CandidateWebsite.ShortenerController do
   use CandidateWebsite, :controller
 
   def index(conn = %{request_path: path}, params) do
-    params = conn |> fetch_query_params() |> Map.get(:params)
     global_opts = GlobalOpts.get(conn, params)
     candidate = Keyword.get(global_opts, :candidate)
 
@@ -25,15 +24,23 @@ defmodule CandidateWebsite.ShortenerController do
         {_, destination} -> destination
       end
 
-    redirect conn, external: "https://" <> destination
+    redirect conn, external: https_prefix(destination)
   end
 
-  defp matches({regex, destination}, path) do
+  defp matches({regex, _destination}, path) do
     Regex.run(regex, path) != nil
   end
 
   defp prepare(%{from: from_regex, to: to_url}) do
     {:ok, from} = from_regex |> String.downcase() |> Regex.compile()
     {from, to_url}
+  end
+
+  defp https_prefix(url = "http" <> _rest) do
+    url
+  end
+
+  defp https_prefix(url) do
+    "https://" <> url
   end
 end
