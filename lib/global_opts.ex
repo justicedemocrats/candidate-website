@@ -6,6 +6,8 @@ defmodule GlobalOpts do
   end
 
   def get(conn, _params) do
-    [candidate: @doamins[conn.host]]
+    IO.inspect conn.host
+    IO.inspect @domains
+    [candidate: @domains[conn.host]]
   end
 end
