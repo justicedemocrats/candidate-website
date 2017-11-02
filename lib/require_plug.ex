@@ -41,7 +41,7 @@ defmodule CandidateWebsite.RequirePlug do
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
-          Enum.reduce(@required, ~m(candidate endorsements about issues)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate endorsements about issues mobile)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 

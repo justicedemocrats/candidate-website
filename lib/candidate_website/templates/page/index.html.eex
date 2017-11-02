@@ -1,5 +1,5 @@
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>); background-position: center; background-color: <%= @header_background_color %>;">
+<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>);  background-color: <%= @header_background_color %>;">
   <div id="button-layer">
     <div>
       <a href="<%= @facebook %>"> <img style="margin: 10px; width: 40px; height: 40px;" src="<%= fb_share() %>" /> </a>
@@ -12,48 +12,19 @@
     </div>
   </div>
 
-  <div id="hero-signup">
-    <div id="name">
-      <%= @name |> String.split(" ") |> List.first() %>
-      <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
-    </div>
-    <div id="name-separator">
-      <div class="half"></div>
-      <div class="star">&#9733;</div>
-      <div class="half"></div>
-    </div>
-    <div id="district">
-      <div id="for-blank"> For <%= congress_or_senate(@district) %> </div>
-      <div id="separator"></div>
-      <div id="district-spec"> <%= human_district(@district) %> </div>
-    </div>
-    <div id="join">
-      <form method="POST" action="/signup?candidate=<%= @candidate %>">
-        <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
-        <fieldset>
-          <div id="join-prompt"> Join my Campaign </div>
-          <div id="join-subtitle"> For info and updates </div>
-          <div class="form-row">
-            <input type="email" name="email" placeholder="Email" required="required" />
-          </div>
-          <div class="form-row">
-            <div class="same-row">
-              <input type="text" name="zip" placeholder="Zip" required="required" />
-              <input type="submit" style="background-color: <%= @primary_color %>;" class="button" type="submit" value="Join Me" />
-            </div>
-          </div>
-          <!-- <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span> -->
-        </fieldset>
-      </form>
-    </div>
-  </div>
+  <%= if not @mobile do %>
+    <%= render "signup-form.html", assigns %>
+  <% end %>
 </div>
+<%= if @mobile do %>
+  <%= render "signup-form.html", assigns %>
+<% end %>
 
 <div class="tabs" style="margin-top: 20px;">
   <nav class="tabs-nav">
     <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
     <a href="#about" class="nav-item"> About </a>
-    <div class="separator"></div>
+    <!-- <div class="separator"></div> -->
     <a href="#issues" class="nav-item"> Platform </a>
     <!-- <div class="separator"></div> -->
     <!-- <a href="#vote" class="nav-item"> Our District </a>
@@ -77,7 +48,7 @@
     <nav class="tabs-nav">
       <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
       <a href="#about" class="nav-item"> About </a>
-      <div class="separator"></div>
+      <!-- <div class="separator"></div> -->
       <a href="#issues" class="nav-item"> Platform </a>
       <!-- <div class="separator"></div>
       <a href="#vote" class="nav-item"> Our District </a>
