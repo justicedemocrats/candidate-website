@@ -8,7 +8,7 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_body why_support_picture action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    platform_header animation_fill_level target_html
+    platform_header animation_fill_level target_html general_email press_email
   )
 
   def init(default), do: default
