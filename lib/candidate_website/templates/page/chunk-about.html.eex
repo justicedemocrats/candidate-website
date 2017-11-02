@@ -4,9 +4,9 @@
     <p style="display: inline;">
       <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
     </p>
-    <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
+    <!-- <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
       More About <%= @name |> String.split(" ") |> List.first() %>
-    </a>
+    </a> -->
   </div>
   <div style="display: flex; justify-content: space-between; flex-direction: column; width: 100%;">
     <!-- <div style="height: 10%;">
