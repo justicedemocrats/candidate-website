@@ -13,16 +13,17 @@ defmodule CandidateWebsite.Router do
     plug(:accepts, ["json"])
   end
 
-  scope "/", CandidateWebsite do
-    pipe_through(:browser)
-
-    get("/", PageController, :index)
-  end
-
   scope "/api", CandidateWebsite do
     pipe_through(:api)
 
     get("/update/cosmic", UpdateController, :cosmic)
     post("/update/cosmic", UpdateController, :cosmic)
+  end
+
+  scope "/", CandidateWebsite do
+    pipe_through(:browser)
+
+    get("/", PageController, :index)
+    get("/*path", ShortenerController, :index)
   end
 end
