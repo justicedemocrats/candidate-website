@@ -1,6 +1,7 @@
 .volunteer-form
   color white
   padding 20px
+  min-width 580px
 
   h2
     text-align center
@@ -8,7 +9,7 @@
   .form-container
     display flex
     width 100%
-    padding 20px
+    padding 10px
 
     .info-fields
       width 300px
@@ -21,14 +22,20 @@
     .volunteer-options
       display flex
       flex-direction column
-      min-width 300px
+      width 300px
       border-right 1px solid white
+
+      input[type='checkbox'] {
+        width:15px;
+        height:15px;
+        border-radius:5px;
+        border:2px solid #555;
+      }
 
       .option
         width 40%
         text-transform uppercase
         font-weight bold
-        font-size larger
 
       .checkbox-row
         display flex
