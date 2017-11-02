@@ -31,4 +31,8 @@ function getQueryStringValue(key) {
   )
 }
 
+<<<<<<< HEAD
 bind()
+=======
+setTimeout(bind, 100)
+>>>>>>> master
