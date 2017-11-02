@@ -1,36 +1,41 @@
 <div class="volunteer-form" style="background-color: <%= @primary_color %>">
   <h2> How Will You Help? </h2>
-  <div class="form-container">
-    <div class="volunteer-options">
-      <div class="checkbox-row">
-        <div class="option">
-          <input type="checkbox" name="host-event" /> Host an Event
+
+  <form method="post" action="/volunteer?candidate=<%= @candidate %>">
+    <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
+    <div class="form-container">
+      <div class="volunteer-options">
+        <div class="checkbox-row">
+          <div class="option">
+            <input type="checkbox" name="host_event" /> Host an Event
+          </div>
+          <div class="option">
+            <input type="checkbox" name="attend_event" /> Attend an Event
+          </div>
         </div>
-        <div class="option">
-          <input type="checkbox" name="attent-event" /> Attend an Event
+        <div class="checkbox-row">
+          <div class="option">
+            <input type="checkbox" name="call_voters" /> Call Voters
+          </div>
+          <div class="option">
+            <input type="checkbox" name="join_team" /> Join a National Team
+          </div>
         </div>
       </div>
-      <div class="checkbox-row">
-        <div class="option">
-          <input type="checkbox" name="call-voters" /> Call Voters
+
+      <div class="info-fields">
+        <div class="form-row">
+          <input type="email" name="email" placeholder="Email" required="required" />
         </div>
-        <div class="option">
-          <input type="checkbox" name="register-voters" /> Register Voters
+        <div class="form-row same-row">
+          <input type="text" name="zip" placeholder="Zip" required="required" />
+          <input type="submit" class="button" placeholder="Zip" value="I'm In!" style="background-color: <%= @highlight_color %>" />
         </div>
+        <p>
+          Check all options you're interested in and we'll provide details for each
+          once we know you're in.
+        </p>
       </div>
     </div>
-    <div class="info-fields">
-      <div class="form-row">
-        <input type="email" name="email" placeholder="Email"/>
-      </div>
-      <div class="form-row same-row">
-        <input type="text" name="zip" placeholder="Zip"/>
-        <input type="button" class="button" placeholder="Zip" value="I'm In!" style="background-color: <%= @highlight_color %>"/>
-      </div>
-      <p>
-        Check all options you're interested in and we'll provide details for each
-        once we know you're in.
-      </p>
-    </div>
-  </div>
+  </form>
 </div>

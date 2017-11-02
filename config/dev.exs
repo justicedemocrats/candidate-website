@@ -50,8 +50,9 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :osdi, Osdi.Repo,
   adapter: Ecto.Adapters.Postgres,
+  database: "osdi_repo",
   username: "postgres",
   password: "postgres",
-  database: "osdi_repo",
   hostname: "localhost",
-  pool_size: 10
+  port: "5432",
+  types: GeoExample.PostgresTypes

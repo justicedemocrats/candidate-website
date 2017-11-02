@@ -25,7 +25,11 @@ defmodule CandidateWebsite.PageView do
   end
 
   def state(district) do
-    [abbrev, num] = String.split(district, "-")
+    [abbrev, _num] = String.split(district, "-")
     @states[abbrev]
+  end
+
+  def csrf_token() do
+    Plug.CSRFProtection.get_csrf_token()
   end
 end

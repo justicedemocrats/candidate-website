@@ -2,9 +2,9 @@
   <h1 style="color: white; font-family: 'Montserrat'; font-weight: lighter;"> Why Support <%= @name |> String.split(" ") |> List.first() %> </h1>
 </div>
 <div style="display: flex; padding-top: 20px;">
-  <div style="padding-right: 30px; font-family: Georgia; letter-spacing: 1px; font-size: 20px;">
+  <div style="padding-right: 30px; letter-spacing: 1px; font-size: 20px; width: 100%;">
     <h1 name="issues" style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
     <%= raw(@why_support_body) %>
   </div>
-  <img src="<%= @why_support_picture["imgix_url"] %>" />
+  <img src="<%= @why_support_picture["imgix_url"] %>" style="max-height: 300px;"/>
 </div>

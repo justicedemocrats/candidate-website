@@ -28,20 +28,21 @@
       <div id="district-spec"> <%= human_district(@district) %> </div>
     </div>
     <div id="join">
-      <form method="POST" action="/signup">
+      <form method="POST" action="/signup?candidate=<%= @candidate %>">
+        <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
         <fieldset>
           <div id="join-prompt"> Join my Campaign </div>
           <div id="join-subtitle"> For info and updates </div>
           <div class="form-row">
-            <input type="email" name="email" placeholder="Email" />
+            <input type="email" name="email" placeholder="Email" required="required" />
           </div>
           <div class="form-row">
             <div class="same-row">
-              <input type="text" name="zip" placeholder="Zip"/>
-              <input type="button" style="background-color: <%= @primary_color %>;" class="button" type="submit" value="Join Me" />
+              <input type="text" name="zip" placeholder="Zip" required="required" />
+              <input type="submit" style="background-color: <%= @primary_color %>;" class="button" type="submit" value="Join Me" />
             </div>
           </div>
-          <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span>
+          <!-- <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span> -->
         </fieldset>
       </form>
     </div>
@@ -54,12 +55,12 @@
     <a href="#about" class="nav-item"> About </a>
     <div class="separator"></div>
     <a href="#issues" class="nav-item"> Platform </a>
-    <div class="separator"></div>
-    <a href="#vote" class="nav-item"> Our District </a>
+    <!-- <div class="separator"></div> -->
+    <!-- <a href="#vote" class="nav-item"> Our District </a>
     <div class="separator"></div>
     <a href="#events" class="nav-item"> Events </a>
-    <div class="separator"></div>
-    <a href="#news" class="nav-item"> News </a>
+    <div class="separator"></div> -->
+    <!-- <a href="#news" class="nav-item"> News </a> -->
     <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
   </nav>
 </div>
@@ -78,12 +79,12 @@
       <a href="#about" class="nav-item"> About </a>
       <div class="separator"></div>
       <a href="#issues" class="nav-item"> Platform </a>
-      <div class="separator"></div>
+      <!-- <div class="separator"></div>
       <a href="#vote" class="nav-item"> Our District </a>
       <div class="separator"></div>
       <a href="#events" class="nav-item"> Events </a>
       <div class="separator"></div>
-      <a href="#news" class="nav-item"> News </a>
+      <a href="#news" class="nav-item"> News </a> -->
       <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>"> Volunteer </a>
     </nav>
   </div>
