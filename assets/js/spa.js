@@ -68,7 +68,8 @@ const handle = {
       history.push(a.getAttribute('href'))
       reloadBodyScripts()
       bus.emit('morphed')
-    })},
+    })
+  },
 
   external: a => window.open(a.getAttribute('href')),
 
@@ -103,6 +104,19 @@ const all = () => {
   relatives()
   externals()
   internals()
+
+  setTimeout(() => {
+    const hash = window.location.hash.substr(1)
+    console.log(hash)
+
+    if (hash && hash != '') {
+      const target =
+        document.querySelector(`#${hash}`) ||
+        document.querySelector(`[name=${hash}]`)
+
+      if (target) smoothScroll(target)
+    }
+  }, 300)
 }
 
 const bind = {
