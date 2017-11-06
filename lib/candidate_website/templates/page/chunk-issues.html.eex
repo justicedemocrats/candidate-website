@@ -1,4 +1,4 @@
-<h1 name="issues" style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
+<h1 style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
 <p style="display: inline;">
   <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
 </p>

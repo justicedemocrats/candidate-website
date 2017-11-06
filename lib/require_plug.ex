@@ -31,9 +31,11 @@ defmodule CandidateWebsite.RequirePlug do
 
     articles =
       Cosmic.get_type("articles", candidate)
-      |> Enum.map(fn %{"metadata" => ~m(headline description thumbnail priority)} ->
+      |> Enum.map(fn %{"metadata" => ~m(headline description thumbnail priority url)} ->
           priority = as_float(priority)
-          ~m(headline description thumbnail priority)a
+          headline = truncate(headline, 60)
+          description = truncate(description, 140)
+          ~m(headline description thumbnail priority url)a
         end)
       |> Enum.sort(&by_priority/2)
 
@@ -75,16 +77,25 @@ defmodule CandidateWebsite.RequirePlug do
   end
 
   defp as_float(unknown) do
-    {unknown, _} = case is_float(unknown) or is_integer(unknown) do
+    {float, _} = case is_float(unknown) or is_integer(unknown) do
       true -> {unknown, true}
       false -> case unknown do
         "." <> _rest -> Float.parse("0" <> unknown)
         _ -> Float.parse(unknown)
       end
     end
+
+    float
   end
 
   defp by_priority(%{priority: a}, %{priority: b}) do
     a <= b
+  end
+
+  defp truncate(string, length) do
+    case String.slice(string, 0, length) do
+      ^string -> string
+      sliced -> sliced <> "..."
+    end
   end
 end

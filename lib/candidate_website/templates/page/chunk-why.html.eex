@@ -3,7 +3,7 @@
 </div>
 <div style="display: flex; padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
   <div style="padding-right: 30px; letter-spacing: 1px; font-size: 20px; width: 100%;">
-    <h1 name="issues" style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
+    <h1 style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
     <%= raw(@why_support_body) %>
   </div>
   <%= if not @mobile do %>
