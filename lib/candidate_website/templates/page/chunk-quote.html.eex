@@ -4,7 +4,7 @@
   <div style="
     width: 66%; min-height: 50vh;
     background-image: url(<%= URI.encode(@action_shot["imgix_url"]) %>);
-    margin-right: 10px; background-size: cover;">
+    margin-right: 10px; background-size: cover; background-position: center;">
   </div>
   <div class="full-center" style="
     background-color: <%= @primary_color %>; margin-left: 10px; color: white;
