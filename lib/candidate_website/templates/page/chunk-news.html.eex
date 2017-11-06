@@ -1,11 +1,11 @@
 <div class="news-section-container" id="news">
 
-  <div style="width: 50%">
+  <div style="width: 40%">
     <div class="banner-header" style="background-color: <%= @primary_color %>; width: 100%;">
       <h1 style="color: white; font-family: 'Montserrat'; font-weight: lighter;"> Join the Conversation </h1>
     </div>
 
-    <a class="twitter-timeline" href="https://twitter.com/AlisonForCA?ref_src=twsrc%5Etfw" style="max-height: 800px;">Tweets by AlisonForCA</a>
+    <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;">Tweets by AlisonForCA</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
