@@ -29,28 +29,29 @@ defmodule CandidateWebsite.RequirePlug do
     %{"content" => about_content, "metadata" => %{"image" => about_image}} = Cosmic.get("about-en", candidate)
     about = ~m(about_content about_image)a
 
+    articles =
+      Cosmic.get_type("articles", candidate)
+      |> Enum.map(fn %{"metadata" => ~m(headline description thumbnail priority)} ->
+          priority = as_float(priority)
+          ~m(headline description thumbnail priority)a
+        end)
+      |> Enum.sort(&by_priority/2)
+
     issues =
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro planks priority)} ->
-          {priority, _} = case is_float(priority) or is_integer(priority) do
-            true -> {priority, true}
-            false -> case priority do
-              "." <> _rest -> Float.parse("0" <> priority)
-              _ -> Float.parse(priority)
-            end
-          end
-
+          priority = as_float(priority)
           planks = planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
           ~m(title header intro planks priority)a
         end)
-      |> Enum.sort(fn (%{priority: a}, %{priority: b}) -> a <= b end)
+      |> Enum.sort(&by_priority/2)
 
     mobile = is_mobile?(conn)
 
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
-          Enum.reduce(@required, ~m(candidate about issues mobile)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate about issues mobile articles)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 
@@ -73,4 +74,17 @@ defmodule CandidateWebsite.RequirePlug do
     end
   end
 
+  defp as_float(unknown) do
+    {unknown, _} = case is_float(unknown) or is_integer(unknown) do
+      true -> {unknown, true}
+      false -> case unknown do
+        "." <> _rest -> Float.parse("0" <> unknown)
+        _ -> Float.parse(unknown)
+      end
+    end
+  end
+
+  defp by_priority(%{priority: a}, %{priority: b}) do
+    a <= b
+  end
 end

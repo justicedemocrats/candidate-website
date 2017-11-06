@@ -1,3 +1,19 @@
-<h1> News </h1>
-<a class="twitter-timeline"  href="https://twitter.com/search?q=%40alison_hartson" data-widget-id="925816739358638080">Tweets about @alison_hartson</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div class="banner-header" style="background-color: <%= @primary_color %>;">
+  <h1 style="color: white; font-family: 'Montserrat'; font-weight: lighter;"> News </h1>
+</div>
+
+<div class="articles">
+  <%= for article <- @articles do %>
+    <div class="article">
+      <img src="<%= article.thumbnail["imgix_url"] %>" />
+      <div class="article-preview">
+        <div class="headline"> <%= article.headline %> </div>
+        <div class="description"> <%= article.description %> </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<!-- <a class="twitter-timeline"  href="https://twitter.com/search?q=%40alison_hartson" data-widget-id="925816739358638080">Tweets about @alison_hartson</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->

@@ -37,7 +37,7 @@
 </div>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "platform"] do %>
+<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "platform", "news"] do %>
   <div class="chunk" data-kind="<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
@@ -74,4 +74,5 @@
     <div>
       Press contact: <a href="mailto:<%= @press_email%>" style="color: <%= @primary_color %>;"> <%= @press_email %> </a>
     </div>
+  </div>
 </div>

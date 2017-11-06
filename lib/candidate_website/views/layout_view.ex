@@ -20,7 +20,7 @@ defmodule CandidateWebsite.LayoutView do
 
     case num do
       "SN" -> @states[abbrev]
-      dnum -> district
+      _dnum -> district
     end
   end
 end

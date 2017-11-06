@@ -1,12 +1,8 @@
 defmodule Cosmic.Migration do
-  @candidate_attrs ~w(
-
-  )
-
-  @campaign_attrs ~w(
-    district launch_status brands small_picture website_blurb domain time_zone
-    calling_script_link calling_prompt callable
-  )
+  # @campaign_attrs ~w(
+  #   district launch_status brands small_picture website_blurb domain time_zone
+  #   calling_script_link calling_prompt callable
+  # )
 
   def clone_object_type do
     %{body: %{"objects" => object_type}} = Cosmic.Api.get("object-type/candidates")
@@ -45,8 +41,7 @@ defmodule Cosmic.Migration do
     metafields =
       metafields
       |> Enum.map(fn field -> Map.drop(field, ["value"]) end)
-
-    # |> exclude(MapSet.new(@campaign_attrs))
+      |> exclude(MapSet.new(@campaign_attrs))
 
     Cosmic.Api.post(
       "add-object-type",
