@@ -1,7 +1,7 @@
 defmodule GlobalOpts do
   @domains Application.get_env(:candidate_website, :domains)
 
-  def get(conn, %{"candidate" => candidate}) do
+  def get(_conn, %{"candidate" => candidate}) do
     [candidate: candidate]
   end
 

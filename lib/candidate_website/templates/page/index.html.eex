@@ -29,15 +29,15 @@
     <!-- <div class="separator"></div> -->
     <!-- <a href="#vote" class="nav-item"> Our District </a>
     <div class="separator"></div>
-    <a href="#events" class="nav-item"> Events </a>
-    <div class="separator"></div> -->
-    <!-- <a href="#news" class="nav-item"> News </a> -->
+    <a href="#events" class="nav-item"> Events </a> -->
+    <!-- <div class="separator"></div> -->
+    <a href="#news" class="nav-item"> News </a>
     <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
   </nav>
 </div>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "platform"] do %>
+<%= for chunk <- ["about", "quote", "issues", "donate", "why", "volunteer", "platform", "news"] do %>
   <div class="chunk" data-kind="<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
@@ -52,10 +52,10 @@
       <a href="#issues" class="nav-item"> Platform </a>
       <!-- <div class="separator"></div>
       <a href="#vote" class="nav-item"> Our District </a>
-      <div class="separator"></div>
-      <a href="#events" class="nav-item"> Events </a>
-      <div class="separator"></div>
-      <a href="#news" class="nav-item"> News </a> -->
+      <div class="separator"></div> -->
+      <!-- <a href="#events" class="nav-item"> Events </a> -->
+      <!-- <div class="separator"></div> -->
+      <a href="#news" class="nav-item"> News </a>
       <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
     </nav>
   </div>
@@ -74,4 +74,5 @@
     <div>
       Press contact: <a href="mailto:<%= @press_email%>" style="color: <%= @primary_color %>;"> <%= @press_email %> </a>
     </div>
+  </div>
 </div>
