@@ -48,12 +48,19 @@ defmodule CandidateWebsite.RequirePlug do
         end)
       |> Enum.sort(&by_priority/2)
 
+    events =
+      Stash.get(:event_cache, "Calendar: #{metadata["name"]}") || []
+      |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
+      |> Enum.sort(&EventHelp.date_compare/2)
+      |> Enum.map(&EventHelp.add_date_line/1)
+      |> Enum.map(&EventHelp.add_candidate_attr/1)
+
     mobile = is_mobile?(conn)
 
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         data =
-          Enum.reduce(@required, ~m(candidate about issues mobile articles)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 

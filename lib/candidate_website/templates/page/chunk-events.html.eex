@@ -1,1 +1,37 @@
-<h1> Events </h1>
+<div class="full-center">
+  <h1 style="color: <%= @primary_color %>; font-family: 'Montserrat'; font-weight: lighter; text-align: center;">
+    <%= if length(@events) > 0 do %>
+      Attend an Upcoming Event
+    <% else %>
+      We Need You to Power this Revolution
+    <% end %>
+  </h1>
+
+  <div class="event-box">
+    <%= if length(@events) == 0 do %>
+
+    <% end %>
+    <%= for ev <- @events do %>
+      <div class="event">
+        <div class="box">
+          <p><strong> <%= ev.title %> </strong> <br/>
+           <%= ev.date_line %> </p>
+          <a class="little-button" href="/events/<%= ev.name %>" style="display: block;" target="_blank"> RSVP </a>
+        </div>
+        <div class="box">
+          <p><strong> <%= ev.location.venue %> </strong> <br/>
+          <%= ev.location.address_lines |> List.first() %> <br/>
+          <%= ev.location.locality %> <%= ev.location.region %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a href="https://now.justicedemocrats.com/form/submit-event"
+    class="button"
+    style="color: white; background-color: <%= @highlight_color %>;
+      text-align: center; margin-left: auto; margin-right: auto;
+    " >
+    Host An Event for <%= @name %>
+  </a>
+</div>

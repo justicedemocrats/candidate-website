@@ -39,7 +39,8 @@ defmodule App.Mixfile do
       {:distillery, "~> 1.0.0"},
       {:short_maps, "~> 0.1.2"},
       {:browser, "~> 0.1.0"},
-      {:html_sanitize_ex, "~> 1.3.0-rc3"}
+      {:html_sanitize_ex, "~> 1.3.0-rc3"},
+      {:quantum, "~> 2.0.0"}
     ]
   end
 
