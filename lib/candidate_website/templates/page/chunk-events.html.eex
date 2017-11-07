@@ -8,20 +8,14 @@
   </h1>
 
   <div class="event-box">
-    <%= if length(@events) == 0 do %>
-
-    <% end %>
     <%= for ev <- @events do %>
-      <div class="event">
+      <div class="event" onclick="window.open('https://now.justicedemocrats.com/events/<%= ev.name %>')">
+        <a href="https://now.justicedemocrats.com/events/<%= ev.name %>" class="button" style="background-color: <%= @highlight_color %>">
+          RSVP
+        </a>
         <div class="box">
           <p><strong> <%= ev.title %> </strong> <br/>
            <%= ev.date_line %> </p>
-          <a class="little-button" href="/events/<%= ev.name %>" style="display: block;" target="_blank"> RSVP </a>
-        </div>
-        <div class="box">
-          <p><strong> <%= ev.location.venue %> </strong> <br/>
-          <%= ev.location.address_lines |> List.first() %> <br/>
-          <%= ev.location.locality %> <%= ev.location.region %> </p>
         </div>
       </div>
     <% end %>
@@ -31,6 +25,7 @@
     class="button"
     style="color: white; background-color: <%= @highlight_color %>;
       text-align: center; margin-left: auto; margin-right: auto;
+      margin-top: 50px;
     " >
     Host An Event for <%= @name %>
   </a>
