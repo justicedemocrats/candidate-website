@@ -48,12 +48,14 @@ defmodule CandidateWebsite.RequirePlug do
         end)
       |> Enum.sort(&by_priority/2)
 
+    event_slugs = Stash.get(:event_cache, "Calendar: #{metadata["name"]}") || []
     events =
-      Stash.get(:event_cache, "Calendar: #{metadata["name"]}") || []
+      event_slugs
       |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
       |> Enum.sort(&EventHelp.date_compare/2)
       |> Enum.map(&EventHelp.add_date_line/1)
       |> Enum.map(&EventHelp.add_candidate_attr/1)
+      |> IO.inspect()
 
     mobile = is_mobile?(conn)
 

@@ -26,3 +26,4 @@ npm-debug.log
 # variables.
 /config/*.secret.exs
 cosmic_cache
+event_cache
