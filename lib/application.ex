@@ -7,6 +7,7 @@ defmodule CandidateWebsite.Application do
     import Supervisor.Spec
 
     Cosmic.fetch_all()
+    CandidateWebsite.EventCache.fetch_or_load()
 
     # Define workers and child supervisors to be supervised
     children = [
