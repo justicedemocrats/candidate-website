@@ -22,7 +22,11 @@ config :cipher,
   magic_token: "magictoken"
 
 # Cosmic
-config :cosmic, slugs: ["alexandria-ocasio-cortez", "alison-hartson", "ben-packer"]
+config :cosmic, slugs: [
+  "alexandria-ocasio-cortez", "alison-hartson", "ben-packer", "adrienne-bell",
+  "anthony-clark", "chardo-richardson", "cori-bush", "letitia-plummer",
+  "paula-jean-swearengin", "sarah-smith", "david-gill"
+]
 
 # Domains
 config :candidate_website, domains: %{
