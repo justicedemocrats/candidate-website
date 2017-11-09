@@ -42,6 +42,7 @@ config :cosmic,
 config :candidate_website,
   domains: %{
     "alisonhartson.com" => "alison-hartson"
+    "robb2018.com" => "robb-ryerse"
   }
 
 jobs =
