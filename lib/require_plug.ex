@@ -26,36 +26,41 @@ defmodule CandidateWebsite.RequirePlug do
     #        ~m(organization_name organization_logo endorsement_text)a
     #      end)
 
-    %{"content" => about_content, "metadata" => %{"image" => about_image}} = Cosmic.get("about-en", candidate)
+    %{"content" => about_content, "metadata" => %{"image" => about_image}} =
+      Cosmic.get("about-en", candidate)
+
     about = ~m(about_content about_image)a
 
     articles =
       Cosmic.get_type("articles", candidate)
       |> Enum.map(fn %{"metadata" => ~m(headline description thumbnail priority url)} ->
-          priority = as_float(priority)
-          headline = truncate(headline, 60)
-          description = truncate(description, 140)
-          ~m(headline description thumbnail priority url)a
-        end)
+           priority = as_float(priority)
+           headline = truncate(headline, 60)
+           description = truncate(description, 140)
+           ~m(headline description thumbnail priority url)a
+         end)
       |> Enum.sort(&by_priority/2)
 
     issues =
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro planks priority)} ->
-          priority = as_float(priority)
-          planks = planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
-          ~m(title header intro planks priority)a
-        end)
+           priority = as_float(priority)
+
+           planks =
+             planks |> Enum.map(fn ~m(statement description) -> ~m(statement description)a end)
+
+           ~m(title header intro planks priority)a
+         end)
       |> Enum.sort(&by_priority/2)
 
     event_slugs = Stash.get(:event_cache, "Calendar: #{metadata["name"]}") || []
+
     events =
       event_slugs
       |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
       |> Enum.sort(&EventHelp.date_compare/2)
       |> Enum.map(&EventHelp.add_date_line/1)
       |> Enum.map(&EventHelp.add_candidate_attr/1)
-      |> IO.inspect()
 
     mobile = is_mobile?(conn)
 
@@ -86,13 +91,17 @@ defmodule CandidateWebsite.RequirePlug do
   end
 
   defp as_float(unknown) do
-    {float, _} = case is_float(unknown) or is_integer(unknown) do
-      true -> {unknown, true}
-      false -> case unknown do
-        "." <> _rest -> Float.parse("0" <> unknown)
-        _ -> Float.parse(unknown)
+    {float, _} =
+      case is_float(unknown) or is_integer(unknown) do
+        true ->
+          {unknown, true}
+
+        false ->
+          case unknown do
+            "." <> _rest -> Float.parse("0" <> unknown)
+            _ -> Float.parse(unknown)
+          end
       end
-    end
 
     float
   end

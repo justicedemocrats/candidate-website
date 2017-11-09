@@ -31,19 +31,20 @@ defmodule CandidateWebsite.PageController do
       add_tags: tags
     })
 
-    redirect conn, external: donate_url
+    redirect(conn, external: donate_url)
   end
 
   def volunteer(conn, params) do
     %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
 
-    data = Enum.reduce(~w(call_voters join_team attend_event host_event), params, fn (checkbox, acc) ->
-      if params[checkbox] do
-        Map.put(acc, checkbox, true)
-      else
-        Map.put(acc, checkbox, false)
-      end
-    end)
+    data =
+      Enum.reduce(~w(call_voters join_team attend_event host_event), params, fn checkbox, acc ->
+        if params[checkbox] do
+          Map.put(acc, checkbox, true)
+        else
+          Map.put(acc, checkbox, false)
+        end
+      end)
 
     ref = Map.get(params, "ref", nil)
 
@@ -52,7 +53,13 @@ defmodule CandidateWebsite.PageController do
     email_address = email
     postal_addresses = [%{postal_code: zip}]
 
-    tags = [{call_voters, "Call Voters"}, {join_team, "Join Team"}, {attend_event, "Attend Event"}, {host_event, "Host Event"}]
+    tags =
+      [
+        {call_voters, "Call Voters"},
+        {join_team, "Join Team"},
+        {attend_event, "Attend Event"},
+        {host_event, "Host Event"}
+      ]
       |> Enum.filter(fn {pred, _} -> pred end)
       |> Enum.map(fn {_, str} -> "Action: Volunteer Desire: #{candidate_name}: #{str}" end)
       |> Enum.concat(["Action: Joined As Volunteer: #{candidate_name}"])
@@ -69,6 +76,6 @@ defmodule CandidateWebsite.PageController do
       add_tags: tags
     })
 
-    redirect conn, external: donate_url
+    redirect(conn, external: donate_url)
   end
 end

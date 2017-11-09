@@ -1,5 +1,6 @@
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= ~s("#{@big_picture["imgix_url"]}") %>);  background-color: <%= @header_background_color %>;">
+<div id="hero" class="desktop" style="background-image: url(<%= @big_picture["imgix_url"] %>);  background-color: <%= @header_background_color %>;">
+  <img src="<%= @big_picture["imgix_url"] %>" />
   <div id="button-layer">
     <div>
       <a href="<%= @facebook %>"> <img style="margin: 10px; width: 40px; height: 40px;" src="<%= fb_share() %>" /> </a>

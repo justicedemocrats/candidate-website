@@ -7,7 +7,11 @@
         <div class="plank-header">
           <%= issue.header %>
         </div>
-        <a class="button" href="https://justicedemocrats.com/platform" style="background-color: <%= @highlight_color %>;"> More </a>
+        <%= if @candidate == "robb-ryerse" do %>
+          <a class="button" href="https://brandnewcongress.org/platform" style="background-color: <%= @highlight_color %>;"> More </a>
+        <% else %>
+          <a class="button" href="https://justicedemocrats.com/platform" style="background-color: <%= @highlight_color %>;"> More </a>
+        <% end %>
       </div>
       <div class="plank-intro">
         <p style="display: inline;">
