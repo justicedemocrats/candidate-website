@@ -12,8 +12,10 @@ const autoprefixer = require("autoprefixer");
  * Configuration
  **/
 module.exports = (env) => {
-  const isDev = !(env && env.prod);
+  const isDev = !(process.env.NODE_ENV && process.env.MIX_ENV == 'prod');
   const devtool = isDev ? "eval" : "source-map";
+
+  console.log(isDev)
 
   return {
     devtool: devtool,
@@ -88,11 +90,10 @@ module.exports = (env) => {
           use: isDev ? [
             "style-loader",
             "css-loader",
-            "postcss-loader",
             "stylus-loader"
           ] : ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: ["css-loader", "postcss-loader", "stylus-loader"]
+            use: ["css-loader", "stylus-loader"]
           })
         }
       ]
