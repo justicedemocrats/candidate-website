@@ -7,7 +7,7 @@
         <div class="plank-header">
           <%= issue.header %>
         </div>
-        <%= if @candidate == "robb-ryerse" do %>
+        <%= if String.contains?(@name, "Robb") do %>
           <a class="button" href="https://brandnewcongress.org/platform" style="background-color: <%= @highlight_color %>;"> More </a>
         <% else %>
           <a class="button" href="https://justicedemocrats.com/platform" style="background-color: <%= @highlight_color %>;"> More </a>
