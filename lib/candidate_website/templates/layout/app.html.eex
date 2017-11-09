@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= @name %> for <%= after_for(@district) %>">
     <meta name="author" content="<%= @name %>">
-    <meta name="image" content="<%= @big_picture["imgix_url"] %>">
+    <meta name="image" content="<%= URI.encode(@big_picture["imgix_url"]) %>">
 
     <!-- for Facebook -->
     <meta property="og:title" content="<%=title%>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="<%=@big_picture["imgix_url"]%>" />
+    <meta property="og:image" content="<%=URI.encode(@big_picture["imgix_url"])%>" />
     <meta property="og:description" content="<%= HtmlSanitizeEx.strip_tags(@intro_paragraph) %>" />
 
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="<%= title %>" />
     <meta name="twitter:description" content="<%= HtmlSanitizeEx.strip_tags(@intro_paragraph) %>" />
-    <meta name="twitter:image" content="<%= @big_picture["imgix_url"] %>" />
+    <meta name="twitter:image" content="<%= URI.encode(@big_picture["imgix_url"]) %>" />
 
 
     <title><%= title %></title>
