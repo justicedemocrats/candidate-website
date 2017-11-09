@@ -15,7 +15,7 @@ module.exports = (env) => {
   const isDev = !(process.env.MIX_ENV && process.env.MIX_ENV == 'prod');
   const devtool = isDev ? "eval" : "source-map";
 
-  console.log(isDev)
+  console.log(`WEBPACK running in production environment: ${!isDev}`)
 
   return {
     devtool: devtool,
