@@ -25,7 +25,7 @@ config :cipher,
 config :cosmic, slugs: [
   "alexandria-ocasio-cortez", "alison-hartson", "ben-packer", "adrienne-bell",
   "anthony-clark", "chardo-richardson", "cori-bush", "letitia-plummer",
-  "paula-jean-swearengin", "sarah-smith", "david-gill"
+  "paula-jean-swearengin", "sarah-smith", "david-gill", "robb-ryerse"
 ]
 
 # Domains
