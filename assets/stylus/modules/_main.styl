@@ -19,13 +19,14 @@
       border none
 
 .tabs
+  padding-left 10%
+  padding-right 10%
+
   .tabs-nav
     text-align center
     flexbox(flex)
-    justify-content space-around
+    justify-content space-between
     flex-wrap wrap
-    margin-left 50px
-    margin-right 50px
 
     .nav-item
       color black
@@ -55,18 +56,24 @@ h1
   font-family Montserrat
 
 .chunk
-  padding 40px 10px 40px 10px
+  padding-left 10%
+  padding-right 10%
+  padding-top 30px
+  padding-bottom 30px
 
 .chunk:nth-child(odd)
   background-color #f5f5f5
 
-.chunk[data-kind="about"],
-.chunk[data-kind="issues"],
-.chunk[data-kind="why"],
-.chunk[data-kind="vote"],
-.chunk[data-kind="volunteer"]
-  padding-left 50px
-  padding-right 50px
+// .chunk[data-kind="about"],
+// .chunk[data-kind="issues"],
+// .chunk[data-kind="why"],
+// .chunk[data-kind="vote"],
+// .chunk[data-kind="volunteer"]
+//   padding-left 50px
+//   padding-right 50px
+
+.chunk[data-kind="quote"]
+  padding 0px
 
 .mobile
   .chunk[data-kind="about"],
@@ -77,14 +84,10 @@ h1
     padding-left 20px
     padding-right 20px
 
-
-.chunk[data-kind="about"]
-  min-height 380px
-
-.chunk[data-kind="about"], .chunk[data-kind="issues"]
-  max-width 1000px
-  margin-left auto
-  margin-right auto
+// .chunk[data-kind="about"], .chunk[data-kind="issues"]
+//   max-width 1000px
+//   margin-left auto
+//   margin-right auto
 
 .same-row
   flexbox(flex)

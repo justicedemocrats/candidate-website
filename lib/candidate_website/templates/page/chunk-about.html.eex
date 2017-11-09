@@ -11,10 +11,10 @@
       More About <%= @name |> String.split(" ") |> List.first() %>
     </a> -->
   </div>
-  <div class="about-flex">
-    <!-- <div style="height: 10%;">
+  <!-- <div class="about-flex">
+    <div style="height: 10%;">
       <%= raw(@target_html) %>
-    </div> -->
+    </div>
     <%= if not @mobile do %>
       <%= if show_state do %>
       <div class="flex justify-center" style="position: relative; height: 90%;">
@@ -27,5 +27,5 @@
         </div>
         <% end %>
     <% end %>
-  </div>
+  </div> -->
 </div>
