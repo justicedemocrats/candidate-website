@@ -5,7 +5,7 @@
       <h1 style="color: white; font-family: 'Montserrat'; font-weight: lighter;"> Join the Conversation </h1>
     </div>
 
-    <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;">Tweets by AlisonForCA</a>
+    <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
