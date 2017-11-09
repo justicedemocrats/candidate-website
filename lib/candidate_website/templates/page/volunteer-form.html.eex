@@ -31,10 +31,8 @@
           <input type="text" name="zip" placeholder="Zip" required="required" />
           <input type="submit" class="button" placeholder="Zip" value="I'm In!" style="background-color: <%= @highlight_color %>" />
         </div>
-        <p>
           Check all options you're interested in and we'll provide details for each
           once we know you're in.
-        </p>
       </div>
     </div>
   </form>

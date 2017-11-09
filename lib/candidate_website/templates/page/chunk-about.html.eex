@@ -1,7 +1,7 @@
 <% state = @district |> state() |> String.downcase() %>
 <% show_state = Enum.member?(~w(california), state) %>
 
-<div style="display: flex;">
+<div class="flex">
   <div>
     <h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
     <p style="display: inline;">
@@ -11,14 +11,14 @@
       More About <%= @name |> String.split(" ") |> List.first() %>
     </a> -->
   </div>
-  <div style="display: flex; justify-content: space-between; flex-direction: column; width: 100%;">
-    <!-- <div style="height: 10%;">
+  <!-- <div class="about-flex">
+    <div style="height: 10%;">
       <%= raw(@target_html) %>
-    </div> -->
+    </div>
     <%= if not @mobile do %>
       <%= if show_state do %>
-        <div style="position: relative; height: 90%; display: flex; justify-content: center;">
-          <div style="position: absolute; height: 100%;">
+      <div class="flex justify-center" style="position: relative; height: 90%;">
+        <div style="position: absolute; height: 100%;">
             <%= render "z-#{state}.html", assigns |> Map.put(:filled, false) %>
           </div>
           <div id="filled-animate" data-height="100%;" style="position: absolute; height: 0; overflow: hidden;">
@@ -27,5 +27,5 @@
         </div>
         <% end %>
     <% end %>
-  </div>
+  </div> -->
 </div>

@@ -10,10 +10,9 @@
   </div>
   <div class="custom-donation-container">
     <% if not @mobile do %>
-      <div
+      <div class="full-center"
         style="background-color: <%= @primary_color %>; color: white;
-          width: 400px; margin-right: 30px; display: flex; align-items: center;
-          justify-content: center; font-family: 'Montserrat';">
+          width: 400px; margin-right: 30px; font-family: 'Montserrat';">
         <strong style="margin-right: 10px;">OR</strong> <span> Make A Custom Contribution</span>
       </div>
     <% end %>
