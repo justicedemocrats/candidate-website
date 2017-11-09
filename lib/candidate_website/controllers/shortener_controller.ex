@@ -15,7 +15,7 @@ defmodule CandidateWebsite.ShortenerController do
     tuple_or_nil =
       route
       |> Enum.map(&prepare/1)
-      |> Enum.filter(&(matches(&1, path)))
+      |> Enum.filter(&matches(&1, path))
       |> List.first()
 
     destination =
@@ -24,7 +24,7 @@ defmodule CandidateWebsite.ShortenerController do
         {_, destination} -> destination
       end
 
-    redirect conn, external: https_prefix(destination)
+    redirect(conn, external: https_prefix(destination))
   end
 
   defp matches({regex, _destination}, path) do

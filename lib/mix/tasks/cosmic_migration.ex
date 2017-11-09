@@ -55,7 +55,6 @@ defmodule Cosmic.Migration do
 
   defp exclude(metafields, to_exclude) do
     Enum.reject(metafields, fn %{"key" => key} ->
-      IO.inspect(key)
       MapSet.member?(to_exclude, key)
     end)
   end
