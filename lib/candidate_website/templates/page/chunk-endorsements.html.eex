@@ -6,7 +6,7 @@
   <%= for endorsement <- @endorsements do %>
     <div class="endorsement">
       <div class="logo-container">
-        <img src="<%= endorsement.organization_logo["imgix_url"] %>" />
+        <img src="<%= URI.encode(endorsement.organization_logo["imgix_url"]) %>" />
       </div>
       <span class="organization-name">
         <%= endorsement.organization_name %>

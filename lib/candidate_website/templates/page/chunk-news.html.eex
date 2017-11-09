@@ -18,11 +18,11 @@
       <%= for article <- @articles do %>
         <div class="article" onclick="window.open('<%= article.url %>')">
           <%= if not @mobile do %>
-            <div class="thumbnail" style="background-image: url(<%= article.thumbnail["imgix_url"] %>)"></div>
+            <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
           <% end %>
           <div class="article-preview">
             <%= if @mobile do %>
-              <div class="thumbnail" style="background-image: url(<%= article.thumbnail["imgix_url"] %>)"></div>
+              <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
             <% end %>
             <div class="headline"> <%= article.headline %> </div>
             <div class="description"> <%= article.description %> </div>

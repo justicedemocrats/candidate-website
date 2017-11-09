@@ -1,3 +1,15 @@
+<%
+host_event_url = if String.contains?(@name, "Robb"),
+  do: "https://now.brandnewcongress.org/form/submit-event",
+  else: "https://now.justicedemocrats.com/form/submit-event"
+%>
+
+<%
+host_event_base = if String.contains?(@name, "Robb"),
+  do: "https://now.brandnewcongress.org/events/",
+else: "https://now.justicedemocrats.com/events/"
+%>
+
 <div class="full-center">
   <h1 style="color: <%= @primary_color %>; font-family: 'Montserrat'; font-weight: lighter; text-align: center;">
     <%= if length(@events) > 0 do %>
@@ -10,7 +22,7 @@
   <div class="event-box">
     <%= for ev <- @events do %>
       <div class="event" onclick="window.open('https://now.justicedemocrats.com/events/<%= ev.name %>')">
-        <a href="https://now.justicedemocrats.com/events/<%= ev.name %>" class="button" style="background-color: <%= @highlight_color %>">
+        <a href="<%= "#{host_event_base}#{ev.name}" %>" class="button" style="background-color: <%= @highlight_color %>">
           RSVP
         </a>
         <div class="box">
@@ -21,7 +33,7 @@
     <% end %>
   </div>
 
-  <a href="https://now.justicedemocrats.com/form/submit-event"
+  <a href="<%= host_event_url %>"
     class="button"
     style="color: white; background-color: <%= @highlight_color %>;
       text-align: center; margin-left: auto; margin-right: auto;
