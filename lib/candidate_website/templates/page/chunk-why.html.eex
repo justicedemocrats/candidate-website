@@ -1,4 +1,4 @@
-<div class="banner-header" style="background-color: <%= @primary_color %>;">
+<div name="why" class="banner-header" style="background-color: <%= @primary_color %>;">
   <h1 style="color: white;"> Why Support <%= @name |> String.split(" ") |> List.first() %> </h1>
 </div>
 <div class="flex" style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;">

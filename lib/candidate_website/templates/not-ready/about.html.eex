@@ -1,0 +1,41 @@
+<div class="tabs" style="margin-top: 20px;">
+  <nav class="tabs-nav">
+    <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
+    <a href="/#about" class="nav-item"> About </a>
+    <!-- <div class="separator"></div> -->
+    <a href="/#issues" class="nav-item"> Platform </a>
+    <!-- <div class="separator"></div> -->
+    <!-- <a href="#vote" class="nav-item"> Our District </a>
+    <div class="separator"></div> -->
+    <a href="/#events" class="nav-item"> Events </a>
+    <!-- <div class="separator"></div> -->
+    <a href="/#news" class="nav-item"> News </a>
+    <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
+  </nav>
+</div>
+
+<h1 class="about-header"> About the Candidate </h1>
+
+<div>
+  <div class="half" style="border-bottom: 2px solid white;"></div>
+  <div class="star">&#9733;</div>
+  <div class="half" style="border-bottom: 2px solid white;"></div>
+</div>
+
+<div class="name-header">
+  <div class="info-container">
+    <div id="name">
+      <%= @name |> String.split(" ") |> List.first() %>
+      <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
+    </div>
+    <div> <%= @position %> </div>
+    <div class="district"> <%= th_district(@district) %> </div>
+    <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>;"> Contribute </a>
+  </div>
+
+  <div class="picture-container">
+    <div style="border-radius: 50%; background-image: url(<%= URI.encode(@small_picture) %>);"></div>
+  </div>
+</div>
+
+<%= render "footer.html", assigns %>
