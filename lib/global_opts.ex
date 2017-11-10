@@ -6,7 +6,6 @@ defmodule GlobalOpts do
   end
 
   def get(conn, _params) do
-    candidate = @domains[conn.host] || @domains["www.#{conn.host}"]
-    [candidate: candidate]
+    [candidate: @domains[conn.host]]
   end
 end

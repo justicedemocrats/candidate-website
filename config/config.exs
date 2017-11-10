@@ -42,9 +42,13 @@ config :cosmic,
 config :candidate_website,
   domains: %{
     "alisonhartson.com" => "alison-hartson",
+    "www.alisonhartson.com" => "alison-hartson",
     "robb2018.com" => "robb-ryerse",
+    "www.robb2018.com" => "robb-ryerse",
     "votesarahsmith.com" => "sarah-smith",
-    "ocasio2018.com" => "alexandria-ocasio-cortez"
+    "www.votesarahsmith.com" => "sarah-smith",
+    "ocasio2018.com" => "alexandria-ocasio-cortez",
+    "www.ocasio2018.com" => "alexandria-ocasio-cortez"
   }
 
 jobs =
