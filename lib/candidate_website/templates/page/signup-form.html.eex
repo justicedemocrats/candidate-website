@@ -7,6 +7,14 @@
     end
 %>
 
+<%
+  for_text =
+    cond do
+      assigns[:before_for_congress] -> "#{assigns[:before_for_congress]} For #{congress_or_senate(@district)}"
+      true -> "For #{congress_or_senate(@district)}"
+    end
+%>
+
 <div id="hero-signup" style="color: <%= color %>;">
   <div id="name">
     <%= @name |> String.split(" ") |> List.first() %>
@@ -18,7 +26,7 @@
     <div class="half" style="border-bottom: 2px solid <%= color %>;"></div>
   </div>
   <div id="district">
-    <div id="for-blank"> For <%= congress_or_senate(@district) %> </div>
+    <div id="for-blank"> <%= for_text %> </div>
     <div id="separator" style="border-right: 1px solid <%= color %>;"></div>
     <div id="district-spec"> <%= human_district(@district) %> </div>
   </div>
