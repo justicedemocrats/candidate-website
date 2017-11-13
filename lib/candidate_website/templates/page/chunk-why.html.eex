@@ -7,7 +7,7 @@
   <%= if not @mobile and assigns[:why_support_picture] do %>
     <img
       src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"
-      style="max-height: 300px; float: right; max-width: 40%;" hspace="5"
+      style="max-height: 300px; float: right; max-width: 40%; max-height: 100%;" hspace="5"
     />
   <% end %>
   <%= raw(@why_support_body) %>
