@@ -26,10 +26,12 @@ defmodule CandidateWebsite.RequirePlug do
     #        ~m(organization_name organization_logo endorsement_text)a
     #      end)
 
-    %{"content" => about_content, "metadata" => %{"image" => about_image}} =
+    # %{"content" => about_content, "metadata" => %{"image" => about_image}} =
+      about =
       Cosmic.get("about-en", candidate)
 
-    about = ~m(about_content about_image)a
+    # about = ~m(about_content about_image)a
+    about = %{about_content: "", about_image: ""}
 
     articles =
       Cosmic.get_type("articles", candidate)
