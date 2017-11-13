@@ -16,6 +16,11 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_picture instagram
   )
 
+  @about_attrs ~w(
+    occupation section_one quote_one quote_background_image section_two
+    quote_two quote_side_image section_three
+  )
+
   def init(default), do: default
 
   def call(conn, _opts) do
@@ -32,11 +37,12 @@ defmodule CandidateWebsite.RequirePlug do
     #      end)
 
     # %{"content" => about_content, "metadata" => %{"image" => about_image}} =
-      about =
-      Cosmic.get("about-en", candidate)
+    %{"metadata" => about_metadata} = Cosmic.get("about-en", candidate)
 
     # about = ~m(about_content about_image)a
-    about = %{about_content: "", about_image: ""}
+    about = Enum.reduce(@about_attrs, %{}, fn key, acc ->
+      Map.put(acc, String.to_atom(key), about_metadata[key])
+    end)
 
     articles =
       Cosmic.get_type("articles", candidate)

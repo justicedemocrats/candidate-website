@@ -28,13 +28,12 @@
       <%= @name |> String.split(" ") |> List.first() %>
       <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
     </div>
-    <div> <%= @position %> </div>
+    <div> <%= @about.occupation %> </div>
     <div class="district"> <%= th_district(@district) %> </div>
     <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>;"> Contribute </a>
   </div>
 
   <div class="picture-container">
-    <div style="border-radius: 50%; background-image: url(<%= URI.encode(@small_picture) %>);"></div>
   </div>
 </div>
 
