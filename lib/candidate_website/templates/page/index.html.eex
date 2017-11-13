@@ -10,9 +10,13 @@
 <div id="app"></div>
 <div id="hero" class="desktop" style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);  background-color: <%= @header_background_color %>;">
   <div id="button-layer">
-    <div>
-      <a href="<%= @facebook %>"> <img style="margin: 10px; width: 40px; height: 40px;" src="<%= fb_share() %>" /> </a>
-      <a href="<%= @twitter %>"/> <img style="margin: 10px; width: 40px; height: 40px;" src="<%= twitter_share() %>" /> </a>
+    <div id="social-container">
+      <a href="<%= @facebook %>">
+        <%= render "facebook.html", [color: color] %>
+      </a>
+      <a href="<%= @twitter %>">
+        <%= render "twitter.html", [color: color] %>
+      </a>
     </div>
     <div>
       <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
