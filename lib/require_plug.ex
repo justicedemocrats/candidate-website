@@ -8,11 +8,11 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_body why_support_picture action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    general_email press_email
+    general_email press_email platform_header 
   )
 
   @optional ~w(
-    platform_header animation_fill_level target_html hero_text_color before_for_congress
+    animation_fill_level target_html hero_text_color before_for_congress
   )
 
   def init(default), do: default
@@ -31,10 +31,11 @@ defmodule CandidateWebsite.RequirePlug do
     #      end)
 
     # %{"content" => about_content, "metadata" => %{"image" => about_image}} =
-      # Cosmic.get("about-en", candidate)
+      about =
+      Cosmic.get("about-en", candidate)
 
     # about = ~m(about_content about_image)a
-    about = %{h: "i"}
+    about = %{about_content: "", about_image: ""}
 
     articles =
       Cosmic.get_type("articles", candidate)
