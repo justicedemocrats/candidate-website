@@ -48,7 +48,9 @@ config :candidate_website,
     "votesarahsmith.com" => "sarah-smith",
     "www.votesarahsmith.com" => "sarah-smith",
     "ocasio2018.com" => "alexandria-ocasio-cortez",
-    "www.ocasio2018.com" => "alexandria-ocasio-cortez"
+    "www.ocasio2018.com" => "alexandria-ocasio-cortez",
+    "bell2018.com" => "adrienne-bell",
+    "www.bell2018.com" => "adrienne-bell"
   }
 
 jobs =
