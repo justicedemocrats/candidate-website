@@ -15,6 +15,8 @@
     end
 %>
 
+<% join_message = assigns[:signup_prompt] || "Join my Campaign" %>
+
 <div id="hero-signup" style="color: <%= color %>;">
   <div id="name">
     <%= @name |> String.split(" ") |> List.first() %>
@@ -34,19 +36,28 @@
     <form method="POST" action="/signup?candidate=<%= @candidate %>">
       <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
       <fieldset>
-        <div id="join-prompt"> Join my Campaign </div>
+        <div id="join-prompt"> <%= join_message %> </div>
         <div id="join-subtitle"> For info and updates </div>
         <div class="form-row">
-          <input type="email" name="email" placeholder="Email" required="required" />
+          <div class="same-row">
+            <input type="text" name="name" placeholder="Name*" required="required" />
+            <input type="email" name="email" placeholder="Email*" required="required" />
+          </div>
         </div>
         <div class="form-row">
           <div class="same-row">
-            <input type="text" name="zip" placeholder="Zip" required="required" />
-            <input type="submit" style="width: 50%; background-color: <%= @primary_color %>; border: none;" class="button" value="Join Me" />
+            <input type="text" name="zip" placeholder="Zip*" required="required" />
+            <input type="tel" name="phone" placeholder="Phone" />
           </div>
         </div>
-        <!-- <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span> -->
+        <div class="form-row">
+          <div class="same-row">
+            <input type="submit" style=" background-color: <%= @primary_color %>; border: none;" class="button" value="Join Me" />
+          </div>
+        </div>
       </fieldset>
     </form>
   </div>
 </div>
+
+<!-- <span style="font-family: 'Roboto Condensed'; text-transform: uppercase;"> I want to volunteer <input type="checkbox" checked="true" /> </span> -->

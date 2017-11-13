@@ -1,12 +1,16 @@
 <div name="why" class="banner-header" style="background-color: <%= @primary_color %>;">
   <h1 style="color: white;"> Why Support <%= @name |> String.split(" ") |> List.first() %> </h1>
 </div>
-<div class="flex" style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
-  <div style="padding-right: 30px; letter-spacing: 1px; font-size: 20px; width: 100%;">
-    <h1 style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
-    <%= raw(@why_support_body) %>
-  </div>
+<!-- <div class="flex" style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;"> -->
+<div style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
+  <h1 style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
   <%= if not @mobile and assigns[:why_support_picture] do %>
-    <img src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>" style="max-height: 300px;"/>
+    <img
+      src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"
+      style="max-height: 300px; float: right; max-width: 40%;" hspace="5"
+    />
   <% end %>
+  <%= raw(@why_support_body) %>
 </div>
+  <!-- <div style="padding-right: 30px; letter-spacing: 1px; font-size: 20px; width: 100%;">
+  </div> -->

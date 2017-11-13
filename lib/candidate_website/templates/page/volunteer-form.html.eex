@@ -25,15 +25,26 @@
 
       <div class="info-fields">
         <div class="form-row">
-          <input type="email" name="email" placeholder="Email" required="required" />
+          <div class="same-row">
+            <input type="text" name="name" placeholder="Name*" required="required" />
+            <input type="email" name="email" placeholder="Email*" required="required" />
+          </div>
         </div>
-        <div class="form-row same-row">
-          <input type="text" name="zip" placeholder="Zip" required="required" />
-          <input type="submit" class="button" placeholder="Zip" value="I'm In!" style="background-color: <%= @highlight_color %>" />
+        <div class="form-row">
+          <div class="same-row">
+            <input type="text" name="zip" placeholder="Zip*" required="required" />
+            <input type="tel" name="phone" placeholder="Phone" />
+          </div>
         </div>
-          Check all options you're interested in and we'll provide details for each
-          once we know you're in.
+        <div class="form-row">
+          <div class="same-row">
+            <input type="submit" class="button" value="I'm In!" style="background-color: <%= @highlight_color %>; border: none;" />
+          </div>
+        </div>
+        Check all options you're interested in and we'll provide details for each
+        once we know you're in.
       </div>
+
     </div>
   </form>
 </div>
