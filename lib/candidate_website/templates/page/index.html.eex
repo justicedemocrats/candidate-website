@@ -1,3 +1,12 @@
+<%
+  color =
+    cond do
+      @mobile -> @primary_color
+      assigns[:hero_text_color] -> assigns[:hero_text_color]
+      true -> "white"
+    end
+%>
+
 <div id="app"></div>
 <div id="hero" class="desktop" style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);  background-color: <%= @header_background_color %>;">
   <div id="button-layer">
@@ -6,7 +15,7 @@
       <a href="<%= @twitter %>"/> <img style="margin: 10px; width: 40px; height: 40px;" src="<%= twitter_share() %>" /> </a>
     </div>
     <div>
-      <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase;">
+      <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
         Donate
       </a>
     </div>

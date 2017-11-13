@@ -8,7 +8,11 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_body why_support_picture action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    platform_header animation_fill_level target_html general_email press_email
+    general_email press_email
+  )
+
+  @optional ~w(
+    platform_header animation_fill_level target_html hero_text_color
   )
 
   def init(default), do: default
@@ -26,10 +30,11 @@ defmodule CandidateWebsite.RequirePlug do
     #        ~m(organization_name organization_logo endorsement_text)a
     #      end)
 
-    %{"content" => about_content, "metadata" => %{"image" => about_image}} =
-      Cosmic.get("about-en", candidate)
+    # %{"content" => about_content, "metadata" => %{"image" => about_image}} =
+      # Cosmic.get("about-en", candidate)
 
-    about = ~m(about_content about_image)a
+    # about = ~m(about_content about_image)a
+    about = %{h: "i"}
 
     articles =
       Cosmic.get_type("articles", candidate)
@@ -64,19 +69,32 @@ defmodule CandidateWebsite.RequirePlug do
 
     mobile = is_mobile?(conn)
 
+    # Base, non homepage
+    other_data = ~m(candidate about issues mobile articles events)a
+
+    # Add optional attrs
+    optional_data = Enum.reduce(@optional, %{}, fn key, acc ->
+      Map.put(acc, String.to_atom(key), metadata[key])
+    end)
+
+    # Add required attrs
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
-        data =
+        required_data =
           Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
+
+        data = other_data
+          |> Map.merge(optional_data)
+          |> Map.merge(required_data)
 
         Plug.Conn.assign(conn, :data, data)
 
       non_empty ->
         Phoenix.Controller.text(
           conn,
-          "Candidate #{candidate} is missing fields [#{Enum.join(non_empty, ", ")}] in cosmic"
+          "Candidate #{candidate} is missing fields [#{Enum.join(non_empty, ", ")}] in homepage-en"
         )
     end
   end

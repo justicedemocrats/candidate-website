@@ -1,6 +1,13 @@
-<% color = if @mobile, do: @primary_color, else: "white" %>
+<%
+  color =
+    cond do
+      @mobile -> @primary_color
+      assigns[:hero_text_color] -> assigns[:hero_text_color]
+      true -> "white"
+    end
+%>
 
-<div id="hero-signup">
+<div id="hero-signup" style="color: <%= color %>;">
   <div id="name">
     <%= @name |> String.split(" ") |> List.first() %>
     <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
