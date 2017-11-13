@@ -5,14 +5,15 @@ defmodule CandidateWebsite.RequirePlug do
   @required ~w(
     name district big_picture donate_url facebook twitter intro_statement
     intro_paragraph issues_header issues_paragraph why_support_header paid_for
-    why_support_body why_support_picture action_shot quote primary_color highlight_color
+    why_support_body action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    general_email press_email platform_header 
+    general_email press_email platform_header signup_prompt
   )
 
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
+    why_support_picture instagram
   )
 
   def init(default), do: default

@@ -6,6 +6,7 @@
     <%= render "volunteer-form.html", assigns %>
   </div>
   <div style="padding: 50px; color: <%= @primary_color %>; font-weight: bold; min-width: 40%;
+    text-align: center;
     font-size: <%= if @mobile, do: 32, else: 42%>px;
     ">
     Democracy is powered by volunteers like yourself.

@@ -9,7 +9,7 @@
 
   #hero-signup
     width 33vw
-    bottom 10%
+    bottom 1%
     right 10%
     position absolute
     text-align center
@@ -94,11 +94,11 @@ h1
   justify-content space-between
 
 
-  input[name="zip"]
-    width 45%
+  input[name="zip"], input[name="name"], input[name="email"], input[type="tel"]
+    width 48%
 
-  input[type="button"]
-    width 45%
+  input[type="submit"]
+    width 100%
 
 #footer
   background-color #F5F5F5
@@ -132,7 +132,14 @@ h1
   justify-content space-between
   margin-left 50px
   margin-right 50px
+  padding-top 20px
   align-items(center)
+
+  #social-container
+    flexbox(flex)
+    justify-content space-between
+    width 100px
+    align-items(center)
 
   .button-light
     background-color transparent
