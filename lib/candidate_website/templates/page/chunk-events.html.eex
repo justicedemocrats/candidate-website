@@ -10,7 +10,7 @@ host_event_base = if String.contains?(@name, "Robb"),
 else: "https://now.justicedemocrats.com/events/"
 %>
 
-<div class="full-center">
+<div class="full-center" id="events">
   <h1 style="color: <%= @primary_color %>; font-family: 'Montserrat'; font-weight: lighter; text-align: center;">
     <%= if length(@events) > 0 do %>
       Attend an Upcoming Event
