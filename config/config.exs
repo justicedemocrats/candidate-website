@@ -35,7 +35,8 @@ config :cosmic,
     "paula-jean-swearengin",
     "sarah-smith",
     "david-gill",
-    "robb-ryerse"
+    "robb-ryerse",
+    "marc-whitmire"
   ]
 
 # Domains
