@@ -12,7 +12,7 @@ defmodule CandidateWebsite.RequirePlug do
   )
 
   @optional ~w(
-    platform_header animation_fill_level target_html hero_text_color
+    platform_header animation_fill_level target_html hero_text_color before_for_congress
   )
 
   def init(default), do: default
