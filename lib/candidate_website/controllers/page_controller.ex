@@ -24,7 +24,13 @@ defmodule CandidateWebsite.PageController do
 
   def signup(conn, params) do
     %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
-    ~m(email zip) = params
+    ~m(email zip name) = params
+
+    [given_name, family_name] =
+      case String.split(name, " ") do
+        [first_only] -> [first_only, ""]
+        n_list -> [List.first(n_list), List.last(n_list)]
+      end
 
     email_address = email
     postal_addresses = [%{postal_code: zip}]
@@ -40,8 +46,17 @@ defmodule CandidateWebsite.PageController do
         tags
       end
 
+    person = ~m(email_address postal_addresses given_name family_name)a
+
+    person =
+      if params["phone"] != nil and params["phone"] != "" do
+        Map.put(person, :phone_number, params["phone"])
+      else
+        person
+      end
+
     Osdi.PersonSignup.main(%{
-      person: ~m(email_address postal_addresses)a,
+      person: person,
       add_tags: tags
     })
 
@@ -62,10 +77,18 @@ defmodule CandidateWebsite.PageController do
 
     ref = Map.get(params, "ref", nil)
 
-    ~m(email zip call_voters join_team attend_event host_event) = data
+    ~m(email zip name call_voters join_team attend_event host_event) = data
 
     email_address = email
     postal_addresses = [%{postal_code: zip}]
+
+    [given_name, family_name] =
+      case String.split(name, " ") do
+        [first_only] -> [first_only, ""]
+        n_list -> [List.first(n_list), List.last(n_list)]
+      end
+
+    person = ~m(email_address postal_addresses given_name family_name)a
 
     tags =
       [
@@ -85,8 +108,15 @@ defmodule CandidateWebsite.PageController do
         tags
       end
 
+    person =
+      if data["phone"] != nil and data["phone"] != "" do
+        Map.put(person, :phone_number, data["phone"])
+      else
+        person
+      end
+
     Osdi.PersonSignup.main(%{
-      person: ~m(email_address postal_addresses)a,
+      person: person,
       add_tags: tags
     })
 
