@@ -14,11 +14,10 @@
         Read More About Me Here
       </a>
     <% end %>
-    <!-- <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
-      More About <%= @name |> String.split(" ") |> List.first() %>
-    </a> -->
   </div>
-  <!-- <div class="about-flex">
+
+<!--
+  <div class="about-flex">
     <div style="height: 10%;">
       <%= raw(@target_html) %>
     </div>
@@ -34,7 +33,7 @@
         </div>
         <% end %>
     <% end %>
-  </div> -->
-
+  </div>
+ -->
 
 </div>
