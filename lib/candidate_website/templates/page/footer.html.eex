@@ -2,9 +2,9 @@
   <div class="tabs">
     <nav class="tabs-nav">
       <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
-      <a href="#about" class="nav-item"> About </a>
+      <a href="/about" class="nav-item"> About </a>
       <!-- <div class="separator"></div> -->
-      <a href="#issues" class="nav-item"> Platform </a>
+      <a href="/platform" class="nav-item"> Platform </a>
       <!-- <div class="separator"></div>
       <a href="#vote" class="nav-item"> Our District </a>
       <div class="separator"></div> -->
