@@ -36,10 +36,9 @@ defmodule CandidateWebsite.RequirePlug do
     #        ~m(organization_name organization_logo endorsement_text)a
     #      end)
 
-    # %{"content" => about_content, "metadata" => %{"image" => about_image}} =
     %{"metadata" => about_metadata} = Cosmic.get("about-en", candidate)
 
-    # about = ~m(about_content about_image)a
+    about_enabled = (Enum.filter(@about_attrs, (& Map.has_key?(about_metadata, &1))) |> length()) == 9
     about = Enum.reduce(@about_attrs, %{}, fn key, acc ->
       Map.put(acc, String.to_atom(key), about_metadata[key])
     end)
@@ -78,7 +77,7 @@ defmodule CandidateWebsite.RequirePlug do
     mobile = is_mobile?(conn)
 
     # Base, non homepage
-    other_data = ~m(candidate about issues mobile articles events)a
+    other_data = ~m(candidate about_enabled about issues mobile articles events)a
 
     # Add optional attrs
     optional_data = Enum.reduce(@optional, %{}, fn key, acc ->
@@ -97,7 +96,9 @@ defmodule CandidateWebsite.RequirePlug do
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
 
-        Plug.Conn.assign(conn, :data, data)
+        conn
+        |> Plug.Conn.assign(:data, data)
+        |> Plug.Conn.assign(:enabled, %{about: about_enabled})
 
       non_empty ->
         Phoenix.Controller.text(
