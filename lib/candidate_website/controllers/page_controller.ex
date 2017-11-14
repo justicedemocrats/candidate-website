@@ -8,6 +8,20 @@ defmodule CandidateWebsite.PageController do
     render(conn, "index.html", Enum.into(assigns, []))
   end
 
+  def about(conn, _params) do
+    %{enabled: %{about: about_enabled}, data: assigns} = Map.take(conn.assigns, [:data, :enabled])
+    if about_enabled do
+      render(conn, "about.html", Enum.into(assigns, []))
+    else
+      redirect(conn, to: "/#about")
+    end
+  end
+
+  def platform(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "platform.html", Enum.into(assigns, []))
+  end
+
   def signup(conn, params) do
     %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip) = params

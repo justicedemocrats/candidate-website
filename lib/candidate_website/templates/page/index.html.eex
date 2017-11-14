@@ -67,7 +67,11 @@
 <div class="tabs" style="margin-top: 20px;">
   <nav class="tabs-nav">
     <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
-    <a href="#why" class="nav-item"> About </a>
+    <%= if @about_enabled do %>
+      <a href="/about" class="nav-item"> About </a>
+    <% else %>
+      <a href="#why" class="nav-item"> About </a>
+    <% end %>
     <!-- <div class="separator"></div> -->
     <a href="#issues" class="nav-item"> Platform </a>
     <!-- <div class="separator"></div> -->

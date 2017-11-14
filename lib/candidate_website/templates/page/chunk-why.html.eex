@@ -2,7 +2,7 @@
   <h1 style="color: white;"> Why Support <%= @name |> String.split(" ") |> List.first() %> </h1>
 </div>
 <!-- <div class="flex" style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;"> -->
-<div style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
+<div style="padding-top: 20px; overflow: hidden; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
   <h1 style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
   <%= if not @mobile and assigns[:why_support_picture] do %>
     <img

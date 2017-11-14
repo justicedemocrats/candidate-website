@@ -24,6 +24,9 @@ defmodule CandidateWebsite.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+    get("/about", PageController, :about)
+    get("/platform", PageController, :platform)
+
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)
     get("/*path", ShortenerController, :index)

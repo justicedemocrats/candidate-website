@@ -7,6 +7,13 @@
     <p style="display: inline;">
       <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
     </p>
+
+    <%= if @about_enabled do %>
+      <br/>
+      <a href="/about" class="more-about" style="color: <%= @highlight_color %>; ">
+        Read More About Me Here
+      </a>
+    <% end %>
     <!-- <a class="more-about" style="color: <%= @highlight_color %>; display: inline; font-size: larger;">
       More About <%= @name |> String.split(" ") |> List.first() %>
     </a> -->
@@ -28,4 +35,6 @@
         <% end %>
     <% end %>
   </div> -->
+
+
 </div>
