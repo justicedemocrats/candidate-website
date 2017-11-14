@@ -18,7 +18,7 @@ defmodule CandidateWebsite.RequirePlug do
 
   @about_attrs ~w(
     occupation section_one quote_one quote_background_image section_two
-    quote_two quote_side_image section_three
+    quote_two quote_side_image section_three headshot
   )
 
   def init(default), do: default

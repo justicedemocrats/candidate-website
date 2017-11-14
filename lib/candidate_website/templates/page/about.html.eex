@@ -1,39 +1,79 @@
-<div class="tabs" style="margin-top: 20px;">
-  <nav class="tabs-nav">
-    <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
-    <a href="/#about" class="nav-item"> About </a>
-    <!-- <div class="separator"></div> -->
-    <a href="/#issues" class="nav-item"> Platform </a>
-    <!-- <div class="separator"></div> -->
-    <!-- <a href="#vote" class="nav-item"> Our District </a>
-    <div class="separator"></div> -->
-    <a href="/#events" class="nav-item"> Events </a>
-    <!-- <div class="separator"></div> -->
-    <a href="/#news" class="nav-item"> News </a>
-    <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
-  </nav>
-</div>
-
-<h1 class="about-header"> About the Candidate </h1>
-
-<div>
-  <div class="half" style="border-bottom: 2px solid white;"></div>
-  <div class="star">&#9733;</div>
-  <div class="half" style="border-bottom: 2px solid white;"></div>
-</div>
-
-<div class="name-header">
-  <div class="info-container">
-    <div id="name">
-      <%= @name |> String.split(" ") |> List.first() %>
-      <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
+<div class="about-page">
+  <div class="about-header-container" style="background-color: <%= @primary_color %>;">
+    <div class="tabs">
+      <nav class="tabs-nav">
+        <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
+        <a href="/about" class="nav-item"> About </a>
+        <!-- <div class="separator"></div> -->
+        <a href="/platform" class="nav-item"> Platform </a>
+        <!-- <div class="separator"></div> -->
+        <!-- <a href="#vote" class="nav-item"> Our District </a>
+        <div class="separator"></div> -->
+        <a href="/#events" class="nav-item"> Events </a>
+        <!-- <div class="separator"></div> -->
+        <a href="/#news" class="nav-item"> News </a>
+        <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
+      </nav>
     </div>
-    <div> <%= @about.occupation %> </div>
-    <div class="district"> <%= th_district(@district) %> </div>
-    <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>;"> Contribute </a>
+
+    <div class="main-container">
+      <h1 class="about-header"> About <%= @name |> String.split(" ") |> List.first() %> </h1>
+
+      <div id="name-separator">
+        <div class="half" style="border-bottom: 2px solid white;"></div>
+        <div class="star">&#9733;</div>
+        <div class="half" style="border-bottom: 2px solid white;"></div>
+      </div>
+
+      <div class="top-container">
+        <div class="name-header">
+          <div class="info-container">
+            <div id="name">
+              <%= @name |> String.split(" ") |> List.first() %>
+              <span style="white-space: nowrap;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
+            </div>
+
+            <div> <%= @about.occupation %> </div>
+
+            <div class="district" style="border-top: 2px solid <%= @highlight_color %>; border-bottom: 2px solid <%= @highlight_color %>;">
+              <%= th_district(@district) %>
+            </div>
+
+            <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>; border: none;"> Contribute </a>
+          </div>
+        </div>
+
+        <img src="<%= URI.encode(@about.headshot["imgix_url"]) %>" />
+      </div>
+
+    </div>
   </div>
 
-  <div class="picture-container">
+  <div class="section">
+    <%= raw(@about.section_one) %>
+  </div>
+
+  <div class="quote-one" style="background-image: url(<%= URI.encode(@about.quote_background_image["imgix_url"]) %>);">
+    <%= raw(@about.quote_one) %>
+  </div>
+
+  <div class="section">
+    <%= raw(@about.section_two) %>
+  </div>
+
+  <div class="quote-two">
+    <div class="quote-two-content" style="background-color: <%= @primary_color %>;">
+      <%= raw(@about.quote_two) %>
+    </div>
+    <div class="image" style="background-image: url(<%= URI.encode(@about.quote_background_image["imgix_url"]) %>)"></div>
+  </div>
+
+  <div class="section">
+    <%= raw(@about.section_three) %>
+  </div>
+
+  <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
+    <%= render "volunteer-form.html", assigns %>
   </div>
 </div>
 
