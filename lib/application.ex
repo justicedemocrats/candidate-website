@@ -6,9 +6,6 @@ defmodule CandidateWebsite.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
-    Cosmic.fetch_all()
-    CandidateWebsite.EventCache.fetch_or_load()
-
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint
@@ -16,7 +13,12 @@ defmodule CandidateWebsite.Application do
     ]
 
     opts = [strategy: :one_for_one, name: CandidateWebsite.Supervisor]
-    Supervisor.start_link(children, opts)
+    result = Supervisor.start_link(children, opts)
+
+    Cosmic.fetch_all()
+    CandidateWebsite.EventCache.fetch_or_load()
+
+    result
   end
 
   # Tell Phoenix to update the endpoint configuration
