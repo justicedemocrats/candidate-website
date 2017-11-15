@@ -36,8 +36,20 @@
 
     <%= {:safe, js_script_tag() } %>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"></script>
   <script>
     flexibility(document.documentElement);
   </script>
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <%= if @candidate == "alison-hartson" do %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109182244-1');
+    </script>
+  <% end %>
 </html>
