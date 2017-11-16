@@ -1,4 +1,11 @@
 <% title = assigns[:title] || "#{@name |> String.split(" ") |> List.first()} for #{after_for(@district)}" %>
+<%
+  menu_color =
+    cond do
+      assigns[:hero_text_color] -> assigns[:hero_text_color]
+      true -> "white"
+    end
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +29,6 @@
     <meta name="twitter:description" content="<%= HtmlSanitizeEx.strip_tags(@intro_paragraph) %>" />
     <meta name="twitter:image" content="<%= URI.encode(@big_picture["imgix_url"]) %>" />
 
-
     <title><%= title %></title>
 
     <%= {:safe, css_link_tag() } %>
@@ -30,9 +36,22 @@
   </head>
 
   <body>
+    <%= if @mobile do %>
+      <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
+    <% end %>
+
     <main class="main <%= if @mobile, do: "mobile", else: "desktop" %>" role="main">
       <%= render @view_module, @view_template, assigns %>
     </main>
+
+    <script>
+      window.name = "<%= @name %>";
+      window.district = "<%= th_district(@district) %>";
+      window.mobile = <%= if @mobile, do: "true", else: "false" %>;
+      window.heroTextColor = "<%= menu_color %>";
+      window.donateUrl = "<%= @donate_url %>";
+      window.aboutEnabled = "<%= @about_enabled %>";
+    </script>
 
     <%= {:safe, js_script_tag() } %>
   </body>

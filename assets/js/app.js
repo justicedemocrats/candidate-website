@@ -1,4 +1,7 @@
 import spa from './spa'
+import Hamburger from './components/hamburger'
+import React from 'react'
+import { render } from 'react-dom'
 
 spa.bind.all()
 
@@ -32,3 +35,8 @@ function getQueryStringValue(key) {
 }
 
 setTimeout(bind, 100)
+
+const hamburgerTarget = document.getElementById('mobile-menu')
+if (hamburgerTarget) {
+  render(<Hamburger />, hamburgerTarget)
+}
