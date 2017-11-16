@@ -51,7 +51,9 @@ config :candidate_website,
     "ocasio2018.com" => "alexandria-ocasio-cortez",
     "www.ocasio2018.com" => "alexandria-ocasio-cortez",
     "bell2018.com" => "adrienne-bell",
-    "www.bell2018.com" => "adrienne-bell"
+    "www.bell2018.com" => "adrienne-bell",
+    "whitmire2018.com" => "marc-whitmire",
+    "www.whitmire2018.com" => "marc-whitmire"
   }
 
 jobs =
