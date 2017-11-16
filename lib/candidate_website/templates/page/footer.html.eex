@@ -4,7 +4,7 @@
       <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
       <a href="/about" class="nav-item"> About </a>
       <!-- <div class="separator"></div> -->
-      <a href="/platform" class="nav-item"> Platform </a>
+      <a href="/issues" class="nav-item"> Issues </a>
       <!-- <div class="separator"></div>
       <a href="#vote" class="nav-item"> Our District </a>
       <div class="separator"></div> -->

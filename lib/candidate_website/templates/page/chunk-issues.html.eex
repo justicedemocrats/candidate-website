@@ -3,12 +3,6 @@
   <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
 </p>
 
-<%
-  platform_url = if String.contains?(@name, "Robb"),
-    do: "https://brandnewcongress.org/platform",
-    else: "https://justicedemocrats.com/platform"
-%>
-
-<a href="<%= platform_url %>" class="more-about" style="color: <%= @highlight_color %>; ">
+<a href="/platform" class="more-about" style="color: <%= @highlight_color %>; ">
   Read My Full Platform Here
 </a>
