@@ -1,11 +1,11 @@
 <%
-host_event_url = if String.contains?(@name, "Robb"),
+host_event_url = if String.contains?(@name, "Robb") or String.contains?(@name, "Marc"),
   do: "https://now.brandnewcongress.org/form/submit-event",
   else: "https://now.justicedemocrats.com/form/submit-event"
 %>
 
 <%
-host_event_base = if String.contains?(@name, "Robb"),
+host_event_base = if String.contains?(@name, "Robb") or String.contains?(@name, "Marc"),
   do: "https://now.brandnewcongress.org/events/",
 else: "https://now.justicedemocrats.com/events/"
 %>
