@@ -10,6 +10,7 @@
     "deploy": "MIX_ENV=prod NODE_ENV=prod webpack -p"
   },
   "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "component-closest": "^1.0.1",
     "event-emitter-es6": "^1.1.5",
     "history": "^4.7.2",
