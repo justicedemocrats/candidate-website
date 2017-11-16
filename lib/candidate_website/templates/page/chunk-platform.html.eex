@@ -7,17 +7,13 @@
         <div class="plank-header">
           <%= issue.header %>
         </div>
-        <%= if String.contains?(@name, "Robb") do %>
-          <a class="button" href="https://brandnewcongress.org/platform" style="background-color: <%= @highlight_color %>;"> More </a>
-        <% else %>
-          <a class="button" href="https://justicedemocrats.com/platform" style="background-color: <%= @highlight_color %>;"> More </a>
-        <% end %>
+        <a class="button" href="/issues" style="background-color: <%= @highlight_color %>;"> More </a>
       </div>
       <div class="plank-intro">
         <p style="display: inline;">
           <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
         </p>
-        <a class="more-about" style="color: <%= @highlight_color %>;" href="https://justicedemocrats.com/platform">
+        <a class="more-about" style="color: <%= @highlight_color %>;" href="/issues">
           Read More
         </a>
       </div>
