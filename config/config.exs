@@ -55,7 +55,9 @@ config :candidate_website,
     "whitmire2018.com" => "marc-whitmire",
     "www.whitmire2018.com" => "marc-whitmire",
     "anthonyclark2018.com" => "anthony-clark",
-    "www.anthonyclark2018.com" => "anthony-clark"
+    "www.anthonyclark2018.com" => "anthony-clark",
+    "paulajean2018.com" => "paula-jean-swearengin",
+    "www.paulajean2018.com" => "paula-jean-swearengin"
   }
 
 jobs =
