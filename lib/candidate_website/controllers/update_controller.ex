@@ -10,11 +10,11 @@ defmodule CandidateWebsite.UpdateController do
     })
   end
 
-  def post_cosmic(conn, _params) do
-    # Cosmic.update()
+  def post_cosmic(conn, params) do
+    Cosmic.update()
 
     json(conn, %{
-      "disabled" => "Temporarily"
+      "unnecessary" => "Ben implemented webhooks! No need to visit hit this link any more, but an update just happened just in case. If it's not updating, contact Ben. Thanks!"
     })
   end
 end
