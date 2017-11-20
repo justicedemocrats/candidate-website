@@ -16,8 +16,8 @@ defmodule CandidateWebsite.Router do
   scope "/api", CandidateWebsite do
     pipe_through(:api)
 
-    get("/update/cosmic", UpdateController, :cosmic)
-    post("/update/cosmic", UpdateController, :cosmic)
+    get("/update/cosmic", UpdateController, :get_cosmic)
+    post("/update/cosmic", UpdateController, :post_cosmic)
   end
 
   scope "/", CandidateWebsite do

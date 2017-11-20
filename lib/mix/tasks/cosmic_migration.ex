@@ -60,15 +60,21 @@ defmodule Cosmic.Migration do
   end
 
   def rich_text_why_support(slug) do
-    %{body: %{"objects" => [%{"metafields" => metafields}]}} = Cosmic.Api.get("object-type/homepage", slug: slug)
-    new_metafields = Enum.map metafields, fn
-      why_support_field = %{"key" => "why_support_body"} -> Map.put(why_support_field, "type", "html-textarea")
-      other_field -> other_field
-    end
+    %{body: %{"objects" => [%{"metafields" => metafields}]}} =
+      Cosmic.Api.get("object-type/homepage", slug: slug)
 
-    IO.inspect new_metafields
+    new_metafields =
+      Enum.map(metafields, fn
+        why_support_field = %{"key" => "why_support_body"} ->
+          Map.put(why_support_field, "type", "html-textarea")
+
+        other_field ->
+          other_field
+      end)
+
+    IO.inspect(new_metafields)
 
     body = %{metafields: new_metafields, slug: "homepage"}
-    Cosmic.Api.put("edit-object-type", [body: body, slug: slug])
+    Cosmic.Api.put("edit-object-type", body: body, slug: slug)
   end
 end
