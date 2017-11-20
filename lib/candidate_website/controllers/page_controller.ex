@@ -10,6 +10,7 @@ defmodule CandidateWebsite.PageController do
 
   def about(conn, _params) do
     %{enabled: %{about: about_enabled}, data: assigns} = Map.take(conn.assigns, [:data, :enabled])
+
     if about_enabled do
       render(conn, "about.html", Enum.into(assigns, []))
     else
