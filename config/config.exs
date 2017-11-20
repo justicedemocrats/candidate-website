@@ -36,7 +36,8 @@ config :cosmic,
     "sarah-smith",
     "david-gill",
     "robb-ryerse",
-    "marc-whitmire"
+    "marc-whitmire",
+    "rick-trevino"
   ]
 
 # Domains
