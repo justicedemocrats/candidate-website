@@ -58,7 +58,9 @@ config :candidate_website,
     "anthonyclark2018.com" => "anthony-clark",
     "www.anthonyclark2018.com" => "anthony-clark",
     "paulajean2018.com" => "paula-jean-swearengin",
-    "www.paulajean2018.com" => "paula-jean-swearengin"
+    "www.paulajean2018.com" => "paula-jean-swearengin",
+    "votecoribush.com" => "cori-bush",
+    "www.votecoribush.com" => "cori-bush"
   }
 
 jobs =

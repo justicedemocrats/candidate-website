@@ -9,7 +9,7 @@
   <div class="full-center" style="
     background-color: <%= @primary_color %>; margin-left: 10px; color: white;
     width: 40%; font-weight: bold; font-family: 'Roboto Condensed'; padding: 20px;
-    font-size: <%= Float.ceil((@quote |> String.length()) / division_constant) %>px;
+    font-size: <%= 10 + Float.ceil((@quote |> String.length()) / division_constant) %>px;
   ">
     <%= @quote %>
   </div>
