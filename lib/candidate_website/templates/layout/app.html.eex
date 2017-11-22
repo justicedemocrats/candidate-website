@@ -62,15 +62,15 @@
     flexibility(document.documentElement);
   </script>
 
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <%= if @candidate == "alison-hartson" do %>
+  <%= if assigns[:google_analytics_id] != nil do %>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments)};
       gtag('js', new Date());
 
-      gtag('config', 'UA-109182244-1');
+      gtag('config', '<%= assigns[:google_analytics_id] %>');
     </script>
   <% end %>
 </html>
