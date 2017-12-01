@@ -30,11 +30,15 @@ defmodule CandidateWebsite.RequirePlug do
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
-    # endorsements =
-    #   Cosmic.get_type("endorsements", candidate)
-    #   |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text)} ->
-    #        ~m(organization_name organization_logo endorsement_text)a
-    #      end)
+    endorsements =
+      try do
+        Cosmic.get_type("endorsements", candidate)
+        |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)} ->
+             ~m(organization_name organization_logo endorsement_text endorsement_url)a
+           end)
+      rescue
+        _e -> []
+      end
 
     %{"metadata" => about_metadata} = Cosmic.get("about-en", candidate)
 
@@ -79,7 +83,7 @@ defmodule CandidateWebsite.RequirePlug do
     mobile = is_mobile?(conn)
 
     # Base, non homepage
-    other_data = ~m(candidate about_enabled about issues mobile articles events)a
+    other_data = ~m(candidate about_enabled about issues mobile articles events endorsements)a
 
     # Add optional attrs
     optional_data =
