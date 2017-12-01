@@ -1,16 +1,18 @@
-<h1 style="text-align: center; color: <%= @primary_color %>">
-  Who's Endorsing Me?
-</h1>
+<%= if length(@endorsements) > 0 do %>
+  <h1 style="text-align: center; color: <%= @primary_color %>">
+    Who's Endorsing Me?
+  </h1>
 
-<div class="endorsement-container">
-  <%= for endorsement <- @endorsements do %>
-    <div class="endorsement">
-      <div class="logo-container">
-        <img src="<%= URI.encode(endorsement.organization_logo["imgix_url"]) %>" />
+  <div class="endorsement-container">
+    <%= for endorsement <- @endorsements do %>
+      <div class="endorsement" onclick="window.open('<%= endorsement[:endorsement_url] %>')">
+        <div class="logo-container">
+          <img src="<%= URI.encode(endorsement.organization_logo["imgix_url"]) %>" />
+        </div>
+        <span class="organization-name">
+          <a href="<%= endorsement[:endorsement_url] %>"> <%= endorsement.organization_name %> </a>
+        </span>
       </div>
-      <span class="organization-name">
-        <%= endorsement.organization_name %>
-      </span>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
