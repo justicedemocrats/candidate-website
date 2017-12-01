@@ -13,7 +13,7 @@ defmodule CandidateWebsite.RequirePlug do
 
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
-    why_support_picture instagram google_analytics_id
+    why_support_picture instagram google_analytics_id linkedin
   )
 
   @about_attrs ~w(
