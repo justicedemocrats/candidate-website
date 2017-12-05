@@ -61,6 +61,8 @@ config :candidate_website,
     "www.paulajean2018.com" => "paula-jean-swearengin",
     "votecoribush.com" => "cori-bush",
     "www.votecoribush.com" => "cori-bush"
+    "www.chardo2018.com" => "chardo-richardson",
+    "chardo2018.com" => "chardo-richardson"
   }
 
 jobs =
