@@ -33,6 +33,13 @@
             <%= render "linkedin.html", [color: color] %>
           </a>
         <% end %>
+
+        <%= if assigns[:youtube] do %>
+          <a href="<%= assigns[:youtube] %>">
+            <%= render "youtube.html", [color: color] %>
+          </a>
+        <% end %>
+
       </div>
       <div>
         <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
