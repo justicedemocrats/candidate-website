@@ -1,0 +1,36 @@
+.two-column
+  height 100%
+  width 100%
+  background-size cover
+  background-repeat no-repeat
+
+  .social-share
+    flexbox(flex)
+    justify-content(space-between)
+    width 100%
+        
+    #twitter-widget-0
+      transform scale(1.5)
+
+  .left-column
+    background-color rgba(0, 0, 0, .8)
+    color white
+    height 100%
+    flexbox(flex)
+    align-items(center)
+    flex-direction(column)
+    justify-content(center)
+    padding 20px
+
+  .external-content-wrapper
+    text-align left
+    width 100%
+
+.desktop
+  .left-column
+    max-width 850px
+    min-width 500px
+    float left
+
+html, body, main
+  height 100%
