@@ -33,7 +33,9 @@ defmodule CandidateWebsite.RequirePlug do
     endorsements =
       try do
         Cosmic.get_type("endorsements", candidate)
-        |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)} ->
+        |> Enum.map(fn %{
+                         "metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)
+                       } ->
              ~m(organization_name organization_logo endorsement_text endorsement_url)a
            end)
       rescue
