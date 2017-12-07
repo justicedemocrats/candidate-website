@@ -160,10 +160,13 @@ defmodule CandidateWebsite.RequirePlug do
   end
 
   defp get_candidate_domain(candidate) do
-    @domains
-    |> IO.inspect()
-    |> Enum.map(fn {domain, cand_slug} -> {cand_slug, domain} end)
-    |> Enum.into(%{})
-    |> Map.get(candidate)
+    match =
+      @domains
+      |> IO.inspect()
+      |> Enum.map(fn {domain, cand_slug} -> {cand_slug, domain} end)
+      |> Enum.into(%{})
+      |> Map.get(candidate)
+
+    "https://" <> match
   end
 end

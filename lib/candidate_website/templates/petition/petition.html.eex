@@ -1,5 +1,5 @@
 <%
-  url = "https://" <> @domain <> "/petition/" <> @slug
+  url = @domain <> "/petition/" <> @slug
   twitter_query = URI.encode_query(text: @tweet_template, url: url)
   twitter_href = "https://twitter.com/intent/tweet?#{twitter_query}"
   fb_query = URI.encode_query(u: url)
@@ -24,19 +24,19 @@
 <meta name="twitter:description" content="<%=@content%>" />
 <meta name="twitter:image" content="<%=@share_image["imgix_url"]%>" />
 
-<div class="two-column">
-  <div class="right-column">
+<div class="two-column" style="background-image: url('<%=@background_image["imgix_url"] %>')">
+  <div class="left-column">
     <%= if assigns[:signed] != true do %>
       <div class="external-content-wrapper">
         <%= raw(@content) %>
       </div>
 
-      <%= form_tag("/petition/#{@slug}", method: :post, id: "main-form") %>
+      <%= form_tag("/petition/#{@slug}?candidate=#{@candidate}", method: :post, id: "main-form") %>
         <div class="petition-container">
           <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
 
           <fieldset style="margin-top: 20px;">
-            <legend style="color:white;">Your Info</legend>
+            <legend>Your Info</legend>
             <div class="input-field">
               <label>Name</label>
               <input type="text" name="name" required="required"/>
@@ -76,9 +76,9 @@
 
       <h1 style="text-transform: capitalize"> Next Steps </h1>
 
-      <fieldset style="margin-top: 20px; color: white;">
+      <fieldset style="margin-top: 20px; color: white; width: 100%;" >
         <legend style="color:white;">Share on social media</legend>
-        <div style="<%= if not @mobile, do: ~s(padding-left: 25%; padding-right: 25%;) %>">
+        <div class="social-share">
           <!--  Load Twitter Widget -->
           <script>window.twttr = (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
