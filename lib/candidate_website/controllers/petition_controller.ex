@@ -46,7 +46,7 @@ defmodule CandidateWebsite.PetitionController do
 
     Osdi.PersonSignup.main(%{
       person: person,
-      add_tags: ["Action: Signed Petition: #{Keyword.get(assigns, :name)}: #{petition.title}"]
+      add_tags: ["Action: Signed Petition: #{assigns.name}: #{petition.title}"]
     })
 
     render(
