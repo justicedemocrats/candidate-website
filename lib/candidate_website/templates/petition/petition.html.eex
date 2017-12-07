@@ -1,0 +1,109 @@
+<%
+  url = "https://" <> @domain <> "/petition/" <> @slug
+  twitter_query = URI.encode_query(text: @tweet_template, url: url)
+  twitter_href = "https://twitter.com/intent/tweet?#{twitter_query}"
+  fb_query = URI.encode_query(u: url)
+  fb_href = "https://www.facebook.com/sharer/sharer.php?#{fb_query}&amp;src=sdkpreparse"
+%>
+<!-- for Google -->
+<meta name="description" content="<%=@title%>" />
+<meta name="keywords" content="<%=@title <> "" <> @name %>" />
+<meta name="author" content="<%= @name %>" />
+<meta name="copyright" content="<%= @name %>" />
+
+<!-- for Facebook -->
+<meta property="og:url" content="<%="https://" <> @domain <> "/petition/" <> @slug %>" />
+<meta property="og:title" content="<%=@title%>" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<%=@share_image["imgix_url"]%>" />
+<meta property="og:description" content="<%=@content%>" />
+
+<!-- for Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="<%=@title%>" />
+<meta name="twitter:description" content="<%=@content%>" />
+<meta name="twitter:image" content="<%=@share_image["imgix_url"]%>" />
+
+<div class="two-column">
+  <div class="right-column">
+    <%= if assigns[:signed] != true do %>
+      <div class="external-content-wrapper">
+        <%= raw(@content) %>
+      </div>
+
+      <%= form_tag("/petition/#{@slug}", method: :post, id: "main-form") %>
+        <div class="petition-container">
+          <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
+
+          <fieldset style="margin-top: 20px;">
+            <legend style="color:white;">Your Info</legend>
+            <div class="input-field">
+              <label>Name</label>
+              <input type="text" name="name" required="required"/>
+            </div>
+            <div class="input-field">
+              <label>Email</label>
+              <input type="email" name="email" required="required"/>
+            </div>
+
+            <div class="input-field">
+              <label>Mobile Phone</label>
+              <input type="tel" name="phone" />
+            </div>
+
+            <div class="input-field">
+              <label>Zip</label>
+              <input type="text" name="zip" maxlength="5" required="required" />
+            </div>
+
+            <div class="input-field">
+            <button type="submit" class="button-block"><%=@sign_button_text%></button>
+            </div>
+          </fieldset>
+
+          <span class="disclaimer">
+            By signing this petition, I consent to receiving emails from
+            <a target="_blank" href="<%=@domain%>"><%=@name%></a>.
+          </span>
+        </div>
+      </form>
+
+    <% else %>
+
+      <div class="external-content-wrapper">
+        <%= raw(@post_sign_text) %>
+      </div>
+
+      <h1 style="text-transform: capitalize"> Next Steps </h1>
+
+      <fieldset style="margin-top: 20px; color: white;">
+        <legend style="color:white;">Share on social media</legend>
+        <div style="<%= if not @mobile, do: ~s(padding-left: 25%; padding-right: 25%;) %>">
+          <!--  Load Twitter Widget -->
+          <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
+            if (d.getElementById(id)) return t; js = d.createElement(s);
+            js.id = id; js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs); t._e = [];
+            t.ready = function(f) { t._e.push(f); }; return t;
+          }(document, "script", "twitter-wjs"));</script>
+
+          <a class="twitter-share-button" href="<%=twitter_href%>" data-size="large" style="transform: scale(2);" onclick="ga('send', 'event', 'twitter-share');">
+            Tweet
+          </a>
+
+          <div class="fb-share-button" data-href="<%=url%>" data-layout="button_count" data-size="large" style="float:right;">
+            <a class="fb-xfbml-parse-ignore" target="_blank"
+              style="background-color: #3b5998; color: white; padding: 15px; text-decoration: none; margin-top: 5px;"
+              href="<%=fb_href%>"
+              onclick="ga('send', 'event', 'fb-share');"
+            >
+              Share on Facebook
+            </a>
+          </div>
+        </div>
+      </fieldset>
+
+    <% end %>
+  </div>
+</div>

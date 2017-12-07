@@ -30,6 +30,10 @@ defmodule CandidateWebsite.Router do
 
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)
+
+    get("/petition/:slug", PetitionController, :get)
+    post("/petition/:slug", PetitionController, :post)
+
     get("/*path", ShortenerController, :index)
   end
 end
