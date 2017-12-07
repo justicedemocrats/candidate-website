@@ -2,6 +2,8 @@ defmodule CandidateWebsite.RequirePlug do
   import Plug.Conn, only: [fetch_query_params: 1]
   import ShortMaps
 
+  @domains Application.get_env(:candidate_website, :domains)
+
   @required ~w(
     name district big_picture donate_url facebook twitter intro_statement
     intro_paragraph issues_header issues_paragraph why_support_header paid_for
@@ -85,7 +87,10 @@ defmodule CandidateWebsite.RequirePlug do
     mobile = is_mobile?(conn)
 
     # Base, non homepage
-    other_data = ~m(candidate about_enabled about issues mobile articles events endorsements)a
+    domain = get_candidate_domain(candidate)
+
+    other_data =
+      ~m(candidate domain about_enabled about issues mobile articles events endorsements)a
 
     # Add optional attrs
     optional_data =
@@ -152,5 +157,13 @@ defmodule CandidateWebsite.RequirePlug do
       ^string -> string
       sliced -> sliced <> "..."
     end
+  end
+
+  defp get_candidate_domain(candidate) do
+    @domains
+    |> IO.inspect()
+    |> Enum.map(fn {domain, cand_slug} -> {cand_slug, domain} end)
+    |> Enum.into(%{})
+    |> Map.get(candidate)
   end
 end
