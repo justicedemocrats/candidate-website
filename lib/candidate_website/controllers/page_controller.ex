@@ -27,39 +27,8 @@ defmodule CandidateWebsite.PageController do
     %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip name) = params
 
-    [given_name, family_name] =
-      case String.split(name, " ") do
-        [first_only] -> [first_only, ""]
-        n_list -> [List.first(n_list), List.last(n_list)]
-      end
-
-    email_address = email
-    postal_addresses = [%{postal_code: zip}]
-
-    ref = Map.get(params, "ref", nil)
-
-    tags = ["Action: Joined Website: #{candidate_name}"]
-
-    tags =
-      if ref do
-        Enum.concat(tags, ["Action: Joined Website: #{candidate_name}: #{ref}"])
-      else
-        tags
-      end
-
-    person = ~m(email_address postal_addresses given_name family_name)a
-
-    person =
-      if params["phone"] != nil and params["phone"] != "" do
-        Map.put(person, :phone_number, params["phone"])
-      else
-        person
-      end
-
-    Osdi.PersonSignup.main(%{
-      person: person,
-      add_tags: tags
-    })
+    extra = if Map.has_key?(params, "phone"), do: %{phone: params["phone"]}, else: %{}
+    Ak.Signup.process_signup(candidate_name, Map.merge(~m(email zip name), extra))
 
     redirect(conn, external: donate_url)
   end
@@ -70,57 +39,26 @@ defmodule CandidateWebsite.PageController do
     data =
       Enum.reduce(~w(call_voters join_team attend_event host_event), params, fn checkbox, acc ->
         if params[checkbox] do
-          Map.put(acc, checkbox, true)
+          Map.put(acc, "action_" <> checkbox, true)
         else
-          Map.put(acc, checkbox, false)
+          Map.put(acc, "action_" <> checkbox, false)
         end
       end)
 
-    ref = Map.get(params, "ref", nil)
+    extra = if params["ref"], do: %{source: params["ref"]}, else: %{}
 
-    ~m(email zip name call_voters join_team attend_event host_event) = data
+    matcher = fn ~m(title) ->
+      String.contains?(title, "Volunteer") and String.contains?(title, candidate_name)
+    end
 
-    email_address = email
-    postal_addresses = [%{postal_code: zip}]
+    Ak.Signup.process_signup(matcher, Map.merge(data, extra))
 
-    [given_name, family_name] =
-      case String.split(name, " ") do
-        [first_only] -> [first_only, ""]
-        n_list -> [List.first(n_list), List.last(n_list)]
-      end
+    destination = case candidate_name do
+      "Robb" <> _ -> "https://now.brandnewcongress.org/act"
+      "Marc Whit" <> _ -> "https://now.brandnewcongress.org/act"
+      _ -> "https://now.justicedemocrats.com/act"
+    end
 
-    person = ~m(email_address postal_addresses given_name family_name)a
-
-    tags =
-      [
-        {call_voters, "Call Voters"},
-        {join_team, "Join Team"},
-        {attend_event, "Attend Event"},
-        {host_event, "Host Event"}
-      ]
-      |> Enum.filter(fn {pred, _} -> pred end)
-      |> Enum.map(fn {_, str} -> "Action: Volunteer Desire: #{candidate_name}: #{str}" end)
-      |> Enum.concat(["Action: Joined As Volunteer: #{candidate_name}"])
-
-    tags =
-      if ref do
-        Enum.concat(tags, ["Action: Joined as Volunteer: #{candidate_name}: #{ref}"])
-      else
-        tags
-      end
-
-    person =
-      if data["phone"] != nil and data["phone"] != "" do
-        Map.put(person, :phone_number, data["phone"])
-      else
-        person
-      end
-
-    Osdi.PersonSignup.main(%{
-      person: person,
-      add_tags: tags
-    })
-
-    redirect(conn, external: donate_url)
+    redirect(conn, external: destination)
   end
 end
