@@ -9,7 +9,10 @@ defmodule CandidateWebsite.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the endpoint
-      supervisor(CandidateWebsite.Endpoint, [])
+      supervisor(CandidateWebsite.Endpoint, []),
+      worker(Ak.List, []),
+      worker(Ak.Signup, []),
+      worker(Ak.Petition, [])
     ]
 
     opts = [strategy: :one_for_one, name: CandidateWebsite.Supervisor]
