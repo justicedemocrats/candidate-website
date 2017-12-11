@@ -166,6 +166,9 @@ defmodule CandidateWebsite.RequirePlug do
       |> Enum.into(%{})
       |> Map.get(candidate)
 
-    "https://" <> match
+    case match do
+      nil -> nil
+      _ -> "https://" <> match
+    end
   end
 end
