@@ -37,7 +37,8 @@ config :cosmic,
     "david-gill",
     "robb-ryerse",
     "marc-whitmire",
-    "rick-trevino"
+    "rick-trevino",
+    "j-darnell-jones"
   ]
 
 # Domains
