@@ -79,9 +79,4 @@ defmodule EventHelp do
     candidate = candidate || "Justice Democrats"
     Map.put(event, :candidate, candidate)
   end
-
-  def destructure_tags(event) do
-    destructured = Enum.map(event.tags, fn %{name: name} -> name end)
-    Map.put(event, :tags, destructured)
-  end
 end

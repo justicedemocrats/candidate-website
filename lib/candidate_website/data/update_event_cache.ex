@@ -1,7 +1,5 @@
 defmodule CandidateWebsite.EventCache do
   require Logger
-  alias Osdi.{Repo, Event, Tag}
-  import Ecto.Query
 
   @attrs ~w(
     id start_date end_date featured_image_url location summary title name
@@ -13,12 +11,8 @@ defmodule CandidateWebsite.EventCache do
 
     # Fetch all events
     all_events =
-      from(e in Event, where: e.status == "confirmed" and e.end_date > ^NaiveDateTime.utc_now())
-      |> Repo.all()
-      |> Repo.preload([:tags, :location])
-      |> Enum.map(fn ev -> Map.take(ev, @attrs) end)
-      |> Enum.map(&EventHelp.destructure_tags/1)
-      |> Enum.map(&EventHelp.set_browser_url/1)
+      EventProxy.stream("events")
+      |> Enum.filter(fn e -> e.status == "confirmed" and e.end_date > DateTime.utc_now() end)
       |> Enum.map(&EventHelp.add_date_line/1)
 
     # Cache each by slug
@@ -28,9 +22,9 @@ defmodule CandidateWebsite.EventCache do
     Stash.set(:event_cache, "all_slugs", Enum.map(all_events, fn %{name: name} -> name end))
 
     # Filter each by calendar
-    from(t in Tag, where: like(t.name, "%Calendar: %"))
-    |> Repo.all()
-    |> MapSet.new()
+    all_tags = Enum.flat_map(all_events, & &1.tags)
+
+    Enum.filter(all_tags, & String.contains?(&1, "Calendar:"))
     |> Enum.each(fn calendar ->
          calendar |> events_for_calendar(all_events) |> cache_calendar(calendar)
        end)
