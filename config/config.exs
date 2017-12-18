@@ -1,8 +1,5 @@
 use Mix.Config
 
-# General application configuration
-config :candidate_website, ecto_repos: [Osdi.Repo]
-
 # Configures the endpoint
 config :candidate_website, CandidateWebsite.Endpoint,
   url: [host: "localhost"],
