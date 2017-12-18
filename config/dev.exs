@@ -56,3 +56,7 @@ config :osdi, Osdi.Repo,
   hostname: "localhost",
   port: "5432",
   types: GeoExample.PostgresTypes
+
+config :candidate_website,
+  proxy_base_url: "http://localhost:3000/ak",
+  proxy_secret: "secret"

@@ -10,9 +10,8 @@ defmodule CandidateWebsite.EventCache do
     Logger.info("Updating event cache")
 
     # Fetch all events
-    all_events =
-      EventProxy.stream("events")
-      |> Enum.filter(fn e -> e.status == "confirmed" and e.end_date > DateTime.utc_now() end)
+    all_events = EventProxy.stream("events")
+      |> Enum.filter(fn e -> e.status == "confirmed" and EventHelp.parse(e.end_date) > DateTime.utc_now() end)
       |> Enum.map(&EventHelp.add_date_line/1)
 
     # Cache each by slug
@@ -51,13 +50,13 @@ defmodule CandidateWebsite.EventCache do
     Stash.set(:event_cache, event.name, event)
   end
 
-  defp events_for_calendar(%{name: selected_calendar}, events) do
+  defp events_for_calendar(selected_calendar, events) do
     Enum.filter(events, fn %{tags: tags} ->
       Enum.member?(tags, selected_calendar)
     end)
   end
 
   defp cache_calendar(events, calendar) do
-    Stash.set(:event_cache, calendar.name, Enum.map(events, fn %{name: slug} -> slug end))
+    Stash.set(:event_cache, calendar, Enum.map(events, fn %{name: slug} -> slug end))
   end
 end

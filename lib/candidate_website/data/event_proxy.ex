@@ -5,7 +5,7 @@ defmodule EventProxy do
   @secret Application.get_env(:candidate_website, :proxy_secret)
 
   def process_url(url) do
-    "#{@base}/#{url}" |> IO.inspect
+    "#{@base}/#{url}"
   end
 
   def process_options(opts) do
