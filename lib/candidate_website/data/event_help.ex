@@ -4,8 +4,8 @@ defmodule EventHelp do
       :event_cache
       |> Stash.get("Calendar: #{calendar}")
       |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
-      # |> Enum.sort(&EventHelp.date_compare/2)
-      # |> Enum.map(&EventHelp.add_date_line/1)
+      |> Enum.sort(&EventHelp.date_compare/2)
+      |> Enum.map(&EventHelp.add_date_line/1)
     rescue
       _e -> []
     end
@@ -63,6 +63,8 @@ defmodule EventHelp do
   def set_browser_url(ev = %{name: name}), do: Map.put(ev, :browser_url, "/events/#{name}")
 
   def date_compare(%{start_date: d1}, %{start_date: d2}) do
+    d1 = parse(d1)
+    d2 = parse(d2)
     case DateTime.compare(d1, d2) do
       :gt -> false
       _ -> true

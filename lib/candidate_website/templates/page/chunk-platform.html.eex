@@ -3,7 +3,9 @@
   <%= for issue <- @issues do %>
     <div class="plank-container">
       <div class="plank-header-container" style="background-color: <%= @primary_color %>;">
-        <div class="lets"> Let's </div>
+        <%= if assigns[:hide_lets] != "True" do %>
+          <div class="lets"> Let's </div>
+        <% end %>
         <div class="plank-header">
           <%= issue.header %>
         </div>
