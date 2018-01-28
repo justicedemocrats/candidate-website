@@ -34,7 +34,7 @@ defmodule App.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:cosmic, git: "https://github.com/BrandNewCongress/cosmic_ex.git"},
+      {:cosmic, git: "https://github.com/justicedemocrats/cosmic_ex.git"},
       {:distillery, "~> 1.0.0"},
       {:short_maps, "~> 0.1.2"},
       {:browser, "~> 0.1.0"},

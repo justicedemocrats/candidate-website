@@ -47,16 +47,6 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :osdi, Osdi.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  database: "osdi_repo",
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  port: "5432",
-  types: GeoExample.PostgresTypes
-
 config :candidate_website,
   proxy_base_url: "http://localhost:3000/ak",
   proxy_secret: "secret"
