@@ -80,6 +80,7 @@ defmodule CandidateWebsite.RequirePlug do
     events =
       event_slugs
       |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
+      |> Enum.uniq_by(fn %{identifiers: identifiers} -> identifiers end)
       |> Enum.sort(&EventHelp.date_compare/2)
       |> Enum.map(&EventHelp.add_date_line/1)
       |> Enum.map(&EventHelp.add_candidate_attr/1)
