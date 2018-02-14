@@ -10,6 +10,7 @@
     "deploy": "MIX_ENV=prod NODE_ENV=prod webpack -p"
   },
   "dependencies": {
+    "webpack": "^3.4.0",
     "babel-preset-stage-0": "^6.24.1",
     "component-closest": "^1.0.1",
     "event-emitter-es6": "^1.1.5",
@@ -43,7 +44,6 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.9",
-    "webpack": "^3.4.0",
     "webpack-dev-server": "^2.6.1"
   }
 }
