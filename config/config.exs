@@ -29,7 +29,8 @@ config :cosmic,
     "robb-ryerse",
     "marc-whitmire",
     "rick-trevino",
-    "j-darnell-jones"
+    "j-darnell-jones",
+    "john-heenan"
   ]
 
 # Domains
@@ -57,10 +58,9 @@ config :candidate_website,
     "chardo2018.com" => "chardo-richardson"
   }
 
-jobs =
-  [
-    {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
-  ]
+jobs = [
+  {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
+]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
