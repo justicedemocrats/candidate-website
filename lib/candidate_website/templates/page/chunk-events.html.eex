@@ -1,11 +1,9 @@
 <%
 host_event_url = cond do
   String.contains?(@name, "Robb") or String.contains?(@name, "Marc") ->
-    "https://now.brandnewcongress.org/form/submit-event"
-  String.contains?(@name, "Alison") ->
-    "https://form.jotform.com/73397275984172"
+    nil
   true ->
-    "https://now.justicedemocrats.com/form/submit-event"
+    "https://jdems.us/host"
 end
 %>
 
@@ -38,14 +36,16 @@ else: "https://now.justicedemocrats.com/events/"
     <% end %>
   </div>
 
-  <a href="<%= host_event_url %>"
-    class="button"
-    style="color: white; background-color: <%= @highlight_color %>;
-      text-align: center; margin-left: auto; margin-right: auto;
-      margin-top: 50px;
-    " >
-    Host An Event for <%= @name %>
-  </a>
+  <%= if host_event_url != nil do %>
+    <a href="<%= host_event_url %>"
+      class="button"
+      style="color: white; background-color: <%= @highlight_color %>;
+        text-align: center; margin-left: auto; margin-right: auto;
+        margin-top: 50px;
+      " >
+      Host An Event for <%= @name %>
+    </a>
+  <% end %>
 
   <%= if String.contains?(@name, "Alison") do %>
     <a href="https://now.justicedemocrats.com/act"
