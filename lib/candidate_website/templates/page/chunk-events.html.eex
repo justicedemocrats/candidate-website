@@ -24,13 +24,13 @@ else: "https://now.justicedemocrats.com/events/"
 
   <div class="event-box">
     <%= for ev <- @events do %>
-      <div class="event" onclick="window.open('https://now.justicedemocrats.com/events/<%= ev.name %>')">
-        <a href="<%= "#{host_event_base}#{ev.name}" %>" class="button" style="background-color: <%= @highlight_color %>">
+      <div class="event" onclick="window.open('<%= ev["browser_url"] %>')">
+        <a href="<%= ev["browser_url"] %>" class="button" style="background-color: <%= @highlight_color %>">
           RSVP
         </a>
         <div class="box">
-          <p><strong> <%= ev.title %> </strong> <br/>
-           <%= ev.date_line %> </p>
+          <p><strong> <%= ev["title"] %> </strong> <br/>
+           <%= ev["date_line"] %> </p>
         </div>
       </div>
     <% end %>

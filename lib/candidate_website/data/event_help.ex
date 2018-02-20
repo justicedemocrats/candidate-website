@@ -14,9 +14,7 @@ defmodule EventHelp do
   def add_date_line(event) do
     date_line =
       humanize_date(event.start_date) <>
-        "from " <>
-        humanize_time(event.start_date) <>
-        " - " <> humanize_time(event.end_date)
+        "from " <> humanize_time(event.start_date) <> " - " <> humanize_time(event.end_date)
 
     Map.put(event, :date_line, date_line)
   end
@@ -65,6 +63,7 @@ defmodule EventHelp do
   def date_compare(%{start_date: d1}, %{start_date: d2}) do
     d1 = parse(d1)
     d2 = parse(d2)
+
     case DateTime.compare(d1, d2) do
       :gt -> false
       _ -> true
@@ -73,7 +72,7 @@ defmodule EventHelp do
 
   def add_candidate_attr(event) do
     candidate =
-      event.tags
+      event["tags"]
       |> Enum.filter(&String.contains?(&1, "Calendar: "))
       |> Enum.map(&(&1 |> String.split(":") |> List.last() |> String.trim()))
       |> Enum.reject(&(&1 == "Brand New Congress" or &1 == "Justice Democrats"))

@@ -1,32 +1,27 @@
 defmodule CandidateWebsite.EventCache do
   require Logger
-
-  @attrs ~w(
-    id start_date end_date featured_image_url location summary title name
-    type status description contact type location tags instructions
-  )a
+  import ShortMaps
 
   def update do
     Logger.info("Updating event cache")
 
     # Fetch all events
-    all_events = EventProxy.stream("events")
-      |> Enum.filter(fn e -> e.status == "confirmed" and EventHelp.parse(e.end_date) > DateTime.utc_now() end)
-      |> Enum.map(&EventHelp.add_date_line/1)
+    %{body: raw} = HTTPotion.get("https://map.justicedemocrats.com/api/events")
+    all_events = Poison.decode!(raw)
 
     # Cache each by slug
     all_events |> Enum.each(&cache_by_name/1)
 
     # Cache all slugs as part of all
-    Stash.set(:event_cache, "all_slugs", Enum.map(all_events, fn %{name: name} -> name end))
+    Stash.set(:event_cache, "all_slugs", Enum.map(all_events, fn ~m(id) -> id end))
 
     # Filter each by calendar
-    all_tags = Enum.flat_map(all_events, & &1.tags)
+    all_tags = Enum.flat_map(all_events, & &1["tags"])
 
-    Enum.filter(all_tags, & String.contains?(&1, "Calendar:"))
+    Enum.filter(all_tags, &String.contains?(&1, "Calendar:"))
     |> Enum.each(fn calendar ->
-         calendar |> events_for_calendar(all_events) |> cache_calendar(calendar)
-       end)
+      calendar |> events_for_calendar(all_events) |> cache_calendar(calendar)
+    end)
 
     Stash.persist(:event_cache, "event_cache")
     Logger.info("Updated event cache on #{Timex.now() |> DateTime.to_iso8601()}")
@@ -47,16 +42,16 @@ defmodule CandidateWebsite.EventCache do
   end
 
   defp cache_by_name(event) do
-    Stash.set(:event_cache, event.name, event)
+    Stash.set(:event_cache, event["id"], event)
   end
 
   defp events_for_calendar(selected_calendar, events) do
-    Enum.filter(events, fn %{tags: tags} ->
+    Enum.filter(events, fn ~m(tags) ->
       Enum.member?(tags, selected_calendar)
     end)
   end
 
   defp cache_calendar(events, calendar) do
-    Stash.set(:event_cache, calendar, Enum.map(events, fn %{name: slug} -> slug end))
+    Stash.set(:event_cache, calendar, Enum.map(events, fn ~m(id) -> id end))
   end
 end
