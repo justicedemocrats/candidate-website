@@ -53,14 +53,14 @@ defmodule EventHelp do
   end
 
   def parse(dt) do
-    iso = if String.ends_with?(dt, "Z"), do: dt, else: dt <> "Z"
-    {:ok, result, _} = DateTime.from_iso8601(iso)
+    # iso = if String.ends_with?(dt, "Z"), do: dt, else: dt <> "Z"
+    {:ok, result, _} = DateTime.from_iso8601(dt)
     result
   end
 
   def set_browser_url(ev = %{name: name}), do: Map.put(ev, :browser_url, "/events/#{name}")
 
-  def date_compare(%{start_date: d1}, %{start_date: d2}) do
+  def date_compare(%{"start_date" => d1}, %{"start_date" => d2}) do
     d1 = parse(d1)
     d2 = parse(d2)
 
