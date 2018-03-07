@@ -36,17 +36,6 @@ else: "https://now.justicedemocrats.com/events/"
     <% end %>
   </div>
 
-  <%= if host_event_url != nil do %>
-    <a href="<%= host_event_url %>"
-      class="button"
-      style="color: white; background-color: <%= @highlight_color %>;
-        text-align: center; margin-left: auto; margin-right: auto;
-        margin-top: 50px;
-      " >
-      Host An Event for <%= @name %>
-    </a>
-  <% end %>
-
   <%= if String.contains?(@name, "Alison") do %>
     <a href="https://now.justicedemocrats.com/act"
       class="button"
@@ -55,6 +44,26 @@ else: "https://now.justicedemocrats.com/events/"
         margin-top: 50px;
       " >
       Find Events Near You
+    </a>
+  <%= else %>
+    <a href="https://now.justicedemocrats.com/events?district=<%= @district %>"
+      class="button"
+      style="color: white; background-color: <%= @highlight_color %>;
+        text-align: center; margin-left: auto; margin-right: auto;
+        margin-top: 50px;
+      " >
+      All Upcoming Events
+    </a>
+  <% end %>
+
+  <%= if host_event_url != nil do %>
+    <a href="<%= host_event_url %>"
+      class="button"
+      style="color: white; background-color: <%= @highlight_color %>;
+        text-align: center; margin-left: auto; margin-right: auto;
+        margin-top: 50px;
+      " >
+      Host An Event for <%= @name %>
     </a>
   <% end %>
 </div>
