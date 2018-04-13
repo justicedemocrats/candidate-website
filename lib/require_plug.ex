@@ -99,6 +99,13 @@ defmodule CandidateWebsite.RequirePlug do
         Map.put(acc, String.to_atom(key), metadata[key])
       end)
 
+    # Global css
+    global_css =
+      case Cosmic.get("global-css", candidate) do
+        %{"metadata" => ~m(global_css)} -> global_css
+        _ -> ""
+      end
+
     # Add required attrs
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
@@ -111,6 +118,7 @@ defmodule CandidateWebsite.RequirePlug do
           other_data
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
+          |> Map.merge(~m(global_css)a)
 
         conn
         |> Plug.Conn.assign(:data, data)

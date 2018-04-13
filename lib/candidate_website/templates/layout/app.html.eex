@@ -38,6 +38,12 @@
   </head>
 
   <body>
+    <%= if @data[:global_css] != nil do %>
+      <style>
+        <%= raw(assigns[:global_css]) %>
+      </style>
+    <% end %>
+
     <%= if @mobile do %>
       <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
     <% end %>
