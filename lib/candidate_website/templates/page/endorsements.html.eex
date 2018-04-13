@@ -1,0 +1,56 @@
+<div class="platform-page">
+  <div class="platform-header-container" style="background-color: <%= @primary_color %>;">
+    <div class="tabs">
+      <nav class="tabs-nav">
+        <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
+        <a href="/about" class="nav-item"> About </a>
+        <!-- <div class="separator"></div> -->
+        <a href="/issues" class="nav-item"> Issues </a>
+        <!-- <div class="separator"></div> -->
+        <!-- <a href="#vote" class="nav-item"> Our District </a>
+        <div class="separator"></div> -->
+        <a href="/#events" class="nav-item"> Events </a>
+        <!-- <div class="separator"></div> -->
+        <a href="/#news" class="nav-item"> News </a>
+        <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
+      </nav>
+    </div>
+
+    <div class="main-container">
+      <h1 class="platform-header">
+        Press
+      </h1>
+
+      <div id="name-separator">
+        <div class="half" style="border-bottom: 2px solid white;"></div>
+        <div class="star">&#9733;</div>
+        <div class="half" style="border-bottom: 2px solid white;"></div>
+      </div>
+
+      <div id="platform-prompt">
+        <%= @platform_header %>
+      </div>
+
+    </div>
+  </div>
+
+  <%= for issue <- @issues do %>
+    <%= if issue.show_on_homepage do %>
+      <div class="issue-header" style="background-color: <%= @primary_color %>;">
+        <h1> <%= issue.header %> </h1>
+      </div>
+      <div class="issue-icon">
+        <img src="<%= issue.icon[~s(imgix_url)] %>"/>
+      </div>
+      <div class="section">
+        <%= raw(issue.full) %>
+    </div>
+    <% end %>
+  <% end %>
+
+  <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
+    <%= render "volunteer-form.html", assigns %>
+  </div>
+</div>
+
+<%= render "footer.html", assigns %>
