@@ -1,35 +1,34 @@
-<div class="news-section-container" id="news">
-
-  <div style="width: 48%">
-    <div class="banner-header" style="background-color: <%= @primary_color %>; width: 100%;">
-      <h1 style="color: white;"> Join the Conversation </h1>
-    </div>
-
-    <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="news-container">
+  <div class="banner-header" style="background-color: <%= @primary_color %>;">
+    <h1 style="color: white;"> News </h1>
   </div>
 
-  <div class="news-container">
-    <div class="banner-header" style="background-color: <%= @primary_color %>;">
-      <h1 style="color: white;"> News </h1>
-    </div>
-
-    <div class="articles">
-      <%= for article <- @articles do %>
-        <div class="article" onclick="window.open('<%= article.url %>')">
-          <%= if not @mobile do %>
+  <div class="articles">
+    <%= for article <- @articles do %>
+      <div class="article" onclick="window.open('<%= article.url %>')">
+        <%= if not @mobile do %>
+          <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
+        <% end %>
+        <div class="article-preview">
+          <%= if @mobile do %>
             <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
           <% end %>
-          <div class="article-preview">
-            <%= if @mobile do %>
-              <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
-            <% end %>
-            <div class="headline"> <%= article.headline %> </div>
-            <div class="description"> <%= article.description %> </div>
-          </div>
+          <div class="headline"> <%= article.headline %> </div>
+          <div class="description"> <%= article.description %> </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div>
+  <div class="banner-header" style="background-color: <%= @primary_color %>; width: 100%;">
+    <h1 style="color: white;"> Join the Conversation </h1>
   </div>
 
+  <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+

@@ -1,13 +1,16 @@
 <div id="donate">
   <h1 style="color: <%=@primary_color %>"> Donate to My Campaign </h1>
-  <div id="circles-container">
-    <%= for amount <- [9, 19, 29, 49] do %>
-      <a style="background-color: <%= @primary_color %>" class="circle" href="<%= @donate_url <> "?amount=#{amount}"%>">
-        <span class="amount"><%= amount %></span>
-        <span class="dollars">dollars</span>
-      </a>
-    <% end %>
-  </div>
+
+  <%= if not @mobile do %>
+    <div id="circles-container">
+      <%= for amount <- [9, 19, 29, 49] do %>
+        <a style="background-color: <%= @primary_color %>" class="circle" href="<%= @donate_url <> "?amount=#{amount}"%>">
+          <span class="amount"><%= amount %></span>
+          <span class="dollars">dollars</span>
+        </a>
+      <% end %>
+    </div>
+  <% end %>
   <div class="custom-donation-container">
     <% if not @mobile do %>
       <div class="full-center"
