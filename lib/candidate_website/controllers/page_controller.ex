@@ -23,6 +23,16 @@ defmodule CandidateWebsite.PageController do
     render(conn, "platform.html", Enum.into(assigns, []))
   end
 
+  def press(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "news.html", Enum.into(assigns, []))
+  end
+
+  def endorsements(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "endorsements.html", Enum.into(assigns, []))
+  end
+
   def signup(conn, params) do
     %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip name) = params
@@ -53,11 +63,12 @@ defmodule CandidateWebsite.PageController do
 
     Ak.Signup.process_signup(matcher, Map.merge(data, extra))
 
-    destination = case candidate_name do
-      "Robb" <> _ -> "https://now.brandnewcongress.org/act"
-      "Marc Whit" <> _ -> "https://now.brandnewcongress.org/act"
-      _ -> "https://now.justicedemocrats.com/act"
-    end
+    destination =
+      case candidate_name do
+        "Robb" <> _ -> "https://now.brandnewcongress.org/act"
+        "Marc Whit" <> _ -> "https://now.brandnewcongress.org/act"
+        _ -> "https://now.justicedemocrats.com/act"
+      end
 
     redirect(conn, external: destination)
   end

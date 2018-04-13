@@ -15,4 +15,14 @@
       </div>
     <% end %>
   </div>
+
+<a href="/endorsements"
+  class="button"
+  style="color: white; background-color: <%= @highlight_color %>;
+    text-align: center; margin-left: auto; margin-right: auto;
+    margin-top: 50px;
+  " >
+  See All Endorsements
+</a>
+
 <% end %>

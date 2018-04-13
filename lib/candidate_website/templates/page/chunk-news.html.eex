@@ -21,6 +21,15 @@
   </div>
 </div>
 
+<a href="/press"
+  class="button"
+  style="color: white; background-color: <%= @highlight_color %>;
+    text-align: center; margin-left: auto; margin-right: auto;
+    margin-top: 50px;
+  " >
+  See All News
+</a>
+
 <br/>
 
 <div>

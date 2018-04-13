@@ -35,12 +35,17 @@
   </div>
 
   <%= for issue <- @issues do %>
-    <div class="issue-header" style="background-color: <%= @primary_color %>;">
-      <h1> <%= issue.header %> </h1>
+    <%= if issue.show_on_homepage do %>
+      <div class="issue-header" style="background-color: <%= @primary_color %>;">
+        <h1> <%= issue.header %> </h1>
+      </div>
+      <div class="issue-icon">
+        <img src="<%= issue.icon[~s(imgix_url)] %>"/>
+      </div>
+      <div class="section">
+        <%= raw(issue.full) %>
     </div>
-    <div class="section">
-      <%= raw(issue.intro) %>
-    </div>
+    <% end %>
   <% end %>
 
   <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
