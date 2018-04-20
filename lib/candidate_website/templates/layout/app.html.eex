@@ -35,6 +35,19 @@
 
     <%= {:safe, css_link_tag() } %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
+
+
+    <%= if assigns[:google_analytics_id] != nil do %>
+      <!-- Global Site Tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= assigns[:google_analytics_id] %>"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', '<%= assigns[:google_analytics_id] %>');
+      </script>
+    <% end %>
   </head>
 
   <body>
@@ -67,16 +80,4 @@
   <script>
     flexibility(document.documentElement);
   </script>
-
-  <%= if assigns[:google_analytics_id] != nil do %>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
-
-      gtag('config', '<%= assigns[:google_analytics_id] %>');
-    </script>
-  <% end %>
 </html>
