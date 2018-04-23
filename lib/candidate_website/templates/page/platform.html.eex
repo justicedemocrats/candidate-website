@@ -37,17 +37,15 @@
   <div class="issues-container">
     <%= for issue <- @issues do %>
       <div class="issue-box">
-        <%= if issue.show_on_homepage do %>
-          <div class="issue-header" style="background-color: <%= @primary_color %>;">
-            <h1> <%= issue.header %> </h1>
-          </div>
-          <div class="issue-icon">
-            <img src="<%= issue.icon[~s(imgix_url)] %>"/>
-          </div>
-          <div class="section">
-            <%= raw(issue.full) %>
+        <div class="issue-header" style="background-color: <%= @primary_color %>;">
+          <h1> <%= issue.header %> </h1>
         </div>
-        <% end %>
+        <div class="issue-icon">
+          <img src="<%= issue.icon[~s(imgix_url)] %>"/>
+        </div>
+        <div class="section">
+          <%= raw(issue.full) %>
+        </div>
       </div>
     <% end %>
   </div>
