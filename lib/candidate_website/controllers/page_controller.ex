@@ -38,8 +38,6 @@ defmodule CandidateWebsite.PageController do
 
     case data do
       %{action_network_api_key: action_network_api_key} when not is_nil(action_network_api_key) ->
-        IO.inspect(action_network_api_key)
-
         HTTPotion.post(
           "https://actionnetwork.org/api/v2/people",
           headers: [
