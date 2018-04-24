@@ -35,9 +35,38 @@
 
     <%= {:safe, css_link_tag() } %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
+
+    <%= if assigns[:google_tag_manager_id] != nil do %>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','<%= assigns[:google_tag_manager_id] %>');</script>
+        <!-- End Google Tag Manager -->
+    <% end %>
+    <%= if assigns[:google_analytics_id] != nil and assigns[:google_tag_manager_id] == nil do %>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= assigns[:google_analytics_id] %>"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', '<%= assigns[:google_analytics_id] %>');
+        </script>
+    <% end %>
+
+
   </head>
 
   <body>
+    <%= if assigns[:google_tag_manager_id] != nil do %>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= assigns[:google_tag_manager_id] %>"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    <% end %>
     <%= if @data[:global_css] != nil do %>
       <style>
         <%= raw(assigns[:global_css]) %>
@@ -67,16 +96,4 @@
   <script>
     flexibility(document.documentElement);
   </script>
-
-  <%= if assigns[:google_analytics_id] != nil do %>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
-
-      gtag('config', '<%= assigns[:google_analytics_id] %>');
-    </script>
-  <% end %>
 </html>
