@@ -58,7 +58,10 @@ defmodule CandidateWebsite.PageController do
                     "postal_code" => zip,
                     "primary" => true
                   }
-                ]
+                ],
+                "custom_fields" => %{
+                  "Mobile Phone" => params["phone"]
+                }
               },
               "add_tags" => ["website-signup"]
             })
@@ -113,6 +116,9 @@ defmodule CandidateWebsite.PageController do
                 "email_addresses" => [
                   %{"address" => params["email"]}
                 ],
+                "custom_fields" => %{
+                  "Mobile Phone" => params["phone"]
+                },
                 "postal_addresses" => [
                   %{
                     "postal_code" => params["zip"],
