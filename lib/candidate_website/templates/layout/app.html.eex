@@ -60,10 +60,8 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments)};
         gtag('js', new Date());
-        <%= if assigns[:google_optimize_id] != nil do %>
-        ga('require', '<%= assigns[:google_optimize_id] %>');
-        <% end %>
-        gtag('config', '<%= assigns[:google_analytics_id] %>');
+
+        gtag('config', '<%= assigns[:google_analytics_id] %>'<%= if assigns[:google_optimize_id] != nil do %>, { 'optimize_id': '<%= assigns[:google_optimize_id] %>' }<% end %>);
         </script>
     <% end %>
   </head>
