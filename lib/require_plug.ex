@@ -16,7 +16,7 @@ defmodule CandidateWebsite.RequirePlug do
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
-    action_network_api_key google_tag_manager_id
+    action_network_api_key google_tag_manager_id google_optimize_id
   )
 
   @about_attrs ~w(
@@ -100,7 +100,8 @@ defmodule CandidateWebsite.RequirePlug do
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         required_data =
-          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key,
+                                                                                        acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 
