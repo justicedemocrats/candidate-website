@@ -78,13 +78,18 @@ defmodule CandidateWebsite.PageController do
     cand_data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
 
     data =
-      Enum.reduce(~w(call_voters join_team attend_event host_event), params, fn checkbox, acc ->
+      Map.keys(params)
+      |> MapSet.new()
+      |> MapSet.difference(MapSet.new(~w(email name phone zip _csrf_token)))
+      |> MapSet.to_list()
+      |> Enum.reduce(params, fn checkbox, acc ->
         if params[checkbox] do
           Map.put(acc, "action_" <> checkbox, true)
         else
           Map.put(acc, "action_" <> checkbox, false)
         end
       end)
+      |> IO.inspect()
 
     extra = if params["ref"], do: %{source: params["ref"]}, else: %{}
 
