@@ -39,15 +39,15 @@
         <div id="join-prompt"> <%= join_message %> </div>
         <div id="join-subtitle"> For info and updates </div>
         <div class="form-row">
-          <div class="same-row">
             <input type="text" name="name" placeholder="Name*" required="required" />
+        </div>
+        <div class="form-row">
             <input type="email" name="email" placeholder="Email*" required="required" />
-          </div>
         </div>
         <div class="form-row">
           <div class="same-row">
-            <input type="text" name="zip" placeholder="Zip*" required="required" />
             <input type="tel" name="phone" placeholder="Phone" />
+            <input type="text" name="zip" placeholder="Zip" />
           </div>
         </div>
         <div class="form-row">
