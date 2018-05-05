@@ -16,7 +16,8 @@ defmodule CandidateWebsite.RequirePlug do
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
-    action_network_api_key google_tag_manager_id volunteer_options
+    action_network_api_key google_tag_manager_id google_optimize_id volunteer_options
+    master
   )
 
   @about_attrs ~w(
@@ -67,9 +68,9 @@ defmodule CandidateWebsite.RequirePlug do
 
     issues =
       Cosmic.get_type("issues", candidate)
-      |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro priority)} ->
+      |> Enum.map(fn %{"title" => title, "metadata" => ~m(header intro priority full)} ->
         priority = as_float(priority)
-        ~m(title header intro priority)a
+        ~m(title header intro priority full)a
       end)
       |> Enum.sort(&by_priority/2)
 
@@ -100,7 +101,8 @@ defmodule CandidateWebsite.RequirePlug do
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         required_data =
-          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key,
+                                                                                        acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 

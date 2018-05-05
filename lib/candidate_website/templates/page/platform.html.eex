@@ -39,7 +39,11 @@
       <h1> <%= issue.header %> </h1>
     </div>
     <div class="section">
-      <%= raw(issue.intro) %>
+      <%= if issue.full != nil do %>
+        <%= raw(issue.full) %>
+      <% else %>
+        <%= raw(issue.intro) %>
+      <% end %>
     </div>
   <% end %>
 
