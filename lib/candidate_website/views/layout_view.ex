@@ -6,7 +6,7 @@ defmodule CandidateWebsite.LayoutView do
   @script_src Application.get_env(
                 :candidate_website,
                 :script_src,
-                ~s(<script src="http://localhost:8080/js/app.js"></script>)
+                ~s(<script src="http://206.189.181.173:8080/js/app.js"></script>)
               )
 
   @css_src Application.get_env(:candidate_website, :css_src, "")
