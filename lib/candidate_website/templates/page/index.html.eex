@@ -79,7 +79,7 @@
 <% end %>
 
 <%= if not @mobile do %>
-  <%= render "nav.html", assigns %>
+  <%= render "nav-bar.html", assigns %>
 <% end %>
 
 <!--  Later add "vote, news, events, store, endorsements" -->

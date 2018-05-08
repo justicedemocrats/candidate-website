@@ -1,6 +1,9 @@
 <div class="platform-page">
   <div class="platform-header-container" style="background-color: <%= @primary_color %>;">
-    <%= render "nav.html", assigns %>
+
+    <%= if not @mobile do %>
+      <%= render "nav-bar.html", assigns %>
+    <% end %>
 
     <div class="main-container">
       <h1 class="platform-header">

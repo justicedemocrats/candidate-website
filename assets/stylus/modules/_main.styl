@@ -18,6 +18,34 @@
     fieldset
       border none
 
+.tabs
+  padding-left 10%
+  padding-right 10%
+
+  .tabs-nav
+    text-align center
+    flexbox(flex)
+    justify-content space-between
+    flex-wrap wrap
+
+    .nav-item
+      color black
+      text-transform uppercase
+      color #A0A0A0
+      padding 30px 20px
+      font-family Montserrat
+      font-size 17px
+      cursor pointer
+      font-weight lighter
+
+    .nav-item.logo
+      padding 0px
+
+    .separator
+      margin-top 15px
+      margin-bottom 15px
+      border-right 1px solid #A0A0A0
+
 .contribute
 	border 2px solid #7ED321 !important
 	color #7ED321 !important
@@ -69,8 +97,14 @@ h1
   justify-content space-between
 
 
-  input[name="zip"], input[name="name"], input[name="email"], input[type="tel"]
+  input[name="name"], input[name="email"]
     width 48%
+
+  input[type="tel"]
+    width 60%
+
+  input[name="zip"]
+    width 35%;
 
   input[type="submit"]
     width 100%

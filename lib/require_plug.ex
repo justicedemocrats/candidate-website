@@ -28,7 +28,8 @@ defmodule CandidateWebsite.RequirePlug do
   def call(conn, _opts) do
     params = conn |> fetch_query_params() |> Map.get(:params)
     global_opts = GlobalOpts.get(conn, params)
-    candidate = Keyword.get(global_opts, :candidate)
+    # candidate = Keyword.get(global_opts, :candidate)
+    candidate = "alexandria-ocasio-cortez-staging"
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
