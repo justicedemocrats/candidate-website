@@ -29,5 +29,11 @@
     <div>
       Press contact: <a href="mailto:<%= @press_email%>" style="color: <%= @primary_color %>;"> <%= @press_email %> </a>
     </div>
+    <!-- Privacy Policy Link -->
+    <%= if assigns[:privacy_policy] != nil do %>
+    <div>
+      <a href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
+    </div>
+    <% end %>
   </div>
 </div>
