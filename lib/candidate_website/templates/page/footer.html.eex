@@ -1,6 +1,6 @@
-<div id="footer">
+<%= render "nav-bar.html", assigns %>
 
-  <%= render "nav-bar.html", assigns %>
+<div id="footer">
 
   <div id="paid-for-container">
     <div id="paid-for">
@@ -8,13 +8,10 @@
     </div>
   </div>
 
-  <div class="email-us column-center">
-    Email Us
-    <div>
+  <div class="email-general">
       General contact: <a href="mailto:<%= @general_email%>" style="color: <%= @primary_color %>;"> <%= @general_email %> </a>
     </div>
-    <div>
+    <div class="email-press">
       Press contact: <a href="mailto:<%= @press_email%>" style="color: <%= @primary_color %>;"> <%= @press_email %> </a>
     </div>
-  </div>
 </div>

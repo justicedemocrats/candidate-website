@@ -1,4 +1,4 @@
-<div class="tabs" style="margin-top: 20px; height:120px;">
+<div class="tabs" style="height:120px; margin-bottom:0 !important;">
   <nav class="tabs-nav">
     <a href="/" class="nav-item logo"><img
       src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"
