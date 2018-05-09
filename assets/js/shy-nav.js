@@ -3,6 +3,8 @@ const ShyNav = {
     init: function(nav) {
         this.nav = document.getElementById(nav);
 
+        if (this.nav == undefined) return;
+
         // initialize nav position
         this.setInlineOrSticky();
 
@@ -31,15 +33,15 @@ const ShyNav = {
         }
         else
         {
-            this.addClass('scrolling-up');
             this.removeClass('scrolling-down');
+            this.addClass('scrolling-up');
         }
 
         // set whether nav is visible
         if (this.isVisible())
         {
-            this.addClass('nav-visible');
             this.removeClass('nav-hidden');
+            this.addClass('nav-visible');
         }
         else
         {
@@ -57,7 +59,8 @@ const ShyNav = {
     {
         var html = document.getElementsByTagName("HTML")[0];
         
-        if (to_add == undefined) return;
+        if (to_add == undefined
+            || html.classList.contains(to_add)) return;
 
         html.className += ' ' + to_add; 
     },
@@ -76,7 +79,7 @@ const ShyNav = {
         var htmlClass = ' ' + html.className + ' ';
 
         while(htmlClass.indexOf(' ' + to_remove + ' ') !== -1) {
-             htmlClass = htmlClass.replace(' ' + to_remove, ' ');
+             htmlClass = htmlClass.replace(' ' + to_remove, '');
         }
 
         html.className = htmlClass;

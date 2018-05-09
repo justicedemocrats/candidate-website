@@ -1,7 +1,5 @@
 <div id="footer">
 
-  <%= render "nav-bar.html", assigns %>
-
   <div id="paid-for-container">
     <div id="paid-for">
       <%= @paid_for %>
