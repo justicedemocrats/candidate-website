@@ -17,20 +17,13 @@ config :cosmic,
   slugs: [
     "alexandria-ocasio-cortez",
     "alison-hartson",
-    "ben-packer",
     "adrienne-bell",
     "anthony-clark",
     "chardo-richardson",
     "cori-bush",
-    "letitia-plummer",
     "paula-jean-swearengin",
-    "sarah-smith",
     "david-gill",
-    "robb-ryerse",
-    "marc-whitmire",
-    "rick-trevino",
-    "j-darnell-jones",
-    "john-heenan"
+    "marc-whitmire"
   ]
 
 # Domains
@@ -38,10 +31,6 @@ config :candidate_website,
   domains: %{
     "alisonhartson.com" => "alison-hartson",
     "www.alisonhartson.com" => "alison-hartson",
-    "robb2018.com" => "robb-ryerse",
-    "www.robb2018.com" => "robb-ryerse",
-    "votesarahsmith.com" => "sarah-smith",
-    "www.votesarahsmith.com" => "sarah-smith",
     "ocasio2018.com" => "alexandria-ocasio-cortez",
     "www.ocasio2018.com" => "alexandria-ocasio-cortez",
     "bell2018.com" => "adrienne-bell",
