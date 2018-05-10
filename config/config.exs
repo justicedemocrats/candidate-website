@@ -16,13 +16,11 @@ config :logger, :console,
 config :cosmic,
   slugs: [
     "alexandria-ocasio-cortez",
-    "alison-hartson",
     "adrienne-bell",
     "anthony-clark",
     "chardo-richardson",
     "cori-bush",
     "paula-jean-swearengin",
-    "david-gill",
     "marc-whitmire"
   ]
 
