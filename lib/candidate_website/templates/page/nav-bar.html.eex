@@ -1,0 +1,23 @@
+<div class="tabs" style="margin-top: 20px; height:120px;">
+  <nav class="tabs-nav">
+    <a href="/" class="nav-item logo"><img
+      src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"
+      style="height: 89px; float: right; width: 116px;"
+    /></a>
+    <a href="<%= @donate_url %>" class="nav-item contribute" style="margin-top:17px;"> Contribute </a>
+    <%= if @about_enabled do %>
+      <a href="/about" class="nav-item"> About </a>
+      <% else %>
+        <a href="/#why" class="nav-item"> About </a>
+        <% end %>
+          <!-- <div class="separator"></div> -->
+          <a href="/issues" class="nav-item"> Issues </a>
+          <!-- <div class="separator"></div> -->
+          <!-- <a href="#vote" class="nav-item"> Our District </a>
+    <div class="separator"></div> -->
+          <a href="/#events" class="nav-item"> Events </a>
+          <!-- <div class="separator"></div> -->
+          <a href="/#news" class="nav-item"> News </a>
+          <a href="/#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>; margin-top:17px;"> Volunteer </a>
+  </nav>
+</div>
