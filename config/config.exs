@@ -27,8 +27,6 @@ config :cosmic,
 # Domains
 config :candidate_website,
   domains: %{
-    "alisonhartson.com" => "alison-hartson",
-    "www.alisonhartson.com" => "alison-hartson",
     "ocasio2018.com" => "alexandria-ocasio-cortez",
     "www.ocasio2018.com" => "alexandria-ocasio-cortez",
     "bell2018.com" => "adrienne-bell",
@@ -36,7 +34,6 @@ config :candidate_website,
     "whitmire2018.com" => "marc-whitmire",
     "www.whitmire2018.com" => "marc-whitmire",
     "anthonyclark2018.com" => "anthony-clark",
-    "www.anthonyclark2018.com" => "anthony-clark",
     "paulajean2018.com" => "paula-jean-swearengin",
     "www.paulajean2018.com" => "paula-jean-swearengin",
     "votecoribush.com" => "cori-bush",
@@ -45,9 +42,10 @@ config :candidate_website,
     "chardo2018.com" => "chardo-richardson"
   }
 
-jobs = [
-  {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
-]
+config :candidate_website, CandidateWebsite.Scheduler,
+  jobs: [
+    {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
+  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
