@@ -6,7 +6,6 @@ h1
   font-weight bold
   font-size 2em
   color #3C2D82
-  max-width 1100px
   margin auto
 
 h2
@@ -30,7 +29,6 @@ p
   font-size 1.05em
   line-height 1.4
   letter-spacing .4px
-  max-width 1100px
   margin auto
   text-align justify
 
@@ -38,6 +36,7 @@ p
   width 100%
   height 547px
   position relative
+  background-repeat no-repeat
 
   #hero-logo
     background-image url(https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png)
@@ -94,26 +93,34 @@ p
           text-align center
           letter-spacing 1px
 
-.tabs
-  padding-left 10%
-  padding-right 10%
-  padding-top 5px
-  padding-bottom 5px
+.nav
+  height 129px
   background-color #f5f5f5
-  vertical-align middle
+  flexbox(flex)
+  justify-content(center)
+  align-items(center)
+  padding-left 10%
+  // padding-right 10%
+
+  .logo
+    max-height 89px
+    max-width 100%
+    margin-right 137px
+
+.tabs
+  margin-bottom 0px !important // Countering stupid CSS
 
   .tabs-nav
-    text-align center
     flexbox(flex)
     justify-content space-between
     flex-wrap wrap
-    margin-bottom 0px !important // Countering stupid CSS
     line-height 0px !imporant // Countering stupid CSS
+    margin-bottom 0px // Countering stupid CSS
 
     .nav-item
       text-transform uppercase
       color #3C2D82
-      padding 30px 20px
+      padding 1rem 1rem !important // Countering stupid CSS
       font-family Proxima Nova
       font-size 17px
       cursor pointer
@@ -121,34 +128,27 @@ p
       background none
       letter-spacing 1px
 
-    .logo
-      padding 0px
-      height auto
-      float right
-      width 100px
+      .contribute
+        border 0px !important
+        padding-top 13px !important
+        color #ffffff !important
+        border-radius 3px !important
+        height 51px !important
+        margin-top 7px !important
+        background-color rgba(80,192,32,0.83) !important
+
+      .volunteer
+        padding-top 13px !important
+        color #ffffff !important
+        border-radius 3px!important
+        height 51px
+        margin-top 7px
+        border 0px !important
 
     .separator
       // margin-top 15px
       // margin-bottom 15px
       // border-right 1px solid #A0A0A0
-
-.contribute
-  border 0px !important
-  padding-top 13px !important
-  color #ffffff !important
-  border-radius 3px!important
-  height 50px
-  margin-top 7px
-  background-color rgba(80,192,32,0.83) !important
-
-.volunteer
-  padding-top 13px !important
-  color #ffffff !important
-  border-radius 3px!important
-  height 50px
-  margin-top 7px
-  background-color #3C2D82 !important
-  border 0px !important
 
 .chunk
   padding 50px 10% !important
@@ -157,16 +157,48 @@ p
   // padding-top 30px
   // padding-bottom 30px
 
+.contribute
+  color #ffffff !important
+  background-color rgba(80,192,32,0.83) !important
+
+.volunteer
+  color #ffffff !important
+  background-color #3C2D82 !important
+
+// About Chunk //
+
+#chunk-about
+  flexbox(flex)
+
+  #about-text
+    margin-right 4.5rem
+
+    #about-header
+      margin-bottom 1rem
+
+  #about-image
+    margin-left 4.51rem
+
+    #district-image
+      max-height 247px
+      max-width 100%
+
+// Issues Chunk //
+
+#chunk-issues
+  background-color #F8D11C
+  flexbox(flex)
+
+
+
+
+
 .chunk:nth-child(odd)
   background-color #f5f5f5
 
-.chunk:nth-child(4) .flex
-  justify-content center
-  padding-bottom 50px !important
-
-.chunk:nth-child(4) .flex p
-  max-width 1100px !important
-  margin auto !important
+//.chunk:nth-child(4) .flex p
+//  max-width 1100px !important
+//  margin auto !important
 
 .chunk:nth-child(4) .flex img
   max-width 200px !important
@@ -258,7 +290,6 @@ p
   justify-content space-between
   margin-left 50px
   margin-right 50px
-  padding-top 20px
   align-items(center)
 
   #social-container
