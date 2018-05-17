@@ -21,7 +21,12 @@
     <% end %>
   </div>
   <div id="about-image">
-    <img id="district-image" src="https://cosmic-s3.imgix.net/e24126d0-5a0f-11e8-8dfe-6d215cddee31-Group%2020.png"/>
+    <div id="district-image-container">
+      <img id="district-image" src="https://cosmic-s3.imgix.net/e24126d0-5a0f-11e8-8dfe-6d215cddee31-Group%2020.png"/>
+    </div>
+    <div id="district-image-subheader">
+      <h2 id="district-image-text">NY-14</h2>
+    </div>
   </div>
 <!--
   <div class="about-flex">

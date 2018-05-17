@@ -1,8 +1,18 @@
-<h1 style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
-<p style="display: inline;">
-  <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-</p>
-
-<a href="/platform" class="more-about" style="color: <%= @highlight_color %>; ">
-  Read My Full Platform Here
-</a>
+<div id="issues-image-container">
+  <img id="district-image" src="https://cosmic-s3.imgix.net/f5192900-5a15-11e8-9ef8-a98ccfb4f39f-SANDY_CUTOUT-03(2).png"/>
+</div>
+<div id="issues-text">
+  <div id="issues-header">
+    <h1 style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
+  </div>
+  <div id="issues-paragraph">
+    <p style="display: inline;">
+      <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+    </p>
+  </div>
+  <div id="issues-platform-link">
+    <a href="/platform" class="more-about" style="color: <%= @highlight_color %>; ">
+      Read My Full Platform Here
+    </a>
+  </div>
+</div>
