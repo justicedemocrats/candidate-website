@@ -1,71 +1,177 @@
+div
+  padding-top 0px
+
+h1
+  font-family Roboto Slab
+  font-weight bold
+  font-size 2em
+  color #3C2D82
+  max-width 1100px
+  margin auto
+
+h2
+  font-family Roboto Slab
+  font-weight bold
+  font-size 1.6em
+  color #3C2D82
+  margin auto
+
+h3
+  font-family Roboto Slab
+  font-weight bold
+  font-size 2em
+  color #ffffff
+  max-width 1100px
+  margin auto
+
+p
+  font-family Proxima Nova
+  font-weight regular
+  font-size 1.05em
+  line-height 1.4
+  letter-spacing .4px
+  max-width 1100px
+  margin auto
+  text-align justify
+
 #hero
   width 100%
-  min-height 550px
-  background-size contain
-  background-position center
-  background-position center
-  background-repeat no-repeat
+  height 547px
   position relative
 
+  #hero-logo
+    background-image url(https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png)
+    background-size contain
+    background-repeat no-repeat
+    max-height 369px
+    height auto
+    width auto
+    opacity 0.7
+    margin auto
+    position absolute
+    right 20%
+
   #hero-signup
-    width 33vw
-    bottom 1%
-    right 10%
+    top 20%
+    right 6.45%
+    color white
     position absolute
     text-align center
-    color white
 
     fieldset
       border none
 
+    #join
+      background-color hsla(0,0%,100%,.1)
+      font-family Proxima Nova
+      font-weight 600
+      max-width 351px
+
+      #join-prompt
+        font-size 28px
+        font-family Roboto Slab, serif
+        font-weight bold
+        text-align center
+        margin-top -10px
+        text-shadow 0 2px 4px 0
+
+      #join-subtitle
+        font-size 14px
+        font-style normal
+        font-weight normal
+        text-align center
+
+      .form-row
+        margin-top 8px
+        margin-bottom 8px
+
+        #join-submit
+          color #FFFFFF
+          font-family Proxima Nova
+          font-size 13px
+          font-weight 600
+          line-height 23px
+          text-align center
+          letter-spacing 1px
+
 .tabs
   padding-left 10%
   padding-right 10%
+  padding-top 5px
+  padding-bottom 5px
+  background-color #f5f5f5
+  vertical-align middle
 
   .tabs-nav
     text-align center
     flexbox(flex)
     justify-content space-between
     flex-wrap wrap
+    margin-bottom 0px !important // Countering stupid CSS
+    line-height 0px !imporant // Countering stupid CSS
 
     .nav-item
-      color black
       text-transform uppercase
-      color #A0A0A0
+      color #3C2D82
       padding 30px 20px
-      font-family Montserrat
+      font-family Proxima Nova
       font-size 17px
       cursor pointer
-      font-weight lighter
+      font-weight bold
+      background none
+      letter-spacing 1px
 
-    .nav-item.logo
+    .logo
       padding 0px
+      height auto
+      float right
+      width 100px
 
     .separator
-      margin-top 15px
-      margin-bottom 15px
-      border-right 1px solid #A0A0A0
+      // margin-top 15px
+      // margin-bottom 15px
+      // border-right 1px solid #A0A0A0
 
 .contribute
-	border 2px solid #7ED321 !important
-	color #7ED321 !important
-	border-radius 103.68px !important
-	background-color rgba(126,211,33,0.1) !important
+  border 0px !important
+  padding-top 13px !important
+  color #ffffff !important
+  border-radius 3px!important
+  height 50px
+  margin-top 7px
+  background-color rgba(80,192,32,0.83) !important
 
-.contribute
-  font-weight bold !important
-
-h1
-  font-family Montserrat
+.volunteer
+  padding-top 13px !important
+  color #ffffff !important
+  border-radius 3px!important
+  height 50px
+  margin-top 7px
+  background-color #3C2D82 !important
+  border 0px !important
 
 .chunk
+  padding 50px 10% !important
   padding-left 10%
   padding-right 10%
-  padding-top 30px
-  padding-bottom 30px
+  // padding-top 30px
+  // padding-bottom 30px
 
 .chunk:nth-child(odd)
   background-color #f5f5f5
+
+.chunk:nth-child(4) .flex
+  justify-content center
+  padding-bottom 50px !important
+
+.chunk:nth-child(4) .flex p
+  max-width 1100px !important
+  margin auto !important
+
+.chunk:nth-child(4) .flex img
+  max-width 200px !important
+  float right
+  margin-left 10%
 
 // .chunk[data-kind="about"],
 // .chunk[data-kind="issues"],
@@ -104,7 +210,7 @@ h1
     width 60%
 
   input[name="zip"]
-    width 35%;
+    width 35%
 
   input[type="submit"]
     width 100%
@@ -128,13 +234,18 @@ h1
       border 1px solid #9B9B9B
       padding 20px
       color #9B9B9B
-      font-family 'Montserrat'
+      font-family Proxima Nova
 
 .more-about
   display inline
-  font-size larger
-  font-family 'Roboto Condensed'
-  text-transform uppercase
+  font-size 1em
+  font-family Roboto Slab
+  font-weight bold
+  color #3C2D82
+  margin-top 10px
+  text-decoration underline
+  text-underline-position under
+  text-transform unset
 
 .mobile
   #button-layer
@@ -197,7 +308,7 @@ h1
 #name
   font-size 46px
   text-transform uppercase
-  font-family 'Montserrat'
+  font-family Proxima Nova
   font-weight 900
   flexbox(flex)
   flex-direction(column)
@@ -218,27 +329,6 @@ h1
   #separator
     margin-top 3px
     margin-bottom 3px
-
-#join
-  margin-top 20px
-  background-color rgba(255, 255, 255, .1)
-  font-family 'Montserrat'
-
-  #join-prompt
-    text-align center
-    text-transform capitalize
-    font-size larger
-    font-family 'Montserrat'
-
-  #join-subtitle
-    font-size smaller
-    font-style italic
-    font-family 'Montserrat'
-    text-align center
-
-  .form-row
-    margin-top 5px
-    margin-bottom 5px
 
 .flex
   flexbox(flex)

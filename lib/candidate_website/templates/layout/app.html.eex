@@ -34,16 +34,17 @@
     <title><%= title %></title>
 
     <%= {:safe, css_link_tag() } %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
   </head>
 
   <body>
+    <!--
     <%= if @data[:global_css] != nil do %>
       <style>
         <%= raw(assigns[:global_css]) %>
       </style>
     <% end %>
-
+  -->
     <%= if @mobile do %>
       <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
     <% end %>
