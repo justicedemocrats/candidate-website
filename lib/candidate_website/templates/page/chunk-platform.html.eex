@@ -1,6 +1,8 @@
 <h1 name="issues" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
 <div class="planks-container">
-  <%= for issue <- @issues do %>
+  <% limit = if @mobile, do: 3, else: 6 %>
+
+  <%= for issue <- Enum.slice(@issues, 0, limit) do %>
     <div class="plank-container">
       <div class="plank-header-container" style="background-color: <%= @primary_color %>;">
         <%= if assigns[:hide_lets] != "True" do %>

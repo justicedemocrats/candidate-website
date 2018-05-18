@@ -45,7 +45,7 @@ defmodule CandidateWebsite.EventCache do
     Stash.set(:event_cache, event["id"], event)
   end
 
-  defp events_for_calendar(selected_calendar, events) do
+  def events_for_calendar(selected_calendar, events) do
     Enum.filter(events, fn ~m(tags) ->
       Enum.member?(tags, selected_calendar)
     end)

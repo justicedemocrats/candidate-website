@@ -12,7 +12,8 @@ defmodule CandidateWebsite.Application do
       supervisor(CandidateWebsite.Endpoint, []),
       worker(Ak.List, []),
       worker(Ak.Signup, []),
-      worker(Ak.Petition, [])
+      worker(Ak.Petition, []),
+      worker(CandidateWebsite.Scheduler, [])
     ]
 
     opts = [strategy: :one_for_one, name: CandidateWebsite.Supervisor]
