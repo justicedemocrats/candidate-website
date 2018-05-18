@@ -289,7 +289,7 @@ p
     background-size cover
     width 100%
 
-// Donate //
+// Donate Chunk //
 
 #chunk-donate
   flexbox(flex)
@@ -356,6 +356,78 @@ p
       box-shadow inset 1px 1px 1px 0 rgba(0,0,0,0.5)
       padding 10px 0px 10px 0px
       margin-right 12px
+
+// Platform //
+
+#chunk-platform
+  flexbox(flex)
+  flex-direction column
+  align-items center
+  justify-content center
+  background-color #EDEDED;
+
+  #platform-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+
+    #platform-header-text
+      font-size 4em
+
+  #planks-container
+    flexbox(flex)
+    justify-content center
+    flex-wrap wrap
+
+    .plank-container
+      flexbox(flex)
+      flex-direction(column)
+      width 384px
+      flexbox(flex)
+      justify-content space-between
+      align-items(center)
+      text-align center
+      background-color #FFFFFF
+      margin 0.75em
+      padding 1.5em
+
+      .plank-header
+        // Spacing
+
+        .plank-header-text
+          font-size 36px
+          font-family Roboto Slab
+          text-align center
+          font-weight bold
+          color #3C2D82
+
+      .plank-intro-container
+        margin 2em 0 0 0
+
+        .plank-intro
+        align-self flex-start
+
+          .plank-intro-text
+            font-size 18px
+
+            h2
+              display none
+
+        .plank-cta-container
+          align-self flex-end
+
+          .plank-cta
+            color: #3C2D82;
+            font-family Proxima Nova
+            font-size 14px
+            font-weight bold
+            text-transform uppercase
+
+  #planks-button-container
+    // Spacing
+
+    #planks-cta-button
+      background-color #3C2D82
+      box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
 
 .chunk[data-kind="quote"]
   padding 0px
