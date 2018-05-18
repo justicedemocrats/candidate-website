@@ -26,7 +26,6 @@
       <a href="<%= @facebook %>">
         <%= render "facebook.html", [color: assigns[:highlight_color]] %>
       </a>
-
       <a href="<%= @twitter %>">
         <%= render "twitter.html", [color: assigns[:highlight_color]] %>
       </a>

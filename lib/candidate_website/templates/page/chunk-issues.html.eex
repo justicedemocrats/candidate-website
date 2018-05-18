@@ -1,5 +1,7 @@
 <div id="issues-image-container">
-  <img id="district-image" src="https://cosmic-s3.imgix.net/f5192900-5a15-11e8-9ef8-a98ccfb4f39f-SANDY_CUTOUT-03(2).png"/>
+  <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/>
+</div>
+<div id="issues-separator">
 </div>
 <div id="issues-text">
   <div id="issues-header">
@@ -11,7 +13,7 @@
     </p>
   </div>
   <div id="issues-platform-link">
-    <a href="/platform" class="more-about" style="color: <%= @highlight_color %>; ">
+    <a href="/platform" id="issues-platform-link-button" class="more-about button" style="background-color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>; color: #FFFFFF;">
       Read My Full Platform Here
     </a>
   </div>
