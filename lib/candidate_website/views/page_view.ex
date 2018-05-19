@@ -7,10 +7,11 @@ defmodule CandidateWebsite.PageView do
   def twitter_share, do: "/images/twitter.svg"
 
   def congress_or_senate(district),
-    do: district
-        |> String.split("-")
-        |> List.last()
-        |> congress_or_senate_from_bit()
+    do:
+      district
+      |> String.split("-")
+      |> List.last()
+      |> congress_or_senate_from_bit()
 
   def congress_or_senate_from_bit("SN"), do: "Senate"
   def congress_or_senate_from_bit(_), do: "Congress"
@@ -47,5 +48,17 @@ defmodule CandidateWebsite.PageView do
         true -> "#{num}st district of #{@states[abbrev]}"
       end
     end
+  end
+
+  def process_vol_options(opts) do
+    opts
+    |> String.split("\n")
+    |> Enum.map(&String.trim/1)
+    |> Enum.map(fn opt ->
+      %{
+        label: opt,
+        name: opt |> String.downcase() |> String.replace(" ", "_")
+      }
+    end)
   end
 end

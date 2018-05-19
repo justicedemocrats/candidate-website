@@ -46,12 +46,16 @@
           <img src="<%= issue.icon[~s(imgix_url)] %>"/>
         </div>
         <div class="section">
+        <%= if issue.full != nil do %>
           <%= raw(issue.full) %>
+        <% else %>
+          <%= raw(issue.intro) %>
+        <% end %>
         </div>
       </div>
     <% end %>
   </div>
-
+          
   <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
     <%= render "volunteer-form.html", assigns %>
   </div>
