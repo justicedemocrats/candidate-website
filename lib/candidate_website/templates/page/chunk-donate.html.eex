@@ -1,45 +1,42 @@
-<div id="donate">
-  <h1 style="color: <%=@primary_color %>"> Donate to My Campaign </h1>
+<div id="donate-header">
+  <h1 id="donate-header-text" style="color: <%=@primary_color %>">Donate to My Campaign</h1>
+</div>
 
-  <%= if not @mobile do %>
-    <div id="circles-container">
-      <%= for amount <- [9, 19, 29, 49] do %>
-        <a style="background-color: <%= @primary_color %>" class="circle" href="<%= @donate_url <> "?amount=#{amount}"%>">
-          <span class="amount"><%= amount %></span>
-          <span class="dollars">dollars</span>
-        </a>
-      <% end %>
+<!-- <%= if not @mobile do %> -->
+
+<div id="circles-container">
+  <%= for amount <- [9, 19, 29, 49] do %>
+    <div id="circle-<%= amount %>">
+      <a class="circle" href="<%= @donate_url <> "?amount=#{amount}"%>">
+        <span class="amount">$<%= amount %></span>
+        <!-- <span class="dollars">dollars</span> -->
+      </a>
     </div>
   <% end %>
-  <div class="custom-donation-container">
-    <% if not @mobile do %>
-      <div class="full-center"
-        style="background-color: <%= @primary_color %>; color: white;
-          width: 400px; margin-right: 30px; font-family: 'Montserrat';">
-        <strong style="margin-right: 10px;">OR</strong> <span> Make A Custom Contribution</span>
-      </div>
-    <% end %>
-    <input id="custom-contribution" type="number" placeholder="27" style="width: 60px; margin-right: 10px;"/>
-    <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button"> Contribute </a>
-  </div>
-
-  <style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
-  </style>
-
-  <script>
-    const el = document.querySelector('#custom-contribution');
-    const go = document.querySelector('#custom-contribution-go');
-
-    el.addEventListener('input', function (ev) {
-      const amount = ev.target.value
-      go.setAttribute('href', '<%= @donate_url %>?amount=' + amount)
-    })
-
-  </script>
 </div>
+
+<!-- <% end %> -->
+<div id="custom-donation-container" class="custom-donation-container">
+    <input id="custom-contribution" type="number" placeholder="$27.00"/>
+    <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button">Contribute</a>
+</div>
+
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+</style>
+
+<script>
+  const el = document.querySelector('#custom-contribution');
+  const go = document.querySelector('#custom-contribution-go');
+
+  el.addEventListener('input', function (ev) {
+    const amount = ev.target.value
+    go.setAttribute('href', '<%= @donate_url %>?amount=' + amount)
+  })
+
+</script>

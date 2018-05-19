@@ -26,9 +26,10 @@ config :candidate_website,
     "staging.ocasio2018.com" => "alexandria-ocasio-cortez"
   }
 
-jobs = [
-  {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
-]
+config :candidate_website, CandidateWebsite.Scheduler,
+  jobs: [
+    {"*/2 * * * *", {CandidateWebsite.EventCache, :update, []}}
+  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

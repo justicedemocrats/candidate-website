@@ -1,24 +1,34 @@
-<h1 name="issues" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
-<div class="planks-container">
-  <%= for issue <- @issues do %>
+<div id="platform-header">
+  <h1 id="platform-header-text" name="platform-header-text" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
+</div>
+
+<div id="planks-container" class="planks-container">
+  <% limit = if @mobile, do: 3, else: 6 %>
+  <%= for issue <- Enum.slice(@issues, 0, limit) do %>
     <div class="plank-container">
-      <div class="plank-header-container" style="background-color: <%= @primary_color %>;">
-        <%= if assigns[:hide_lets] != "True" do %>
-          <div class="lets"> Let's </div>
-        <% end %>
-        <div class="plank-header">
+      <div class="plank-header">
+        <h2 class="plank-header-text">
           <%= issue.header %>
-        </div>
-        <a class="button" href="/issues" style="background-color: <%= @highlight_color %>;"> More </a>
+        </h2>
       </div>
-      <div class="plank-intro">
-        <p style="display: inline;">
-          <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-        </p>
-        <a class="more-about" style="color: <%= @highlight_color %>;" href="/issues">
-          Read More
+      <div class="plank-intro-container">
+        <div class="plank-intro">
+          <p class="plank-intro-text" style="display: inline;">
+            <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+          </p>
+        </div>
+      </div>
+      <div class="plank-cta-container">
+        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
+          More on This
         </a>
       </div>
     </div>
   <% end %>
+</div>
+
+<div id="planks-button-container">
+  <button id="planks-cta-button" class="button planks-cta-button">
+    Read My Full Platform
+  </button>
 </div>
