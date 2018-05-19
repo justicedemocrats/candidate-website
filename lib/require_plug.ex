@@ -16,6 +16,8 @@ defmodule CandidateWebsite.RequirePlug do
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
+    action_network_api_key google_tag_manager_id google_optimize_id volunteer_options
+    master privacy_policy join_button_color state_logo
   )
 
   @about_attrs ~w(
@@ -28,7 +30,8 @@ defmodule CandidateWebsite.RequirePlug do
   def call(conn, _opts) do
     params = conn |> fetch_query_params() |> Map.get(:params)
     global_opts = GlobalOpts.get(conn, params)
-    candidate = Keyword.get(global_opts, :candidate)
+    # candidate = Keyword.get(global_opts, :candidate)
+    candidate = "alexandria-ocasio-cortez-staging"
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
@@ -101,13 +104,6 @@ defmodule CandidateWebsite.RequirePlug do
         Map.put(acc, String.to_atom(key), metadata[key])
       end)
 
-    # Global css
-    global_css =
-      case Cosmic.get("global-css", candidate) do
-        %{"metadata" => ~m(global_css)} -> global_css
-        _ -> ""
-      end
-
     # Add required attrs
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
@@ -120,7 +116,6 @@ defmodule CandidateWebsite.RequirePlug do
           other_data
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
-          |> Map.merge(~m(global_css)a)
 
         conn
         |> Plug.Conn.assign(:data, data)

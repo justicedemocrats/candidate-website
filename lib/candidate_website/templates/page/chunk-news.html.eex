@@ -1,4 +1,4 @@
-<div class="news-container">
+<div class="news-container" id="news">
   <div class="banner-header" style="background-color: <%= @primary_color %>;">
     <h1 style="color: white;"> News </h1>
   </div>
@@ -40,4 +40,3 @@
   <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-
