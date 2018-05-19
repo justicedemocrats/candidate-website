@@ -5,7 +5,7 @@
 <!-- <%= if not @mobile do %> -->
 
 <div id="circles-container">
-  <%= for amount <- [9, 19, 29, 49] do %>
+  <%= for amount <- [5, 14, 27, 50] do %>
     <div id="circle-<%= amount %>">
       <a class="circle" href="<%= @donate_url <> "?amount=#{amount}"%>">
         <span class="amount">$<%= amount %></span>
