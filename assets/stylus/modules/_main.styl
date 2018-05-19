@@ -357,7 +357,7 @@ p
       padding 10px 0px 10px 0px
       margin-right 12px
 
-// Platform //
+// Platform Chunk //
 
 #chunk-platform
   flexbox(flex)
@@ -395,7 +395,7 @@ p
       .plank-header
         text-align center
         width 100%
-        min-height 118px
+        min-height 6em
 
         .plank-header-text
           font-size 36px
@@ -442,9 +442,44 @@ p
       font-weight 600
       line-height 18px
       text-align center
-      vertical-align middle
       &:hover
         background-color rgb(140, 116, 255)
+
+// Volunteer Chunk //
+
+#chunk-volunteer
+  flexbox(flex)
+  background-color #FFFFFF // Delete
+  flex-direction column
+  margin 4em 0em 5em 0em
+
+  #volunteer-header
+    flexbox(flex)
+    background-color #ffffff
+    align-items center
+    justify-content center
+    margin 0em 0em 5em 0em
+
+    #volunteer-header-text
+      color #3C2D82
+      font-family Roboto Slab
+      font-size 64px
+      font-weight bold
+      line-height 76px
+      text-align center
+
+  #volunteer-form-container
+    // No flexbox here
+    background-color rgb(60, 45, 130)
+
+    #volunteer-form-overlay-container
+      margin 3em 3.5em 3em 3.5em
+      flexbox(flex)
+      justify-content center
+      // align-items center
+
+      #volunteer-form
+        // Stuff
 
 .chunk[data-kind="quote"]
   padding 0px
