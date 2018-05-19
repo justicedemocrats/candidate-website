@@ -369,6 +369,7 @@ p
   #platform-header
     flexbox(flex)
     margin 4em 0em 4em 0em
+    width 100%
 
     #platform-header-text
       font-size 4em
@@ -379,19 +380,22 @@ p
     flex-wrap wrap
 
     .plank-container
+      flex-grow 1
       flexbox(flex)
       flex-direction(column)
-      width 384px
-      flexbox(flex)
       justify-content space-between
-      align-items(center)
       text-align center
       background-color #FFFFFF
       margin 0.75em
-      padding 1.5em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
 
       .plank-header
-        // Spacing
+        text-align center
+        width 100%
+        min-height 118px
 
         .plank-header-text
           font-size 36px
@@ -401,10 +405,11 @@ p
           color #3C2D82
 
       .plank-intro-container
-        margin 2em 0 0 0
+        width 100%
+        align-self flex-start
 
         .plank-intro
-        align-self flex-start
+          align-self flex-start
 
           .plank-intro-text
             font-size 18px
@@ -412,22 +417,34 @@ p
             h2
               display none
 
-        .plank-cta-container
-          align-self flex-end
+      .plank-cta-container
+        margin-top 1em
 
-          .plank-cta
-            color: #3C2D82;
-            font-family Proxima Nova
-            font-size 14px
-            font-weight bold
-            text-transform uppercase
+        .plank-cta
+          color: #3C2D82;
+          font-family Proxima Nova
+          font-size 14px
+          font-weight bold
+          text-transform uppercase
+          margin-bottom 0.5em
+          border-bottom 2px solid #3C2D82
 
   #planks-button-container
-    // Spacing
+    padding 4em 0 5em 0
 
     #planks-cta-button
       background-color #3C2D82
-      box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family Proxima Nova
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
 
 .chunk[data-kind="quote"]
   padding 0px

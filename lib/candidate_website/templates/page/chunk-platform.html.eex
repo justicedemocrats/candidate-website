@@ -17,11 +17,11 @@
             <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
           </p>
         </div>
-        <div class="plank-cta-container">
-          <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
-            More on This
-          </a>
-        </div>
+      </div>
+      <div class="plank-cta-container">
+        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
+          More on This
+        </a>
       </div>
     </div>
   <% end %>
