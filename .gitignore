@@ -32,5 +32,3 @@ event_cache
 .elixir_ls
 .env
 .DS_Store
-assets/package-lock.json
-assets/package-lock.json
