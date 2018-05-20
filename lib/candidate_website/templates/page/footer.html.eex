@@ -1,21 +1,27 @@
+<%= render "nav-bar.html", assigns %>
+
 <div id="footer">
 
-  <%= render "nav-bar.html", assigns %>
-  <div id="footer-container">
+  <div id="paid-for-container">
     <div id="paid-for">
-      <%=@paid_for%>
+      <%= @paid_for %>
     </div>
-    <!-- Privacy Policy Link -->
-    <%= if assigns[:privacy_policy] != nil do %>
-    <div id="privacy">
-      <a href="<%= @privacy_policy %>">Privacy Policy</a>
+  </div>
+
+  <!-- Privacy Policy Link -->
+  <%= if assigns[:privacy_policy] != nil do %>
+    <div id="privacy-policy-container">
+      <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
     </div>
-    <% end %>
-      <div id="email-us">
-        <div>General Contact: <a href="mailto:<%= @general_email%>"> <%= @general_email %> </a>
-        </div>
-        <div>Press Contact: <a href="mailto:<%= @press_email%>"> <%= @press_email %> </a>
-        </div>
-      </div>
+  <% end %>
+
+  <div id="email-us">
+    <div class="email-general">
+      <strong>General contact: </strong><a href="mailto:<%= @general_email%>"><%= @general_email %> </a>
     </div>
+    <div class="email-press">
+      <strong>Press contact: </strong><a href="mailto:<%= @press_email%>"><%= @press_email %> </a>
+    </div>
+  </div>
+
 </div>

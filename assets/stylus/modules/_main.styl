@@ -99,7 +99,7 @@ p
   flexbox(flex)
   justify-content(center)
   align-items(center)
-  flex-wrap nowrap
+  flex-wrap(nowrap)
   padding-left 10%
   // padding-right 10%
 
@@ -113,8 +113,8 @@ p
 
   .tabs-nav
     flexbox(flex)
-    justify-content space-between
-    flex-wrap nowrap
+    justify-content(space-between)
+    flex-wrap(nowrap)
     line-height 0px !imporant // Countering stupid CSS
     margin-bottom 0px // Countering stupid CSS
 
@@ -208,7 +208,7 @@ p
 
   #issues-text
     flexbox(flex)
-    flex-direction column
+    flex-direction(column)
     width 40%
 
     #issues-header
@@ -229,8 +229,8 @@ p
 #chunk-why-shortened
   flexbox(flex)
   background-color #ffffff
-  align-items center
-  justify-content center
+  align-items(center)
+  justify-content(center)
   margin 4em 0em 5em 0em
 
   #shortened-support-header
@@ -246,12 +246,12 @@ p
 #chunk-why
   background-color #3C2D82
   flexbox(flex)
-  flex-direction row
+  flex-direction(row)
   padding 0
 
   #why-support-text
     flexbox(flex)
-    flex-direction column
+    flex-direction(column)
     padding 4em 0em 4em 10%
     margin 0em 5em 0em 0em
 
@@ -294,8 +294,8 @@ p
 #chunk-donate
   flexbox(flex)
   flex-direction(column)
-  align-items center
-  justify-content center
+  align-items(center)
+  justify-content(center)
   background-color #EDEDED;
   margin 2.5em 2.5em 2.5em 2.5em
   padding 4em 0em 4em 0em
@@ -315,7 +315,7 @@ p
 
     .circle
       flexbox(flex)
-      justify-content center
+      justify-content(center)
       flex-direction(column)
       height 155px
       width 155px
@@ -361,9 +361,9 @@ p
 
 #chunk-platform
   flexbox(flex)
-  flex-direction column
-  align-items center
-  justify-content center
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
   background-color #EDEDED;
 
   #platform-header
@@ -376,14 +376,14 @@ p
 
   #planks-container
     flexbox(flex)
-    justify-content center
-    flex-wrap wrap
+    justify-content(center)
+    flex-wrap(wrap)
 
     .plank-container
       flex-grow 1
       flexbox(flex)
       flex-direction(column)
-      justify-content space-between
+      justify-content(space-between)
       text-align center
       background-color #FFFFFF
       margin 0.75em
@@ -395,7 +395,7 @@ p
       .plank-header
         text-align center
         width 100%
-        min-height 118px
+        min-height 6em
 
         .plank-header-text
           font-size 36px
@@ -406,10 +406,10 @@ p
 
       .plank-intro-container
         width 100%
-        align-self flex-start
+        align-self(flex-start)
 
         .plank-intro
-          align-self flex-start
+          align-self(flex-start)
 
           .plank-intro-text
             font-size 18px
@@ -446,6 +446,142 @@ p
       &:hover
         background-color rgb(140, 116, 255)
 
+// Mews Chunk //
+
+#chunk-news
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+
+  #news-cta
+    padding 4em 0 5em 0
+
+    #news-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family Proxima Nova
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
+
+  #news-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #news-header-text
+      font-size 4em
+
+  #news-articles-container
+    flexbox(flex)
+    justify-content(center)
+    flex-wrap(wrap)
+
+    .article-container
+      // flex-grow(1)
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .article-thumbnail
+        max-width 100%
+        height 100px
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+
+      .headline
+        margin 1em 0 1em 0
+
+        h2
+          color #3C2D82
+          font-size 36px !important
+          font-family Roboto Slab
+          font-weight bold
+          text-align left
+          line-height 36px !important // potentially redundant
+
+      .description
+        // padding
+
+        p
+          font-size 1em
+
+// Endorsements Chunk //
+
+#chunk-endorsements
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED
+
+  #endorsement-header-container
+    flexbox(flex)
+    margin 5em 0em 5em 0em
+    width 100%
+
+    #endorsement-header-text
+      font-size 4em
+
+  #endorsement-container
+    flexbox(flex)
+    justify-content(center)
+    align-items(center)
+    flex-direction(row)
+
+    .endorsement-logo-container
+      flexbox(flex)
+      align-items(center)
+      margin 1.5em
+
+      .endorsement-logo-link
+        // Filler
+
+        .endorsement-logo-image
+          filter gray
+          -webkit-filter grayscale(1)
+          filter grayscale(1)
+          // max-height 8em
+          width auto
+          max-height 5em
+
+
+  #endorsement-button-container
+    padding 4em 0 5em 0
+
+    #endorsement-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family Proxima Nova
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      text-transform uppercase
+      &:hover
+        background-color rgb(140, 116, 255)
+
+
+
+
 .chunk[data-kind="quote"]
   padding 0px
 
@@ -456,7 +592,7 @@ p
 
 .same-row
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
 
 
   input[name="name"], input[name="email"]
@@ -471,59 +607,41 @@ p
   input[type="submit"]
     width 100%
 
-// Footer //
+// Footer BLock
 
 #footer
+  flexbox(flex)
+  flex-direction(row)
+  align-items(center)
+  justify-content(space-between)
   background-color #3C2D82
-  padding 0px
-  padding-top 0px
+  font-size 16px
+  line-height 16px
+  padding 50px 10% !important
 
-  .nav-item
-    background-color transparent
+  a
+    color #ffffff !important
 
-  #footer-container
-    width 100%
-    flexbox(flex)
-    justify-content center
-    align-items(center)
-    height 60px
-    padding 95px
-
+  #paid-for-container
     #paid-for
+      flex(1)
       border 1px solid #FFFFFF
-      padding 15px 10px
-      text-align: center
-      max-width: 440px
+      padding 20px 10px
+      text-align center
+      max-width 440px
       color #FFFFFF
       font-family Proxima Nova
-      flex 1
-      -webkit-flex 1
-      -ms-flex 1
 
-    #email-us
-      padding 0px 20px
-      color #FFFFFF
-      font-family Proxima Nova
-      text-align: center
-      flex 1
-      -webkit-flex 1
-      -ms-flex 1
-      a
-        font-weight: bold
-        color #FFFFFF
+  #privacy-policy-container
+    flexbox(flex)
+    align-items(center)
+    justify-content(center)
 
-    #privacy
-      padding 0px 20px
-      color #FFFFFF
-      font-family Proxima Nova
-      text-align: center
-      flex 1
-      -webkit-flex 1
-      -ms-flex 1
-
-      a
-        font-weight: bold
-        color #FFFFFF
+  #email-us
+    flexbox(flex)
+    flex-direction(column)
+    align-items(left)
+    color #FFFFFF
 
 .more-about
   display inline
@@ -544,14 +662,14 @@ p
 
 #button-layer
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
   margin-left 50px
   margin-right 50px
   align-items(center)
 
   #social-container
     flexbox(flex)
-    justify-content space-between
+    justify-content(space-between)
     width 100px
     align-items(center)
 
