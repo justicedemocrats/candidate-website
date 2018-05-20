@@ -38,11 +38,9 @@ defmodule CandidateWebsite.RequirePlug do
     endorsements =
       try do
         Cosmic.get_type("endorsements", candidate)
-        |> Enum.map(fn %{
-                         "metadata" =>
-                           ~m(organization_name organization_logo endorsement_text endorsement_url)
-                       } ->
-          ~m(organization_name organization_logo endorsement_text endorsement_url)a
+        |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)} ->
+          organization_slug = organization_name |> String.downcase() |> String.replace(~r/\s+/, "_")
+          ~m(organization_name organization_slug organization_logo endorsement_text endorsement_url)a
         end)
       rescue
         _e -> []
