@@ -607,32 +607,41 @@ p
   input[type="submit"]
     width 100%
 
+// Footer BLock
+
 #footer
   flexbox(flex)
-  background-color #3C2D82
-  padding 50px 10% !important
-  color #ffffff
-  font-size 18px
-  font-weight bold
-  line-height 22px
+  flex-direction(row)
+  align-items(center)
   justify-content(space-between)
+  background-color #3C2D82
+  font-size 16px
+  line-height 16px
+  padding 50px 10% !important
 
   a
     color #ffffff !important
 
-  .nav-item
-    background-color transparent
-
   #paid-for-container
     #paid-for
-      border 1px solid #ffffff
-      padding 20px !important
-      color #ffffff
+      flex(1)
+      border 1px solid #FFFFFF
+      padding 20px 10px
+      text-align center
+      max-width 440px
+      color #FFFFFF
       font-family Proxima Nova
 
-.email-general
-.email-press
-  padding 20px 0 !important
+  #privacy-policy-container
+    flexbox(flex)
+    align-items(center)
+    justify-content(center)
+
+  #email-us
+    flexbox(flex)
+    flex-direction(column)
+    align-items(left)
+    color #FFFFFF
 
 .more-about
   display inline
@@ -749,4 +758,3 @@ p
   flex-direction(column)
   justify-content(center)
   align-items(center)
-  
