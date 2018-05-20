@@ -113,7 +113,7 @@ p
 
   .tabs-nav
     flexbox(flex)
-    justify-content space-between
+    justify-content(space-between)
     flex-wrap nowrap
     line-height 0px !imporant // Countering stupid CSS
     margin-bottom 0px // Countering stupid CSS
@@ -229,7 +229,7 @@ p
 #chunk-why-shortened
   flexbox(flex)
   background-color #ffffff
-  align-items center
+  align-items(center)
   justify-content center
   margin 4em 0em 5em 0em
 
@@ -294,7 +294,7 @@ p
 #chunk-donate
   flexbox(flex)
   flex-direction(column)
-  align-items center
+  align-items(center)
   justify-content center
   background-color #EDEDED;
   margin 2.5em 2.5em 2.5em 2.5em
@@ -362,7 +362,7 @@ p
 #chunk-platform
   flexbox(flex)
   flex-direction column
-  align-items center
+  align-items(center)
   justify-content center
   background-color #EDEDED;
 
@@ -383,7 +383,7 @@ p
       flex-grow 1
       flexbox(flex)
       flex-direction(column)
-      justify-content space-between
+      justify-content(space-between)
       text-align center
       background-color #FFFFFF
       margin 0.75em
@@ -395,7 +395,7 @@ p
       .plank-header
         text-align center
         width 100%
-        min-height 118px
+        min-height 6em
 
         .plank-header-text
           font-size 36px
@@ -446,6 +446,82 @@ p
       &:hover
         background-color rgb(140, 116, 255)
 
+// Mews Chunk //
+
+#chunk-news
+  flexbox(flex)
+  flex-direction column
+  align-items(center)
+  justify-content center
+  background-color #EDEDED;
+
+  #news-cta
+    padding 4em 0 5em 0
+
+    #news-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family Proxima Nova
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
+
+  #news-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #news-header-text
+      font-size 4em
+
+  #news-articles-container
+    flexbox(flex)
+    justify-content center
+    flex-wrap wrap
+
+    .article-container
+      flex-grow 1
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .article-thumbnail
+        max-width 100%
+        height 100px
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+
+      .headline
+        margin 1em 0 1em 0
+
+        h2
+        	color #3C2D82
+          font-size 36px !important
+        	font-family Roboto Slab
+          font-weight bold
+          text-align left
+          line-height 36px !important // potentially redundant
+
+      .description
+        // padding
+
+        p
+          font-size 1em
+
+
 .chunk[data-kind="quote"]
   padding 0px
 
@@ -456,7 +532,7 @@ p
 
 .same-row
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
 
 
   input[name="name"], input[name="email"]
@@ -511,14 +587,14 @@ p
 
 #button-layer
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
   margin-left 50px
   margin-right 50px
   align-items(center)
 
   #social-container
     flexbox(flex)
-    justify-content space-between
+    justify-content(space-between)
     width 100px
     align-items(center)
 
