@@ -17,10 +17,10 @@
 
   <div id="email-us">
     <div class="email-general">
-      <strong>General contact: </strong><a href="mailto:<%= @general_email%>"><%= @general_email %> </a>
+      General Contact:<a href="mailto:<%= @general_email%>"><strong><%= @general_email %></strong></a>
     </div>
     <div class="email-press">
-      <strong>Press contact: </strong><a href="mailto:<%= @press_email%>"><%= @press_email %> </a>
+      Press Contact:<a href="mailto:<%= @press_email%>"><strong><%= @press_email %></strong></a>
     </div>
   </div>
 
