@@ -1,6 +1,9 @@
+<%= if not @mobile do %>
 <div id="issues-image-container">
   <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/>
 </div>
+<% end %>
+
 <div id="issues-separator">
 </div>
 <div id="issues-text">
@@ -12,9 +15,10 @@
       <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
     </p>
   </div>
-  <div id="issues-platform-link">
-    <a href="/platform" id="issues-platform-link-button" class="more-about button" style="background-color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>; color: #FFFFFF;">
-      Read My Full Platform Here
-    </a>
+
+  <div id="issues-button-container">
+    <button id="issues-cta-button" class="button issues-cta-button">
+      Read My Full Platform
+      </button>
   </div>
 </div>
