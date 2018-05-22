@@ -1,19 +1,24 @@
+// Global Variables
+primary_font_name = Roboto Slab
+secondary_font_name = Metropolis
+
+
  @font-face
-   font-family Metropolis
+   font-family secondary_font_name
    font-weight 400
    font-style normal
    src url('../fonts/Metropolis-Regular.eot')
    src url('../fonts/Metropolis-Regular.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-Regular.woff') format('woff'), url('../fonts/Metropolis-Regular.ttf') format('truetype'), url('../fonts/Metropolis-Regular.woff2') format('woff2')
 
  @font-face
-   font-family Metropolis
+   font-family secondary_font_name
    font-weight 600
    font-style normal
    src url('../fonts/Metropolis-SemiBold.eot')
    src url('../fonts/Metropolis-SemiBold.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-SemiBold.woff') format('woff'), url('../fonts/Metropolis-SemiBold.ttf') format('truetype'), url('../fonts/Metropolis-SemiBold.woff2') format('woff2')
 
  @font-face
-   font-family Metropolis
+   font-family secondary_font_name
    font-weight 700
    font-style normal
    src url('../fonts/Metropolis-Bold.eot')
@@ -26,21 +31,21 @@ div
   padding-top 0px
 
 h1
-  font-family Roboto Slab
+  font-family primary_font_name
   font-weight bold
   font-size 40px
   color #3C2D82
   margin auto
 
 h2
-  font-family Roboto Slab
+  font-family primary_font_name
   font-weight bold
   font-size 1.6em
   color #3C2D82
   margin auto
 
 h3
-  font-family Roboto Slab
+  font-family primary_font_name
   font-weight bold
   font-size 2em
   color #ffffff
@@ -48,7 +53,7 @@ h3
   margin auto
 
 p
-  font-family Metropolis
+  font-family secondary_font_name
   font-weight regular
   font-size 20px
   line-height 1.4
@@ -86,13 +91,13 @@ p
 
     #join
       background-color hsla(0,0%,100%,.1)
-      font-family Metropolis
+      font-family secondary_font_name
       font-weight 600
       max-width 351px
 
       #join-prompt
         font-size 28px
-        font-family Roboto Slab, serif
+        font-family primary_font_name, serif
         font-weight bold
         text-align center
         margin-top -10px
@@ -110,7 +115,7 @@ p
 
         #join-submit
           color #FFFFFF
-          font-family Metropolis
+          font-family secondary_font_name
           font-size 13px
           font-weight 600
           line-height 23px
@@ -146,7 +151,7 @@ p
       text-transform uppercase
       color #3C2D82
       padding 1rem 1rem !important // Countering stupid CSS
-      font-family Metropolis
+      font-family secondary_font_name
       font-size 17px
       cursor pointer
       font-weight bold
@@ -239,11 +244,11 @@ p
       margin-bottom 33px
 
     #issues-header
-    	font-family Roboto Slab
+    	font-family primary_font_name
     	line-height 45px
 
     #issues-paragraph
-      font-family Metropolis
+      font-family secondary_font_name
       font-size 20px
       line-height 29px
 
@@ -282,7 +287,7 @@ p
 
   #shortened-support-header
     color #3C2D82
-    font-family Roboto Slab
+    font-family primary_font_name
     font-size 64px
     font-weight bold
     line-height 76px
@@ -321,7 +326,7 @@ p
 
       #why-support-cta
         color #FFFFFF
-        font-family Metropolis
+        font-family secondary_font_name
         font-size 14px
         font-weight bold
         line-height 17px
@@ -446,7 +451,7 @@ p
 
         .plank-header-text
           font-size 36px
-          font-family Roboto Slab
+          font-family primary_font_name
           text-align center
           font-weight bold
           color #3C2D82
@@ -469,7 +474,7 @@ p
 
         .plank-cta
           color: #3C2D82;
-          font-family Metropolis
+          font-family secondary_font_name
           font-size 14px
           font-weight bold
           text-transform uppercase
@@ -484,7 +489,7 @@ p
       // border-radius 3px;
       // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
       padding 1em 2em 2em 2em
-      font-family Metropolis
+      font-family secondary_font_name
       font-size 18px
       font-weight 600
       line-height 18px
@@ -510,7 +515,7 @@ p
       // border-radius 3px;
       // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
       padding 1em 2em 2em 2em
-      font-family Metropolis
+      font-family secondary_font_name
       font-size 18px
       font-weight 600
       line-height 18px
@@ -557,7 +562,7 @@ p
         h2
           color #3C2D82
           font-size 36px !important
-          font-family Roboto Slab
+          font-family primary_font_name
           font-weight bold
           text-align left
           line-height 36px !important // potentially redundant
@@ -635,7 +640,7 @@ p
       // border-radius 3px;
       // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
       padding 1em 2em 2em 2em
-      font-family Metropolis
+      font-family secondary_font_name
       font-size 18px
       font-weight 600
       line-height 18px
@@ -698,7 +703,7 @@ p
       text-align center
       max-width 440px
       color #FFFFFF
-      font-family Metropolis
+      font-family secondary_font_name
 
   #privacy-policy-container
     flexbox(flex)
@@ -715,7 +720,7 @@ p
 .more-about
   display inline
   font-size 1em
-  font-family Roboto Slab
+  font-family primary_font_name
   font-weight bold
   color #3C2D82
   margin-top 10px
@@ -783,7 +788,7 @@ p
 #name
   font-size 46px
   text-transform uppercase
-  font-family Metropolis
+  font-family secondary_font_name
   font-weight 900
   flexbox(flex)
   flex-direction(column)
