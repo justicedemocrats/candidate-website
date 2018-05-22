@@ -15,7 +15,7 @@
     </div>
   <% end %>
 
-  <div id="email-us">
+  <div id="email-us column-center">
     <div class="email-general">
       General Contact: <a href="mailto:<%= @general_email%>"><%= @general_email %></a>
     </div>

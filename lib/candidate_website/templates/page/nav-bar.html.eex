@@ -1,4 +1,5 @@
-<div class="nav">
+<!-- Can't assign ID, nav element is used near footer as well -->
+<div class="nav main-nav-wrapper">
   <a href="/">
     <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
   </a>

@@ -1,0 +1,62 @@
+.main-nav-wrapper
+  height 90px
+
+.tabs
+  padding-left 10%
+  padding-right 10%
+  margin-bottom 0
+
+  .tabs-nav
+    text-align center
+    flexbox(flex)
+    justify-content space-between
+    flex-wrap wrap
+    margin-bottom 20px
+
+    .nav-item
+      color black
+      text-transform uppercase
+      color #A0A0A0
+      padding 20px
+      font-family Montserrat
+      font-size 17px
+      cursor pointer
+      font-weight lighter
+
+    .separator
+      margin-top 15px
+      margin-bottom 15px
+      border-right 1px solid #A0A0A0
+
+
+.main-nav
+    background white
+
+
+// Inline or sticky styles
+
+.nav-hidden .main-nav
+    transition margin-top 0.3s ease-in-out
+    margin-top 0
+    position fixed
+    left 0
+    right 0
+    top 0
+
+.nav-hidden.scrolling-up .main-nav
+    margin-top -130px
+
+// Main page
+#hero + .main-nav-wrapper .main-nav
+  padding-top 20px
+
+
+/* Platform page
+.platform-page
+
+    .main-nav
+        background rgb(87, 37, 125)
+
+    .main-nav-wrapper
+      margin-bottom 20px
+*/
