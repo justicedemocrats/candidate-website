@@ -1,28 +1,19 @@
 <%= if length(@endorsements) > 0 do %>
-  <h1 style="text-align: center; color: <%= @primary_color %>">
-    Who's Endorsing Me?
-  </h1>
-
-  <div class="endorsement-container">
+  <div id="endorsement-header-container">
+    <h1 id="endorsement-header-text">
+      Endorsed By:
+    </h1>
+  </div>
+  <div id="endorsement-container">
     <%= for endorsement <- @endorsements do %>
-      <div class="endorsement" onclick="window.open('<%= endorsement[:endorsement_url] %>')">
-        <div class="logo-container">
-          <img src="<%= URI.encode(endorsement.organization_logo["imgix_url"]) %>" />
-        </div>
-        <span class="organization-name">
-          <a href="<%= endorsement[:endorsement_url] %>"> <%= endorsement.organization_name %> </a>
-        </span>
+      <div id="<%= endorsement.organization_slug %>" class="endorsement-logo-container" onclick="window.open('<%= endorsement[:endorsement_url] %>')">
+        <a class="endorsement-logo-link" href="<%= endorsement[:endorsement_url] %>">
+          <img class="endorsement-logo-image" src="<%= URI.encode(endorsement.organization_logo["imgix_url"]) %>" alt="<%= endorsement.organization_name %>">
+        </a>
       </div>
     <% end %>
   </div>
-
-<a href="/endorsements"
-  class="button"
-  style="color: white; background-color: <%= @highlight_color %>;
-    text-align: center; margin-left: auto; margin-right: auto;
-    margin-top: 50px;
-  " >
-  See All Endorsements
-</a>
-
+  <div id="endorsement-button-container">
+    <button id="endorsement-button">See Full List of Endorsements</button>
+  </div>
 <% end %>

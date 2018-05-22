@@ -1,91 +1,660 @@
+// Global Variables
+primary_font_name = Roboto Slab
+secondary_font_name = Metropolis
+
+
+ @font-face
+   font-family secondary_font_name
+   font-weight 400
+   font-style normal
+   src url('../fonts/Metropolis-Regular.eot')
+   src url('../fonts/Metropolis-Regular.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-Regular.woff') format('woff'), url('../fonts/Metropolis-Regular.ttf') format('truetype'), url('../fonts/Metropolis-Regular.woff2') format('woff2')
+
+ @font-face
+   font-family secondary_font_name
+   font-weight 600
+   font-style normal
+   src url('../fonts/Metropolis-SemiBold.eot')
+   src url('../fonts/Metropolis-SemiBold.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-SemiBold.woff') format('woff'), url('../fonts/Metropolis-SemiBold.ttf') format('truetype'), url('../fonts/Metropolis-SemiBold.woff2') format('woff2')
+
+ @font-face
+   font-family secondary_font_name
+   font-weight 700
+   font-style normal
+   src url('../fonts/Metropolis-Bold.eot')
+   src url('../fonts/Metropolis-Bold.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-Bold.woff') format('woff'), url('../fonts/Metropolis-Bold.ttf') format('truetype'), url('../fonts/Metropolis-Bold.woff2') format('woff2')
+
+ .ingeo
+   font-family Geo
+
+div
+  padding-top 0px
+
+h1
+  font-family primary_font_name
+  font-weight bold
+  font-size 40px
+  color #3C2D82
+  margin auto
+
+h2
+  font-family primary_font_name
+  font-weight bold
+  font-size 1.6em
+  color #3C2D82
+  margin auto
+
+h3
+  font-family primary_font_name
+  font-weight bold
+  font-size 2em
+  color #ffffff
+  max-width 1100px
+  margin auto
+
+p
+  font-family secondary_font_name
+  font-weight regular
+  font-size 20px
+  line-height 1.4
+  letter-spacing .4px
+  margin auto
+  text-align justify
+
 #hero
   width 100%
-  min-height 550px
-  background-size contain
-  background-position center
-  background-position center
-  background-repeat no-repeat
+  height 547px
   position relative
+  background-repeat no-repeat
+
+  #hero-logo
+    background-image url(https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png)
+    background-size contain
+    background-repeat no-repeat
+    max-height 369px
+    height auto
+    width auto
+    opacity 0.7
+    margin auto
+    position absolute
+    right 20%
 
   #hero-signup
-    width 33vw
-    bottom 1%
-    right 10%
+    top 20%
+    right 6.45%
+    color white
     position absolute
     text-align center
-    color white
 
     fieldset
       border none
 
-.tabs
+    #join
+      background-color hsla(0,0%,100%,.1)
+      font-family secondary_font_name
+      font-weight 600
+      max-width 351px
+
+      #join-prompt
+        font-size 28px
+        font-family primary_font_name, serif
+        font-weight bold
+        text-align center
+        margin-top -10px
+        text-shadow 0 2px 4px 0
+
+      #join-subtitle
+        font-size 14px
+        font-style normal
+        font-weight normal
+        text-align center
+
+      .form-row
+        margin-top 8px
+        margin-bottom 8px
+
+        #join-submit
+          color #FFFFFF
+          font-family secondary_font_name
+          font-size 13px
+          font-weight 600
+          line-height 23px
+          text-align center
+          letter-spacing 1px
+
+.nav
+  height 129px
+  background-color #f5f5f5
+  flexbox(flex)
+  justify-content(center)
+  align-items(center)
+  flex-wrap(nowrap)
   padding-left 10%
-  padding-right 10%
+  // padding-right 10%
+
+  .logo
+    max-height 89px
+    max-width 100%
+    margin-right 137px
+
+.tabs
+  margin-bottom 0px !important // Countering stupid CSS
 
   .tabs-nav
-    text-align center
     flexbox(flex)
-    justify-content space-between
-    flex-wrap wrap
+    justify-content(space-between)
+    flex-wrap(nowrap)
+    line-height 0px !imporant // Countering stupid CSS
+    margin-bottom 0px // Countering stupid CSS
 
     .nav-item
-      color black
       text-transform uppercase
-      color #A0A0A0
-      padding 30px 20px
-      font-family Montserrat
+      color #3C2D82
+      padding 1rem 1rem !important // Countering stupid CSS
+      font-family secondary_font_name
       font-size 17px
       cursor pointer
-      font-weight lighter
+      font-weight bold
+      background none
+      letter-spacing 1px
 
-    .nav-item.logo
-      padding 0px
+      .contribute
+        border 0px !important
+        color #ffffff !important
+        border-radius 3px !important
+        height 51px !important
+        background-color rgba(80,192,32,0.83) !important
+
+      .volunteer
+        color #ffffff !important
+        border-radius 3px!important
+        height 51px
+        border 0px !important
 
     .separator
-      margin-top 15px
-      margin-bottom 15px
-      border-right 1px solid #A0A0A0
-
-.contribute
-	border 2px solid #7ED321 !important
-	color #7ED321 !important
-	border-radius 103.68px !important
-	background-color rgba(126,211,33,0.1) !important
-
-.contribute
-  font-weight bold !important
-
-h1
-  font-family Montserrat
+      // margin-top 15px
+      // margin-bottom 15px
+      // border-right 1px solid #A0A0A0
 
 .chunk
   padding-left 10%
   padding-right 10%
-  padding-top 30px
-  padding-bottom 30px
+  // padding-top 30px
+  // padding-bottom 30px
 
-.chunk:nth-child(odd)
-  background-color #f5f5f5
+.contribute
+  color #ffffff !important
+  background-color rgba(80,192,32,0.83) !important
 
-// .chunk[data-kind="about"],
-// .chunk[data-kind="issues"],
-// .chunk[data-kind="why"],
-// .chunk[data-kind="vote"],
-// .chunk[data-kind="volunteer"]
-//   padding-left 50px
-//   padding-right 50px
+.volunteer
+  color #ffffff !important
+  background-color #3C2D82 !important
+
+// About Chunk //
+
+#chunk-about
+  flexbox(flex)
+  margin-top 60px
+  margin-bottom 60px
+
+  #about-text
+    margin-right 4.5rem
+
+    #about-header
+      margin-bottom 1rem
+
+  #about-image
+    margin-left 4.51rem
+
+    #district-image
+      max-height 247px
+      max-width 100%
+      margin-bottom 8px
+
+    #district-image-text
+      margin-top 8px
+      font-size 36px
+      font-weight bold
+      text-align center !important
+
+// Issues Chunk //
+
+#chunk-issues
+  background-color #F8D11C
+  flexbox(flex)
+  padding-top 60px
+
+  #issues-image-container
+    margin-top auto
+    width 50%
+
+    #issues-image
+      margin-bottom auto
+      max-width 115%
+      min-width 100%
+      height auto
+      width auto/9
+
+  #issues-text
+    flexbox(flex)
+    flex-direction(column)
+    width 40%
+
+    h1
+      margin-bottom 33px
+
+    #issues-header
+    	font-family primary_font_name
+    	line-height 45px
+
+    #issues-paragraph
+      font-family secondary_font_name
+      font-size 20px
+      line-height 29px
+
+    #issues-button-container
+      padding 4em 0 5em 0
+      margin 0 auto
+
+      #issues-cta-button
+        background-color: #3c2d82;
+        padding: 1em 2em 2em 2em;
+        font-family: Proxima Nova;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+        vertical-align: middle;
+
+  #issues-separator
+    width 10%
+
+.mobile
+  #chunk-issues
+    #issues-text
+      width auto
+    #issues-separator
+      width 0
+
+// Why Support Shortened //
+
+#chunk-why-shortened
+  flexbox(flex)
+  background-color #ffffff
+  align-items(center)
+  justify-content(center)
+  margin 4em 0em 5em 0em
+
+  #shortened-support-header
+    color #3C2D82
+    font-family primary_font_name
+    font-size 64px
+    font-weight bold
+    line-height 76px
+    text-align center
+
+// Why Support //
+
+#chunk-why
+  background-color #3C2D82
+  flexbox(flex)
+  flex-direction(row)
+  padding 0
+
+  #why-support-text
+    flexbox(flex)
+    flex-direction(column)
+    padding 4em 0em 4em 10%
+    margin 0em 5em 0em 0em
+
+    #why-support-header
+      margin 0em 0em 1em 0em
+
+      #why-support-header-text
+        color #FFFFFF
+        line-height 45px
+
+    #why-support-body
+      margin 1em 0em 1em 0em
+
+      p
+        color #FFFFFF
+        line-height: 29px;
+
+    #why-support-learn-more
+      margin 2em 0em 0em 0em
+
+      #why-support-cta
+        color #FFFFFF
+        font-family secondary_font_name
+        font-size 14px
+        font-weight bold
+        line-height 17px
+        text-transform uppercase
+        text-align center
+
+  #why-support-image
+    // background-image url(https://cosmic-s3.imgix.net/af195580-5a40-11e8-af91-73e918c660c1-alex_on_street.png)
+    background-image url(https://i.imgur.com/MoJ1emX.png)
+    background-repeat no-repeat
+    background-position right
+    background-size cover
+    width 100%
+
+// Donate Chunk //
+
+#chunk-donate
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+  margin 2.5em 2.5em 2.5em 2.5em
+  padding 4em 0em 4em 0em
+
+  #donate-header
+    margin-bottom 2.5em
+
+    #donate-header-text
+      color: #3C2D82;
+      line-height: 45px;
+      text-align center
+
+  #circles-container
+    flexbox(flex)
+    text-align center
+    margin 2.5em 0em 2.5em 0em
+
+    .circle
+      flexbox(flex)
+      justify-content(center)
+      flex-direction(column)
+      height 155px
+      width 155px
+      color white
+      background-color rgba(80,192,32,0.83)
+      font-weight bold
+      border 8px solid white
+      border-radius 50%
+      margin 0px 2.5em 0px 2.5em
+
+      .amount
+        font-size 35px
+
+  #custom-donation-container
+    flexbox(flex)
+    text-align center
+    margin 2.5em .75em .5em .75em !important
+
+    #custom-contribution-go
+      border 0px // Countering stupid CSS
+      height 100%
+      color #ffffff
+      text-transform uppercase
+      font-weight bold
+      font-size 18px
+      background-color rgba(80,192,32,0.83)
+      padding 10px 20px 10px 20px
+      margin-left 12px
+
+    #custom-contribution
+      border 0px // Countering stupid CSS
+      width 101px
+      height 100%
+      text-align center
+      font-weight bold
+      color #9E9E9E
+      background-color #FFFFFF
+      box-shadow inset 1px 1px 1px 0 rgba(0,0,0,0.5)
+      padding 10px 0px 10px 0px
+      margin-right 12px
+
+// Platform //
+
+#chunk-platform
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+
+  #platform-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #platform-header-text
+      font-size 4em
+
+  #planks-container
+    flexbox(flex)
+    justify-content(center)
+    flex-wrap(wrap)
+
+    .plank-container
+      flex-grow 1
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      text-align center
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .plank-header
+        text-align center
+        width 100%
+        min-height 6em
+
+        .plank-header-text
+          font-size 36px
+          font-family primary_font_name
+          text-align center
+          font-weight bold
+          color #3C2D82
+
+      .plank-intro-container
+        width 100%
+        align-self(flex-start)
+
+        .plank-intro
+          align-self(flex-start)
+
+          .plank-intro-text
+            font-size 18px
+
+            h2
+              display none
+
+      .plank-cta-container
+        margin-top 1em
+
+        .plank-cta
+          color: #3C2D82;
+          font-family secondary_font_name
+          font-size 14px
+          font-weight bold
+          text-transform uppercase
+          margin-bottom 0.5em
+          border-bottom 2px solid #3C2D82
+
+  #planks-button-container
+    padding 4em 0 5em 0
+
+    #planks-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
+
+// News Chunk //
+
+#chunk-news
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+
+  #news-cta
+    padding 4em 0 5em 0
+
+    #news-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
+
+  #news-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #news-header-text
+      font-size 4em
+
+  #news-articles-container
+    flexbox(flex)
+    justify-content(center)
+    flex-wrap(wrap)
+
+    .article-container
+      // flex-grow(1)
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .article-thumbnail
+        max-width 100%
+        height 100px
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+
+      .headline
+        margin 1em 0 1em 0
+
+        h2
+          color #3C2D82
+          font-size 36px !important
+          font-family primary_font_name
+          font-weight bold
+          text-align left
+          line-height 36px !important // potentially redundant
+
+      .description
+        // padding
+
+        p
+          font-size 1em
+
+// Twitter Chunk //
+
+#chunk-twitter
+  background-color #FFFFFF;
+  padding-top 75px
+  padding-bottom 75px
+
+  img
+    border-radius 50%
+    display inline-block
+    width 300px
+
+  #twitter-feed
+    display inline-block
+    width 66%
+    margin-left 75px
+
+
+
+// Endorsements Chunk //
+
+#chunk-endorsements
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED
+
+  #endorsement-header-container
+    flexbox(flex)
+    margin 5em 0em 5em 0em
+    width 100%
+
+    #endorsement-header-text
+      font-size 4em
+
+  #endorsement-container
+    flexbox(flex)
+    justify-content(center)
+    align-items(center)
+    flex-direction(row)
+
+    .endorsement-logo-container
+      flexbox(flex)
+      align-items(center)
+      margin 1.5em
+
+      .endorsement-logo-link
+        // Filler
+
+        .endorsement-logo-image
+          filter gray
+          -webkit-filter grayscale(1)
+          filter grayscale(1)
+          // max-height 8em
+          width auto
+          max-height 5em
+
+
+  #endorsement-button-container
+    padding 4em 0 5em 0
+
+    #endorsement-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      text-transform uppercase
+      &:hover
+        background-color rgb(140, 116, 255)
+
+
+
 
 .chunk[data-kind="quote"]
   padding 0px
-
-.mobile
-  .chunk[data-kind="about"],
-  .chunk[data-kind="issues"],
-  .chunk[data-kind="why"],
-  .chunk[data-kind="vote"],
-  .chunk[data-kind="volunteer"]
-    padding-left 20px
-    padding-right 20px
 
 // .chunk[data-kind="about"], .chunk[data-kind="issues"]
 //   max-width 1000px
@@ -94,7 +663,7 @@ h1
 
 .same-row
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
 
 
   input[name="name"], input[name="email"]
@@ -104,37 +673,60 @@ h1
     width 60%
 
   input[name="zip"]
-    width 35%;
+    width 35%
 
   input[type="submit"]
     width 100%
 
-#footer
-  background-color #F5F5F5
-  padding 50px
-  padding-top 50px
+// Footer Block
 
-  .nav-item
-    background-color transparent
+#footer
+  flexbox(flex)
+  flex-direction(row)
+  align-items(center)
+  justify-content(space-between)
+  background-color #3C2D82
+  font-size 16px
+  line-height 1.5em
+  padding 50px 10% !important
+
+  a
+    color #ffffff !important
+    font-weight: bold
+    vertical-align: top
 
   #paid-for-container
-    width 100%
-    flexbox(flex)
-    justify-content center
-    align-items(center)
-    min-height 110px
-
     #paid-for
-      border 1px solid #9B9B9B
-      padding 20px
-      color #9B9B9B
-      font-family 'Montserrat'
+      flex(1)
+      border 1px solid #FFFFFF
+      padding 20px 10px
+      text-align center
+      max-width 440px
+      color #FFFFFF
+      font-family secondary_font_name
+
+  #privacy-policy-container
+    flexbox(flex)
+    align-items(center)
+    justify-content(center)
+
+  #email-us
+    flexbox(flex)
+    flex-direction(column)
+    align-items(center)
+    color #FFFFFF
+
 
 .more-about
   display inline
-  font-size larger
-  font-family 'Roboto Condensed'
-  text-transform uppercase
+  font-size 1em
+  font-family primary_font_name
+  font-weight bold
+  color #3C2D82
+  margin-top 10px
+  text-decoration underline
+  text-underline-position under
+  text-transform unset
 
 .mobile
   #button-layer
@@ -144,15 +736,14 @@ h1
 
 #button-layer
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
   margin-left 50px
   margin-right 50px
-  padding-top 20px
   align-items(center)
 
   #social-container
     flexbox(flex)
-    justify-content space-between
+    justify-content(space-between)
     width 100px
     align-items(center)
 
@@ -197,7 +788,7 @@ h1
 #name
   font-size 46px
   text-transform uppercase
-  font-family 'Montserrat'
+  font-family secondary_font_name
   font-weight 900
   flexbox(flex)
   flex-direction(column)
@@ -218,27 +809,6 @@ h1
   #separator
     margin-top 3px
     margin-bottom 3px
-
-#join
-  margin-top 20px
-  background-color rgba(255, 255, 255, .1)
-  font-family 'Montserrat'
-
-  #join-prompt
-    text-align center
-    text-transform capitalize
-    font-size larger
-    font-family 'Montserrat'
-
-  #join-subtitle
-    font-size smaller
-    font-style italic
-    font-family 'Montserrat'
-    text-align center
-
-  .form-row
-    margin-top 5px
-    margin-bottom 5px
 
 .flex
   flexbox(flex)
