@@ -8,21 +8,30 @@ secondary_font_name = Metropolis
    font-weight 400
    font-style normal
    src url('../fonts/Metropolis-Regular.eot')
-   src url('../fonts/Metropolis-Regular.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-Regular.woff') format('woff'), url('../fonts/Metropolis-Regular.ttf') format('truetype'), url('../fonts/Metropolis-Regular.woff2') format('woff2')
+   src url('../fonts/Metropolis-Regular.eot#iefix') format('embedded-opentype')
+   src url('../fonts/Metropolis-Regular.woff') format('woff')
+   src url('../fonts/Metropolis-Regular.ttf') format('truetype')
+   src url('../fonts/Metropolis-Regular.woff2') format('woff2')
 
  @font-face
    font-family secondary_font_name
    font-weight 600
    font-style normal
    src url('../fonts/Metropolis-SemiBold.eot')
-   src url('../fonts/Metropolis-SemiBold.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-SemiBold.woff') format('woff'), url('../fonts/Metropolis-SemiBold.ttf') format('truetype'), url('../fonts/Metropolis-SemiBold.woff2') format('woff2')
+   src url('../fonts/Metropolis-SemiBold.eot#iefix') format('embedded-opentype')
+   src url('../fonts/Metropolis-SemiBold.woff') format('woff')
+   src url('../fonts/Metropolis-SemiBold.ttf') format('truetype')
+   src url('../fonts/Metropolis-SemiBold.woff2') format('woff2')
 
  @font-face
    font-family secondary_font_name
    font-weight 700
    font-style normal
    src url('../fonts/Metropolis-Bold.eot')
-   src url('../fonts/Metropolis-Bold.eot#iefix') format('embedded-opentype'), url('../fonts/Metropolis-Bold.woff') format('woff'), url('../fonts/Metropolis-Bold.ttf') format('truetype'), url('../fonts/Metropolis-Bold.woff2') format('woff2')
+   src url('../fonts/Metropolis-Bold.eot#iefix') format('embedded-opentype')
+   src url('../fonts/Metropolis-Bold.woff') format('woff')
+   src url('../fonts/Metropolis-Bold.ttf') format('truetype')
+   src url('../fonts/Metropolis-Bold.woff2') format('woff2')
 
  .ingeo
    font-family Geo
@@ -31,21 +40,21 @@ div
   padding-top 0px
 
 h1
-  font-family primary_font_name
+  font-family primary_font_name,
   font-weight bold
   font-size 40px
   color #3C2D82
   margin auto
 
 h2
-  font-family primary_font_name
+  font-family primary_font_name // Fixed
   font-weight bold
   font-size 1.6em
   color #3C2D82
   margin auto
 
 h3
-  font-family primary_font_name
+  font-family primary_font_name // Fixed
   font-weight bold
   font-size 2em
   color #ffffff
@@ -54,12 +63,9 @@ h3
 
 p
   font-family secondary_font_name
-  font-weight regular
+  font-weight 400
   font-size 20px
-  line-height 1.4
-  letter-spacing .4px
   margin auto
-  text-align justify
 
 #hero
   width 100%
@@ -97,7 +103,7 @@ p
 
       #join-prompt
         font-size 28px
-        font-family primary_font_name, serif
+        font-family primary_font_name // Fixed
         font-weight bold
         text-align center
         margin-top -10px
@@ -257,14 +263,14 @@ p
       margin 0 auto
 
       #issues-cta-button
-        background-color: #3c2d82;
-        padding: 1em 2em 2em 2em;
-        font-family: Proxima Nova;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 18px;
-        text-align: center;
-        vertical-align: middle;
+        background-color #3c2d82;
+        padding 1em 2em 2em 2em;
+        font-family secondary_font_name
+        font-size 18px
+        font-weight 600
+        line-height 18px
+        text-align center
+        vertical-align middle
 
   #issues-separator
     width 10%
@@ -287,7 +293,7 @@ p
 
   #shortened-support-header
     color #3C2D82
-    font-family primary_font_name
+    font-family primary_font_name // Fixed
     font-size 64px
     font-weight bold
     line-height 76px
@@ -409,7 +415,7 @@ p
       padding 10px 0px 10px 0px
       margin-right 12px
 
-// Platform //
+// Platform Chunk //
 
 #chunk-platform
   flexbox(flex)
@@ -451,7 +457,7 @@ p
 
         .plank-header-text
           font-size 36px
-          font-family primary_font_name
+          font-family primary_font_name // Fixed
           text-align center
           font-weight bold
           color #3C2D82
@@ -494,9 +500,145 @@ p
       font-weight 600
       line-height 18px
       text-align center
-      vertical-align middle
       &:hover
         background-color rgb(140, 116, 255)
+
+
+// Volunteer Chunk //
+
+#chunk-volunteer
+  flexbox(flex)
+  background-color #FFFFFF // Delete
+  flex-direction column
+  margin 4em 0em 5em 0em
+
+  #volunteer-header
+    flexbox(flex)
+    background-color #ffffff
+    align-items center
+    justify-content center
+    margin 0em 0em 5em 0em
+
+    #volunteer-header-text
+      color #3C2D82
+      font-family Roboto Slab
+      font-size 64px
+      font-weight bold
+      line-height 76px
+      text-align center
+
+  #volunteer-form-block-container
+    // No flexbox here
+    background-color #4c3e8b
+
+    #volunteer-form-overlay
+      border-size = 0.25em
+      margin 3em 3.5em 3em 3.5em
+      border-top border-size solid #675b9d
+      border-bottom border-size solid #3c2d82
+      flexbox(flex)
+      justify-content(center)
+      background-color #5a4d95
+
+      #volunteer-form
+        padding 5em 4em 5em 4em
+
+        #volunteer-form-object
+          // Stuff
+
+          #volunteer-form-container
+            flexbox(flex)
+            flex-direction(row)
+            justify-content(space-between)
+
+            #volunteer-options
+              flexbox(flex)
+              flex-direction(column)
+              justify-content(center)
+              width 50%
+              margin-right 2em
+              // Stuff
+
+              #volunteer-form-text-block
+                flexbox(flex)
+                flex-direction(column)
+                justify-content(space-between)
+                // Stuff
+
+                #volunter-form-text-header-container
+                  margin-bottom 1em
+
+                  #volunteer-form-text-header
+                    font-size 28px
+                    font-weight bold
+                    font-family primary_font_name // Fixed
+                    color #FFFFFF
+                    text-align center
+                    // Stuff
+
+                #volunteer-form-text-body-container
+                  margin-top 1em
+
+                  #volunteer-form-text-body
+                    font-size 14px
+                    font-family secondary_font_name
+                    color #FFFFFF
+                    text-align center
+
+              #volunteer-checkboxes
+                // Stuff
+
+                .checkbox-row
+                  flexbox(flex)
+                  flex-direction(row)
+                  justify-content(center)
+
+                  .option
+                    font-family secondary_font_name
+                    font-size 16px
+                    font-weight 700
+                    color #FFF
+                    width 100%
+
+                    &:nth-child(0)
+                      align-self(left)
+
+            #form-input-fields
+              flexbox(flex)
+              flex-direction(column)
+              justify-content(space-between)
+              align-items(stretch)
+              width 50%
+              margin-left 2em
+
+              .form-row
+                flexbox(flex)
+                justify-content(space-between)
+                flex-direction(row)
+                align-items(space-between)
+                height 100%
+
+                input
+                  height 90%
+
+                #phone-input
+                  width 65%
+
+                #zip-input
+                  width 30%
+
+                .button
+                  width 100%
+                  background-color #3C2D82
+                  padding 1em 2em
+                  font-family secondary_font_name
+                  font-size 13px
+                  font-weight 600
+                  line-height 13px
+                  text-align center
+
+                  &:hover
+                    background-color rgb(140, 116, 255)
 
 // News Chunk //
 
@@ -562,7 +704,7 @@ p
         h2
           color #3C2D82
           font-size 36px !important
-          font-family primary_font_name
+          font-family primary_font_name // Fixed
           font-weight bold
           text-align left
           line-height 36px !important // potentially redundant
@@ -651,8 +793,6 @@ p
         background-color rgb(140, 116, 255)
 
 
-
-
 .chunk[data-kind="quote"]
   padding 0px
 
@@ -720,7 +860,7 @@ p
 .more-about
   display inline
   font-size 1em
-  font-family primary_font_name
+  font-family primary_font_name // Fixed
   font-weight bold
   color #3C2D82
   margin-top 10px
