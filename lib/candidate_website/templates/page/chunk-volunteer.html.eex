@@ -20,8 +20,8 @@
     Democracy is Powered by Volunteers Like You
   </h1>
 </div>
-<div id="volunteer-form-container">
-  <div id="volunteer-form-overlay-container">
+<div id="volunteer-form-block-container">
+  <div id="volunteer-form-overlay">
     <div id="volunteer-form">
       <%= render "volunteer-form.html", assigns %>
     </div>
