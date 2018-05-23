@@ -48,7 +48,7 @@
 <% end %>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "events", "endorsements"] do %>
+<%= for chunk <- ["about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "endorsements", "events"] do %>
   <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
