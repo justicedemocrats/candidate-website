@@ -200,28 +200,58 @@ p
 
 #chunk-about
   flexbox(flex)
-  margin-top 60px
-  margin-bottom 60px
+  margin 4em 0
 
-  #about-text
-    margin-right 4.5rem
+  @media screen and (min-width: 701px)
+    flex-direction(row)
 
-    #about-header
-      margin-bottom 1rem
+  @media screen and (max-width: 700px)
+    flex-direction(column)
+    align-itemst(center)
 
-  #about-image
-    margin-left 4.51rem
+  #about-text-container
+    flexbox(flex)
+    flex-direction(column)
 
-    #district-image
-      max-height 247px
-      max-width 100%
-      margin-bottom 8px
+    @media screen and (min-width: 701px)
+      order(1)
 
-    #district-image-text
-      margin-top 8px
-      font-size 36px
-      font-weight bold
-      text-align center !important
+    @media screen and (max-width: 700px)
+      order(2)
+
+    #about-header-container
+      margin-bottom 1.5rem
+
+  #about-image-container
+    flexbox(flex)
+    flex-direction(column)
+    align-items(center)
+
+    @media screen and (min-width: 701px)
+      order(2)
+      margin-left 4.51rem
+
+    @media screen and (max-width: 700px)
+      order(1)
+      margin-bottom 2em
+
+    #district-image-container
+      // Stiff
+
+      #district-image
+        max-height 247px
+        max-width 100%
+
+    #district-image-subheader
+      margin-top 2em
+
+      @media screen and (max-width: 700px)
+        display none
+
+      #district-image-text
+        font-size 36px
+        font-weight bold
+        font-family primary_font_name
 
 // Issues Chunk //
 
