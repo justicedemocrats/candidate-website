@@ -1,5 +1,14 @@
 <%= render "nav-bar.html", assigns %>
 
+<%= if @mobile do %>
+<div id="mobileFooterNav">
+    <a href="/">
+      <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
+    </a>
+    <div class="mobile-menu"> </div>
+</div>
+<% end %>
+
 <div id="footer">
 
   <div id="paid-for-container">
