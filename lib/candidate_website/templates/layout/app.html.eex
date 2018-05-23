@@ -67,9 +67,7 @@
   </head>
 
   <body>
-    <%= if @mobile do %>
-      <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
-    <% end %>
+    <div style="position: absolute; top: 0px; right: 0px; z-index: 1;" class="mobile-menu"></div>
 
     <main class="main <%= if @mobile, do: "mobile", else: "desktop" %>" role="main">
       <%= render @view_module, @view_template, assigns %>

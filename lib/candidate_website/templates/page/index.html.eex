@@ -43,9 +43,7 @@
   </div>
 <% end %>
 
-<%= if not @mobile do %>
-  <%= render "nav-bar.html", assigns %>
-<% end %>
+<%= render "nav-bar.html", assigns %>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
 <%= for chunk <- ["about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "endorsements", "events"] do %>
