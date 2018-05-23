@@ -6,7 +6,7 @@
 
 <div id="issues-text-cointainer">
   <div id="issues-header-container">
-    <h1 id="issues-header-text" style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
+    <h1 id="issues-header-text" <%= @issues_header %></h1>
   </div>
   <div id="issues-paragraph-container">
     <p id="issues-paragraph-text">
