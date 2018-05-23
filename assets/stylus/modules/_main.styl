@@ -258,7 +258,7 @@ p
 #chunk-issues
   background-color #F8D11C
   flexbox(flex)
-  padding-top 60px
+  flex-direction(row)
 
   #issues-image-container
     margin-top auto
@@ -271,22 +271,24 @@ p
       height auto
       width auto/9
 
-  #issues-text
+  #issues-text-container
     flexbox(flex)
     flex-direction(column)
-    width 40%
 
     h1
       margin-bottom 33px
 
-    #issues-header
+    #issues-header-cointainer
     	font-family primary_font_name
     	line-height 45px
 
-    #issues-paragraph
-      font-family secondary_font_name
-      font-size 20px
-      line-height 29px
+    #issues-paragraph-container
+      // Stuff
+
+      #issues-paragraph-text
+        font-family secondary_font_name
+        font-size 20px
+        // line-height 29px
 
     #issues-button-container
       padding 4em 0 5em 0
@@ -301,9 +303,6 @@ p
         line-height 18px
         text-align center
         vertical-align middle
-
-  #issues-separator
-    width 10%
 
 .mobile
   #chunk-issues
