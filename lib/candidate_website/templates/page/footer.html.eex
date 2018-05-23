@@ -1,4 +1,6 @@
-<%= render "nav-bar.html", assigns %>
+<%= if not @mobile do %>
+  <%= render "nav-bar.html", assigns %>
+<% end %>
 
 <div id="footer">
 
