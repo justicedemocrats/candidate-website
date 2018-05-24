@@ -1008,7 +1008,12 @@ p
     flexbox(flex)
     justify-content(center)
     align-items(center)
-    flex-direction(row)
+
+    @media (min-width:320px) and (max-width: 960px)
+      flex-direction(column)
+
+    @media (min-width:961px)
+      flex-direction(row)
 
     .endorsement-logo-container
       flexbox(flex)
