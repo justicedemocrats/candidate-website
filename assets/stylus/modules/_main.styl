@@ -139,20 +139,27 @@ p
           text-align center
           letter-spacing 1px
 
+.main > #hero-signup
+  display none
+
 @media (max-width: 1440px)
   #hero
-    background-size 95%
+    background-size 90%
     background-position-x -100px
 
 @media (max-width: 1140px)
   #hero
-    height 80%
+    height 85%
 
     #hero-signup
-      top 15%
+      top 9%
       right 1%
 
-@media (max-width: 768px)
+@media (max-width: 960px)
+  .main > #hero-signup
+    display block
+    color #3C2D82
+
   #hero
     #hero-signup
       display none
@@ -211,7 +218,7 @@ p
       // margin-bottom 15px
       // border-right 1px solid #A0A0A0
 
-@media (max-width: 768px)
+@media (max-width: 960px)
   .nav
     display:none;
 
@@ -234,7 +241,7 @@ p
   > div
     background-color #3c2d82 !important
 
-@media (min-width: 769px)
+@media (min-width: 961px)
   #mobileFooterNav, .mobile-menu
     display none
 
@@ -454,8 +461,10 @@ p
 
   #circles-container
     flexbox(flex)
+    flex-wrap wrap
     text-align center
-    margin 2.5em 0em 2.5em 0em
+    justify-content center
+    //margin 2.5em 0em 2.5em 0em
 
     .circle
       flexbox(flex)
@@ -468,26 +477,31 @@ p
       font-weight bold
       border 8px solid white
       border-radius 50%
-      margin 0px 2.5em 0px 2.5em
+      margin 2.5em 2.5em 0px 2.5em
 
       .amount
         font-size 35px
 
   #custom-donation-container
     flexbox(flex)
+    flex-direction row
+    flex-wrap wrap
+    justify-content center
     text-align center
-    margin 2.5em .75em .5em .75em !important
+    height auto
+    //margin 2.5em .75em .5em .75em !important
 
     #custom-contribution-go
       border 0px // Countering stupid CSS
-      height 100%
+      height 54px
       color #ffffff
       text-transform uppercase
       font-weight bold
       font-size 18px
       background-color rgba(80,192,32,0.83)
       padding 10px 20px 10px 20px
-      margin-left 12px
+      //margin-left 12px
+      margin 2.2em 12px
 
     #custom-contribution
       border 0px // Countering stupid CSS
@@ -499,7 +513,18 @@ p
       background-color #FFFFFF
       box-shadow inset 1px 1px 1px 0 rgba(0,0,0,0.5)
       padding 10px 0px 10px 0px
-      margin-right 12px
+      //margin-right 12px
+      margin 2.5em 12px
+
+@media (max-width: 425px)
+  #chunk-donate
+    #custom-donation-container
+      flex-direction column
+      #custom-contribution-go
+        margin-top 0
+        margin-bottom 0
+      #custom-contribution
+        margin 2.5em auto
 
 // Platform Chunk //
 
@@ -820,6 +845,14 @@ p
     margin-left 75px
     max-width 1200px
 
+@media (max-width: 947px)
+  #chunk-twitter
+    #twitter-feed
+      width 100%
+      margin-left 0
+      margin-top 75px
+      //width 250px
+
 @media (max-width: 425px)
   #chunk-twitter
     img
@@ -1088,8 +1121,13 @@ p
   text-underline-position under
   text-transform unset
 
-.mobile
-  #button-layer
+.main > #button-layer
+  display none
+
+//.mobile
+@media (max-width: 960px)
+  .main > #button-layer
+    display flex
     width 100%
     justify-content(space-around)
     margin 0
@@ -1116,7 +1154,7 @@ p
   transition height ease-out 1s
 
 //.mobile
-@media (max-width: 768px)
+@media (max-width: 960px)
   #hero
     background-size contain
     background-image: url(https://cosmic-s3.imgix.net/341855b0-5ee2-11e8-9f06-23be1fda63d3-ocasio-mobile-header.png)

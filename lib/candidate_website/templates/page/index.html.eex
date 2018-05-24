@@ -12,17 +12,15 @@
 <div id="app"></div>
 <div id="hero" class="desktop" > <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"  -->
 
-  <%= if not @mobile do %>
     <!-- <div id="hero-logo"><img src="https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png"/></div> -->
     <%= render "signup-form.html", assigns %>
-  <% end %>
 </div>
 
-<%= if @mobile do %>
-  <%= render "signup-form.html", assigns %>
-<% end %>
+<%= render "signup-form.html", assigns %>
 
 <%= if @mobile do %>
+<% end %>
+
   <div id="button-layer">
     <a href="<%= @facebook %>">
       <%= render "facebook.html", [color: color] %>
@@ -36,11 +34,10 @@
         <%= render "instagram.html", [color: color] %>
       </a>
     <% end %>
-    <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
+    <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: #3C2D82; border: 2px solid #3C2D82;">
       Donate
     </a>
   </div>
-<% end %>
 
 <%= render "nav-bar.html", assigns %>
 

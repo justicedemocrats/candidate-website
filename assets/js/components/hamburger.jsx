@@ -75,8 +75,8 @@ const styles = {
   },
 
   screen: {
-    width: "100vw",
-    height: "100vh",
+    width: "100%",
+    height: "100%",
     backgroundColor: "rgba(0, 0, 0, .3)",
     position: "fixed",
     left: 0,
