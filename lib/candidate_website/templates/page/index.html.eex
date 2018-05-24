@@ -10,12 +10,11 @@
 <% social_width = if assigns[:instagram], do: "150px", else: "100px" %>
 
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"> <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);  -->
+<div id="hero" class="desktop" > <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"  -->
 
   <%= if not @mobile do %>
-    <div id="hero-logo"></div>
+    <!-- <div id="hero-logo"><img src="https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png"/></div> -->
     <%= render "signup-form.html", assigns %>
-
   <% end %>
 </div>
 
