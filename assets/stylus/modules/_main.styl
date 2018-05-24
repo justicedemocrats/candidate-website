@@ -730,6 +730,12 @@ p
   flex-direction(column)
   margin 4em 0em 5em 0em
 
+  @media (max-width: 550px)
+    padding 0
+
+  @media (min-width: 551px) and (max-width 960px)
+    padding 0 5%
+
   #volunteer-header
     flexbox(flex)
     background-color #ffffff
@@ -758,29 +764,50 @@ p
       background-color #5a4d95
 
       #volunteer-form
-        padding 5em 4em 5em 4em
+        // Stuff
+
+        @media (max-width: 960px)
+          padding 2em 2em
+
+        @media (min-width: 961px)
+          padding 5em 4em
+
 
         #volunteer-form-object
           // Stuff
 
           #volunteer-form-container
             flexbox(flex)
-            flex-direction(row)
             justify-content(space-between)
+
+            @media (max-width:680px)
+              flex-direction(column)
+              padding 0 20px
+
+            @media (min-width: 681px) and (max-width: 960px)
+              flex-direction(column)
+              padding 0 45px
+
+            @media (min-width: 961px)
+              flex-direction(row)
+
 
             #volunteer-options
               flexbox(flex)
               flex-direction(column)
               justify-content(center)
-              width 50%
-              margin-right 2em
-              // Stuff
+
+              // @media (max-width: 960px)
+              //   // Stuff
+
+              @media (min-width: 961px)
+                width 50%
+                margin-right 2em
 
               #volunteer-form-text-block
                 flexbox(flex)
                 flex-direction(column)
                 justify-content(space-between)
-                // Stuff
 
                 #volunter-form-text-header-container
                   margin-bottom 1em
@@ -798,12 +825,15 @@ p
 
                   #volunteer-form-text-body
                     font-size 14px
+                    letter-spacing 1px
                     font-family secondary_font_name
                     color #FFFFFF
                     text-align center
 
               #volunteer-checkboxes
                 // Stuff
+                @media (max-width: 960px)
+                  margin-bottom 30px
 
                 .checkbox-row
                   flexbox(flex)
@@ -825,8 +855,12 @@ p
               flex-direction(column)
               justify-content(space-between)
               align-items(stretch)
-              width 50%
-              margin-left 2em
+
+              // @media (max-width: 960px)
+
+              @media (min-width: 961px)
+                width 50%
+                margin-left 2em
 
               .form-row
                 flexbox(flex)
@@ -834,6 +868,7 @@ p
                 flex-direction(row)
                 align-items(space-between)
                 height 100%
+                margin 10px 0
 
                 input
                   height 90%
