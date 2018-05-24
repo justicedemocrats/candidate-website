@@ -1,6 +1,4 @@
-<%= if not @mobile do %>
-  <%= render "nav-bar.html", assigns %>
-<% end %>
+<%= render "nav-bar.html", assigns %>
 
 <div id="mobileFooterNav">
     <a href="/">
