@@ -1,13 +1,13 @@
 <%= if not @mobile do %>
 <div id="issues-image-container">
-  <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/>
+  <!-- <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/> -->
 </div>
 <% end %>
 
 <div id="issues-text-container">
   <div id="issues-header-container">
     <h1 id="issues-header-text">
-      <%= @issues_header %>
+      <%= raw(@issues_header) %>
     </h1>
   </div>
   <div id="issues-paragraph-container">
