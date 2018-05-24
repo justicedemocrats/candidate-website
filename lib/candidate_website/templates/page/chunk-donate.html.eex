@@ -2,7 +2,6 @@
   <h1 id="donate-header-text" style="color: <%=@primary_color %>">Donate to My Campaign</h1>
 </div>
 
-<!-- <%= if not @mobile do %> -->
 
 <div id="circles-container">
   <%= for amount <- [5, 14, 27, 50] do %>
@@ -15,7 +14,6 @@
   <% end %>
 </div>
 
-<!-- <% end %> -->
 <div id="custom-donation-container" class="custom-donation-container">
     <input id="custom-contribution" type="number" placeholder="$27.00"/>
     <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button">Contribute</a>
