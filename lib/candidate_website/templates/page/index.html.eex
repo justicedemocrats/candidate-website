@@ -16,11 +16,6 @@
     <%= render "signup-form.html", assigns %>
 </div>
 
-<%= render "signup-form.html", assigns %>
-
-<%= if @mobile do %>
-<% end %>
-
   <div id="button-layer">
     <a href="<%= @facebook %>">
       <%= render "facebook.html", [color: color] %>
@@ -38,6 +33,8 @@
       Donate
     </a>
   </div>
+
+<%= render "signup-form.html", assigns %>
 
 <%= render "nav-bar.html", assigns %>
 

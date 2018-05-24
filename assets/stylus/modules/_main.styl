@@ -96,7 +96,7 @@ p
     top 20%
     left -2%
 
-  #hero-signup
+#hero-signup
     top 20%
     right 5%
     color white
@@ -105,6 +105,7 @@ p
 
     fieldset
       border none
+      margin-bottom 0
 
     #join
       background-color hsla(0,0%,100%,.1)
@@ -157,8 +158,13 @@ p
 
 @media (max-width: 960px)
   .main > #hero-signup
+    background-color #3C2D82
     display block
-    color #3C2D82
+    position static
+    padding 30px
+    #join
+      margin 0 auto
+      max-width none
 
   #hero
     #hero-signup
@@ -1243,7 +1249,7 @@ p
     display flex
     width 100%
     justify-content(space-around)
-    margin 0
+    margin 30px 0
 
 #button-layer
   flexbox(flex)
