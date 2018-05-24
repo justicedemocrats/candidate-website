@@ -265,21 +265,21 @@ p
   flexbox(flex)
   margin 4em 0
 
-  @media screen and (min-width: 701px)
+  @media screen and (min-width: 961px)
     flex-direction(row)
 
-  @media screen and (max-width: 700px)
+  @media screen and (max-width: 960px)
     flex-direction(column)
-    align-itemst(center)
+    align-items(center)
 
   #about-text-container
     flexbox(flex)
     flex-direction(column)
 
-    @media screen and (min-width: 701px)
+    @media screen and (min-width: 961px)
       order(1)
 
-    @media screen and (max-width: 700px)
+    @media screen and (max-width: 960px)
       order(2)
 
     #about-header-container
@@ -290,11 +290,11 @@ p
     flex-direction(column)
     align-items(center)
 
-    @media screen and (min-width: 701px)
+    @media screen and (min-width: 961px)
       order(2)
       margin-left 4.51rem
 
-    @media screen and (max-width: 700px)
+    @media screen and (max-width: 960px)
       order(1)
       margin-bottom 2em
 
@@ -308,7 +308,7 @@ p
     #district-image-subheader
       margin-top 2em
 
-      @media screen and (max-width: 700px)
+      @media screen and (max-width: 961px)
         display none
 
       #district-image-text
@@ -321,61 +321,102 @@ p
 #chunk-issues
   background-color #F8D11C
   flexbox(flex)
-  padding-top 60px
+  flex-direction(row)
+  justify-content(center)
+  align-items(stretch)
+  padding 0
 
   #issues-image-container
-    margin-top auto
+    background-image url(https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png)
+    background-repeat no-repeat
+    background-position left
+    background-size cover
+    background-origin border-box
+    margin 0 0 0 5%
     width 50%
 
-    #issues-image
-      margin-bottom auto
-      max-width 115%
-      min-width 100%
-      height auto
-      width auto/9
+    @media (max-width: 960px)
+      display none
 
-  #issues-text
+    @media (min-width: 961px)
+      display block
+
+  #issues-text-container
     flexbox(flex)
     flex-direction(column)
-    width 40%
 
-    h1
-      margin-bottom 33px
+    @media (max-width: 960px)
+      width 100%
+      padding 4em 10%
 
-    #issues-header
-    	font-family primary_font_name
-    	line-height 45px
+    @media (min-width: 961px)
+      padding 4em 10% 4em 0em
+      margin 0em 0em 0em 4em
+      width 50%
 
-    #issues-paragraph
-      font-family secondary_font_name
-      font-size 20px
-      line-height 29px
+    #issues-header-container
+      margin 0em 0em 1em 0em
+      flexbox(flex)
+      flex-direction(row)
+
+      #issues-header-text
+        font-weight bold
+
+        @media (min-width:320px) and (max-width: 960px)
+          font-size 40px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          font-size 32px
+
+        @media (min-width: 1601px)
+          font-size 40px
+
+    #issues-paragraph-container
+      margin 1em 0em 1em 0em
+      flexbox(flex)
+
+      p
+        font-family secondary_font_name
+
+        @media (min-width:320px) and (max-width: 960px)
+          font-size 20px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          font-size 16px
+
+        @media (min-width: 1601px)
+          font-size 20px
 
     #issues-button-container
-      padding 4em 0 5em 0
-      margin 0 auto
+      margin 1em 0em 1em 0em
+      flexbox(flex)
+      flex-direction(row)
+      align-items(center)
+      justify-content(center)
 
       #issues-cta-button
-        background-color #3c2d82;
-        padding 1em 2em 2em 2em;
+        background-color #3C2D82
+        padding 1em 2em 2em 2em
         font-family secondary_font_name
-        font-size 18px
         font-weight 600
-        line-height 18px
+        // line-height 13px
         text-align center
-        vertical-align middle
 
-  #issues-separator
-    width 10%
+        &:hover
+          background-color rgb(140, 116, 255)
 
-.mobile
-  #chunk-issues
-    #issues-text
-      width auto
-    #issues-separator
-      width 0
+        @media (min-width:320px) and (max-width: 960px)
+          font-size 20px
+          line-height 20px
 
-// Why Support Shortened //
+        @media (min-width:961px) and (max-width: 1600px)
+          font-size 16px
+          line-height 16px
+
+        @media (min-width: 1601px)
+          font-size 20px
+          line-height 20px
+
 
 #chunk-why-shortened
   flexbox(flex)
@@ -397,28 +438,58 @@ p
 #chunk-why
   background-color #3C2D82
   flexbox(flex)
-  flex-direction(row)
   padding 0
+
+  @media (max-width: 960px)
+    flex-direction(column)
+
+  @media (min-width: 961px)
+    flex-direction(row)
 
   #why-support-text
     flexbox(flex)
     flex-direction(column)
-    padding 4em 0em 4em 10%
-    margin 0em 5em 0em 0em
+
+    @media (max-width: 960px)
+      order(2)
+      padding 4em 10%
+
+    @media (min-width: 961px)
+      order(1)
+      padding 4em 0em 4em 10%
+      margin 0em 5em 0em 0em
 
     #why-support-header
       margin 0em 0em 1em 0em
 
       #why-support-header-text
         color #FFFFFF
-        line-height 45px
+        // line-height 45px
+
+        @media (min-width:320px) and (max-width: 960px)
+          font-size 40px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          font-size 32px
+
+        @media (min-width: 1601px)
+          font-size 40px
 
     #why-support-body
       margin 1em 0em 1em 0em
 
       p
         color #FFFFFF
-        line-height: 29px;
+        // line-height: 29px;
+
+        @media (min-width:320px) and (max-width: 960px)
+          font-size 20px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          font-size 16px
+
+        @media (min-width: 1601px)
+          font-size 20px
 
     #why-support-learn-more
       margin 2em 0em 0em 0em
@@ -433,12 +504,30 @@ p
         text-align center
 
   #why-support-image
-    // background-image url(https://cosmic-s3.imgix.net/af195580-5a40-11e8-af91-73e918c660c1-alex_on_street.png)
-    background-image url(https://i.imgur.com/MoJ1emX.png)
-    background-repeat no-repeat
-    background-position right
-    background-size cover
-    width 100%
+    // Stuff
+
+    @media (max-width: 960px)
+      order(1)
+
+    @media (min-width: 961px)
+      order(2)
+      background-position right
+      background-size cover
+      background-image url(https://i.imgur.com/MoJ1emX.png)
+      background-repeat no-repeat
+      width 100%
+
+    #why-support-image-actual
+      // Stuff
+
+      @media (max-width: 960px)
+        max-width 100%
+        height auto
+        clip rect(280px,1495px,1206px,640px)
+        overflow hidden
+
+      @media (min-width: 961px)
+        display none
 
 // Donate Chunk //
 
@@ -1033,8 +1122,6 @@ p
       &:hover
         background-color rgb(140, 116, 255)
 
-.chunk[data-kind="quote"]
-  padding 0px
 
 // .chunk[data-kind="about"], .chunk[data-kind="issues"]
 //   max-width 1000px
