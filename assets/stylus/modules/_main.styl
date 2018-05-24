@@ -234,7 +234,7 @@ p
 
   @media screen and (max-width: 700px)
     flex-direction(column)
-    align-itemst(center)
+    align-items(center)
 
   #about-text-container
     flexbox(flex)
@@ -266,7 +266,7 @@ p
       // Stiff
 
       #district-image
-        max-height 247px
+        // max-height 247px
         max-width 100%
 
     #district-image-subheader
@@ -286,40 +286,45 @@ p
   background-color #F8D11C
   flexbox(flex)
   flex-direction(row)
+  padding 0
 
   #issues-image-container
-    margin-top auto
-    width 50%
+    flex-shrink(0)
+    flexbox(flex)
+    justify-content(stretch)
+    align-items(center)
 
     #issues-image
-      margin-bottom auto
-      max-width 115%
-      min-width 100%
-      height auto
-      width auto/9
+      max-width 100%
+      // align-self(center)
+      // flex-basis(auto)
 
   #issues-text-container
+    flex-shrink(1)
     flexbox(flex)
     flex-direction(column)
+    padding 4em 0
+    // margin 0em 5em 0em 0em
 
     #issues-header-cointainer
-      // Stuff
+      margin 0em 0em 1em 0em
 
       #issues-header-text
       	font-family primary_font_name
-      	line-height 45px
+      	font-size 3vw
 
     #issues-paragraph-container
-      // Stuff
+      margin 1em 0em 1em 0em
 
       #issues-paragraph-text
         font-family secondary_font_name
-        font-size 20px
+        font-size 2vw
         // line-height 29px
 
     #issues-button-container
-      padding 4em 0 5em 0
-      margin 0 auto
+      flexbox(flex)
+      flex-direction(row)
+      align-items(center)
 
       #issues-cta-button
         background-color #3c2d82;
@@ -327,7 +332,6 @@ p
         font-family secondary_font_name
         font-size 18px
         font-weight 600
-        line-height 18px
         text-align center
         vertical-align middle
 
@@ -959,8 +963,6 @@ p
       &:hover
         background-color rgb(140, 116, 255)
 
-.chunk[data-kind="quote"]
-  padding 0px
 
 // .chunk[data-kind="about"], .chunk[data-kind="issues"]
 //   max-width 1000px

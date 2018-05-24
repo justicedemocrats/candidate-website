@@ -1,6 +1,8 @@
 <div id="why-support-text">
   <div id="why-support-header">
-    <h1 id="why-support-header-text"><%= @why_support_header %></h1>
+    <h1 id="why-support-header-text">
+      <%= @why_support_header %>
+    </h1>
   </div>
   <div id="why-support-body">
     <%= raw(@why_support_body) %>
