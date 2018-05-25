@@ -1,7 +1,9 @@
-<%= if not @mobile do %>
 <div id="issues-image-container">
   <!-- <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/> -->
+  <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/>
 </div>
+<%= if not @mobile do %>
+
 <% end %>
 
 <div id="issues-text-container">
@@ -17,7 +19,7 @@
   </div>
 
   <div id="issues-button-container">
-    <button id="issues-cta-button" class="button issues-cta-button">
+    <button id="issues-cta-button" class="button issues-cta-button" onclick="window.location='/issues';">
       Read My Full Platform
       </button>
   </div>
