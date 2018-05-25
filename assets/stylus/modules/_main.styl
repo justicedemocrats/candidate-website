@@ -43,6 +43,10 @@ button, .button, .button:hover, button:hover
   box-shadow none !important
   text-transform uppercase
 
+.main > div
+  max-width 1440px
+  margin 0 auto
+
 #hero
   width 100%
   height 100%
@@ -54,6 +58,8 @@ button, .button, .button:hover, button:hover
   //url(https://cosmic-s3.imgix.net/c8b74f40-56eb-11e8-a098-e1c5d0edce44-banner-no-logo.png)
   background-color #3C2D82
   background-position-y bottom
+  background-size 90%
+  background-position-x -100px
 
   #hero-logo
     //background-image url(https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png)
@@ -121,8 +127,8 @@ button, .button, .button:hover, button:hover
 
 @media (max-width: 1440px)
   #hero
-    background-size 90%
-    background-position-x -100px
+    //background-size 90%
+    //background-position-x -100px
 
 @media (max-width: 1140px)
   #hero
@@ -153,8 +159,8 @@ button, .button, .button:hover, button:hover
   justify-content(center)
   align-items(center)
   flex-wrap(nowrap)
-  padding-left 10%
-  padding-right 10%
+  padding-left 5%
+  padding-right 5%
 
   .logo
     max-height 89px
@@ -231,8 +237,8 @@ button, .button, .button:hover, button:hover
     display none
 
 .chunk
-  padding-left 10%
-  padding-right 10%
+  padding-left 5%
+  padding-right 5%
   // padding-top 30px
   // padding-bottom 30px
 
@@ -248,7 +254,7 @@ button, .button, .button:hover, button:hover
 
 #chunk-about
   flexbox(flex)
-  margin 4em 0
+  margin 4em auto
 
   @media screen and (min-width: 961px)
     flex-direction(row)
@@ -431,7 +437,7 @@ button, .button, .button:hover, button:hover
   background-color #ffffff
   align-items(center)
   justify-content(center)
-  margin 4em 0em 5em 0em
+  margin 4em auto 5em auto
 
   #shortened-support-header
     color #3C2D82
@@ -567,7 +573,7 @@ button, .button, .button:hover, button:hover
   align-items(center)
   justify-content(center)
   background-color #EDEDED;
-  margin 2.5em 2.5em 2.5em 2.5em
+  margin 2.5em auto
   padding 4em 0em 4em 0em
 
   #donate-header
@@ -756,7 +762,7 @@ button, .button, .button:hover, button:hover
   flexbox(flex)
   background-color #FFFFFF // Delete
   flex-direction(column)
-  margin 4em 0em 5em 0em
+  margin 4em auto 5em auto
 
   @media (max-width: 550px)
     padding 0
@@ -1014,7 +1020,7 @@ button, .button, .button:hover, button:hover
 
         h2
           color #3C2D82
-          font-size 36px !important
+          font-size 36px
           font-family primary_font_name // Fixed
           font-weight bold
           text-align left
@@ -1161,7 +1167,7 @@ button, .button, .button:hover, button:hover
   flex-direction(column)
   align-items(center)
   justify-content(center)
-  margin 4em 0em 5em 0em
+  margin 4em auto 5em auto
 
   #events-header-container
     flexbox(flex)
