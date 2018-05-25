@@ -39,8 +39,6 @@
           <% end %>
         </div>
 
-        <%= if length(process_vol_options(@volunteer_options)) > 4 do %>
-
         <div class="checkbox-row">
           <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 4..5) do %>
             <div class="option">
@@ -49,6 +47,14 @@
           <% end %>
         </div>
 
+        <%= if length(process_vol_options(@volunteer_options)) > 6 do %>
+            <div class="checkbox-row">
+              <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 6..7) do %>
+                <div class="option">
+                  <input type="checkbox" class="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
+                </div>
+              <% end %>
+            </div>
         <% end %>
 
         <% else %>
@@ -74,29 +80,29 @@
         <% end %>
 
       </div>
+      <div id="form-input-fields" class="info-fields">
 
+        <div class="form-row">
+          <input id="name-input" type="text" name="name" placeholder="Name*" required="required" />
+        </div>
+
+        <div class="form-row">
+          <input id="email-input" type="email" name="email" placeholder="Email*" required="required" />
+        </div>
+
+        <div class="form-row">
+          <input id="phone-input" type="tel" name="phone" placeholder="Phone" />
+          <input id="zip-input" type="text" name="zip" placeholder="Zip*" required="required" />
+        </div>
+
+        <div class="form-row">
+          <input type="submit" class="button" value="I'm In!" />
+        </div>
+
+      </div>
     </div>
 
-    <div id="form-input-fields" class="info-fields">
 
-      <div class="form-row">
-        <input id="name-input" type="text" name="name" placeholder="Name*" required="required" />
-      </div>
-
-      <div class="form-row">
-        <input id="email-input" type="email" name="email" placeholder="Email*" required="required" />
-      </div>
-
-      <div class="form-row">
-        <input id="phone-input" type="tel" name="phone" placeholder="Phone" />
-        <input id="zip-input" type="text" name="zip" placeholder="Zip*" required="required" />
-      </div>
-
-      <div class="form-row">
-        <input type="submit" class="button" value="I'm In!" />
-      </div>
-
-    </div>
 
   </div>
 

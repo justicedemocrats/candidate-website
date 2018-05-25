@@ -10,8 +10,10 @@ h1
   font-family primary_font_name,
   font-weight bold
   font-size 40px
+  font-weight bold
   color #3C2D82
   margin auto
+  text-align center
 
 h2
   font-family primary_font_name // Fixed
@@ -33,6 +35,13 @@ p
   font-weight 400
   font-size 20px
   margin auto
+
+button, .button, .button:hover, button:hover
+  border transparent
+  border-top-color transparent
+  border-bottom-color transparent
+  box-shadow none !important
+  text-transform uppercase
 
 #hero
   width 100%
@@ -165,9 +174,11 @@ p
     .nav-item
       text-transform uppercase
       color #3C2D82
-      padding 1rem 1rem !important // Countering stupid CSS
+      //padding 1rem 1rem !important // Countering stupid CSS
       font-family secondary_font_name
-      font-size 17px
+      font-size 14px
+      line-height 35px
+      height 51px
       cursor pointer
       font-weight bold
       background none
@@ -175,6 +186,7 @@ p
 
       .contribute
         border 0px !important
+        font-size 16px
         color #ffffff !important
         border-radius 3px !important
         height 51px !important
@@ -300,19 +312,38 @@ p
   padding 0
 
   #issues-image-container
-    background-image url(https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png)
-    background-repeat no-repeat
-    background-position left
-    background-size cover
-    background-origin border-box
-    margin 0 0 0 5%
+    //background-image url(https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png)
+    //background-repeat no-repeat
+    //background-position left
+    //background-size cover
+    //background-origin border-box
+    //margin 0 0 0 5%
+    //margin 5% 0 0 5%
     width 50%
+    position relative
+    margin-top 20px
 
     @media (max-width: 960px)
       display none
 
     @media (min-width: 961px)
       display block
+
+    #issues-image
+      //height 100%
+      width auto
+      position absolute
+      overflow hidden
+      max-width none
+      bottom 0
+      //left -200px
+
+      @media (max-width: 1300px)
+        left -10%
+      @media (max-width: 1200px)
+        left -30%
+      @media (max-width: 1000px)
+        left -50%
 
   #issues-text-container
     flexbox(flex)
@@ -333,16 +364,16 @@ p
       flex-direction(row)
 
       #issues-header-text
-        font-weight bold
+        //font-weight bold
 
         @media (min-width:320px) and (max-width: 960px)
-          font-size 40px
+          //font-size 40px
 
         @media (min-width:961px) and (max-width: 1600px)
-          font-size 32px
+          //font-size 32px
 
         @media (min-width: 1601px)
-          font-size 40px
+          //font-size 40px
 
     #issues-paragraph-container
       margin 1em 0em 1em 0em
@@ -352,13 +383,13 @@ p
         font-family secondary_font_name
 
         @media (min-width:320px) and (max-width: 960px)
-          font-size 20px
+          //font-size 20px
 
         @media (min-width:961px) and (max-width: 1600px)
-          font-size 16px
+          //font-size 16px
 
         @media (min-width: 1601px)
-          font-size 20px
+          //font-size 20px
 
     #issues-button-container
       margin 1em 0em 1em 0em
@@ -372,23 +403,27 @@ p
         padding 1em 2em 2em 2em
         font-family secondary_font_name
         font-weight 600
-        // line-height 13px
         text-align center
+        font-size 20px
+        white-space normal
+        line-height 1.3 !important
+        height auto
+        padding 1em 2em 1em 2em
 
         &:hover
           background-color rgb(140, 116, 255)
 
         @media (min-width:320px) and (max-width: 960px)
-          font-size 20px
-          line-height 20px
+          //font-size 20px
+          //line-height 20px
 
         @media (min-width:961px) and (max-width: 1600px)
-          font-size 16px
-          line-height 16px
+          //font-size 16px
+          //line-height 16px
 
         @media (min-width: 1601px)
-          font-size 20px
-          line-height 20px
+          //font-size 20px
+          //line-height 20px
 
 
 #chunk-why-shortened
@@ -401,10 +436,14 @@ p
   #shortened-support-header
     color #3C2D82
     font-family primary_font_name // Fixed
-    font-size 64px
+    font-size 4em
     font-weight bold
     line-height 76px
     text-align center
+
+    @media (max-width: 425px)
+      font-size 3em
+      line-height 1.3
 
 // Why Support //
 
@@ -422,6 +461,7 @@ p
   #why-support-text
     flexbox(flex)
     flex-direction(column)
+    width 100%
 
     @media (max-width: 960px)
       order(2)
@@ -440,13 +480,13 @@ p
         // line-height 45px
 
         @media (min-width:320px) and (max-width: 960px)
-          font-size 40px
+          //font-size 40px
 
         @media (min-width:961px) and (max-width: 1600px)
-          font-size 32px
+          //font-size 32px
 
         @media (min-width: 1601px)
-          font-size 40px
+          //font-size 40px
 
     #why-support-body
       margin 1em 0em 1em 0em
@@ -456,13 +496,13 @@ p
         // line-height: 29px;
 
         @media (min-width:320px) and (max-width: 960px)
-          font-size 20px
+          //font-size 20px
 
         @media (min-width:961px) and (max-width: 1600px)
-          font-size 16px
+          //font-size 16px
 
         @media (min-width: 1601px)
-          font-size 20px
+          //font-size 20px
 
     #why-support-learn-more
       margin 2em 0em 0em 0em
@@ -478,29 +518,46 @@ p
 
   #why-support-image
     // Stuff
+    overflow: hidden;
+    position: relative;
 
     @media (max-width: 960px)
       order(1)
+      height: 450px;
+
+    @media (max-width: 425px)
+      order(1)
+      height: 350px;
 
     @media (min-width: 961px)
       order(2)
-      background-position right
-      background-size cover
-      background-image url(https://i.imgur.com/MoJ1emX.png)
-      background-repeat no-repeat
+      //background-position right
+      //background-size cover
+      //background-image url(https://i.imgur.com/MoJ1emX.png)
+      //background-repeat no-repeat
       width 100%
 
     #why-support-image-actual
       // Stuff
+      height 100%
+      width auto
+      overflow hidden
+      max-width none
+      position absolute
+      left 0
+
+      @media (max-width: 1200px)
+        left -200px
 
       @media (max-width: 960px)
-        max-width 100%
+        width 100%
         height auto
-        clip rect(280px,1495px,1206px,640px)
+        clip unset
         overflow hidden
+        left 0
 
       @media (min-width: 961px)
-        display none
+        //display none
 
 // Donate Chunk //
 
@@ -604,6 +661,10 @@ p
 
     #platform-header-text
       font-size 4em
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
 
   #planks-container
     flexbox(flex)
@@ -717,24 +778,35 @@ p
       font-weight bold
       text-align center
 
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
   #volunteer-form-block-container
     // No flexbox here
     background-color #4c3e8b
 
     #volunteer-form-overlay
       border-size = 0.25em
-      margin 3em 3.5em 3em 3.5em
+      margin 3em 10%
       border-top border-size solid #675b9d
       border-bottom border-size solid #3c2d82
       flexbox(flex)
       justify-content(center)
       background-color #5a4d95
 
+      @media (max-width: 425px)
+        border none
+        background-color transparent
+
       #volunteer-form
         // Stuff
 
         @media (max-width: 960px)
           padding 2em 2em
+
+        @media (max-width: 425px)
+          padding 0
 
         @media (min-width: 961px)
           padding 5em 4em
@@ -768,8 +840,8 @@ p
               //   // Stuff
 
               @media (min-width: 961px)
-                width 50%
-                margin-right 2em
+                //width 50%
+                //margin-right 2em
 
               #volunteer-form-text-block
                 flexbox(flex)
@@ -785,34 +857,45 @@ p
                     font-family primary_font_name // Fixed
                     color #FFFFFF
                     text-align center
+                    line-height 1.3
                     // Stuff
 
                 #volunteer-form-text-body-container
                   margin-top 1em
 
                   #volunteer-form-text-body
-                    font-size 14px
+                    font-size 18px
                     letter-spacing 1px
                     font-family secondary_font_name
                     color #FFFFFF
                     text-align center
 
               #volunteer-checkboxes
-                // Stuff
+                display flex
+                flex-direction row
+                //align-items(center)
+                justify-content(space-around)
+                flex-wrap wrap
+
                 @media (max-width: 960px)
-                  margin-bottom 30px
+                  //margin-bottom 30px
+                  flex-direction column
+                  margin 0 auto
 
                 .checkbox-row
-                  flexbox(flex)
-                  flex-direction(row)
-                  justify-content(center)
+                  //flexbox(flex)
+                  //flex-direction(row)
+                  //justify-content(center)
+                  //display inline-block
+                  //margin 0 5%
 
                   .option
                     font-family secondary_font_name
-                    font-size 16px
+                    font-size 18px
                     font-weight 700
                     color #FFF
                     width 100%
+                    margin-bottom 1rem
 
                     &:nth-child(0)
                       align-self(flex-start)
@@ -822,12 +905,13 @@ p
               flex-direction(column)
               justify-content(space-between)
               align-items(stretch)
+              margin 2rem 0
 
               // @media (max-width: 960px)
 
               @media (min-width: 961px)
-                width 50%
-                margin-left 2em
+                //width 50%
+                //margin-left 2em
 
               .form-row
                 flexbox(flex)
@@ -835,16 +919,23 @@ p
                 flex-direction(row)
                 align-items(space-between)
                 height 100%
-                margin 10px 0
+                margin 20px 0
+                height 44px
 
                 input
-                  height 90%
+                  height 100%
 
                 #phone-input
                   width 65%
 
+                  @media (max-width: 425)
+                    width 100%
+
                 #zip-input
                   width 30%
+
+                  @media (max-width: 425)
+                    width 100%
 
                 .button
                   width 100%
@@ -855,6 +946,7 @@ p
                   font-weight 600
                   line-height 13px
                   text-align center
+                  text-transform uppercase
 
                   &:hover
                     background-color rgb(140, 116, 255)
@@ -926,7 +1018,10 @@ p
           font-family primary_font_name // Fixed
           font-weight bold
           text-align left
-          line-height 36px !important // potentially redundant
+          line-height 36px
+
+          @media (max-width 425px)
+            font-size 30px
 
       .description
         // padding
@@ -1006,6 +1101,10 @@ p
     #endorsement-header-text
       font-size 4em
 
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
   #endorsement-container
     flexbox(flex)
     justify-content(center)
@@ -1041,14 +1140,16 @@ p
       background-color #3C2D82
       // border-radius 3px;
       // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
-      padding 1em 2em 2em 2em
       font-family secondary_font_name
       font-size 18px
       font-weight 600
-      line-height 18px
       text-align center
       vertical-align middle
       text-transform uppercase
+      white-space normal
+      line-height 1.3 !important
+      height auto
+      padding 1em 2em 1em 2em
       &:hover
         background-color rgb(140, 116, 255)
 
@@ -1072,9 +1173,13 @@ p
     #events-header-text
       color #3C2D82
       font-family primary_font_name
-      font-size 3.5em
+      font-size 4em
       font-weight bold
       text-align center
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
 
   #events-scroll-container
     flexbox(flex)
@@ -1155,11 +1260,15 @@ p
       font-family secondary_font_name
       font-size 18px
       font-weight 600
-      line-height 18px
       text-align center
       vertical-align middle
+      white-space normal
+      line-height 1.3 !important
+      height auto
+      padding 1em 2em 1em 2em
       &:hover
         background-color rgb(140, 116, 255)
+
 
 
 // .chunk[data-kind="about"], .chunk[data-kind="issues"]
@@ -1261,7 +1370,7 @@ p
 #button-layer
   flexbox(flex)
   justify-content(space-between)
-  margin-left 1rem
+  margin-left 2rem
   //margin-right 50px
   align-items(center)
 
