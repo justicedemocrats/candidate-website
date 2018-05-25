@@ -1,5 +1,7 @@
 <div id="platform-header">
-  <h1 id="platform-header-text" name="platform-header-text" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
+  <h1 id="platform-header-text" name="platform-header-text">
+    <%= @platform_chunk_header %>
+  </h1>
 </div>
 
 <div id="planks-container" class="planks-container">
@@ -19,7 +21,7 @@
         </div>
       </div>
       <div class="plank-cta-container">
-        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
+        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues#<%= issue.slug %>">
           More on This
         </a>
       </div>
@@ -28,7 +30,7 @@
 </div>
 
 <div id="planks-button-container">
-  <button id="planks-cta-button" class="button planks-cta-button">
+  <button id="planks-cta-button" class="button planks-cta-button" onclick="window.location='/issues';">
     Read My Full Platform
   </button>
 </div>

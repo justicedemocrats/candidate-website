@@ -18,7 +18,7 @@
   </div>
 
   <div id="issues-button-container">
-    <button id="issues-cta-button" class="button issues-cta-button">
+    <button id="issues-cta-button" class="button issues-cta-button" onclick="window.location='/issues';">
       Read My Full Platform
       </button>
   </div>
