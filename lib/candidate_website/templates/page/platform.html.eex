@@ -1,64 +1,94 @@
-<div class="platform-page">
-  <div class="platform-header-container" style="background-color: <%= @primary_color %>;">
+<%= render "nav-bar.html", assigns %>
 
-    <%= if not @mobile do %>
-      <%= render "nav-bar.html", assigns %>
-    <% end %>
+<div id="platform-hero-container">
+  <!-- Background Image for the Hero block -->
+  <!-- <img src=""></img> -->
 
-    <div class="main-container">
-      <h1 class="platform-header">
+  <!-- Headline Text for the Hero block -->
+  <div id="hero-text-container">
+    <div id="hero-header-container">
+      <h1 id="hero-header-text">
         <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %>
       </h1>
+    </div>
 
-      <div id="name-separator">
-        <div class="half" style="border-bottom: 2px solid white;"></div>
-        <div class="star">&#9733;</div>
-        <div class="half" style="border-bottom: 2px solid white;"></div>
+    <!-- Divider in the Hero block -->
+    <div id="hero-divider-container">
+      <div id="hero-divider-left-container">
+        <hr id="hero-divider-left"/>
       </div>
-
-      <div id="platform-prompt">
-        <%= @platform_header %>
+      <div id="hero-divider-star-container">
+        <div id="hero-divider-star">
+          &#9733;
+        </div>
+      </div>
+      <div id="hero-divider-right-container">
+        <hr id="hero-divider-right"/>
       </div>
     </div>
-  </div>
 
-  <div id="platform-summary">
-    <%= for {issue, i} <- Enum.with_index(@issues) do %>
-      <!-- every fifth issue, start new list -->
-      <%= if rem(i,5) == 0 do %>
-        <ul>
-      <% end %>
-      <li><%= issue.header %></li>
-      <!-- close out ul tag before new ul tag -->
-      <%= if rem(i+1,5) == 0 || (i+1) > length(@issues) do %>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
+    <!-- Subheadline Text in the Hero block -->
+    <div id="hero-subheader-container">
+      <h2 id="hero-subheader-text">
+        <%= @platform_header %>
+      </h2>
+    </div>
 
-  <div class="issues-container">
-    <%= for issue <- @issues do %>
-      <div class="issue-box">
-        <div class="issue-header" style="background-color: <%= @primary_color %>;">
-          <h1> <%= issue.header %> </h1>
-        </div>
-        <div class="issue-icon">
-          <img src="<%= issue.icon[~s(imgix_url)] %>"/>
-        </div>
-        <div class="section">
+  </div>
+</div>
+
+<div id="platform-table-of-contents-container">
+  <ul id="table-of-contents">
+  <%= for issue <- @issues do %>
+    <li class="chapter">
+      <a href="#<%= issue.slug %>">
+        <%= issue.header %>
+      </a>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
+<div id="platform-issues-container">
+  <%= for {issue, i} <- Enum.with_index(@issues) do %>
+  <div class="issue-container" id="<%= issue.slug %>">
+    <!-- Icon Container -->
+    <div class="icon-container">
+      <!-- <img class="issue-icon" src="<%= issue.icon[~s(imgix_url)] %>"/> -->
+      <p class="issue-number">
+        <%= i+1 %>
+      </p>
+    </div>
+    <!-- Text Container -->
+    <div class="text-container">
+      <!-- Header  -->
+      <div class="header-container">
+        <h2 class="issue-header">
+           <%= issue.header %>
+        </h2>
+      </div>
+      <!-- Contents (Full-text)  -->
+      <div class="contents-container">
+        <p class="issue-content">
         <%= if issue.full != nil do %>
           <%= raw(issue.full) %>
         <% else %>
           <%= raw(issue.intro) %>
         <% end %>
-        </div>
+        </p>
       </div>
-    <% end %>
+    </div>
   </div>
-          
-  <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
-    <%= render "volunteer-form.html", assigns %>
+  <div id="issue-divider-container">
+    <hr id="issue-divider"/>
   </div>
+  <% end %>
 </div>
+
+<%= for chunk <- ["volunteer"] do %>
+<div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
+  <%= render "chunk-#{chunk}.html", assigns %>
+</div>
+<% end %>
 
 <%= render "footer.html", assigns %>

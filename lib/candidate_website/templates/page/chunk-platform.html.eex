@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="plank-cta-container">
-        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
+        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues#<%= issue.slug %>">
           More on This
         </a>
       </div>

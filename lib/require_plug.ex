@@ -69,13 +69,14 @@ defmodule CandidateWebsite.RequirePlug do
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{
                        "title" => title,
+                       "slug" => slug,
                        "metadata" => metadata = ~m(header intro priority show_on_homepage)
                      } ->
         priority = as_float(priority)
         full = metadata["full"] || intro
         icon = metadata["icon"] || %{}
         show_on_homepage = show_on_homepage == "Show"
-        ~m(title header intro priority full show_on_homepage icon)a
+        ~m(title slug header intro priority full show_on_homepage icon)a
       end)
       |> Enum.sort(&by_priority/2)
 
