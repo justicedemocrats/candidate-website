@@ -12,7 +12,7 @@ for your operating system.
 
 After that, assuming you've installed Git, run:
 ```
-git clone https://github.com/justicedemocrats/candidate-website.git
+git clone -b ocasio https://github.com/justicedemocrats/candidate-website.git
 cd candidate-website/
 mix deps.get
 mix phx.server
@@ -30,6 +30,3 @@ To make changes, modify the templates in `/lib/candidate_website/templates`, or 
 ## What's Happening
 
 This is a barebones Elixir/Phoenix app which fetches content from [CosmicJS](http://cosmicjs.com/), which is an API first CMS.
-
-
-

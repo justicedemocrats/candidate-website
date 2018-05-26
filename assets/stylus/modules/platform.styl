@@ -1,15 +1,18 @@
 @require fonts
 // Hero Container //
+#platform-hero-wrapper
+  width 100%
+  max-width 100%
+  background-color #3C2D82
+
 #platform-hero-container
   flexbox(flex)
   flex-direction(row)
   justify-content(center)
   align-items(center)
-  background-color #3C2D82
   padding 0 10%
-  mad-width 1440px
-  margin-left auto
-  margin-right auto
+  max-width 1440px
+  margin 0 auto
   // Stuff
 
   #hero-text-container
@@ -85,16 +88,18 @@
         font-family secondary_font_name
         text-align center
 
+#platform-table-of-contents-wrapper
+  width 100%
+  max-width 100%
+  background-color rgba(237,237,237,0.71)
 
 #platform-table-of-contents-container
   flexbox(flex)
   justify-content(center)
   flex-wrap(wrap)
-  background-color rgba(237,237,237,0.71)
   padding 4em 10%
-  mad-width 1440px
-  margin-left auto
-  margin-right auto
+  max-width 1440px
+  margin 0 auto
 
   #table-of-contents
     flexbox(flex)
