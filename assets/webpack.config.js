@@ -85,6 +85,7 @@ module.exports = (env) => {
             outputPath: "../static/fonts/",
             publicPath: "../fonts/"
           }
+          loader: "file-loader",
         },
 
         {
