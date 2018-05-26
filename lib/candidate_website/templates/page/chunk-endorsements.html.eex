@@ -1,3 +1,4 @@
+<div id="endorsements-container">
 <%= if length(@endorsements) > 0 do %>
   <div id="endorsement-header-container">
     <h1 id="endorsement-header-text">
@@ -19,3 +20,4 @@
     </button>
   </div>
 <% end %>
+</div>
