@@ -82,7 +82,7 @@ module.exports = (env) => {
           exclude: /node_modules/,
           options: {
             name: "[name].[ext]",
-            outputPath: "../static/fonts/",
+            outputPath: "../fonts/",
             publicPath: "../fonts/"
           },
           loader: "file-loader"
