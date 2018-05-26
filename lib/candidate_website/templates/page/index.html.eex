@@ -10,29 +10,33 @@
 <% social_width = if assigns[:instagram], do: "150px", else: "100px" %>
 
 <div id="app"></div>
-<div id="hero" class="desktop" > <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"  -->
 
-    <!-- <div id="hero-logo"><img src="https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png"/></div> -->
-    <%= render "signup-form.html", assigns %>
+<div id="hero-wrapper">
+  <div id="hero" class="desktop" > <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"  -->
+
+      <!-- <div id="hero-logo"><img src="https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png"/></div> -->
+      <%= render "signup-form.html", assigns %>
+  </div>
 </div>
 
-  <div id="button-layer">
-    <a href="<%= @facebook %>">
-      <%= render "facebook.html", [color: color] %>
-    </a>
-    <a href="<%= @twitter %>">
-      <%= render "twitter.html", [color: color] %>
-    </a>
+<div id="button-layer">
+  <a href="<%= @facebook %>">
+    <%= render "facebook.html", [color: color] %>
+  </a>
+  <a href="<%= @twitter %>">
+    <%= render "twitter.html", [color: color] %>
+  </a>
 
-    <%= if assigns[:instagram] do %>
-      <a href="<%= assigns[:instagram] %>">
-        <%= render "instagram.html", [color: color] %>
-      </a>
-    <% end %>
-    <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: #3C2D82; border: 2px solid #3C2D82;">
-      Donate
+  <%= if assigns[:instagram] do %>
+    <a href="<%= assigns[:instagram] %>">
+      <%= render "instagram.html", [color: color] %>
     </a>
-  </div>
+  <% end %>
+  <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: #3C2D82; border: 2px solid #3C2D82;">
+    Donate
+  </a>
+</div>
+
 
 <%= render "signup-form.html", assigns %>
 
