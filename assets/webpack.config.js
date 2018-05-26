@@ -80,8 +80,11 @@ module.exports = (env) => {
         {
           test: /\.(ttf|woff2?|eot|svg)$/,
           exclude: /node_modules/,
-          query: { name: "fonts/[hash].[ext]" },
-          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "../static/fonts/",
+            publicPath: "../fonts/"
+          }
         },
 
         {
