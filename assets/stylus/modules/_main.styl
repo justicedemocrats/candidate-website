@@ -1,88 +1,1294 @@
+@require fonts
+
+ .ingeo
+   font-family Geo
+
+div
+  padding-top 0px
+
+h1
+  font-family primary_font_name,
+  font-weight bold
+  font-size 40px
+  font-weight bold
+  color #3C2D82
+  margin auto
+  text-align center
+
+h2
+  font-family primary_font_name // Fixed
+  font-weight bold
+  font-size 1.6em
+  color #3C2D82
+  margin auto
+
+h3
+  font-family primary_font_name // Fixed
+  font-weight bold
+  font-size 2em
+  color #ffffff
+  max-width 1100px
+  margin auto
+
+p
+  font-family secondary_font_name
+  font-weight 400
+  font-size 20px
+  margin auto
+
+button, .button, .button:hover, button:hover
+  border transparent
+  border-top-color transparent
+  border-bottom-color transparent
+  box-shadow none !important
+  text-transform uppercase
+
+.main > div
+  max-width 1440px
+  margin 0 auto
+
 #hero
   width 100%
-  min-height 550px
-  background-size contain
-  background-position center
-  background-position center
-  background-repeat no-repeat
+  height 100%
+  max-height 547px
+  //height 547px
   position relative
+  background-repeat no-repeat
+  background-image url(https://cosmic-s3.imgix.net/22cbc290-5ee9-11e8-b73f-cb1681c50ff2-ocasio-desktop-header.jpg)
+  //url(https://cosmic-s3.imgix.net/c8b74f40-56eb-11e8-a098-e1c5d0edce44-banner-no-logo.png)
+  background-color #3C2D82
+  background-position-y bottom
+  background-size 90%
+  background-position-x -100px
 
-  #hero-signup
-    width 33vw
-    bottom 1%
-    right 10%
+  #hero-logo
+    //background-image url(https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png)
+    //background-size contain
+    //background-repeat no-repeat
+    //max-height 369px
+    //height auto
+    //width auto
+    max-width 500px
+    opacity 0.7
+    margin auto
+    //position absolute
+    //right 20%
+    width 30%
+    position relative
+    top 20%
+    left -2%
+
+#hero-signup
+    top 20%
+    right 5%
+    color white
     position absolute
     text-align center
-    color white
 
     fieldset
       border none
+      margin-bottom 0
+
+    #join
+      background-color hsla(0,0%,100%,.1)
+      font-family secondary_font_name
+      font-weight 600
+      max-width 351px
+
+      #join-prompt
+        font-size 28px
+        font-family primary_font_name // Fixed
+        font-weight bold
+        text-align center
+        margin-top -10px
+        text-shadow 0 2px 4px 0
+
+      #join-subtitle
+        font-size 14px
+        font-style normal
+        font-weight normal
+        text-align center
+
+      .form-row
+        margin-top 8px
+        margin-bottom 8px
+
+        #join-submit
+          color #FFFFFF
+          font-family secondary_font_name
+          font-size 13px
+          font-weight 600
+          line-height 23px
+          text-align center
+          letter-spacing 1px
+
+.main > #hero-signup
+  display none
+
+@media (max-width: 1440px)
+  #hero
+    //background-size 90%
+    //background-position-x -100px
+
+@media (max-width: 1140px)
+  #hero
+    height 85%
+
+    #hero-signup
+      top 9%
+      right 1%
+
+@media (max-width: 960px)
+  .main > #hero-signup
+    background-color #3C2D82
+    display block
+    position static
+    padding 30px
+    #join
+      margin 0 auto
+      max-width none
+
+  #hero
+    #hero-signup
+      display none
+
+.nav
+  height 129px
+  background-color #f5f5f5
+  flexbox(flex)
+  justify-content(center)
+  align-items(center)
+  flex-wrap(nowrap)
+  padding-left 5%
+  padding-right 5%
+
+  .logo
+    max-height 89px
+    max-width 100%
+    margin-right 137px
 
 .tabs
-  padding-left 10%
-  padding-right 10%
+  margin-bottom 0px !important // Countering stupid CSS
 
   .tabs-nav
-    text-align center
     flexbox(flex)
-    justify-content space-between
-    flex-wrap wrap
+    justify-content(space-between)
+    flex-wrap(nowrap)
+    line-height 0px !imporant // Countering stupid CSS
+    margin-bottom 0px // Countering stupid CSS
 
     .nav-item
-      color black
       text-transform uppercase
-      color #A0A0A0
-      padding 20px
-      font-family Montserrat
-      font-size 17px
+      color #3C2D82
+      //padding 1rem 1rem !important // Countering stupid CSS
+      font-family secondary_font_name
+      font-size 14px
+      line-height 35px
+      height 51px
       cursor pointer
-      font-weight lighter
+      font-weight bold
+      background none
+      letter-spacing 1px
+
+      .contribute
+        border 0px !important
+        font-size 16px
+        color #ffffff !important
+        border-radius 3px !important
+        height 51px !important
+        background-color rgba(80,192,32,0.83) !important
+
+      .volunteer
+        color #ffffff !important
+        border-radius 3px!important
+        height 51px
+        border 0px !important
 
     .separator
-      margin-top 15px
-      margin-bottom 15px
-      border-right 1px solid #A0A0A0
+      // margin-top 15px
+      // margin-bottom 15px
+      // border-right 1px solid #A0A0A0
 
-.contribute
-	border 2px solid #7ED321 !important
-	color #7ED321 !important
-	border-radius 103.68px !important
-	background-color rgba(126,211,33,0.1) !important
+@media (max-width: 960px)
+  .nav
+    display:none;
 
-.contribute
-  font-weight bold !important
+#mobileFooterNav
+  background-color #f5f5f5
+  height 130px
+  display flex
+  align-items center
+  justify-content space-between
+  padding 0 10%
 
-h1
-  font-family Montserrat
+  .logo
+    max-height 89px
+    max-width 100%
+
+.main .mobile-menu > div
+  padding 0 10%
+  top 0
+  margin 0 !important
+  > div
+    background-color #3c2d82 !important
+
+@media (min-width: 961px)
+  #mobileFooterNav, .mobile-menu
+    display none
 
 .chunk
-  padding-left 10%
-  padding-right 10%
-  padding-top 30px
-  padding-bottom 30px
+  padding-left 5%
+  padding-right 5%
+  // padding-top 30px
+  // padding-bottom 30px
 
-.chunk:nth-child(odd)
-  background-color #f5f5f5
+.contribute
+  color #ffffff !important
+  background-color rgba(80,192,32,0.83) !important
 
-// .chunk[data-kind="about"],
-// .chunk[data-kind="issues"],
-// .chunk[data-kind="why"],
-// .chunk[data-kind="vote"],
-// .chunk[data-kind="volunteer"]
-//   padding-left 50px
-//   padding-right 50px
+.volunteer
+  color #ffffff !important
+  background-color #3C2D82 !important
 
-.chunk[data-kind="quote"]
-  padding 0px
+// About Chunk //
 
-.mobile
-  .chunk[data-kind="about"],
-  .chunk[data-kind="issues"],
-  .chunk[data-kind="why"],
-  .chunk[data-kind="vote"],
-  .chunk[data-kind="volunteer"]
-    padding-left 20px
-    padding-right 20px
+#chunk-about
+  flexbox(flex)
+  margin 4em auto
+
+  @media screen and (min-width: 961px)
+    flex-direction(row)
+
+  @media screen and (max-width: 960px)
+    flex-direction(column)
+    align-items(center)
+
+  #about-text-container
+    flexbox(flex)
+    flex-direction(column)
+
+    @media screen and (min-width: 961px)
+      order(1)
+
+    @media screen and (max-width: 960px)
+      order(2)
+
+    #about-header-container
+      margin-bottom 1.5rem
+
+  #about-image-container
+    flexbox(flex)
+    flex-direction(column)
+    align-items(center)
+
+    @media screen and (min-width: 961px)
+      order(2)
+      margin-left 4.51rem
+
+    @media screen and (max-width: 960px)
+      order(1)
+      margin-bottom 2em
+
+    #district-image-container
+      // Stiff
+
+      #district-image
+        max-height 247px
+        max-width 100%
+
+    #district-image-subheader
+      margin-top 2em
+
+      @media screen and (max-width: 961px)
+        display none
+
+      #district-image-text
+        font-size 36px
+        font-weight bold
+        font-family primary_font_name
+
+// Issues Chunk //
+
+#chunk-issues
+  background-color #F8D11C
+  flexbox(flex)
+  flex-direction(row)
+  justify-content(center)
+  align-items(stretch)
+  padding 0
+
+  #issues-image-container
+    //background-image url(https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png)
+    //background-repeat no-repeat
+    //background-position left
+    //background-size cover
+    //background-origin border-box
+    //margin 0 0 0 5%
+    //margin 5% 0 0 5%
+    width 50%
+    position relative
+    margin-top 20px
+
+    @media (max-width: 960px)
+      display none
+
+    @media (min-width: 961px)
+      display block
+
+    #issues-image
+      //height 100%
+      width auto
+      position absolute
+      overflow hidden
+      max-width none
+      bottom 0
+      //left -200px
+
+      @media (max-width: 1300px)
+        left -10%
+      @media (max-width: 1200px)
+        left -30%
+      @media (max-width: 1000px)
+        left -50%
+
+  #issues-text-container
+    flexbox(flex)
+    flex-direction(column)
+
+    @media (max-width: 960px)
+      width 100%
+      padding 4em 10%
+
+    @media (min-width: 961px)
+      padding 4em 10% 4em 0em
+      margin 0em 0em 0em 4em
+      width 50%
+
+    #issues-header-container
+      margin 0em 0em 1em 0em
+      flexbox(flex)
+      flex-direction(row)
+
+      #issues-header-text
+        //font-weight bold
+
+        @media (min-width:320px) and (max-width: 960px)
+          //font-size 40px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          //font-size 32px
+
+        @media (min-width: 1601px)
+          //font-size 40px
+
+    #issues-paragraph-container
+      margin 1em 0em 1em 0em
+      flexbox(flex)
+
+      p
+        font-family secondary_font_name
+
+        @media (min-width:320px) and (max-width: 960px)
+          //font-size 20px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          //font-size 16px
+
+        @media (min-width: 1601px)
+          //font-size 20px
+
+    #issues-button-container
+      margin 1em 0em 1em 0em
+      flexbox(flex)
+      flex-direction(row)
+      align-items(center)
+      justify-content(center)
+
+      #issues-cta-button
+        background-color #3C2D82
+        padding 1em 2em 2em 2em
+        font-family secondary_font_name
+        font-weight 600
+        text-align center
+        font-size 20px
+        white-space normal
+        line-height 1.3 !important
+        height auto
+        padding 1em 2em 1em 2em
+
+        &:hover
+          background-color rgb(140, 116, 255)
+
+        @media (min-width:320px) and (max-width: 960px)
+          //font-size 20px
+          //line-height 20px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          //font-size 16px
+          //line-height 16px
+
+        @media (min-width: 1601px)
+          //font-size 20px
+          //line-height 20px
+
+
+#chunk-why-shortened
+  flexbox(flex)
+  background-color #ffffff
+  align-items(center)
+  justify-content(center)
+  margin 4em auto 5em auto
+
+  #shortened-support-header
+    color #3C2D82
+    font-family primary_font_name // Fixed
+    font-size 4em
+    font-weight bold
+    line-height 76px
+    text-align center
+
+    @media (max-width: 425px)
+      font-size 3em
+      line-height 1.3
+
+// Why Support //
+
+#chunk-why
+  background-color #3C2D82
+  flexbox(flex)
+  padding 0
+
+  @media (max-width: 960px)
+    flex-direction(column)
+
+  @media (min-width: 961px)
+    flex-direction(row)
+
+  #why-support-text
+    flexbox(flex)
+    flex-direction(column)
+    width 100%
+
+    @media (max-width: 960px)
+      order(2)
+      padding 4em 10%
+
+    @media (min-width: 961px)
+      order(1)
+      padding 4em 0em 4em 10%
+      margin 0em 5em 0em 0em
+
+    #why-support-header
+      margin 0em 0em 1em 0em
+
+      #why-support-header-text
+        color #FFFFFF
+        // line-height 45px
+
+        @media (min-width:320px) and (max-width: 960px)
+          //font-size 40px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          //font-size 32px
+
+        @media (min-width: 1601px)
+          //font-size 40px
+
+    #why-support-body
+      margin 1em 0em 1em 0em
+
+      p
+        color #FFFFFF
+        // line-height: 29px;
+
+        @media (min-width:320px) and (max-width: 960px)
+          //font-size 20px
+
+        @media (min-width:961px) and (max-width: 1600px)
+          //font-size 16px
+
+        @media (min-width: 1601px)
+          //font-size 20px
+
+    #why-support-learn-more
+      margin 2em 0em 0em 0em
+
+      #why-support-cta
+        color #FFFFFF
+        font-family secondary_font_name
+        font-size 14px
+        font-weight bold
+        line-height 17px
+        text-transform uppercase
+        text-align center
+
+  #why-support-image
+    // Stuff
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 960px)
+      order(1)
+      height: 450px;
+
+    @media (max-width: 425px)
+      order(1)
+      height: 350px;
+
+    @media (min-width: 961px)
+      order(2)
+      //background-position right
+      //background-size cover
+      //background-image url(https://i.imgur.com/MoJ1emX.png)
+      //background-repeat no-repeat
+      width 100%
+
+    #why-support-image-actual
+      // Stuff
+      height 100%
+      width auto
+      overflow hidden
+      max-width none
+      position absolute
+      left 0
+
+      @media (max-width: 1200px)
+        left -200px
+
+      @media (max-width: 960px)
+        width 100%
+        height auto
+        clip unset
+        overflow hidden
+        left 0
+
+      @media (min-width: 961px)
+        //display none
+
+// Donate Chunk //
+
+#chunk-donate
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+  margin 2.5em auto
+  padding 4em 0em 4em 0em
+
+  #donate-header
+    margin-bottom 2.5em
+
+    #donate-header-text
+      color: #3C2D82;
+      line-height: 45px;
+      text-align center
+
+  #circles-container
+    flexbox(flex)
+    flex-wrap wrap
+    text-align center
+    justify-content center
+    //margin 2.5em 0em 2.5em 0em
+
+    .circle
+      flexbox(flex)
+      justify-content(center)
+      flex-direction(column)
+      height 155px
+      width 155px
+      color white
+      background-color rgba(80,192,32,0.83)
+      font-weight bold
+      border 8px solid white
+      border-radius 50%
+      margin 2.5em 2.5em 0px 2.5em
+
+      .amount
+        font-size 35px
+
+  #custom-donation-container
+    flexbox(flex)
+    flex-direction row
+    flex-wrap wrap
+    justify-content center
+    text-align center
+    height auto
+    //margin 2.5em .75em .5em .75em !important
+
+    #custom-contribution-go
+      border 0px // Countering stupid CSS
+      height 54px
+      color #ffffff
+      text-transform uppercase
+      font-weight bold
+      font-size 18px
+      background-color rgba(80,192,32,0.83)
+      padding 10px 20px 10px 20px
+      //margin-left 12px
+      margin 2.2em 12px
+
+    #custom-contribution
+      border 0px // Countering stupid CSS
+      width 101px
+      height 54px
+      text-align center
+      font-weight bold
+      color #9E9E9E
+      background-color #FFFFFF
+      box-shadow inset 1px 1px 1px 0 rgba(0,0,0,0.5)
+      padding 10px 0px 10px 0px
+      //margin-right 12px
+      margin 2.5em 12px
+
+@media (max-width: 425px)
+  #chunk-donate
+    #custom-donation-container
+      flex-direction column
+      #custom-contribution-go
+        margin-top 0
+        margin-bottom 0
+      #custom-contribution
+        margin 2.5em auto
+
+// Platform Chunk //
+
+#chunk-platform
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+
+  #platform-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #platform-header-text
+      font-size 4em
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
+  #planks-container
+    flexbox(flex)
+    justify-content(center)
+    flex-wrap(wrap)
+
+    .plank-container
+      flex-grow 1
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      text-align center
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .plank-header
+        text-align center
+        width 100%
+        min-height 6em
+
+        .plank-header-text
+          font-size 36px
+          font-family primary_font_name // Fixed
+          text-align center
+          font-weight bold
+          color #3C2D82
+
+      .plank-intro-container
+        width 100%
+        align-self(flex-start)
+
+        .plank-intro
+          align-self(flex-start)
+
+          .plank-intro-text
+            font-size 18px
+
+            h2
+              display none
+
+      .plank-cta-container
+        margin-top 1em
+
+        .plank-cta
+          color: #3C2D82;
+          font-family secondary_font_name
+          font-size 14px
+          font-weight bold
+          text-transform uppercase
+          margin-bottom 0.5em
+          border-bottom 2px solid #3C2D82
+
+  #planks-button-container
+    padding 4em 0 5em 0
+
+    #planks-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      &:hover
+        background-color rgb(140, 116, 255)
+
+@media (max-width: 1024px)
+  #chunk-platform
+    #planks-container
+      .plank-container
+        width 100%
+@media (max-width: 425px)
+  #chunk-platform
+    padding 0
+    #planks-container
+      .plank-container
+        margin 0.75em 0
+
+
+// Volunteer Chunk //
+
+#chunk-volunteer
+  flexbox(flex)
+  background-color #FFFFFF // Delete
+  flex-direction(column)
+  margin 4em auto 5em auto
+
+  @media (max-width: 550px)
+    padding 0
+
+  @media (min-width: 551px) and (max-width 960px)
+    padding 0 5%
+
+  #volunteer-header
+    flexbox(flex)
+    background-color #ffffff
+    align-items(center)
+    justify-content(center)
+    margin 0em 0em 5em 0em
+
+    #volunteer-header-text
+      color #3C2D82
+      font-family primary_font_name
+      font-size 4em
+      font-weight bold
+      text-align center
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
+  #volunteer-form-block-container
+    // No flexbox here
+    background-color #4c3e8b
+
+    #volunteer-form-overlay
+      border-size = 0.25em
+      margin 3em 10%
+      border-top border-size solid #675b9d
+      border-bottom border-size solid #3c2d82
+      flexbox(flex)
+      justify-content(center)
+      background-color #5a4d95
+
+      @media (max-width: 425px)
+        border none
+        background-color transparent
+
+      #volunteer-form
+        // Stuff
+
+        @media (max-width: 960px)
+          padding 2em 2em
+
+        @media (max-width: 425px)
+          padding 0
+
+        @media (min-width: 961px)
+          padding 5em 4em
+
+
+        #volunteer-form-object
+          // Stuff
+
+          #volunteer-form-container
+            flexbox(flex)
+            justify-content(space-between)
+
+            @media (max-width:680px)
+              flex-direction(column)
+              padding 0 20px
+
+            @media (min-width: 681px) and (max-width: 960px)
+              flex-direction(column)
+              padding 0 45px
+
+            @media (min-width: 961px)
+              flex-direction(row)
+
+
+            #volunteer-options
+              flexbox(flex)
+              flex-direction(column)
+              justify-content(center)
+
+              // @media (max-width: 960px)
+              //   // Stuff
+
+              @media (min-width: 961px)
+                //width 50%
+                //margin-right 2em
+
+              #volunteer-form-text-block
+                flexbox(flex)
+                flex-direction(column)
+                justify-content(space-between)
+
+                #volunter-form-text-header-container
+                  margin-bottom 1em
+
+                  #volunteer-form-text-header
+                    font-size 28px
+                    font-weight bold
+                    font-family primary_font_name // Fixed
+                    color #FFFFFF
+                    text-align center
+                    line-height 1.3
+                    // Stuff
+
+                #volunteer-form-text-body-container
+                  margin-top 1em
+
+                  #volunteer-form-text-body
+                    font-size 18px
+                    letter-spacing 1px
+                    font-family secondary_font_name
+                    color #FFFFFF
+                    text-align center
+
+              #volunteer-checkboxes
+                display flex
+                flex-direction row
+                //align-items(center)
+                justify-content(space-around)
+                flex-wrap wrap
+
+                @media (max-width: 960px)
+                  //margin-bottom 30px
+                  flex-direction column
+                  margin 0 auto
+
+                .checkbox-row
+                  //flexbox(flex)
+                  //flex-direction(row)
+                  //justify-content(center)
+                  //display inline-block
+                  //margin 0 5%
+
+                  .option
+                    font-family secondary_font_name
+                    font-size 18px
+                    font-weight 700
+                    color #FFF
+                    width 100%
+                    margin-bottom 1rem
+
+                    &:nth-child(0)
+                      align-self(flex-start)
+
+            #form-input-fields
+              flexbox(flex)
+              flex-direction(column)
+              justify-content(space-between)
+              align-items(stretch)
+              margin 2rem 0
+
+              // @media (max-width: 960px)
+
+              @media (min-width: 961px)
+                //width 50%
+                //margin-left 2em
+
+              .form-row
+                flexbox(flex)
+                justify-content(space-between)
+                flex-direction(row)
+                align-items(space-between)
+                height 100%
+                margin 20px 0
+                height 44px
+
+                input
+                  height 100%
+
+                #phone-input
+                  width 65%
+
+                  @media (max-width: 425)
+                    width 100%
+
+                #zip-input
+                  width 30%
+
+                  @media (max-width: 425)
+                    width 100%
+
+                .button
+                  width 100%
+                  background-color #3C2D82
+                  padding 1em 2em
+                  font-family secondary_font_name
+                  font-size 13px
+                  font-weight 600
+                  line-height 13px
+                  text-align center
+                  text-transform uppercase
+
+                  &:hover
+                    background-color rgb(140, 116, 255)
+
+// News Chunk //
+
+#chunk-news
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED;
+
+  #news-cta
+    padding 4em 0 5em 0
+
+    #news-cta-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      line-height 18px
+      text-align center
+      vertical-align middle
+      &:hover
+        background-color rgb(140, 116, 255)
+
+  #news-header
+    flexbox(flex)
+    margin 4em 0em 4em 0em
+    width 100%
+
+    #news-header-text
+      font-size 4em
+
+  #news-articles-container
+    flexbox(flex)
+    justify-content(center)
+    flex-wrap(wrap)
+
+    .article-container
+      // flex-grow(1)
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      background-color #FFFFFF
+      margin 0.75em
+      padding 2em
+      width 30%
+      max-width 384px
+      min-height 322px
+
+      .article-thumbnail
+        max-width 100%
+        height 100px
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+
+      .headline
+        margin 1em 0 1em 0
+
+        h2
+          color #3C2D82
+          font-size 36px
+          font-family primary_font_name // Fixed
+          font-weight bold
+          text-align left
+          line-height 36px
+
+          @media (max-width 425px)
+            font-size 30px
+
+      .description
+        // padding
+
+        p
+          font-size 1em
+
+
+@media (max-width: 1024px)
+  #chunk-news
+    #news-articles-container
+      .article-container
+        width: 100%;
+
+@media (max-width: 425px)
+  #chunk-news
+    padding 0
+    #news-articles-container
+      .article-container
+        margin 0.75em 0
+
+// Twitter Chunk //
+
+#chunk-twitter
+  background-color #FFFFFF
+  padding-top 75px
+  padding-bottom 75px
+  text-align center
+
+  img
+    border-radius 50%
+    display inline-block
+    width 300px
+    height 300px
+
+  #twitter-feed
+    display inline-block
+    width 50%
+    margin-left 75px
+    max-width 1200px
+
+@media (max-width: 947px)
+  #chunk-twitter
+    #twitter-feed
+      width 100%
+      margin-left 0
+      margin-top 75px
+      //width 250px
+
+@media (max-width: 425px)
+  #chunk-twitter
+    img
+      width 250px
+      height 250px
+    #twitter-feed
+      margin-left 0
+      margin-top 75px
+      width 250px
+
+
+
+
+// Endorsements Chunk //
+
+#chunk-endorsements
+  flexbox(flex)
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  background-color #EDEDED
+
+  #endorsement-header-container
+    flexbox(flex)
+    margin 5em 0em 5em 0em
+    width 100%
+
+    #endorsement-header-text
+      font-size 4em
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
+  #endorsement-container
+    flexbox(flex)
+    justify-content(center)
+    align-items(center)
+
+    @media (min-width:320px) and (max-width: 960px)
+      flex-direction(column)
+
+    @media (min-width:961px)
+      flex-direction(row)
+
+    .endorsement-logo-container
+      flexbox(flex)
+      align-items(center)
+      margin 1.5em
+
+      .endorsement-logo-link
+        // Filler
+
+        .endorsement-logo-image
+          filter gray
+          -webkit-filter grayscale(1)
+          filter grayscale(1)
+          // max-height 8em
+          width auto
+          max-height 5em
+
+
+  #endorsement-button-container
+    padding 4em 0 5em 0
+
+    #endorsement-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      text-align center
+      vertical-align middle
+      text-transform uppercase
+      white-space normal
+      line-height 1.3 !important
+      height auto
+      padding 1em 2em 1em 2em
+      &:hover
+        background-color rgb(140, 116, 255)
+
+// Events Chunk //
+
+#chunk-events
+  flexbox(flex)
+  background-color #FFFFFF // Delete
+  flex-direction(column)
+  align-items(center)
+  justify-content(center)
+  margin 4em auto 5em auto
+
+  #events-header-container
+    flexbox(flex)
+    background-color #ffffff
+    align-items(center)
+    justify-content(center)
+    margin 0em 0em 5em 0em
+
+    #events-header-text
+      color #3C2D82
+      font-family primary_font_name
+      font-size 4em
+      font-weight bold
+      text-align center
+
+      @media (max-width: 425px)
+        font-size 3em
+        line-height 1.3
+
+  #events-scroll-container
+    flexbox(flex)
+    flex-direction(column)
+    overflow-y scroll
+    height 500px
+    @media (max-width: 768px)
+      width 90%
+
+    .event-container
+      padding 2.5em 2em
+      margin 0.25em 0
+      flexbox(flex)
+      flex-direction(row)
+      justify-content(space-between)
+      background-color #f5f5f5
+      align-items center
+      @media (max-width: 768px)
+        display block
+
+      .event-text-container
+        align-self(left)
+        flexbox(flex)
+        flex-direction(column)
+        @media (max-width: 768px)
+          align-items center
+
+        .event-title-container
+          // Stuff
+
+          .event-title-text
+            font-family secondary_font_name
+            font-weight 700
+            font-size 1em
+            color #000000
+            line-height 1.3
+            @media (max-width: 768px)
+              text-align center
+
+        .event-description-container
+          // Stuff
+
+          .event-description-text
+            font-family secondary_font_name
+            font-weight 400
+            font-size 0.75em
+            color #000000
+
+      .event-button-container
+        flexbox(flex)
+        flex-direction(row)
+        justify-content(space-between)
+        @media (max-width: 768px)
+          margin-top 2rem
+
+        button
+          font-family secondary_font_name
+          text-transform uppercase
+          font-size 0.75em
+          color #3C2D82
+          border transparent
+          border-bottom 2px solid #3C2D82
+          background-color transparent
+          border-radius 0
+          height auto
+          line-height 2
+          &:hover
+            background-color #3C2D82
+            color #FFF
+
+        .event-rsvp-button-container
+          margin 0 0.5em
+
+          .event-rsvp-button
+            // Stuff
+
+        .event-share-button-container
+          margin 0 0.5em
+
+          .event-share-button
+            // Stuff
+
+  #events-host-button-container
+    padding 4em 0 0 0
+
+    #events-host-button
+      background-color #3C2D82
+      // border-radius 3px;
+      // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+      padding 1em 2em 2em 2em
+      font-family secondary_font_name
+      font-size 18px
+      font-weight 600
+      text-align center
+      vertical-align middle
+      white-space normal
+      line-height 1.3 !important
+      height auto
+      padding 1em 2em 1em 2em
+      &:hover
+        background-color rgb(140, 116, 255)
+
+
 
 // .chunk[data-kind="about"], .chunk[data-kind="issues"]
 //   max-width 1000px
@@ -91,59 +1297,105 @@ h1
 
 .same-row
   flexbox(flex)
-  justify-content space-between
+  justify-content(space-between)
 
 
-  input[name="zip"], input[name="name"], input[name="email"], input[type="tel"]
+  input[name="name"], input[name="email"]
     width 48%
+
+  input[type="tel"]
+    width 60%
+
+  input[name="zip"]
+    width 35%
 
   input[type="submit"]
     width 100%
 
-#footer
-  background-color #F5F5F5
-  padding 50px
-  padding-top 50px
+// Footer Block
 
-  .nav-item
-    background-color transparent
+#footer
+  flexbox(flex)
+  flex-direction(row)
+  align-items(center)
+  justify-content(space-between)
+  background-color #3C2D82
+  font-size 16px
+  line-height 1.5em
+  padding 50px 10% !important
+
+  a
+    color #ffffff !important
+    font-weight: bold
+    vertical-align: top
 
   #paid-for-container
-    width 100%
-    flexbox(flex)
-    justify-content center
-    align-items(center)
-    min-height 110px
-
     #paid-for
-      border 1px solid #9B9B9B
-      padding 20px
-      color #9B9B9B
-      font-family 'Montserrat'
+      flex(1)
+      border 1px solid #FFFFFF
+      padding 20px 10px
+      text-align center
+      max-width 440px
+      color #FFFFFF
+      font-family secondary_font_name
+
+  #privacy-policy-container
+    flexbox(flex)
+    align-items(center)
+    justify-content(center)
+
+  #email-us
+    flexbox(flex)
+    flex-direction(column)
+    align-items(center)
+    color #FFFFFF
+
+@media (max-width: 992px)
+  #footer
+    flex-direction(column)
+
+    #paid-for-container, #privacy-policy-container
+      margin-bottom 30px
+
+    #email-us
+      text-align center
+
+
+
+
 
 .more-about
   display inline
-  font-size larger
-  font-family 'Roboto Condensed'
-  text-transform uppercase
+  font-size 1em
+  font-family primary_font_name // Fixed
+  font-weight bold
+  color #3C2D82
+  margin-top 10px
+  text-decoration underline
+  text-underline-position under
+  text-transform unset
 
-.mobile
-  #button-layer
+.main > #button-layer
+  display none
+
+//.mobile
+@media (max-width: 960px)
+  .main > #button-layer
+    display flex
     width 100%
     justify-content(space-around)
-    margin 0
+    margin 30px 0
 
 #button-layer
   flexbox(flex)
-  justify-content space-between
-  margin-left 50px
-  margin-right 50px
-  padding-top 20px
+  justify-content(space-between)
+  margin-left 2rem
+  //margin-right 50px
   align-items(center)
 
   #social-container
     flexbox(flex)
-    justify-content space-between
+    justify-content(space-between)
     width 100px
     align-items(center)
 
@@ -155,11 +1407,14 @@ h1
 #filled-animate
   transition height ease-out 1s
 
-.mobile
+//.mobile
+@media (max-width: 960px)
   #hero
-    background-size cover
+    background-size contain
+    background-image: url(https://cosmic-s3.imgix.net/341855b0-5ee2-11e8-9f06-23be1fda63d3-ocasio-mobile-header.png)
+    background-color #3C2D82
     min-height 250px
-    background-position left
+    background-position bottom
     background-repeat no-repeat
 
   .tabs
@@ -188,7 +1443,7 @@ h1
 #name
   font-size 46px
   text-transform uppercase
-  font-family 'Montserrat'
+  font-family secondary_font_name
   font-weight 900
   flexbox(flex)
   flex-direction(column)
@@ -209,27 +1464,6 @@ h1
   #separator
     margin-top 3px
     margin-bottom 3px
-
-#join
-  margin-top 20px
-  background-color rgba(255, 255, 255, .1)
-  font-family 'Montserrat'
-
-  #join-prompt
-    text-align center
-    text-transform capitalize
-    font-size larger
-    font-family 'Montserrat'
-
-  #join-subtitle
-    font-size smaller
-    font-style italic
-    font-family 'Montserrat'
-    text-align center
-
-  .form-row
-    margin-top 5px
-    margin-bottom 5px
 
 .flex
   flexbox(flex)

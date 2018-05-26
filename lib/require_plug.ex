@@ -10,12 +10,14 @@ defmodule CandidateWebsite.RequirePlug do
     why_support_body action_shot quote primary_color highlight_color
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
-    general_email press_email platform_header signup_prompt
+    general_email press_email platform_header platform_chunk_header signup_prompt
   )
 
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
+    action_network_api_key google_tag_manager_id google_optimize_id volunteer_options
+    master privacy_policy join_button_color state_logo
   )
 
   @about_attrs ~w(
@@ -28,18 +30,17 @@ defmodule CandidateWebsite.RequirePlug do
   def call(conn, _opts) do
     params = conn |> fetch_query_params() |> Map.get(:params)
     global_opts = GlobalOpts.get(conn, params)
-    candidate = Keyword.get(global_opts, :candidate)
+    # candidate = Keyword.get(global_opts, :candidate)
+    candidate = "alexandria-ocasio-cortez-staging"
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
     endorsements =
       try do
         Cosmic.get_type("endorsements", candidate)
-        |> Enum.map(fn %{
-                         "metadata" =>
-                           ~m(organization_name organization_logo endorsement_text endorsement_url)
-                       } ->
-          ~m(organization_name organization_logo endorsement_text endorsement_url)a
+        |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)} ->
+          organization_slug = organization_name |> String.downcase() |> String.replace(~r/\s+/, "_")
+          ~m(organization_name organization_slug organization_logo endorsement_text endorsement_url)a
         end)
       rescue
         _e -> []
@@ -68,13 +69,14 @@ defmodule CandidateWebsite.RequirePlug do
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{
                        "title" => title,
+                       "slug" => slug,
                        "metadata" => metadata = ~m(header intro priority show_on_homepage)
                      } ->
         priority = as_float(priority)
         full = metadata["full"] || intro
         icon = metadata["icon"] || %{}
         show_on_homepage = show_on_homepage == "Show"
-        ~m(title header intro priority full show_on_homepage icon)a
+        ~m(title slug header intro priority full show_on_homepage icon)a
       end)
       |> Enum.sort(&by_priority/2)
 
@@ -101,13 +103,6 @@ defmodule CandidateWebsite.RequirePlug do
         Map.put(acc, String.to_atom(key), metadata[key])
       end)
 
-    # Global css
-    global_css =
-      case Cosmic.get("global-css", candidate) do
-        %{"metadata" => ~m(global_css)} -> global_css
-        _ -> ""
-      end
-
     # Add required attrs
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
@@ -120,7 +115,6 @@ defmodule CandidateWebsite.RequirePlug do
           other_data
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
-          |> Map.merge(~m(global_css)a)
 
         conn
         |> Plug.Conn.assign(:data, data)

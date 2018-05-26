@@ -34,19 +34,40 @@
     <title><%= title %></title>
 
     <%= {:safe, css_link_tag() } %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+    <%= if assigns[:google_optimize_id] != nil do %>
+      <!-- Page-hiding snippet (recommended)  -->
+      <style>.async-hide { opacity: 0 !important} </style>
+      <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',4000,
+      {'<%= assigns[:google_optimize_id] %>':true});</script>
+    <% end %>
+    <%= if assigns[:google_tag_manager_id] != nil do %>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','<%= assigns[:google_tag_manager_id] %>');</script>
+        <!-- End Google Tag Manager -->
+    <% end %>
+    <%= if assigns[:google_analytics_id] != nil and assigns[:google_tag_manager_id] == nil do %>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= assigns[:google_analytics_id] %>"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+
+        gtag('config', '<%= assigns[:google_analytics_id] %>'<%= if assigns[:google_optimize_id] != nil do %>, { 'optimize_id': '<%= assigns[:google_optimize_id] %>' }<% end %>);
+        </script>
+    <% end %>
   </head>
 
   <body>
-    <%= if @data[:global_css] != nil do %>
-      <style>
-        <%= raw(assigns[:global_css]) %>
-      </style>
-    <% end %>
-
-    <%= if @mobile do %>
-      <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
-    <% end %>
+    <div style="position: absolute; top: 0px; right: 0px; z-index: 1;" class="mobile-menu"></div>
 
     <main class="main <%= if @mobile, do: "mobile", else: "desktop" %>" role="main">
       <%= render @view_module, @view_template, assigns %>
@@ -67,16 +88,4 @@
   <script>
     flexibility(document.documentElement);
   </script>
-
-  <%= if assigns[:google_analytics_id] != nil do %>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments)};
-      gtag('js', new Date());
-
-      gtag('config', '<%= assigns[:google_analytics_id] %>');
-    </script>
-  <% end %>
 </html>

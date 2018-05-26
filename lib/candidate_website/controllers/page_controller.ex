@@ -34,20 +34,65 @@ defmodule CandidateWebsite.PageController do
   end
 
   def signup(conn, params) do
-    %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
+    data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip name) = params
 
     extra = if Map.has_key?(params, "phone"), do: %{phone: params["phone"]}, else: %{}
-    Ak.Signup.process_signup(candidate_name, Map.merge(~m(email zip name), extra))
+
+    [given_name, family_name] =
+      case String.split(name, " ") do
+        [g, f] -> [g, f]
+        [g] -> [g, nil]
+        more -> [List.first(more), List.last(more)]
+      end
+
+    case data do
+      %{action_network_api_key: action_network_api_key} when not is_nil(action_network_api_key) ->
+        HTTPotion.post(
+          "https://actionnetwork.org/api/v2/people",
+          headers: [
+            Accept: "application/hal+json",
+            "Content-Type": "application/json",
+            "OSDI-API-Token": action_network_api_key
+          ],
+          body:
+            Poison.encode!(%{
+              "person" => %{
+                "given_name" => given_name,
+                "family_name" => family_name,
+                "email_addresses" => [
+                  %{"address" => email}
+                ],
+                "postal_addresses" => [
+                  %{
+                    "postal_code" => zip,
+                    "primary" => true
+                  }
+                ],
+                "custom_fields" => %{
+                  "Mobile Phone" => params["phone"]
+                }
+              },
+              "add_tags" => ["website-signup"]
+            })
+        )
+
+      _ ->
+        Ak.Signup.process_signup(candidate_name, Map.merge(~m(email zip name), extra))
+    end
 
     redirect(conn, external: donate_url)
   end
 
   def volunteer(conn, params) do
-    %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
+    cand_data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
 
     data =
-      Enum.reduce(~w(call_voters join_team attend_event host_event), params, fn checkbox, acc ->
+      Map.keys(params)
+      |> MapSet.new()
+      |> MapSet.difference(MapSet.new(~w(email name phone zip _csrf_token)))
+      |> MapSet.to_list()
+      |> Enum.reduce(params, fn checkbox, acc ->
         if params[checkbox] do
           Map.put(acc, "action_" <> checkbox, true)
         else
@@ -61,7 +106,54 @@ defmodule CandidateWebsite.PageController do
       String.contains?(title, "Volunteer") and String.contains?(title, candidate_name)
     end
 
-    Ak.Signup.process_signup(matcher, Map.merge(data, extra))
+    [given_name, family_name] =
+      case String.split(params["name"], " ") do
+        [g, f] -> [g, f]
+        [g] -> [g, nil]
+        more -> [List.first(more), List.last(more)]
+      end
+
+    case cand_data do
+      %{action_network_api_key: action_network_api_key} when not is_nil(action_network_api_key) ->
+        HTTPotion.post(
+          "https://actionnetwork.org/api/v2/people",
+          headers: [
+            Accept: "application/hal+json",
+            "Content-Type": "application/json",
+            "OSDI-API-Token": action_network_api_key
+          ],
+          body:
+            Poison.encode!(%{
+              "person" => %{
+                "given_name" => given_name,
+                "family_name" => family_name,
+                "email_addresses" => [
+                  %{"address" => params["email"]}
+                ],
+                "custom_fields" => %{
+                  "Mobile Phone" => params["phone"]
+                },
+                "postal_addresses" => [
+                  %{
+                    "postal_code" => params["zip"],
+                    "primary" => true
+                  }
+                ]
+              },
+              "add_tags" =>
+                Enum.concat(
+                  ["website-volunteer"],
+                  Map.keys(data)
+                  |> Enum.filter(&String.starts_with?(&1, "action_"))
+                  |> Enum.map(&String.replace(&1, "action_", ""))
+                  |> Enum.map(&"Help: #{nice_tag(&1)}")
+                )
+            })
+        )
+
+      _ ->
+        Ak.Signup.process_signup(matcher, Map.merge(data, extra))
+    end
 
     destination =
       case candidate_name do
@@ -71,5 +163,12 @@ defmodule CandidateWebsite.PageController do
       end
 
     redirect(conn, external: destination)
+  end
+
+  def nice_tag(tag) do
+    tag
+    |> String.split("_")
+    |> Enum.map(&String.capitalize/1)
+    |> Enum.join(" ")
   end
 end

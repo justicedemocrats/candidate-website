@@ -1,4 +1,5 @@
-<div class="news-container">
+<!--
+<div class="news-container" id="news">
   <div class="banner-header" style="background-color: <%= @primary_color %>;">
     <h1 style="color: white;"> News </h1>
   </div>
@@ -20,7 +21,8 @@
     <% end %>
   </div>
 </div>
-
+-->
+<!--
 <a href="/press"
   class="button"
   style="color: white; background-color: <%= @highlight_color %>;
@@ -40,4 +42,32 @@
   <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-
+-->
+<div id="news-header">
+  <h1 id="news-header-text">
+    Recent News
+  </h1>
+</div>
+<div id="news-articles-container">
+  <%= for article <- @articles do %>
+    <div class="article-container" onclick="window.open('<%= article.url %>')">
+      <div class="article-thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)">
+      </div>
+      <div class="headline">
+        <h2 class="headline-text">
+          <%= article.headline %>
+        </h2>
+      </div>
+      <div class="desciption">
+        <p class="description-text">
+          <%= article.description %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="news-cta">
+  <button id="news-cta-button">
+    See All News Updates
+  </button>
+</div>

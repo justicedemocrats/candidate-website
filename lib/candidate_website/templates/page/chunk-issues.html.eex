@@ -1,8 +1,25 @@
-<h1 style="color: <%=@primary_color %>"> <%= @issues_header %></h1>
-<p style="display: inline;">
-  <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-</p>
+<div id="issues-image-container">
+  <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/>
+</div>
+<%= if not @mobile do %>
 
-<a href="/platform" class="more-about" style="color: <%= @highlight_color %>; ">
-  Read My Full Platform Here
-</a>
+<% end %>
+
+<div id="issues-text-container">
+  <div id="issues-header-container">
+    <h1 id="issues-header-text">
+      <%= raw(@issues_header) %>
+    </h1>
+  </div>
+  <div id="issues-paragraph-container">
+    <p id="issues-paragraph-text">
+      <%= raw(@issues_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+    </p>
+  </div>
+
+  <div id="issues-button-container">
+    <button id="issues-cta-button" class="button issues-cta-button" onclick="window.location='/issues';">
+      Read My Full Platform
+      </button>
+  </div>
+</div>

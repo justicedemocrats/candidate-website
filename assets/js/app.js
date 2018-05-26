@@ -36,7 +36,13 @@ function getQueryStringValue(key) {
 
 setTimeout(bind, 100);
 
-const hamburgerTarget = document.getElementById("mobile-menu");
+const hamburgerTarget = document.getElementsByClassName("mobile-menu")[0];
+const hamburgerTargetFooter = document.getElementsByClassName("mobile-menu")[1];
+
 if (hamburgerTarget) {
   render(<Hamburger />, hamburgerTarget);
+}
+
+if (hamburgerTargetFooter) {
+  render(<Hamburger />, hamburgerTargetFooter);
 }

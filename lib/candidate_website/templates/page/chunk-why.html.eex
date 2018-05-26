@@ -1,16 +1,18 @@
-<div name="why" class="banner-header" style="background-color: <%= @primary_color %>;">
-  <h1 style="color: white;"> Why Support <%= @name |> String.split(" ") |> List.first() %> </h1>
+<div id="why-support-text">
+  <div id="why-support-header">
+    <h1 id="why-support-header-text">
+      <%= @why_support_header %>
+    </h1>
+  </div>
+  <div id="why-support-body">
+    <%= raw(@why_support_body) %>
+  </div>
+  <div id="why-support-learn-more">
+    <div id="why-support-cta">
+      Learn More about Alexandria
+    </div>
+  </div>
 </div>
-<!-- <div class="flex" style="padding-top: 20px; text-align: <%= if not @mobile, do: "left", else: "center" %>;"> -->
-<div style="padding-top: 20px; overflow: hidden; text-align: <%= if not @mobile, do: "left", else: "center" %>;">
-  <h1 style="color: <%=@primary_color %>"> <%= @why_support_header %></h1>
-  <%= if not @mobile and assigns[:why_support_picture] do %>
-    <img
-      src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"
-      style="max-height: 300px; float: right; max-width: 40%; max-height: 100%; margin: 10px;" hspace="5"
-    />
-  <% end %>
-  <%= raw(@why_support_body) %>
+<div id="why-support-image">
+  <img id="why-support-image-actual" src="https://i.imgur.com/DHe9eIk.png"/>
 </div>
-  <!-- <div style="padding-right: 30px; letter-spacing: 1px; font-size: 20px; width: 100%;">
-  </div> -->

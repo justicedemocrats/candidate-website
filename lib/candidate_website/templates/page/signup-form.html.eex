@@ -1,13 +1,4 @@
 <%
-  color =
-    cond do
-      @mobile -> @primary_color
-      assigns[:hero_text_color] -> assigns[:hero_text_color]
-      true -> "white"
-    end
-%>
-
-<%
   for_text =
     cond do
       assigns[:before_for_congress] -> "#{assigns[:before_for_congress]} For #{congress_or_senate(@district)}"
@@ -17,21 +8,7 @@
 
 <% join_message = assigns[:signup_prompt] || "Join my Campaign" %>
 
-<div id="hero-signup" style="color: <%= color %>;">
-  <div id="name">
-    <%= @name |> String.split(" ") |> Enum.reverse() |> Enum.slice(1..10) |> Enum.reverse() |> Enum.join(" ") %>
-    <span style="white-space: nowrap; text-align: center;"> <%= @name |> String.split(" ") |> List.last() %> </span>
-  </div>
-  <div id="name-separator">
-    <div class="half" style="border-bottom: 2px solid <%= color %>;"></div>
-    <div class="star">&#9733;</div>
-    <div class="half" style="border-bottom: 2px solid <%= color %>;"></div>
-  </div>
-  <div id="district">
-    <div id="for-blank"> <%= for_text %> </div>
-    <div id="separator" style="border-right: 1px solid <%= color %>;"></div>
-    <div id="district-spec"> <%= human_district(@district) %> </div>
-  </div>
+<div id="hero-signup">
   <div id="join">
     <form method="POST" action="/signup?candidate=<%= @candidate %>">
       <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
@@ -39,20 +16,20 @@
         <div id="join-prompt"> <%= join_message %> </div>
         <div id="join-subtitle"> For info and updates </div>
         <div class="form-row">
-          <div class="same-row">
             <input type="text" name="name" placeholder="Name*" required="required" />
+        </div>
+        <div class="form-row">
             <input type="email" name="email" placeholder="Email*" required="required" />
-          </div>
         </div>
         <div class="form-row">
           <div class="same-row">
-            <input type="text" name="zip" placeholder="Zip*" required="required" />
             <input type="tel" name="phone" placeholder="Phone" />
+            <input type="text" name="zip" placeholder="Zip" />
           </div>
         </div>
         <div class="form-row">
           <div class="same-row">
-            <input type="submit" style=" background-color: <%= @primary_color %>; border: none;" class="button" value="Join Me" />
+            <input id="join-submit" type="submit" style=" background-color: <%= assigns[:join_button_color] %>; border: none;" class="button" value="JOIN ME" />
           </div>
         </div>
       </fieldset>

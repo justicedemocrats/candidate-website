@@ -1,21 +1,33 @@
 <% state = @district |> state() |> String.downcase() %>
 <% show_state = Enum.member?(~w(california), state) %>
-
-<div class="flex">
-  <div>
-    <h1 name="about" style="color: <%=@primary_color %>"> <%= @intro_statement %> </h1>
+<div id="about-text-container">
+  <div id="about-header-container">
+    <p style="display: inline;">
+      <h1 id="about-header" name="about" style="color: <%=@primary_color %>">
+        <%= @intro_statement %>
+      </h1>
+    <p/>
+  </div>
+  <div id="about-paragraph-container">
     <p style="display: inline;">
       <%= raw(@intro_paragraph |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-    </p>
-
-    <%= if @about_enabled do %>
-      <br/>
-      <a href="/about" class="more-about" style="color: <%= @highlight_color %>; ">
-        Read More About Me Here
-      </a>
-    <% end %>
+    <p/>
   </div>
-
+  <%= if @about_enabled do %>
+    <br/>
+    <a href="/about" class="more-about" style="color: <%= @highlight_color %>; ">
+      Read More About Me Here
+    </a>
+  <% end %>
+</div>
+<div id="about-image-container">
+  <div id="district-image-container">
+    <img id="district-image" src="https://cosmic-s3.imgix.net/e24126d0-5a0f-11e8-8dfe-6d215cddee31-Group%2020.png"/>
+  </div>
+  <div id="district-image-subheader">
+    <h2 id="district-image-text">NY-14</h2>
+  </div>
+</div>
 <!--
   <div class="about-flex">
     <div style="height: 10%;">

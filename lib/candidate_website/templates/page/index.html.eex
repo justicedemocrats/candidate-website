@@ -10,55 +10,12 @@
 <% social_width = if assigns[:instagram], do: "150px", else: "100px" %>
 
 <div id="app"></div>
-<div id="hero" class="desktop" style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);  background-color: <%= @header_background_color %>;">
-  <%= if not @mobile do %>
-    <div id="button-layer">
-      <div id="social-container" style="width: <%= social_width %>;">
-        <a href="<%= @facebook %>">
-          <%= render "facebook.html", [color: color] %>
-        </a>
+<div id="hero" class="desktop" > <!-- background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>);style="background-image: url(<%= URI.encode(@big_picture["imgix_url"]) %>); background-color: <%= @header_background_color %>;"  -->
 
-        <a href="<%= @twitter %>">
-          <%= render "twitter.html", [color: color] %>
-        </a>
-
-        <%= if assigns[:instagram] do %>
-          <a href="<%= assigns[:instagram] %>">
-            <%= render "instagram.html", [color: color] %>
-          </a>
-        <% end %>
-
-        <%= if assigns[:linkedin] do %>
-          <a href="<%= assigns[:linkedin] %>">
-            <%= render "linkedin.html", [color: color] %>
-          </a>
-        <% end %>
-
-        <%= if assigns[:youtube] do %>
-          <a href="<%= assigns[:youtube] %>">
-            <%= render "youtube.html", [color: color] %>
-          </a>
-        <% end %>
-
-      </div>
-      <div>
-        <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
-          Donate
-        </a>
-      </div>
-    </div>
-  <% end %>
-
-  <%= if not @mobile do %>
+    <!-- <div id="hero-logo"><img src="https://preview.ibb.co/jNBAgJ/Ocasio2018_Logo_WHITE.png"/></div> -->
     <%= render "signup-form.html", assigns %>
-  <% end %>
 </div>
 
-<%= if @mobile do %>
-  <%= render "signup-form.html", assigns %>
-<% end %>
-
-<%= if @mobile do %>
   <div id="button-layer">
     <a href="<%= @facebook %>">
       <%= render "facebook.html", [color: color] %>
@@ -72,37 +29,18 @@
         <%= render "instagram.html", [color: color] %>
       </a>
     <% end %>
-    <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: <%= color %>; border: 2px solid <%= color %>;">
+    <a class="button button-light" href="<%= @donate_url %>" style="text-transform: uppercase; color: #3C2D82; border: 2px solid #3C2D82;">
       Donate
     </a>
   </div>
-<% end %>
 
-<%= if not @mobile do %>
-  <div class="tabs" style="margin-top: 20px;">
-    <nav class="tabs-nav">
-      <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
-      <%= if @about_enabled do %>
-        <a href="/about" class="nav-item"> About </a>
-      <% else %>
-        <a href="#why" class="nav-item"> About </a>
-      <% end %>
-      <!-- <div class="separator"></div> -->
-      <a href="/issues" class="nav-item"> Issues </a>
-      <!-- <div class="separator"></div> -->
-      <!-- <a href="#vote" class="nav-item"> Our District </a>
-      <div class="separator"></div> -->
-      <a href="#events" class="nav-item"> Events </a>
-      <!-- <div class="separator"></div> -->
-      <a href="#news" class="nav-item"> News </a>
-      <a href="#volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>;"> Volunteer </a>
-    </nav>
-  </div>
-<% end %>
+<%= render "signup-form.html", assigns %>
+
+<%= render "nav-bar.html", assigns %>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "quote", "issues", "donate", "why", "platform", "volunteer", "news", "events", "endorsements"] do %>
-  <div class="chunk" data-kind="<%= chunk %>">
+<%= for chunk <- ["about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "endorsements", "events"] do %>
+  <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
 <% end %>
