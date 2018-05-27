@@ -52,26 +52,59 @@
   </div>
 </div>
 
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  function dropIcon(varia) {
+    if (varia.find('.issue-carat')[0].innerHTML == "+") {
+      varia.find('.issue-carat')[0].innerHTML = "-";
+      } else {
+      varia.find('.issue-carat')[0].innerHTML = "+"
+      }
+  }
+
+  $(document).ready(function($) {
+    $('#platform-issues-container').find('.issue-container').find('.text-container').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      dropIcon($(this));
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $('.accordion-toggle').not($(this)).each(function() {$(this).find('.issue-carat')[0].innerHTML = "+";});
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
+  });
+
+  // $( window ).resize(function() {
+  //   if($(window).width() <=1000) $('.fa-iconname').addClass("lg-2x");
+  //   else $('.fa-iconname').removeClass("lg-2x");
+  // });
+</script>
+
+
 <div id="platform-issues-container">
   <%= for {issue, i} <- Enum.with_index(@issues) do %>
   <div class="issue-container" id="<%= issue.slug %>">
     <!-- Icon Container -->
     <div class="icon-container">
       <!-- <img class="issue-icon" src="<%= issue.icon[~s(imgix_url)] %>"/> -->
-      <p class="issue-number">
-        <%= i+1 %>
-      </p>
-    </div>
+        <p class="issue-number">
+          <%= i+1 %>
+        </p>
+      </div>
     <!-- Text Container -->
     <div class="text-container">
       <!-- Header  -->
-      <div class="header-container">
+      <div class="header-container accordion-toggle">
         <h2 class="issue-header">
            <%= issue.header %>
         </h2>
+        <h2 class="issue-carat">+</h2>
       </div>
       <!-- Contents (Full-text)  -->
-      <div class="contents-container">
+      <div class="contents-container accordion-content">
         <p class="issue-content">
         <%= if issue.full != nil do %>
           <%= raw(issue.full) %>
@@ -82,11 +115,30 @@
       </div>
     </div>
   </div>
-  <div id="issue-divider-container">
-    <hr id="issue-divider"/>
+  <div class="issue-divider-container">
+    <hr class="issue-divider"/>
   </div>
   <% end %>
 </div>
+
+<!-- <div id="platform-accordion-container">
+  <ul id="platform-accordion-contents">
+    <%= for {issue, i} <- Enum.with_index(@issues) do %>
+    <li id="issue">
+      <h2 class="accordion-toggle">
+        <%= issue.header %>
+      </h2>
+      <p class="accordion-content">
+      <%= if issue.full != nil do %>
+        <%= raw(issue.full) %>
+      <% else %>
+        <%= raw(issue.intro) %>
+      <% end %>
+      </p>
+    </li>
+    <% end %>
+  </ul>
+</div> -->
 
 <%= for chunk <- ["volunteer"] do %>
 <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">

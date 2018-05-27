@@ -15,14 +15,24 @@
   margin 0 auto
   // Stuff
 
+  @media (max-width 960px)
+    // Stuff
+
+  @media (min-width 961px)
+    // Hiiii
+
   #hero-text-container
     flexbox(flex)
     flex-direction(column)
     justify-content(center)
     margin 5em 0
-    padding 0 20%
     width 100%
     // Stuff
+    @media (max-width 960px)
+      padding 0
+
+    @media (min-width 961px)
+      padding 0 20%
 
     #hero-header-container
       flexbox(flex)
@@ -87,11 +97,18 @@
         color #FFFFFF
         font-family secondary_font_name
         text-align center
+        letter-spacing 1.35px
 
 #platform-table-of-contents-wrapper
   width 100%
   max-width 100%
   background-color rgba(237,237,237,0.71)
+
+  @media (max-width 960px)
+    display none
+
+  @media (min-width 961px)
+    // Hiiii
 
 #platform-table-of-contents-container
   flexbox(flex)
@@ -118,19 +135,35 @@
       color #3C2D82
 
 
+
 #platform-issues-container
   flexbox(flex)
   flex-direction(column)
-  padding 0 10%
-  mad-width 1440px
-  margin-left auto
-  margin-right auto
+
+  @media (max-width 960px)
+    // Hi
+
+  @media (min-width 961px)
+    padding 0 10%
+    max-width 1440px
+    margin-left auto
+    margin-right auto
+
+  .issue-divider-container
+    .issue-divider
+      @media (max-width 960px)
+        margin 0 0 !important
 
   .issue-container
     flexbox(flex)
     flex-direction(row)
     justify-content(flex-start)
-    padding 4em 0
+
+    @media (max-width 960px)
+      // None
+
+    @media (min-width 961px)
+      padding 4em 0
 
     .icon-container
       flex-shrink(0)
@@ -143,7 +176,12 @@
       padding 8px
       background #fff
       border 15px solid #3C2D82
-      //margin-right 65px
+
+      @media (max-width 960px)
+        display none
+
+      @media (min-width 961px)
+        // None
 
       .issue-icon
         // Stuff
@@ -163,124 +201,85 @@
       flex-direction(column)
       justify-content(flex-start)
       align-items(flex-start)
-      margin-left 130px
+
+      @media (max-width 960px)
+        width 100%
+
+      @media (min-width 961px)
+        margin-left 130px
+
+      .accordion-toggle
+        // Blah
+
+        @media (max-width 960px)
+          cursor pointer
+
+        @media (min-width 961px)
+          // Blah
 
       .header-container
         flexbox(flex)
-        justify-content(flex-start)
-        margin-bottom 1.5em
+        justify-content(space-between)
+
+        @media (max-width 960px)
+          padding 2em 10%
+          width 100%
+          margin-left auto
+          margin-right auto
+          background-color #f4f3f8
+
+        @media (min-width 961px)
+          margin-bottom 1.5em
 
         .issue-header
-          font-size 40px
+          font-size 34px
           color #3C2D82
+
+          @media (max-width 960px)
+            margin 0 20px 0 0
+
+          @media (min-width 961px)
+            // Stuff
+
+        .issue-carat
+          @media (max-width 960px)
+            margin 0
+            font-size 40px
+            color #3C2D82
+
+          @media (min-width 961px)
+            display none
 
       .contents-container
         flexbox(flex)
         justify-content(flex-start)
         margin-top 1.5em
 
+        @media (max-width 960px)
+          padding 0 10%
+          max-width 1440px
+          margin-left auto
+          margin-right auto
+          width 100%
+          display none
+
+        @media (min-width 961px)
+          display block !important
+
         .issue-content
           font-size 20px
 
+        .default
+          display block
 
-// .platform-header-container
-//   color white
-//
-//   p
-//     margin 0
-//
-//   .top-container
-//     flexbox(flex)
-//     margin-bottom 50px
-//
-//     .name-header
-//       margin-right 30px
-//
-//     img
-//       height 250px
-//       width 250px
-//       border-radius 50%
-//       border 10px solid white
-//
-//   .tabs
-//     margin 0
-//     padding-top 20px
-//
-//     .nav-item
-//       background-color transparent
-//       color #939393 !important
-//       border none !important
-//
-//   .platform-header
-//     color white
-//     font-family 'Montserrat'
-//     text-transform uppercase
-//     font-weight bold
-//
-// .platform-header-container
-//   width 100%
-//
-// #platform-prompt
-//   margin-bottom 20px
-//
-// #platform-summary
-//   background-color rgba(237,237,237,0.71)
-//   color #3C2D82
-//   width 100%
-//   padding 60px 10% !important
-//
-//   ul
-//     display inline-block
-//     font-size 24px
-//     font-weight bold
-//     line-height 45px
-//     text-align center
-//     margin-right 35px
-//     width 30%
-//     vertical-align top
-//
-//     ^[-1]
-//       margin-right 0px
-//
-//   li
-//     list-style-type none
-//
-//
-// .main-container
-//   flexbox(flex)
-//   justify-content(flex)
-//   align-items(center)
-//   flex-direction(column)
-//
-//   #name-separator
-//     width 350px
-//     margin-top 10px
-//     margin-bottom 10px
-//     flexbox(flex)
-//     justify-content(space-between)
-//
-//     .half
-//       width 45%
-//       margin-bottom 15px
-//
-//     .star
-//       font-size 22px
-//
-// .platform-page
-//   flexbox(flex)
-//   flex-direction(column)
-//   align-items(center)
-//   width 100%
-//
-//   .section
-//     max-width 1100px
-//     font-size 20px
-//     padding 30px
-//
-// .issue-header
-//   color white
-//   font-family 'Roboto Condensed'
-//   padding 20px
-//   margin-top 50px
-//   margin-bottom 50px
-//   align-self(flex-start)
+// Accordion Functionality
+
+@media (max-width 960px)
+  .accordion-toggle
+    cursor pointer
+
+  .accordion-content
+    // display none
+
+    .default
+      display block
