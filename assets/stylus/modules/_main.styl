@@ -335,11 +335,16 @@ button, .button, .button:hover, button:hover
   #issues-container
     margin 0 auto
     max-width 1440px
-    padding 0 5% 0 2.5%
     flexbox(flex)
     flex-direction(row)
     justify-content(center)
     align-items(stretch)
+
+    @media (max-width: 960px)
+      padding 0 5% 0 5%
+
+    @media (min-width: 961px)
+      padding 0 5% 0 2.5%
 
     #issues-image-container
       //background-image url(https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png)
@@ -736,10 +741,10 @@ button, .button, .button:hover, button:hover
         max-width 384px
         min-height 322px
 
-        @media (max-width: 1024px)
+        @media (max-width 1024px)
           width 100%
 
-        @media (max-width: 425px)
+        @media (max-width 425px)
           margin 0.75em 0
 
         .plank-header
@@ -849,19 +854,20 @@ button, .button, .button:hover, button:hover
       #volunteer-form
         // Stuff
 
-        @media (min-width: 961px)
-          padding 5em 4em
-          max-width 700px
 
         // Small Screen
-        @media (max-width: 425px)
+        @media (min-width 1px) and (max-width 425px)
           padding 0
           width 100%
 
         // Bigger Screen
-        @media (max-width: 960px)
+        @media (min-width 426px) and (max-width: 960px)
           padding 2em 2em
           width 100%
+
+        @media (min-width 961px)
+          padding 5em 4em
+          max-width 700px
 
 
         #volunteer-form-object
@@ -1344,13 +1350,6 @@ button, .button, .button:hover, button:hover
       padding 1em 2em 1em 2em
       &:hover
         background-color rgb(140, 116, 255)
-
-
-
-// .chunk[data-kind="about"], .chunk[data-kind="issues"]
-//   max-width 1000px
-//   margin-left auto
-//   margin-right auto
 
 .same-row
   flexbox(flex)
