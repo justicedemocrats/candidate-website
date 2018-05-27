@@ -1,38 +1,42 @@
-<div class="nav-wrapper" id="main-nav">
+<div class="main-nav-wrapper" id="main-nav">
     <div class="main-nav">
-      <div class="nav">
-        <a href="/">
-          <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
-        </a>
-        <div class="tabs">
-            <nav class="tabs-nav">
-              <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
-              <%= if @about_enabled do %>
-                <a href="/about" class="nav-item"> About </a>
-              <% else %>
-                <a href="/#chunk-why" class="nav-item"> About </a>
-              <% end %>
-                <!-- <div class="separator"></div> -->
-                <a href="/issues" class="nav-item"> Issues </a>
-                <!-- <div class="separator"></div> -->
-                <!-- <a href="#vote" class="nav-item"> Our District </a>
-          <div class="separator"></div> -->
-                <a href="/#chunk-events" class="nav-item"> Events </a>
-                <!-- <div class="separator"></div> -->
-                <a href="/#chunk-news" class="nav-item"> News </a>
-                <a href="/#chunk-volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>"> Volunteer </a>
-              </nav>
+        <div class="nav-wrapper" id="main-nav">
+            <div class="main-nav">
+              <div class="nav">
+                <a href="/">
+                  <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
+                </a>
+                <div class="tabs">
+                    <nav class="tabs-nav">
+                      <a href="<%= @donate_url %>" class="nav-item contribute"> Contribute </a>
+                      <%= if @about_enabled do %>
+                        <a href="/about" class="nav-item"> About </a>
+                      <% else %>
+                        <a href="/#chunk-why" class="nav-item"> About </a>
+                      <% end %>
+                        <!-- <div class="separator"></div> -->
+                        <a href="/issues" class="nav-item"> Issues </a>
+                        <!-- <div class="separator"></div> -->
+                        <!-- <a href="#vote" class="nav-item"> Our District </a>
+                  <div class="separator"></div> -->
+                        <a href="/#chunk-events" class="nav-item"> Events </a>
+                        <!-- <div class="separator"></div> -->
+                        <a href="/#chunk-news" class="nav-item"> News </a>
+                        <a href="/#chunk-volunteer" class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>"> Volunteer </a>
+                      </nav>
+                </div>
+                <div id=button-layer>
+                  <div id="social-container" class="social-container">
+                    <a href="<%= @facebook %>">
+                      <%= render "facebook.html", [color: assigns[:highlight_color]] %>
+                    </a>
+                    <a href="<%= @twitter %>">
+                      <%= render "twitter.html", [color: assigns[:highlight_color]] %>
+                    </a>
+                  </div>
+                </div>
+             </div>
+            </div>
         </div>
-        <div id=button-layer>
-          <div id="social-container" class="social-container">
-            <a href="<%= @facebook %>">
-              <%= render "facebook.html", [color: assigns[:highlight_color]] %>
-            </a>
-            <a href="<%= @twitter %>">
-              <%= render "twitter.html", [color: assigns[:highlight_color]] %>
-            </a>
-          </div>
-        </div>
-     </div>
     </div>
 </div>

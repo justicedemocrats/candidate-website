@@ -227,11 +227,14 @@ button, .button, .button:hover, button:hover
 
 // Sticky nav styles
 .main-nav-wrapper
-  height 90px
+  height 129px
 
 .main-nav
     background white
     z-index 10000
+
+.nav-visible .main-nav
+    margin-top 0
 
 .nav-hidden .main-nav
     transition margin-top 0.3s ease-in-out
@@ -243,10 +246,6 @@ button, .button, .button:hover, button:hover
 
 .nav-hidden.scrolling-up .main-nav
     margin-top -130px
-
-// Main page
-#hero + .main-nav-wrapper .main-nav
-  padding-top 20px
 
 
 @media (max-width: 960px)
