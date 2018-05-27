@@ -224,6 +224,30 @@ button, .button, .button:hover, button:hover
       // margin-bottom 15px
       // border-right 1px solid #A0A0A0
 
+
+// Sticky nav styles
+.main-nav-wrapper
+  height 129px
+
+.main-nav
+    background white
+    z-index 10000
+
+.nav-visible .main-nav
+    margin-top 0
+
+.nav-hidden .main-nav
+    transition margin-top 0.3s ease-in-out
+    margin-top 0
+    position fixed
+    left 0
+    right 0
+    top 0
+
+.nav-hidden.scrolling-up .main-nav
+    margin-top -130px
+
+
 @media (max-width: 960px)
   .nav
     display:none;

@@ -1,5 +1,3 @@
-<%= render "nav-bar.html", assigns %>
-
 <div id="mobileFooterNav">
     <a href="/">
       <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
