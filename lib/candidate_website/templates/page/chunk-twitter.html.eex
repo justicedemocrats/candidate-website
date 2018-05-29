@@ -1,3 +1,9 @@
+<div id="twitter-header">
+    <h1 id="twitter-header-text">
+      Twitter
+    </h1>
+  </div>
+
   <img src="https://cosmic-s3.imgix.net/7d7e5730-5d0d-11e8-9f67-b7bd10c78975-ocasio-twitter.jpg" />
 
   <div id="twitter-feed">
