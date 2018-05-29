@@ -3,7 +3,7 @@ host_event_url = cond do
   String.contains?(@name, "Robb") or String.contains?(@name, "Marc") ->
     nil
   true ->
-    "https://jdems.us/host"
+    "http://ocasio2018.com/events"
 end
 %>
 
