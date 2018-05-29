@@ -14,10 +14,10 @@
       </div>
     <% end %>
   </div>
-  <div id="endorsement-button-container">
+<!--  <div id="endorsement-button-container">
     <button id="endorsement-button">
       See Full List of Endorsements
     </button>
-  </div>
+  </div> -->
 <% end %>
 </div>
