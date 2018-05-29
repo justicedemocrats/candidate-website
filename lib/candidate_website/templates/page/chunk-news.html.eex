@@ -67,9 +67,9 @@
       </div>
     <% end %>
   </div>
-  <div id="news-cta">
+<!--  <div id="news-cta">
     <button id="news-cta-button">
       See All News Updates
     </button>
-  </div>
+  </div> -->
 </div>
