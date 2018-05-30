@@ -73,7 +73,7 @@ defmodule CandidateWebsite.RequirePlug do
                        "metadata" => metadata = ~m(header intro priority show_on_homepage)
                      } ->
         priority = as_float(priority)
-        full = metadata["full"] || intro
+        full = metadata["full_content"] || intro
         icon = metadata["icon"] || %{}
         show_on_homepage = show_on_homepage == "Show"
         ~m(title slug header intro priority full show_on_homepage icon)a
