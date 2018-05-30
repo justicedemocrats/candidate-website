@@ -1,48 +1,3 @@
-<!--
-<div class="news-container" id="news">
-  <div class="banner-header" style="background-color: <%= @primary_color %>;">
-    <h1 style="color: white;"> News </h1>
-  </div>
-
-  <div class="articles">
-    <%= for article <- @articles do %>
-      <div class="article" onclick="window.open('<%= article.url %>')">
-        <%= if not @mobile do %>
-          <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
-        <% end %>
-        <div class="article-preview">
-          <%= if @mobile do %>
-            <div class="thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)"></div>
-          <% end %>
-          <div class="headline"> <%= article.headline %> </div>
-          <div class="description"> <%= article.description %> </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
--->
-<!--
-<a href="/press"
-  class="button"
-  style="color: white; background-color: <%= @highlight_color %>;
-    text-align: center; margin-left: auto; margin-right: auto;
-    margin-top: 50px;
-  " >
-  See All News
-</a>
-
-<br/>
-
-<div>
-  <div class="banner-header" style="background-color: <%= @primary_color %>; width: 100%;">
-    <h1 style="color: white;"> Join the Conversation </h1>
-  </div>
-
-  <a class="twitter-timeline" href="<%= @twitter %>" data-height="800" data-chrome="nofooter" style="max-height: 800px;"></a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
--->
 <div id="news-container">
   <div id="news-header">
     <h1 id="news-header-text">
@@ -50,7 +5,8 @@
     </h1>
   </div>
   <div id="news-articles-container">
-    <%= for article <- @articles do %>
+    <% limit = if @mobile, do: 3, else: 6 %>
+    <%= for article <- Enum.slice(@articles, 0, limit) do %>
       <div class="article-container" onclick="window.open('<%= article.url %>')">
         <div class="article-thumbnail" style="background-image: url(<%= URI.encode(article.thumbnail["imgix_url"]) %>)">
         </div>
