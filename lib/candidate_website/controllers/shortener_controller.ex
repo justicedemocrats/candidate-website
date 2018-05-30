@@ -3,11 +3,13 @@ defmodule CandidateWebsite.ShortenerController do
   use CandidateWebsite, :controller
 
   def index(conn = %{request_path: path}, params) do
-    global_opts = GlobalOpts.get(conn, params)
-    candidate = Keyword.get(global_opts, :candidate)
+    # global_opts = GlobalOpts.get(conn, params)
+    # candidate = Keyword.get(global_opts, :candidate)
+    candidate = "alexandria-ocasio-cortez-staging"
 
     route =
       Cosmic.get_type("shortlinks", candidate)
+      |> Enum.filter(fn %{"metadata" => object} -> match?(~m(from to), object) end)
       |> Enum.map(fn %{"metadata" => ~m(from to)} -> ~m(from to)a end)
 
     path = String.downcase(path)
