@@ -43,7 +43,7 @@
 <%= render "nav-bar.html", assigns %>
 
 <!--  Later add "vote, news, events, store, endorsements" -->
-<%= for chunk <- ["about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "endorsements", "events"] do %>
+<%= for chunk <- ["hero-video", "about", "issues", "why-shortened", "why", "donate", "platform", "volunteer", "news", "twitter", "endorsements", "events"] do %>
   <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
