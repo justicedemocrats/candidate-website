@@ -1,34 +1,38 @@
-<div id="platform-header">
-  <h1 id="platform-header-text" name="platform-header-text" style="color: <%=@primary_color %>; text-align: center;"> <%= @platform_header %></h1>
-</div>
+<div id="platform-container">
+  <div id="platform-header">
+    <h1 id="platform-header-text" name="platform-header-text">
+      <%= @platform_chunk_header %>
+    </h1>
+  </div>
 
-<div id="planks-container" class="planks-container">
-  <% limit = if @mobile, do: 3, else: 6 %>
-  <%= for issue <- Enum.slice(@issues, 0, limit) do %>
-    <div class="plank-container">
-      <div class="plank-header">
-        <h2 class="plank-header-text">
-          <%= issue.header %>
-        </h2>
-      </div>
-      <div class="plank-intro-container">
-        <div class="plank-intro">
-          <p class="plank-intro-text" style="display: inline;">
-            <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
-          </p>
+  <div id="planks-container" class="planks-container">
+    <% limit = if @mobile, do: 3, else: 6 %>
+    <%= for issue <- Enum.slice(@issues, 0, limit) do %>
+      <div class="plank-container">
+        <div class="plank-header">
+          <h2 class="plank-header-text">
+            <%= issue.header %>
+          </h2>
+        </div>
+        <div class="plank-intro-container">
+          <div class="plank-intro">
+            <p class="plank-intro-text" style="display: inline;">
+              <%= raw(issue.intro |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+            </p>
+          </div>
+        </div>
+        <div class="plank-cta-container">
+          <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues#<%= issue.slug %>">
+            More on This
+          </a>
         </div>
       </div>
-      <div class="plank-cta-container">
-        <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues">
-          More on This
-        </a>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<div id="planks-button-container">
-  <button id="planks-cta-button" class="button planks-cta-button">
-    Read My Full Platform
-  </button>
+  <div id="planks-button-container">
+    <button id="planks-cta-button" class="button planks-cta-button" onclick="window.location='/issues';">
+      Read My Full Platform
+    </button>
+  </div>
 </div>

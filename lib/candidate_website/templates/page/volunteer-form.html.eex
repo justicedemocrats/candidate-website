@@ -1,79 +1,109 @@
-<div class="volunteer-form" style="background-color: <%= @primary_color %>">
-  <h2> How Will You Help? </h2>
+<form id="volunteer-form-object" method="post" action="/volunteer?candidate=<%= @candidate %>">
 
-  <form method="post" action="/volunteer?candidate=<%= @candidate %>">
-    <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
-    <div class="form-container">
-      <div class="volunteer-options">
+  <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
+
+  <div id="volunteer-form-container">
+
+    <div id="volunteer-options" class="volunteer-options">
+
+      <div id="volunteer-form-text-block">
+        <div id="volunter-form-text-header-container">
+          <h2 id="volunteer-form-text-header">
+            How Will You Help?
+          </h2>
+        </div>
+        <div id="volunteer-form-text-body-container">
+          <p id="volunteer-form-text-body">
+            Check all options you're interested in and we'll provide details for each once we know you're in.
+          </p>
+        </div>
+      </div>
+      <hr id="volunteer-form-checkbox-divider"/>
+      <div id="volunteer-checkboxes">
 
         <%= if assigns[:volunteer_options] != nil do %>
-          <div class="checkbox-row">
-            <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 0..1) do %>
-              <div class="option">
-                <input type="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
-              </div>
-            <% end %>
-          </div>
-          <div class="checkbox-row">
-            <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 2..3) do %>
-              <div class="option">
-                <input type="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
-              </div>
-            <% end %>
-          </div>
 
-          <%= if length(process_vol_options(@volunteer_options)) > 4 do %>
+        <div class="checkbox-row">
+          <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 0..1) do %>
+            <div class="option">
+              <input type="checkbox" class="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="checkbox-row">
+          <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 2..3) do %>
+            <div class="option">
+              <input type="checkbox" class="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="checkbox-row">
+          <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 4..5) do %>
+            <div class="option">
+              <input type="checkbox" class="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
+            </div>
+          <% end %>
+        </div>
+
+        <%= if length(process_vol_options(@volunteer_options)) > 6 do %>
             <div class="checkbox-row">
-              <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 4..5) do %>
+              <%= for opt <- Enum.slice(process_vol_options(@volunteer_options), 6..7) do %>
                 <div class="option">
-                  <input type="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
+                  <input type="checkbox" class="checkbox" name="<%= opt.name %>" /> <%= opt.label %>
                 </div>
               <% end %>
             </div>
-          <% end %>
+        <% end %>
+
         <% else %>
-          <div class="checkbox-row">
-            <div class="option">
-              <input type="checkbox" name="host_event" /> Host an Event
-            </div>
-            <div class="option">
-              <input type="checkbox" name="attend_event" /> Attend an Event
-            </div>
+
+        <div class="checkbox-row">
+          <div class="option">
+            <input type="checkbox" class="checkbox" name="host_event" /> Host an Event
           </div>
-          <div class="checkbox-row">
-            <div class="option">
-              <input type="checkbox" name="call_voters" /> Call Voters
-            </div>
-            <div class="option">
-              <input type="checkbox" name="join_team" /> Join a National Team
-            </div>
+          <div class="option">
+            <input type="checkbox" class="checkbox" name="attend_event" /> Attend an Event
           </div>
+        </div>
+
+        <div class="checkbox-row">
+          <div class="option">
+            <input type="checkbox" class="checkbox" name="call_voters" /> Call Voters
+          </div>
+          <div class="option">
+            <input type="checkbox" class="checkbox" name="join_team" /> Join a National Team
+          </div>
+        </div>
+
         <% end %>
 
       </div>
+      <div id="form-input-fields" class="info-fields">
 
-      <div class="info-fields">
         <div class="form-row">
-          <div class="same-row">
-            <input type="text" name="name" placeholder="Name*" required="required" />
-            <input type="email" name="email" placeholder="Email*" required="required" />
-          </div>
+          <input id="name-input" type="text" name="name" placeholder="Name*" required="required" />
         </div>
+
         <div class="form-row">
-          <div class="same-row">
-            <input type="text" name="zip" placeholder="Zip*" required="required" />
-            <input type="tel" name="phone" placeholder="Phone" />
-          </div>
+          <input id="email-input" type="email" name="email" placeholder="Email*" required="required" />
         </div>
+
         <div class="form-row">
-          <div class="same-row">
-            <input type="submit" class="button" value="I'm In!" style="background-color: <%= @highlight_color %>; border: none;" />
-          </div>
+          <input id="phone-input" type="tel" name="phone" placeholder="Phone" />
+          <input id="zip-input" type="text" name="zip" placeholder="Zip*" required="required" />
         </div>
-        Check all options you're interested in and we'll provide details for each
-        once we know you're in.
+
+        <div class="form-row">
+          <input type="submit" class="button" value="I'm In!" />
+        </div>
+
       </div>
-
     </div>
-  </form>
-</div>
+
+
+
+  </div>
+
+</form>

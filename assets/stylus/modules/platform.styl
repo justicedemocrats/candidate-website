@@ -1,101 +1,296 @@
-.platform-header-container
-  color white
-
-  p
-    margin 0
-
-  .top-container
-    flexbox(flex)
-    margin-bottom 50px
-
-    .name-header
-      margin-right 30px
-
-    img
-      height 250px
-      width 250px
-      border-radius 50%
-      border 10px solid white
-
-  .tabs
-    margin 0
-    padding-top 20px
-
-    .nav-item
-      background-color transparent
-      color #939393 !important
-      border none !important
-
-  .platform-header
-    color white
-    font-family 'Montserrat'
-    text-transform uppercase
-    font-weight bold
-
-.platform-header-container
+@require fonts
+// Hero Container //
+#platform-hero-wrapper
   width 100%
+  max-width 100%
+  background-color #3C2D82
 
-#platform-prompt
-  margin-bottom 20px
+#platform-hero-container
+  flexbox(flex)
+  flex-direction(row)
+  justify-content(center)
+  align-items(center)
+  padding 0 10%
+  max-width 1440px
+  margin 0 auto
+  // Stuff
 
-#platform-summary
+  @media (max-width 960px)
+    // Stuff
+
+  @media (min-width 961px)
+    // Hiiii
+
+  #hero-text-container
+    flexbox(flex)
+    flex-direction(column)
+    justify-content(center)
+    margin 5em 0
+    width 100%
+    // Stuff
+    @media (max-width 960px)
+      padding 0
+
+    @media (min-width 961px)
+      padding 0 10%
+
+    #hero-header-container
+      flexbox(flex)
+      align-items(center)
+      justify-content(center)
+
+      #hero-header-text
+        font-size 64px
+        color #ffffff
+        font-family primary_font_name
+        text-align center
+        font-size 64px
+
+        @media (max-width 320px)
+          font-size 42px
+
+        @media (max-width 320px)
+          // Stuff
+
+        @media (min-width 961px)
+          // Stuff
+
+
+    #hero-divider-container
+      flexbox(flex)
+      flex-direction(row)
+      justify-content(center)
+      align-items(center)
+
+      #hero-divider-left-container
+        flexbox(flex)
+        align-items(center)
+        justify-content(center)
+        width 100%
+
+        #hero-divider-left
+          color #ffffff
+          margin-left 0
+          margin-right 0
+          width 100%
+
+      #hero-divider-star-container
+        flexbox(flex)
+        align-items(center)
+        justify-content(center)
+        margin 0em 12px
+
+        #hero-divider-star
+          color #ffffff
+          font-size 30px
+
+
+      #hero-divider-right-container
+        flexbox(flex)
+        align-items(center)
+        justify-content(center)
+        width 100%
+
+        #hero-divider-right
+          color #ffffff
+          margin-left 0
+          margin-right 0
+          width 100%
+
+    #hero-subheader-container
+      flexbox(flex)
+      align-items(center)
+      justify-content(center)
+
+      #hero-subheader-text
+        font-size 20px
+        color #FFFFFF
+        font-family secondary_font_name
+        text-align center
+        letter-spacing 1.35px
+
+#platform-table-of-contents-wrapper
+  width 100%
+  max-width 100%
   background-color rgba(237,237,237,0.71)
-  color #3C2D82
-  width 100%
-  padding 60px 10% !important
 
-  ul
-    display inline-block
-    font-size 24px
-    font-weight bold
-    line-height 45px
-    text-align center
-    margin-right 35px
-    width 30%
-    vertical-align top
+  @media (max-width 960px)
+    display none
 
-    ^[-1]
-      margin-right 0px
+  @media (min-width 961px)
+    // Hiiii
 
-  li
-    list-style-type none
-
-
-.main-container
+#platform-table-of-contents-container
   flexbox(flex)
-  justify-content(flex)
-  align-items(center)
-  flex-direction(column)
+  justify-content(center)
+  flex-wrap(wrap)
+  padding 3em 10%
+  max-width 1440px
+  margin 0 auto
 
-  #name-separator
-    width 350px
-    margin-top 10px
-    margin-bottom 10px
+  #table-of-contents
     flexbox(flex)
-    justify-content(space-between)
+    justify-content(flex-left)
+    flex-wrap(wrap)
 
-    .half
-      width 45%
-      margin-bottom 15px
+    .chapter
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(space-between)
+      margin 4px 0
+      width 33.3%
+      font-size 18px
+      font-family primary_font_name // Fixed
+      text-align center
+      font-weight bold
 
-    .star
-      font-size 22px
+      a
+        color #3C2D82
 
-.platform-page
+#platform-issues-container
   flexbox(flex)
   flex-direction(column)
-  align-items(center)
-  width 100%
 
-  .section
-    max-width 1100px
-    font-size 20px
-    padding 30px
+  @media (max-width 960px)
+    // Hi
 
-.issue-header
-  color white
-  font-family 'Roboto Condensed'
-  padding 20px
-  margin-top 50px
-  margin-bottom 50px
-  align-self(flex-start)
+  @media (min-width 961px)
+    padding 0 10%
+    max-width 1440px
+    margin-left auto
+    margin-right auto
+
+  .issue-divider-container
+    .issue-divider
+      @media (max-width 960px)
+        margin 0 0 !important
+
+  .issue-container
+    flexbox(flex)
+    flex-direction(row)
+    justify-content(flex-start)
+
+    @media (max-width 960px)
+      // None
+
+    @media (min-width 961px)
+      padding 4em 0
+
+    .icon-container
+      flex-shrink(0)
+      flexbox(flex)
+      justify-content(flex-start)
+      align-items(stretch)
+      border-radius 50%
+      width 200px
+      height 200px
+      padding 8px
+      background #fff
+      border 15px solid #3C2D82
+
+      @media (max-width 960px)
+        display none
+
+      @media (min-width 961px)
+        // None
+
+      .issue-icon
+        // Stuff
+
+      .issue-number
+        font-size 64px
+        font-family secondary_font_name
+        font-weight 700
+        color #3C2D82
+        // text-align center
+        // vertical-align middle
+
+
+    .text-container
+      flex-shrink(1)
+      flexbox(flex)
+      flex-direction(column)
+      justify-content(flex-start)
+      align-items(flex-start)
+
+      @media (max-width 960px)
+        width 100%
+
+      @media (min-width 961px)
+        margin-left 130px
+
+      .accordion-toggle
+        // Blah
+
+        @media (max-width 960px)
+          cursor pointer
+
+        @media (min-width 961px)
+          // Blah
+
+      .header-container
+        flexbox(flex)
+        justify-content(space-between)
+
+        @media (max-width 960px)
+          padding 2em 10%
+          width 100%
+          margin-left auto
+          margin-right auto
+          background-color #f4f3f8
+
+        @media (min-width 961px)
+          margin-bottom 1.5em
+
+        .issue-header
+          font-size 34px
+          color #3C2D82
+
+          @media (max-width 960px)
+            margin 0 20px 0 0
+
+          @media (min-width 961px)
+            // Stuff
+
+        .issue-carat
+          @media (max-width 960px)
+            margin 0
+            font-size 40px
+            color #3C2D82
+
+          @media (min-width 961px)
+            display none
+
+      .contents-container
+        flexbox(flex)
+        justify-content(flex-start)
+        margin-top 1.5em
+
+        @media (max-width 960px)
+          padding 0 10%
+          max-width 1440px
+          margin-left auto
+          margin-right auto
+          width 100%
+          display none
+
+        @media (min-width 961px)
+          display block !important
+
+        .issue-content
+          font-size 20px
+
+        .default
+          display block
+
+// Accordion Functionality
+
+@media (max-width 960px)
+  .accordion-toggle
+    cursor pointer
+
+  .accordion-content
+    // display none
+
+    .default
+      display block

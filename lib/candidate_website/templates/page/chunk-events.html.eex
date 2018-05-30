@@ -3,7 +3,7 @@ host_event_url = cond do
   String.contains?(@name, "Robb") or String.contains?(@name, "Marc") ->
     nil
   true ->
-    "https://jdems.us/host"
+    "http://ocasio2018.com/events"
 end
 %>
 
@@ -13,37 +13,61 @@ host_event_base = if String.contains?(@name, "Robb") or String.contains?(@name, 
 else: "https://now.justicedemocrats.com/events/"
 %>
 
-<div class="full-center" id="events">
-  <h1 style="color: <%= @primary_color %>; font-family: 'Montserrat'; font-weight: lighter; text-align: center;">
+<div id="events-header-container">
+  <h1 id="events-header-text">
     <%= if length(@events) > 0 do %>
-      Attend an Upcoming Event
+    Attend an Upcoming Event
     <% else %>
-      We Need You to Power this Revolution
+    We Need You to Power this Revolution
     <% end %>
   </h1>
+</div>
 
-  <div class="event-box">
-    <%= for ev <- @events do %>
-      <div class="event" onclick="window.open('<%= ev["browser_url"] %>')">
-        <a href="<%= ev["browser_url"] %>" class="button" style="background-color: <%= @highlight_color %>">
-          RSVP
-        </a>
-        <div class="box">
-          <p><strong> <%= ev["title"] %> </strong> <br/>
-           <%= ev["date_line"] %> </p>
-        </div>
+<div id="events-scroll-container">
+  <%= for ev <- @events do %>
+  <div class="event-container">
+    <div class="event-text-container">
+      <div class="event-title-container">
+        <h2 class="event-title-text">
+          <%= ev["title"] %>
+        </h2>
       </div>
-    <% end %>
+      <div class="event-description-container">
+        <h3 class="event-description-text">
+          <%= ev["date_line"] %>
+        </h3>
+      </div>
+    </div>
+    <div class="event-button-container">
+      <div class="event-rsvp-button-container">
+        <button class="event-rsvp-button" onclick="window.open('<%= ev["browser_url"] %>')">
+          Details / RSVP
+        </button>
+      </div>
+      <!-- <div class="event-share-button-container">
+        <button class="event-share-button">
+          Email
+        </button>
+      </div>
+      <div class="event-share-button-container">
+        <button class="event-share-button" onclick="facebookShare('<%= ev["browser_url"] %>');">
+          Share on Facebook
+        </button>
+      </div>
+      <div class="event-share-button-container">
+        <button class="event-share-button" onclick="twitterShare('<%= ev["browser_url"] %>');">
+          Share on Twitter
+        </button>
+      </div> -->
+    </div>
   </div>
+  <% end %>
+</div>
 
+<div id="events-host-button-container">
   <%= if host_event_url != nil do %>
-    <a href="<%= host_event_url %>"
-      class="button"
-      style="color: white; background-color: <%= @highlight_color %>;
-        text-align: center; margin-left: auto; margin-right: auto;
-        margin-top: 50px;
-      " >
-      Host An Event for <%= @name %>
-    </a>
+  <button id="events-host-button" onclick="location.href = '<%= host_event_url %>'" type="button">
+    Host An Event for <%= @name %>
+  </button>
   <% end %>
 </div>

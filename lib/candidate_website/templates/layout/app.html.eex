@@ -1,6 +1,7 @@
 <% first_names = @name |> String.split(" ") |> Enum.reverse() |> Enum.slice(1..10) |> Enum.reverse() |> Enum.join(" ") %>
 
-<% title = assigns[:title] || "#{first_names} for #{after_for(@district)}" %>
+<% title = assigns[:title] || "Ocasio 2018: Vote June 26th" %>
+<!-- #{first_names} for #{after_for(@district)} -->
 <%
   menu_color =
     cond do
@@ -67,9 +68,7 @@
   </head>
 
   <body>
-    <%= if @mobile do %>
-      <div style="position: fixed; top: 0px; right: 0px; z-index: 1;" id="mobile-menu"></div>
-    <% end %>
+    <div style="position: absolute; top: 0px; right: 0px; z-index: 1;" class="mobile-menu"></div>
 
     <main class="main <%= if @mobile, do: "mobile", else: "desktop" %>" role="main">
       <%= render @view_module, @view_template, assigns %>

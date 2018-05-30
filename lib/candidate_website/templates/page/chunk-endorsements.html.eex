@@ -1,3 +1,4 @@
+<div id="endorsements-container">
 <%= if length(@endorsements) > 0 do %>
   <div id="endorsement-header-container">
     <h1 id="endorsement-header-text">
@@ -13,7 +14,10 @@
       </div>
     <% end %>
   </div>
-  <div id="endorsement-button-container">
-    <button id="endorsement-button">See Full List of Endorsements</button>
-  </div>
+<!--  <div id="endorsement-button-container">
+    <button id="endorsement-button">
+      See Full List of Endorsements
+    </button>
+  </div> -->
 <% end %>
+</div>

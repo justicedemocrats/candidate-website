@@ -1,3 +1,4 @@
+<!--
 <div name="volunteer" class="banner-header" style="background-color: <%= @highlight_color %>; margin-bottom: 50px;">
   <h1> We Need You </h1>
 </div>
@@ -10,5 +11,19 @@
     font-size: <%= if @mobile, do: 32, else: 42%>px;
     ">
     Democracy is powered by volunteers like yourself.
+  </div>
+</div>
+-->
+
+<div id="volunteer-header">
+  <h1 id="volunteer-header-text">
+    Democracy is Powered by Volunteers Like You
+  </h1>
+</div>
+<div id="volunteer-form-block-container">
+  <div id="volunteer-form-overlay">
+    <div id="volunteer-form">
+      <%= render "volunteer-form.html", assigns %>
+    </div>
   </div>
 </div>

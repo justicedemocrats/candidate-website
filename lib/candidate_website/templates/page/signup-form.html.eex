@@ -1,13 +1,4 @@
 <%
-  color =
-    cond do
-      @mobile -> @primary_color
-      assigns[:hero_text_color] -> assigns[:hero_text_color]
-      true -> "white"
-    end
-%>
-
-<%
   for_text =
     cond do
       assigns[:before_for_congress] -> "#{assigns[:before_for_congress]} For #{congress_or_senate(@district)}"
@@ -17,7 +8,7 @@
 
 <% join_message = assigns[:signup_prompt] || "Join my Campaign" %>
 
-<div id="hero-signup" style="color: <%= color %>;">
+<div id="hero-signup">
   <div id="join">
     <form method="POST" action="/signup?candidate=<%= @candidate %>">
       <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />

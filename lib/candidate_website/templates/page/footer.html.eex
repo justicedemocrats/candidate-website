@@ -1,27 +1,33 @@
-<%= render "nav-bar.html", assigns %>
+<div id="mobileFooterNav">
+    <a href="/">
+      <img class="logo" src="<%= URI.encode(assigns[:why_support_picture]["imgix_url"]) %>"/>
+    </a>
+    <div class="mobile-menu"> </div>
+</div>
+<div id="footer-wrapper">
+  <div id="footer">
 
-<div id="footer">
-
-  <div id="paid-for-container">
-    <div id="paid-for">
-      <%= @paid_for %>
+    <div id="paid-for-container">
+      <div id="paid-for">
+        <%= @paid_for %>
+      </div>
     </div>
+
+    <!-- Privacy Policy Link -->
+    <%= if assigns[:privacy_policy] != nil do %>
+      <div id="privacy-policy-container">
+        <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
+      </div>
+    <% end %>
+
+    <div id="email-us">
+      <div class="email-general">
+        General Contact: <a href="mailto:<%= @general_email%>"><%= @general_email %></a>
+      </div>
+      <div class="email-press">
+        Press Contact: <a href="mailto:<%= @press_email%>"><%= @press_email %></a>
+      </div>
+    </div>
+
   </div>
-
-  <!-- Privacy Policy Link -->
-  <%= if assigns[:privacy_policy] != nil do %>
-    <div id="privacy-policy-container">
-      <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
-    </div>
-  <% end %>
-
-  <div id="email-us">
-    <div class="email-general">
-      General Contact: <a href="mailto:<%= @general_email%>"><%= @general_email %></a>
-    </div>
-    <div class="email-press">
-      Press Contact: <a href="mailto:<%= @press_email%>"><%= @press_email %></a>
-    </div>
-  </div>
-
 </div>

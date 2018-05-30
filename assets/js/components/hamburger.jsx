@@ -75,9 +75,12 @@ const styles = {
   },
 
   screen: {
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: "rgba(0, 0, 0, .3)"
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, .3)",
+    position: "fixed",
+    left: 0,
+    zIndex: 10
   },
 
   menu: {
@@ -87,7 +90,7 @@ const styles = {
     right: 0,
     backgroundColor: "black",
     padding: 20,
-    color: "white"
+    color: "white",
   },
 
   menuElement: {

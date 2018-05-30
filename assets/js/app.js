@@ -2,6 +2,7 @@ import spa from "./spa";
 import Hamburger from "./components/hamburger";
 import React from "react";
 import { render } from "react-dom";
+import { ShyNav } from "./shy-nav";
 
 spa.bind.all();
 
@@ -34,9 +35,19 @@ function getQueryStringValue(key) {
   );
 }
 
-setTimeout(bind, 100);
+setTimeout(() =>         {
+             bind();
+             ShyNav.init('main-nav');
+         },
+         100);
 
-const hamburgerTarget = document.getElementById("mobile-menu");
+const hamburgerTarget = document.getElementsByClassName("mobile-menu")[0];
+const hamburgerTargetFooter = document.getElementsByClassName("mobile-menu")[1];
+
 if (hamburgerTarget) {
   render(<Hamburger />, hamburgerTarget);
+}
+
+if (hamburgerTargetFooter) {
+  render(<Hamburger />, hamburgerTargetFooter);
 }
