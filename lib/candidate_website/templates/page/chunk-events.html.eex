@@ -44,11 +44,21 @@ else: "https://now.justicedemocrats.com/events/"
           Details / RSVP
         </button>
       </div>
-      <div class="event-share-button-container">
+      <!-- <div class="event-share-button-container">
         <button class="event-share-button">
-          Share
+          Email
         </button>
       </div>
+      <div class="event-share-button-container">
+        <button class="event-share-button" onclick="facebookShare('<%= ev["browser_url"] %>');">
+          Share on Facebook
+        </button>
+      </div>
+      <div class="event-share-button-container">
+        <button class="event-share-button" onclick="twitterShare('<%= ev["browser_url"] %>');">
+          Share on Twitter
+        </button>
+      </div> -->
     </div>
   </div>
   <% end %>
