@@ -84,12 +84,18 @@
   <%= for {issue, i} <- Enum.with_index(@issues) do %>
   <div class="issue-container" id="<%= issue.slug %>">
     <!-- Icon Container -->
+    <%= if issue.icon[~s(imgix_url)] != "https://cosmic-s3.imgix.net/" do %>
+    <div class="image-container">
+      <img class="issue-icon" src="<%= issue.icon[~s(imgix_url)] %>"/>
+    </div>
+    <% else %>
     <div class="icon-container">
-      <!-- <img class="issue-icon" src="<%= issue.icon[~s(imgix_url)] %>"/> -->
-        <p class="issue-number">
-          <%= i+1 %>
-        </p>
-      </div>
+      <p class="issue-number">
+        <!-- <%= i+1 %> -->
+        &#128488;
+      </p>
+    </div>
+    <% end %>
     <!-- Text Container -->
     <div class="text-container">
       <!-- Header  -->
