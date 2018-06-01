@@ -16,6 +16,7 @@
               <button class="nav-item" onclick="window.location='/#chunk-events';">Events</button>
               <button class="nav-item" onclick="window.location='/#chunk-news';">News</button>
               <button class="nav-item" onclick="window.location='/#chunk-endorsements';">Endorsements</button>
+              <button class="nav-item" onclick="window.location='/store';">Store</button>
               <button class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>" onclick="window.location='/#chunk-volunteer';">Volunteer</button>
             </nav>
         </div>
@@ -26,6 +27,9 @@
             </a>
             <a href="<%= @twitter %>">
               <%= render "twitter.html", [color: assigns[:highlight_color]] %>
+            </a>
+            <a href="<%= @instagram %>">
+              <%= render "instagram.html", [color: assigns[:highlight_color]] %>
             </a>
           </div>
         </div>

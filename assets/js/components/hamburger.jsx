@@ -138,6 +138,7 @@ const siteMap = [
     action: () => smoothScroll(document.querySelector("#events"))
   },
   { text: "News", action: () => smoothScroll(document.querySelector("#news")) },
+  { text: "Store", action: () => (window.location.pathname = "/store") },
   {
     text: "Volunteer",
     action: () => smoothScroll(document.querySelector("#volunteer")),
