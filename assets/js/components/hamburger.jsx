@@ -118,7 +118,7 @@ const styles = {
 
 function render_and_scroll(path, chunk) {
   if (window.location.pathname != path) {
-    window.location.pathname = path + chunk;
+    window.location = path + chunk;
   }
   smoothScroll(document.querySelector(chunk));
 }
