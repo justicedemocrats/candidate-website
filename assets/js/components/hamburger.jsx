@@ -116,6 +116,13 @@ const styles = {
   }
 };
 
+function render_and_scroll(path, chunk) {
+  if (window.location.pathname != path) {
+    window.location.pathname = path + chunk;
+  }
+  smoothScroll(document.querySelector(chunk));
+}
+
 const siteMap = [
   {
     text: "Contribute",
@@ -125,19 +132,11 @@ const siteMap = [
       color: "white"
     }
   },
-  {
-    text: "About",
-    action: () =>
-      window.aboutEnabled
-        ? (window.location.pathname = "/about")
-        : smoothScroll(document.querySelector("#why"))
-  },
+  { text: "About", action: () => (render_and_scroll("/", "#chunk-about")) },
   { text: "Issues", action: () => (window.location.pathname = "/issues") },
-  {
-    text: "Events",
-    action: () => smoothScroll(document.querySelector("#events"))
-  },
-  { text: "News", action: () => smoothScroll(document.querySelector("#news")) },
+  { text: "Events", action: () => (render_and_scroll("/", "#chunk-events")) },
+  { text: "News", action: () => (render_and_scroll("/", "#chunk-news")) },
+  { text: "Endorsements", action: () => (render_and_scroll("/", "#chunk-endorsements")) },
   { text: "Store", action: () => (window.location.pathname = "/store") },
   {
     text: "Volunteer",
