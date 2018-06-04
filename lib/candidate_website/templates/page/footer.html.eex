@@ -6,27 +6,35 @@
 </div>
 <div id="footer-wrapper">
   <div id="footer">
-
     <div id="paid-for-container">
       <div id="paid-for">
         <%= @paid_for %>
       </div>
     </div>
 
-    <!-- Privacy Policy Link -->
-    <%= if assigns[:privacy_policy] != nil do %>
-      <div id="privacy-policy-container">
-        <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
+    <div id="center-column-container">
+      <div class="call-general">
+        Call: <a href="tel:845-605-2742">845-605-2742</a>
       </div>
-    <% end %>
+      <div id="office-container">
+        Visit our  <a id="bronx-office-link" href="https://goo.gl/maps/SSt7y1x4G7q">Bronx</a> and <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> Offices
+      </div>
 
-    <div id="email-us">
+    </div>
+
+    <div id="right-column-container">
       <div class="email-general">
         General Contact: <a href="mailto:<%= @general_email%>"><%= @general_email %></a>
       </div>
       <div class="email-press">
         Press Contact: <a href="mailto:<%= @press_email%>"><%= @press_email %></a>
       </div>
+      <!-- Privacy Policy Link -->
+      <%= if assigns[:privacy_policy] != nil do %>
+        <div id="privacy-policy-container">
+          <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
+        </div>
+      <% end %>
     </div>
 
   </div>
