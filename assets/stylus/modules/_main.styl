@@ -185,7 +185,7 @@ button, .button, .button:hover, button:hover
 .tabs
   margin-bottom 0px !important // Countering stupid CSS
   margin-left 50px
-  
+
   .tabs-nav
     flexbox(flex)
     justify-content(space-between)
@@ -1616,25 +1616,50 @@ button, .button, .button:hover, button:hover
       color #FFFFFF
       font-family secondary_font_name
 
-  #privacy-policy-container
+  #center-column-container
     flexbox(flex)
     align-items(center)
-    justify-content(center)
+    flex-direction(column)
 
-  #email-us
+    div
+      color #ffffff
+
+    #privacy-policy-container
+      flexbox(flex)
+      align-items(center)
+      justify-content(center)
+
+      // #bronx-office-container
+      //   padding-left 5px
+      //
+      // #queens-office-container
+      //   padding-right 5px
+      //   border-right 1px solid white
+        // flexbox(flex)
+        // align-items(center)
+        // justify-content(center)
+
+
+  #right-column-container
     flexbox(flex)
     flex-direction(column)
     align-items(center)
     color #FFFFFF
 
+    #privacy-policy-container
+      flexbox(flex)
+      align-items(center)
+      justify-content(center)
+
+
 @media (max-width: 992px)
   #footer
     flex-direction(column)
 
-    #paid-for-container, #privacy-policy-container
+    #paid-for-container, #center-column-container
       margin-bottom 30px
 
-    #email-us
+    #right-column-container
       text-align center
 
 
