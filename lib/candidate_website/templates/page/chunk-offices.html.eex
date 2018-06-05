@@ -1,0 +1,40 @@
+<div id="offices-chunk-container">
+<%= if length(@offices) > 0 do %>
+  <div id="offices-container">
+    <%= for office <- @offices do %>
+      <div id="<%= office.slug %>-container" class="office-container">
+        <div id="<%= office.slug %>-title-container" class="office-title-container">
+          <h1 id="<%= office.slug %>-title" class="office-title">
+            <%= office.title %>
+          </h1>
+        </div>
+        <div id="<%= office.slug %>-image-container" class="office-image-container">
+          <a id="<%= office.slug %>-image-link-container" class="office-image-link-container" href="<%= office.map_url %>">
+            <img id="<%= office.slug %>-image" src="<%= office.map_image_url %>" class="office-image" alt="<%= office.slug %>-image"></img>
+          </a>
+        </div>
+        <div id="<%= office.slug %>-address-1-container" class="office-address-1-container">
+          <p id="<%= office.slug %>-address-1" class="office-address-1">
+            <%= office.address_line_1 %>
+          </p>
+        </div>
+        <div id="<%= office.slug %>-address-2-container" class="office-address-2-container">
+          <p id="<%= office.slug %>-address-2" class="office-address-2">
+            <%= office.address_line_2 %>
+          </p>
+        </div>
+        <div id="<%= office.slug %>-button-container" class="office-button-container">
+          <button id="<%= office.slug %>-button" class="office-button" onclick="window.open('<%= office.map_url %>')">
+            Visit Map
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<!--  <div id="endorsement-button-container">
+    <button id="endorsement-button">
+      See Full List of Endorsements
+    </button>
+  </div> -->
+<% end %>
+</div>

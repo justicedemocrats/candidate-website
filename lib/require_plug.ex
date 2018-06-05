@@ -55,6 +55,34 @@ defmodule CandidateWebsite.RequirePlug do
         Map.put(acc, String.to_atom(key), about_metadata[key])
       end)
 
+    offices = Cosmic.get_type("offices", candidate)
+    |> Enum.map(fn %{
+      "title" => title,
+      "slug" => slug,
+      "metadata" => metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
+      } ->
+      priority = as_float(priority)
+      map_url = "https://www.google.com/maps/search/?api=1&query=#{address_line_1}, #{address_line_2}"
+      map_image_url = "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{address_line_2}&zoom=15&size=400x400&key=#{google_maps_api_key}"
+      ~m(title slug priority address_line_1 address_line_2 map_url map_image_url)a
+    end)
+    |> Enum.sort(&by_priority/2)
+
+    # offices =
+    #   Cosmic.get_type("offices", candidate)
+    #   |> Enum.map(fn %{
+    #     "title" => title,
+    #     "slug" => slug,
+    #     "metadata" => metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
+    #     } ->
+    #     priority = as_float(priority)
+    #     [address_line_1, address_line_2, google_maps_api_key] = [metadata["address_line_1"], metadata["address_line_2"], metadata["google_maps_api_key"]]
+    #     map_url = "https://www.google.com/maps/search/?api=1&query=#{address_line_1}, #{address_line_2}"
+    #     map_image_url = "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{address_line_2}&zoom=15&size=400x400&key=#{google_maps_api_key}"
+    #     ~m(title slug address_line_1 address_line_2 google_maps_api_key map_url map_image_url)a
+    #   end)
+    #   |> Enum.sort(&by_priority/2)
+
     articles =
       Cosmic.get_type("articles", candidate)
       |> Enum.map(fn %{"metadata" => ~m(headline description thumbnail priority url)} ->
@@ -68,10 +96,10 @@ defmodule CandidateWebsite.RequirePlug do
     issues =
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{
-                       "title" => title,
-                       "slug" => slug,
-                       "metadata" => metadata = ~m(header intro priority show_on_homepage)
-                     } ->
+        "title" => title,
+        "slug" => slug,
+        "metadata" => metadata = ~m(header intro priority show_on_homepage)
+        } ->
         priority = as_float(priority)
         full = metadata["full_content"] || intro
         icon = metadata["icon"] || %{}
@@ -95,7 +123,7 @@ defmodule CandidateWebsite.RequirePlug do
     domain = get_candidate_domain(candidate)
 
     other_data =
-      ~m(candidate domain about_enabled about issues mobile articles events endorsements)a
+      ~m(candidate domain about_enabled about issues mobile articles events offices endorsements)a
 
     # Add optional attrs
     optional_data =
@@ -107,7 +135,7 @@ defmodule CandidateWebsite.RequirePlug do
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         required_data =
-          Enum.reduce(@required, ~m(candidate about issues mobile articles events)a, fn key, acc ->
+          Enum.reduce(@required, ~m(candidate about issues offices mobile articles events)a, fn key, acc ->
             Map.put(acc, String.to_atom(key), metadata[key])
           end)
 

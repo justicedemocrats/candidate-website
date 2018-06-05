@@ -14,12 +14,14 @@
 
     <div id="center-column-container">
       <div class="call-general">
-        Call: <a href="tel:845-605-2742">845-605-2742</a>
+        Call: <a href="tel:1-845-605-2742">(845) 605-2742</a>
+      </div>
+      <div class="call-spanish">
+        Se Habla Español: <a href="tel:1-347-709-2263">(347) 709-2263</a>
       </div>
       <div id="office-container">
         Visit our  <a id="bronx-office-link" href="https://goo.gl/maps/SSt7y1x4G7q">Bronx</a> and <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> Offices
       </div>
-
     </div>
 
     <div id="right-column-container">
@@ -32,7 +34,7 @@
       <!-- Privacy Policy Link -->
       <%= if assigns[:privacy_policy] != nil do %>
         <div id="privacy-policy-container">
-          <a id="privacy-policy-link" href="<%= @privacy_policy %>" style="color: <%= @primary_color %>;">Privacy Policy</a>
+          <a id="privacy-policy-link" href="<%= @privacy_policy %>">Privacy Policy</a>
         </div>
       <% end %>
     </div>
