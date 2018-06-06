@@ -18,6 +18,7 @@ defmodule CandidateWebsite.Router do
 
     get("/update/cosmic", UpdateController, :get_cosmic)
     post("/update/cosmic", UpdateController, :post_cosmic)
+    get("/events", UpdateController, :get_events)
   end
 
   scope "/", CandidateWebsite do

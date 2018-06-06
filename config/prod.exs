@@ -36,6 +36,5 @@ config :actionkit,
   password: "${AK_PASSWORD}"
 
 config :candidate_website,
-  proxy_base_url: "${PROXY_URL}",
-  proxy_secret: "${PROXY_SECRET}"
-
+  osdi_api_event_url: "${OSDI_API_EVENT_URL}",
+  osdi_api_token: "${OSDI_API_TOKEN}"

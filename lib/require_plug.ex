@@ -38,8 +38,13 @@ defmodule CandidateWebsite.RequirePlug do
     endorsements =
       try do
         Cosmic.get_type("endorsements", candidate)
-        |> Enum.map(fn %{"metadata" => ~m(organization_name organization_logo endorsement_text endorsement_url)} ->
-          organization_slug = organization_name |> String.downcase() |> String.replace(~r/\s+/, "_")
+        |> Enum.map(fn %{
+                         "metadata" =>
+                           ~m(organization_name organization_logo endorsement_text endorsement_url)
+                       } ->
+          organization_slug =
+            organization_name |> String.downcase() |> String.replace(~r/\s+/, "_")
+
           ~m(organization_name organization_slug organization_logo endorsement_text endorsement_url)a
         end)
       rescue
@@ -55,18 +60,27 @@ defmodule CandidateWebsite.RequirePlug do
         Map.put(acc, String.to_atom(key), about_metadata[key])
       end)
 
-    offices = Cosmic.get_type("offices", candidate)
-    |> Enum.map(fn %{
-      "title" => title,
-      "slug" => slug,
-      "metadata" => metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
-      } ->
-      priority = as_float(priority)
-      map_url = "https://www.google.com/maps/search/?api=1&query=#{address_line_1}, #{address_line_2}"
-      map_image_url = "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{address_line_2}&zoom=15&size=400x400&key=#{google_maps_api_key}"
-      ~m(title slug priority address_line_1 address_line_2 map_url map_image_url)a
-    end)
-    |> Enum.sort(&by_priority/2)
+    offices =
+      Cosmic.get_type("offices", candidate)
+      |> Enum.map(fn %{
+                       "title" => title,
+                       "slug" => slug,
+                       "metadata" =>
+                         metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
+                     } ->
+        priority = as_float(priority)
+
+        map_url =
+          "https://www.google.com/maps/search/?api=1&query=#{address_line_1}, #{address_line_2}"
+
+        map_image_url =
+          "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{
+            address_line_2
+          }&zoom=15&size=400x400&key=#{google_maps_api_key}"
+
+        ~m(title slug priority address_line_1 address_line_2 map_url map_image_url)a
+      end)
+      |> Enum.sort(&by_priority/2)
 
     # offices =
     #   Cosmic.get_type("offices", candidate)
@@ -96,10 +110,10 @@ defmodule CandidateWebsite.RequirePlug do
     issues =
       Cosmic.get_type("issues", candidate)
       |> Enum.map(fn %{
-        "title" => title,
-        "slug" => slug,
-        "metadata" => metadata = ~m(header intro priority show_on_homepage)
-        } ->
+                       "title" => title,
+                       "slug" => slug,
+                       "metadata" => metadata = ~m(header intro priority show_on_homepage)
+                     } ->
         priority = as_float(priority)
         full = metadata["full_content"] || intro
         icon = metadata["icon"] || %{}
@@ -110,12 +124,7 @@ defmodule CandidateWebsite.RequirePlug do
 
     event_slugs = Stash.get(:event_cache, "Calendar: #{metadata["name"]}") || []
 
-    events =
-      event_slugs
-      |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
-      |> Enum.uniq_by(fn ~m(identifiers) -> identifiers end)
-      |> Enum.sort(&EventHelp.date_compare/2)
-      |> Enum.map(&EventHelp.add_candidate_attr/1)
+    events = EventHelp.events_for(metadata["name"])
 
     mobile = is_mobile?(conn)
 
@@ -135,9 +144,13 @@ defmodule CandidateWebsite.RequirePlug do
     case Enum.filter(@required, &(not field_filled(metadata, &1))) do
       [] ->
         required_data =
-          Enum.reduce(@required, ~m(candidate about issues offices mobile articles events)a, fn key, acc ->
-            Map.put(acc, String.to_atom(key), metadata[key])
-          end)
+          Enum.reduce(
+            @required,
+            ~m(candidate about issues offices mobile articles events)a,
+            fn key, acc ->
+              Map.put(acc, String.to_atom(key), metadata[key])
+            end
+          )
 
         data =
           other_data

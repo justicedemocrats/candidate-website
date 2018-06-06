@@ -1,13 +1,24 @@
 defmodule EventHelp do
+  import ShortMaps
+
   def events_for(calendar) do
     try do
       :event_cache
-      |> Stash.get("Calendar: #{calendar}")
-      |> Enum.map(fn slug -> Stash.get(:event_cache, slug) end)
+      |> Stash.get("blob")
       |> Enum.sort(&EventHelp.date_compare/2)
+      |> Enum.map(&add_date_line/1)
     rescue
       _e -> []
     end
+  end
+
+  def add_date_line(event = ~m(start_date end_date)) do
+    Map.put(
+      event,
+      "date_line",
+      humanize_date(start_date) <>
+        "from " <> humanize_time(start_date) <> " to " <> humanize_time(end_date)
+    )
   end
 
   defp humanize_date(dt) do
@@ -30,7 +41,7 @@ defmodule EventHelp do
       ]
       |> Enum.at(month - 1)
 
-    "#{month}, #{day} "
+    "#{month} #{day} "
   end
 
   defp humanize_time(dt) do
