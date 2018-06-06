@@ -45,6 +45,8 @@ defmodule CandidateWebsite.PageView do
       cond do
         last_num == 1 -> "#{num}st District of #{@states[abbrev]}"
         last_num == 2 -> "#{num}nd District of #{@states[abbrev]}"
+        last_num == 3 -> "#{num}rd District of #{@states[abbrev]}"
+        last_num == 4 -> "#{num}th District of #{@states[abbrev]}"
         true -> "#{num}st district of #{@states[abbrev]}"
       end
     end
