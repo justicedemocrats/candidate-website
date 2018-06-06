@@ -11,6 +11,7 @@ defmodule CandidateWebsite.Router do
 
   pipeline :api do
     plug(:accepts, ["json"])
+    plug(CORSPlug)
   end
 
   scope "/api", CandidateWebsite do

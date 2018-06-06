@@ -41,7 +41,8 @@ defmodule App.Mixfile do
       {:html_sanitize_ex, "~> 1.3.0-rc3"},
       {:quantum, "~> 2.0.0"},
       {:actionkit, git: "https://github.com/justicedemocrats/actionkit_ex.git"},
-      {:httpotion, "~> 3.1.0"}
+      {:httpotion, "~> 3.1.0"},
+      {:cors_plug, "~> 1.5"}
     ]
   end
 
