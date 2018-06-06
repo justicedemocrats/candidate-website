@@ -19,7 +19,7 @@ defmodule CandidateWebsite.EventCache do
     events =
       Enum.filter(body["_embedded"]["osdi:events"], fn ~m(start_date) ->
         {:ok, dt, _} = DateTime.from_iso8601(start_date)
-        Timex.before?(Timex.now(), dt)
+        Timex.before?(Timex.now() |> Timex.shift(hours: 4), dt)
       end)
 
     Logger.info("#{length(events)} events in the future")
