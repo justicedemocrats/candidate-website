@@ -1373,8 +1373,13 @@ button, .button, .button:hover, button:hover
 
     #endorsement-header-container
       flexbox(flex)
-      margin 5em 0em 5em 0em
       width 100%
+
+      @media (max-width: 960px)
+        margin 5em 0 2.5em 0
+
+      @media (min-width: 961px)
+        margin 5em 0em
 
       #endorsement-header-text
         font-size 4em
@@ -1387,6 +1392,7 @@ button, .button, .button:hover, button:hover
       flexbox(flex)
       justify-content(center)
       align-items(center)
+      flex-flow(wrap)
 
       @media (min-width:320px) and (max-width: 960px)
         flex-direction(column)
@@ -1403,12 +1409,22 @@ button, .button, .button:hover, button:hover
           // Filler
 
           .endorsement-logo-image
-            filter gray
-            -webkit-filter grayscale(1)
-            filter grayscale(1)
             // max-height 8em
             width auto
             max-height 5em
+            filter gray
+            -webkit-filter grayscale(1)
+            filter grayscale(1)
+            transition max-height 0.10s
+            -webkit-transition max-height 0.10s
+
+            &:hover
+              filter none
+              -webkit-filter grayscale(0)
+              filter grayscale(0)
+              max-height 5.5em
+              transition max-height 0.25s
+              -webkit-transition max-height 0.25s
 
 
     #endorsement-button-container
