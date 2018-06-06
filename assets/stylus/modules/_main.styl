@@ -1412,19 +1412,21 @@ button, .button, .button:hover, button:hover
             // max-height 8em
             width auto
             max-height 5em
+            max-width 12em
             filter gray
             -webkit-filter grayscale(1)
             filter grayscale(1)
-            transition max-height 0.10s
-            -webkit-transition max-height 0.10s
+            transition max-height 0.10s, max-width 0.10s
+            -webkit-transition max-height 0.10s, max-width 0.10s
 
             &:hover
               filter none
               -webkit-filter grayscale(0)
               filter grayscale(0)
               max-height 5.5em
-              transition max-height 0.25s
-              -webkit-transition max-height 0.25s
+              max-width 13.2em
+              transition max-height 0.25s, max-width 0.25s
+              -webkit-transition max-height 0.25s, max-width 0.25s
 
 
     #endorsement-button-container
