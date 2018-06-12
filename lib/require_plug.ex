@@ -11,6 +11,7 @@ defmodule CandidateWebsite.RequirePlug do
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
     general_email press_email platform_header platform_chunk_header signup_prompt
+    campaign_video
   )
 
   @optional ~w(

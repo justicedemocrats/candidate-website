@@ -1,7 +1,7 @@
 
 
 <div id="hero-video-wrapper" class="hero-video-wrapper">
-    <iframe id="hero-video" allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/rq3QXIVR0bs?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red" width="560" height="315" allowtransparency="true" frameborder="0"></iframe>
+    <iframe id="hero-video" allowFullScreen="allowFullScreen" src="<%= @campaign_video %>" width="560" height="315" allowtransparency="true" frameborder="0"></iframe>
 </div>
 
 <!-- <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/rq3QXIVR0bs' frameborder='0' allowfullscreen></iframe></div> -->
