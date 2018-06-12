@@ -16,9 +16,9 @@ else: "https://now.justicedemocrats.com/events/"
 <div id="events-header-container">
   <h1 id="events-header-text">
     <%= if length(@events) > 0 do %>
-    Attend an Upcoming Event
+      <%= gettext "Attend an Upcoming Event" %>
     <% else %>
-    We Need You to Power this Revolution
+      <%= gettext "We Need You to Power this Revolution" %>
     <% end %>
   </h1>
 </div>
@@ -41,7 +41,7 @@ else: "https://now.justicedemocrats.com/events/"
     <div class="event-button-container">
       <div class="event-rsvp-button-container">
         <button class="event-rsvp-button" onclick="window.open('<%= ev["browser_url"] %>')">
-          Details / RSVP
+          <%= gettext "Details / RSVP" %>
         </button>
       </div>
       <!-- <div class="event-share-button-container">
@@ -67,7 +67,7 @@ else: "https://now.justicedemocrats.com/events/"
 <div id="events-host-button-container">
   <%= if host_event_url != nil do %>
   <button id="events-host-button" onclick="location.href = '<%= host_event_url %>'" type="button">
-    Host An Event for <%= @name %>
+    <%= gettext "Host An Event for" %> <%= @name %>
   </button>
   <% end %>
 </div>

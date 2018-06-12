@@ -23,7 +23,7 @@
         </div>
         <div class="plank-cta-container">
           <a class="plank-cta" style="color: <%= @highlight_color %>;" href="/issues#<%= issue.slug %>">
-            More on This
+            <%= gettext "More on This" %>
           </a>
         </div>
       </div>
@@ -32,7 +32,7 @@
 
   <div id="planks-button-container">
     <button id="planks-cta-button" class="button planks-cta-button" onclick="window.location='/issues';">
-      Read My Full Platform
+      <%= gettext "Read My Full Platform" %>
     </button>
   </div>
 </div>

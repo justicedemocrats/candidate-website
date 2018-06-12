@@ -6,18 +6,21 @@
         </a>
         <div class="tabs">
             <nav class="tabs-nav">
-              <button class="nav-item contribute" onclick="window.location='<%= @donate_url %>';">Contribute</button>
+              <button class="nav-item contribute" onclick="window.location='<%= @donate_url %>';"><%= gettext "Contribute" %></button>
             <%= if @about_enabled do %>
-              <button class="nav-item" onclick="window.location='/about';">About</button>
+              <button class="nav-item" onclick="window.location='/about';"><%= gettext "About" %></button>
             <% else %>
-              <button class="nav-item" onclick="window.location='/#chunk-why';">About</button>
+              <button class="nav-item" onclick="window.location='/#chunk-why';"><%= gettext "About" %></button>
             <% end %>
-              <button class="nav-item" onclick="window.location='/issues';">Issues</button>
-              <button class="nav-item" onclick="window.location='/#chunk-events';">Events</button>
-              <button class="nav-item" onclick="window.location='/#chunk-news';">News</button>
-              <button class="nav-item" onclick="window.location='/#chunk-endorsements';">Endorsements</button>
-              <button class="nav-item" onclick="window.location='/store';">Store</button>
-              <button class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>" onclick="window.location='/#chunk-volunteer';">Volunteer</button>
+              <button class="nav-item" onclick="window.location='/issues';"><%= gettext "Issues" %></button>
+              <button class="nav-item" onclick="window.location='/#chunk-events';"><%= gettext "Events" %></button>
+              <button class="nav-item" onclick="window.location='/#chunk-news';"><%= gettext "News" %></button>
+              <button class="nav-item" onclick="window.location='/#chunk-endorsements';"><%= gettext "Endorsements" %></button>
+              <button class="nav-item" onclick="window.location='/store';"><%= gettext "Store" %></button>
+              <button class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>" onclick="window.location='/#chunk-volunteer';">
+                <%= gettext "Volunteer" %>
+              </button>
+              <button class="nav-item" onclick="window.location='/?lang=<%= gettext "es" %>';"> <%= gettext "¿Español?" %> </button>
             </nav>
         </div>
         <div id=button-layer>

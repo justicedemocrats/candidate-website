@@ -6,7 +6,7 @@
     <% end %>
 
     <div class="main-container">
-      <h1 class="about-header"> About <%= @name |> String.split(" ") |> List.first() %> </h1>
+      <h1 class="about-header"> <%= gettext "About" %> <%= @name |> String.split(" ") |> List.first() %> </h1>
 
       <div id="name-separator">
         <div class="half" style="border-bottom: 2px solid white;"></div>
@@ -28,7 +28,7 @@
               <%= th_district(@district) %>
             </div>
 
-            <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>; border: none;"> Contribute </a>
+            <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>; border: none;"> <%= gettext "Contribute" %> </a>
           </div>
         </div>
 

@@ -29,9 +29,22 @@ defmodule CandidateWebsite.RequirePlug do
 
   def call(conn, _opts) do
     params = conn |> fetch_query_params() |> Map.get(:params)
-    global_opts = GlobalOpts.get(conn, params)
+    # global_opts = GlobalOpts.get(conn, params)
     # candidate = Keyword.get(global_opts, :candidate)
-    candidate = "alexandria-ocasio-cortez-staging"
+
+    IO.inspect(Plug.Conn.get_req_header(conn, "accept-language"))
+
+    lang =
+      case Map.get(params, "lang", conn.cookies["lang"]) do
+        nil -> if prefers_spanish?(conn), do: "es", else: "en"
+        l -> l
+      end
+
+    candidate =
+      case lang do
+        "en" -> "alexandria-ocasio-cortez-staging"
+        l -> "alexandria-ocasio-cortez-#{l}"
+      end
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
@@ -66,7 +79,8 @@ defmodule CandidateWebsite.RequirePlug do
                        "title" => title,
                        "slug" => slug,
                        "metadata" =>
-                         metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
+                         _metadata =
+                           ~m(priority address_line_1 address_line_2 google_maps_api_key)
                      } ->
         priority = as_float(priority)
 
@@ -132,7 +146,7 @@ defmodule CandidateWebsite.RequirePlug do
     domain = get_candidate_domain(candidate)
 
     other_data =
-      ~m(candidate domain about_enabled about issues mobile articles events offices endorsements)a
+      ~m(candidate domain about_enabled about issues mobile articles events offices endorsements lang)a
 
     # Add optional attrs
     optional_data =
@@ -157,9 +171,12 @@ defmodule CandidateWebsite.RequirePlug do
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
 
+        Gettext.put_locale(CandidateWebsite.Gettext, lang)
+
         conn
         |> Plug.Conn.assign(:data, data)
         |> Plug.Conn.assign(:enabled, %{about: about_enabled})
+        |> Plug.Conn.put_resp_cookie("lang", lang)
 
       non_empty ->
         Phoenix.Controller.text(
@@ -215,6 +232,19 @@ defmodule CandidateWebsite.RequirePlug do
     case match do
       nil -> nil
       _ -> "https://" <> match
+    end
+  end
+
+  def prefers_spanish?(conn) do
+    case Plug.Conn.get_req_header(conn, "accept-language") do
+      [value | _] ->
+        value
+        |> String.split(";")
+        |> Enum.filter(fn lang -> String.contains?(lang, "es") end)
+        |> List.first()
+
+      nil ->
+        false
     end
   end
 end

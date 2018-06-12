@@ -9,12 +9,12 @@
       <div id="volunteer-form-text-block">
         <div id="volunter-form-text-header-container">
           <h2 id="volunteer-form-text-header">
-            How Will You Help?
+            <%= gettext "How Will You Help?" %>
           </h2>
         </div>
         <div id="volunteer-form-text-body-container">
           <p id="volunteer-form-text-body">
-            Check all options you're interested in and we'll provide details for each once we know you're in.
+            <%= gettext "Check all options you're interested in and we'll provide details for each once we know you're in" %>
           </p>
         </div>
       </div>

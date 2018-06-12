@@ -1,6 +1,6 @@
 <div id="donate-container">
   <div id="donate-header">
-    <h1 id="donate-header-text" style="color: <%=@primary_color %>">Donate to My Campaign</h1>
+    <h1 id="donate-header-text" style="color: <%=@primary_color %>"><%= gettext "Donate to My Campaign" %></h1>
   </div>
 
 
@@ -17,7 +17,7 @@
 
   <div id="custom-donation-container" class="custom-donation-container">
       <input id="custom-contribution" type="number" placeholder="$27.00"/>
-      <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button">Contribute</a>
+      <a href="<%= @donate_url %>" id="custom-contribution-go" class="contribute button"><%= gettext "Contribute" %></a>
   </div>
 </div>
 

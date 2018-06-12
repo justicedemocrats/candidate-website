@@ -15,7 +15,8 @@ config :logger, :console,
 # Cosmic
 config :cosmic,
   slugs: [
-    "alexandria-ocasio-cortez-staging"
+    "alexandria-ocasio-cortez-staging",
+    "alexandria-ocasio-cortez-es"
   ]
 
 # Domains
