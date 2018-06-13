@@ -104,7 +104,7 @@ msgstr "Temas"
 #, elixir-format
 #: lib/candidate_website/templates/page/signup-form.html.eex:24
 msgid "JOIN ME"
-msgstr ""
+msgstr "SÚMATE"
 
 #, elixir-format
 #: lib/candidate_website/templates/page/chunk-platform.html.eex:26
