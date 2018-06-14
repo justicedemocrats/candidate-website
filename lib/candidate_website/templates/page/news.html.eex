@@ -7,7 +7,7 @@
 
     <div class="main-container">
       <h1 class="platform-header">
-        Press
+        <%= gettext "Press" %>
       </h1>
 
       <div id="name-separator">

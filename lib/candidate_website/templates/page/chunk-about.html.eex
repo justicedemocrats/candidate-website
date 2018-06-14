@@ -16,7 +16,7 @@
   <%= if @about_enabled do %>
     <br/>
     <a href="/about" class="more-about" style="color: <%= @highlight_color %>; ">
-      Read More About Me Here
+      <%= gettext "Read More About Me Here" %>
     </a>
   <% end %>
 </div>

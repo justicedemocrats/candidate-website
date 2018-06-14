@@ -9,7 +9,7 @@
       <div id="hero-header-container">
         <h1 id="hero-header-text">
           <!-- <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %> -->
-          <%= @name %>'s Platform
+          <%= gettext "%{name}'s Platform", name: @name %>
         </h1>
       </div>
 

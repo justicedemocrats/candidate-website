@@ -20,7 +20,7 @@
         Se Habla Español: <a href="tel:1-347-709-2263">(347) 709-2263</a>
       </div>
       <div id="office-container">
-        Visit our  <a id="bronx-office-link" href="https://goo.gl/maps/SSt7y1x4G7q">Bronx</a> and <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> Offices
+        <%= gettext "Visit our" %> <a id="bronx-office-link" href="https://goo.gl/maps/SSt7y1x4G7q">Bronx</a> <%= gettext "and" %> <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> <%= gettext "Offices" %>
       </div>
     </div>
 

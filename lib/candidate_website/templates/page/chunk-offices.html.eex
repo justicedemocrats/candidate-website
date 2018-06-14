@@ -25,7 +25,7 @@
         </div>
         <div id="<%= office.slug %>-button-container" class="office-button-container">
           <button id="<%= office.slug %>-button" class="office-button" onclick="window.open('<%= office.map_url %>')">
-            Visit Map
+            <%= gettext "Visit Map" %>
           </button>
         </div>
       </div>

@@ -1,0 +1,204 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es\n"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/platform.html.eex:12
+msgid "%{name}'s Platform"
+msgstr "Mi Plataforma"
+
+#, elixir-format
+msgid "¿Español?"
+msgstr "English?"
+
+msgid "es"
+msgstr "en"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about.html.eex:9
+#: lib/candidate_website/templates/page/nav-bar.html.eex:11
+#: lib/candidate_website/templates/page/nav-bar.html.eex:13
+msgid "About"
+msgstr "Acerca"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-events.html.eex:19
+msgid "Attend an Upcoming Event"
+msgstr "Asiste A Un Evento"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/volunteer-form.html.eex:17
+msgid "Check all options you're interested in and we'll provide details for each once we know you're in"
+msgstr "Fíjate en todas las opciones en las que tienes interés y te pasamos detalles para cada una una vez que sepamos que te has sumado"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about.html.eex:31
+#: lib/candidate_website/templates/page/chunk-donate.html.eex:20
+#: lib/candidate_website/templates/page/nav-bar.html.eex:9
+msgid "Contribute"
+msgstr "Donar"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-volunteer.html.eex:20
+msgid "Democracy is Powered by Volunteers Like You"
+msgstr "La Democracia Existe Por Voluntarios Como Tú"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-events.html.eex:44
+msgid "Details / RSVP"
+msgstr "Detalles / RSVP"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-donate.html.eex:3
+msgid "Donate to My Campaign"
+msgstr "Doná a mi campaña"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:14
+msgid "Email"
+msgstr "Correo electrónico"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-endorsements.html.eex:5
+msgid "Endorsed By:"
+msgstr "Respaldada Por:"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:18
+msgid "Endorsements"
+msgstr "Patrocinios"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:16
+msgid "Events"
+msgstr "Eventos"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:9
+msgid "For info and updates"
+msgstr "Para información y apuntes"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-events.html.eex:70
+msgid "Host An Event for"
+msgstr "Sé Anfitrión De Evento Para"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/volunteer-form.html.eex:12
+msgid "How Will You Help?"
+msgstr "¿Cómo vas a ayudar?"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:15
+msgid "Issues"
+msgstr "Temas"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:24
+msgid "JOIN ME"
+msgstr "SÚMATE"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-platform.html.eex:26
+msgid "More on This"
+msgstr "Más información"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:11
+msgid "Name"
+msgstr "Nombre"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:17
+msgid "News"
+msgstr "Noticias"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/footer.html.eex:23
+msgid "Offices"
+msgstr "Oficinas"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:18
+msgid "Phone"
+msgstr "Número Telefónico"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/news.html.eex:10
+msgid "Press"
+msgstr "Prensa"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-about.html.eex:19
+msgid "Read More About Me Here"
+msgstr "Lea Mi Plataforma Electoral"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-issues-v2.html.eex:20
+#: lib/candidate_website/templates/page/chunk-issues.html.eex:23
+#: lib/candidate_website/templates/page/chunk-platform.html.eex:35
+msgid "Read My Full Platform"
+msgstr "Lea Mi Plataforma Electoral"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-news.html.eex:4
+msgid "Recent News"
+msgstr "Noticias Recientes"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:19
+msgid "Store"
+msgstr "Tienda"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-twitter.html.eex:10
+msgid "Tweets by Ocasio2018"
+msgstr "Tweets por Ocasio2018"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-twitter.html.eex:3
+msgid "Twitter"
+msgstr "Twitter"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-offices.html.eex:28
+msgid "Visit Map"
+msgstr "Visitá el mapa"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/footer.html.eex:23
+msgid "Visit our"
+msgstr "Visitá las"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-events.html.eex:21
+msgid "We Need You to Power this Revolution"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/chunk-why-shortened.html.eex:3
+msgid "Why Support Alexandria?"
+msgstr "¿Por Qué Debo Apoyar A Alexandria?"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/signup-form.html.eex:19
+msgid "Zip"
+msgstr "Código Postal"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/footer.html.eex:23
+msgid "and"
+msgstr "y"
+
+#, elixir-format
+#; 
+msgid "Volunteer"
+msgstr "Voluntarios"

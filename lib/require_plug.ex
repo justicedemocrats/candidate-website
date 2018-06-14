@@ -11,13 +11,14 @@ defmodule CandidateWebsite.RequirePlug do
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
     general_email press_email platform_header platform_chunk_header signup_prompt
+    campaign_video
   )
 
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
     action_network_api_key google_tag_manager_id google_optimize_id volunteer_options
-    master privacy_policy join_button_color state_logo
+    master privacy_policy join_button_color state_logo early_life experience moving_forward
   )
 
   @about_attrs ~w(
@@ -29,9 +30,22 @@ defmodule CandidateWebsite.RequirePlug do
 
   def call(conn, _opts) do
     params = conn |> fetch_query_params() |> Map.get(:params)
-    global_opts = GlobalOpts.get(conn, params)
+    # global_opts = GlobalOpts.get(conn, params)
     # candidate = Keyword.get(global_opts, :candidate)
-    candidate = "alexandria-ocasio-cortez-staging"
+
+    IO.inspect(Plug.Conn.get_req_header(conn, "accept-language"))
+
+    lang =
+      case Map.get(params, "lang", conn.cookies["lang"]) do
+        nil -> if prefers_spanish?(conn), do: "es", else: "en"
+        l -> l
+      end
+
+    candidate =
+      case lang do
+        "en" -> "alexandria-ocasio-cortez-staging"
+        l -> "alexandria-ocasio-cortez-#{l}"
+      end
 
     %{"metadata" => metadata} = Cosmic.get("homepage-en", candidate)
 
@@ -66,7 +80,8 @@ defmodule CandidateWebsite.RequirePlug do
                        "title" => title,
                        "slug" => slug,
                        "metadata" =>
-                         metadata = ~m(priority address_line_1 address_line_2 google_maps_api_key)
+                         _metadata =
+                           ~m(priority address_line_1 address_line_2 google_maps_api_key)
                      } ->
         priority = as_float(priority)
 
@@ -132,7 +147,7 @@ defmodule CandidateWebsite.RequirePlug do
     domain = get_candidate_domain(candidate)
 
     other_data =
-      ~m(candidate domain about_enabled about issues mobile articles events offices endorsements)a
+      ~m(candidate domain about_enabled about issues mobile articles events offices endorsements lang)a
 
     # Add optional attrs
     optional_data =
@@ -157,9 +172,12 @@ defmodule CandidateWebsite.RequirePlug do
           |> Map.merge(optional_data)
           |> Map.merge(required_data)
 
+        Gettext.put_locale(CandidateWebsite.Gettext, lang)
+
         conn
         |> Plug.Conn.assign(:data, data)
         |> Plug.Conn.assign(:enabled, %{about: about_enabled})
+        |> Plug.Conn.put_resp_cookie("lang", lang)
 
       non_empty ->
         Phoenix.Controller.text(
@@ -215,6 +233,19 @@ defmodule CandidateWebsite.RequirePlug do
     case match do
       nil -> nil
       _ -> "https://" <> match
+    end
+  end
+
+  def prefers_spanish?(conn) do
+    case Plug.Conn.get_req_header(conn, "accept-language") do
+      [value | _] ->
+        value
+        |> String.split(";")
+        |> Enum.filter(fn lang -> String.contains?(lang, "es") end)
+        |> List.first()
+
+      nil ->
+        false
     end
   end
 end

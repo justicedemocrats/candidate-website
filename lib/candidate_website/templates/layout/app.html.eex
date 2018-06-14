@@ -1,6 +1,6 @@
 <% first_names = @name |> String.split(" ") |> Enum.reverse() |> Enum.slice(1..10) |> Enum.reverse() |> Enum.join(" ") %>
 
-<% title = assigns[:title] || "Ocasio 2018: Vote June 26th" %>
+<% title = assigns[:title] || if @lang == "es", do: "Ocasio 2018: Vota el 26 de junio", else: "Ocasio 2018: Vote June 26th" %>
 <!-- #{first_names} for #{after_for(@district)} -->
 <%
   menu_color =

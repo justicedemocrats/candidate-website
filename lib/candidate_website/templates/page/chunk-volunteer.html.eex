@@ -17,7 +17,7 @@
 
 <div id="volunteer-header">
   <h1 id="volunteer-header-text">
-    Democracy is Powered by Volunteers Like You
+    <%= gettext "Democracy is Powered by Volunteers Like You" %>
   </h1>
 </div>
 <div id="volunteer-form-block-container">

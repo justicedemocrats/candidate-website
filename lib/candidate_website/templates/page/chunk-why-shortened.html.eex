@@ -1,5 +1,5 @@
 <div id="shortened-support-container">
   <div id="shortened-support-header">
-    Why Support Alexandria?
+    <%= gettext "Why Support Alexandria?" %>
   </div>
 </div>
