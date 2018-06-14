@@ -132,7 +132,7 @@ const siteMap = [
       color: "white"
     }
   },
-  { text: "About", action: () => (render_and_scroll("/", "#chunk-about")) },
+  { text: "About", action: () => (window.location.pathname = "/about") },
   { text: "Issues", action: () => (window.location.pathname = "/issues") },
   { text: "Events", action: () => (render_and_scroll("/", "#chunk-events")) },
   { text: "News", action: () => (render_and_scroll("/", "#chunk-news")) },

@@ -11,14 +11,14 @@ defmodule CandidateWebsite.RequirePlug do
     vote_registration_url vote_registration_icon vote_instructions_url
     vote_instructions_icon vote_location_url vote_location_icon header_background_color
     general_email press_email platform_header platform_chunk_header signup_prompt
-    campaign_video
+    campaign_video early_life experience moving_forward
   )
 
   @optional ~w(
     animation_fill_level target_html hero_text_color before_for_congress
     why_support_picture instagram google_analytics_id linkedin hide_lets
     action_network_api_key google_tag_manager_id google_optimize_id volunteer_options
-    master privacy_policy join_button_color state_logo early_life experience moving_forward
+    master privacy_policy join_button_color state_logo
   )
 
   @about_attrs ~w(

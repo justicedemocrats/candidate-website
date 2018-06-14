@@ -199,6 +199,26 @@ msgid "and"
 msgstr "y"
 
 #, elixir-format
-#; 
+#;
 msgid "Volunteer"
 msgstr "Voluntarios"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-early-life.html.eex:5
+msgid "Early Life"
+msgstr "Los Primeros Años"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-experience-v2.html.eex:9
+msgid "Experience"
+msgstr "Experiencia Práctica"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about.html.eex:9
+msgid "Meet"
+msgstr "Conoce a"
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-moving-forward-v2.html.eex:5
+msgid "Moving Forward"
+msgstr "Sigamos Adelante!"

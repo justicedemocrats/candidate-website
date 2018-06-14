@@ -2,7 +2,7 @@
   <div id="why-support-text">
     <div id="why-support-header">
       <h1 id="why-support-header-text">
-        Moving Forward
+        <%= gettext "Moving Forward" %>
       </h1>
     </div>
     <div id="why-support-body">

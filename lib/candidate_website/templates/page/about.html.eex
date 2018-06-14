@@ -6,7 +6,7 @@
     <div id="hero-text-container">
       <div id="hero-header-container">
         <h1 id="hero-header-text">
-          Meet <%= "#{@name |> String.split(" ") |> List.first()}" %>
+          <%= gettext "Meet" %> <%= "#{@name |> String.split(" ") |> List.first()}" %>
         </h1>
       </div>
 

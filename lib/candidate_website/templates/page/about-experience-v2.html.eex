@@ -6,7 +6,7 @@
   <div id="issues-text-container">
     <div id="issues-header-container">
       <h1 id="issues-header-text">
-        Experience
+        <%= gettext "Experience" %>
       </h1>
     </div>
     <div id="issues-paragraph-container">
