@@ -16,7 +16,6 @@ msgid "%{name}'s Platform"
 msgstr ""
 
 #, elixir-format
-#: lib/candidate_website/templates/page/about.html.eex:9
 #: lib/candidate_website/templates/page/nav-bar.html.eex:11
 #: lib/candidate_website/templates/page/nav-bar.html.eex:13
 msgid "About"
@@ -33,8 +32,8 @@ msgid "Check all options you're interested in and we'll provide details for each
 msgstr ""
 
 #, elixir-format
-#: lib/candidate_website/templates/page/about.html.eex:31
 #: lib/candidate_website/templates/page/chunk-donate.html.eex:20
+#: lib/candidate_website/templates/page/index.html.eex:34
 #: lib/candidate_website/templates/page/nav-bar.html.eex:9
 msgid "Contribute"
 msgstr ""
@@ -189,4 +188,40 @@ msgstr ""
 #, elixir-format
 #: lib/candidate_website/templates/page/footer.html.eex:23
 msgid "and"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-early-life.html.eex:5
+msgid "Early Life"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-experience-v2.html.eex:9
+msgid "Experience"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about.html.eex:9
+msgid "Meet"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/about-moving-forward-v2.html.eex:5
+msgid "Moving Forward"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:21
+msgid "Volunteer"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/nav-bar.html.eex:23
+msgid "es"
+msgstr ""
+
+#, elixir-format
+#: lib/candidate_website/templates/page/index.html.eex:38
+#: lib/candidate_website/templates/page/nav-bar.html.eex:23
+msgid "¿Español?"
 msgstr ""

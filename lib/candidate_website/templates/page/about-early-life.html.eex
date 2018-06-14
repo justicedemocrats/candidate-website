@@ -1,0 +1,14 @@
+<div id="early-life-container" class="bio-story-container">
+  <div id="early-life-text-container" class="bio-text-container">
+    <div id="early-life-header-container" class="bio-header-container">
+      <h1 id="early-life-header-text" class="bio-header-text">
+        <%= gettext "Early Life" %>
+      </h1>
+    </div>
+    <div id="early-life-paragraph-container" class="bio-paragraph-container">
+      <p id="early-life-paragraph-text" class="bio-paragraph-text">
+        <%= raw(@early_life |> String.replace("<p>", "") |> String.replace("</p>", "")) %>
+      </p>
+    </div>
+  </div>
+</div>

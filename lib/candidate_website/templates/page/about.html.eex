@@ -1,69 +1,51 @@
-<div class="about-page">
-  <div class="about-header-container" style="background-color: <%= @primary_color %>;">
+<%= render "nav-bar.html", assigns %>
 
-    <%= if not @mobile do %>
-      <%= render "nav-bar.html", assigns %>
-    <% end %>
+<div id="about-hero-wrapper">
+  <div id="about-hero-container">
 
-    <div class="main-container">
-      <h1 class="about-header"> <%= gettext "About" %> <%= @name |> String.split(" ") |> List.first() %> </h1>
-
-      <div id="name-separator">
-        <div class="half" style="border-bottom: 2px solid white;"></div>
-        <div class="star">&#9733;</div>
-        <div class="half" style="border-bottom: 2px solid white;"></div>
+    <div id="hero-text-container">
+      <div id="hero-header-container">
+        <h1 id="hero-header-text">
+          <%= gettext "Meet" %> <%= "#{@name |> String.split(" ") |> List.first()}" %>
+        </h1>
       </div>
 
-      <div class="top-container">
-        <div class="name-header">
-          <div class="info-container">
-            <div id="name">
-              <%= @name |> String.split(" ") |> List.first() %>
-              <span style="white-space: nowrap;"> <%= @name |> String.split(" ") |> Enum.slice(1..5) |> Enum.join("") %> </span>
-            </div>
-
-            <div> <%= @about.occupation %> </div>
-
-            <div class="district" style="border-top: 2px solid <%= @highlight_color %>; border-bottom: 2px solid <%= @highlight_color %>;">
-              <%= th_district(@district) %>
-            </div>
-
-            <a href="<%= @donate_url %>" class="button" style="background-color: <%= @highlight_color %>; border: none;"> <%= gettext "Contribute" %> </a>
+      <div id="hero-divider-container">
+        <div id="hero-divider-left-container">
+          <hr id="hero-divider-left"/>
+        </div>
+        <div id="hero-divider-star-container">
+          <div id="hero-divider-star">
+            &#9733;
           </div>
         </div>
+        <div id="hero-divider-right-container">
+          <hr id="hero-divider-right"/>
+        </div>
+      </div>
 
-        <img src="<%= URI.encode(@about.headshot["imgix_url"]) %>" />
+      <!-- Subheadline Text in the Hero block -->
+      <div id="hero-subheader-container">
+        <h2 id="hero-subheader-text">
+          <%= @platform_header %>
+        </h2>
       </div>
 
     </div>
   </div>
-
-  <div class="section">
-    <%= raw(@about.section_one) %>
-  </div>
-
-  <div class="quote-one" style="background-image: url(<%= URI.encode(@about.quote_background_image["imgix_url"]) %>);">
-    <%= raw(@about.quote_one) %>
-  </div>
-
-  <div class="section">
-    <%= raw(@about.section_two) %>
-  </div>
-
-  <div class="quote-two">
-    <div class="quote-two-content" style="background-color: <%= @primary_color %>;">
-      <%= raw(@about.quote_two) %>
-    </div>
-    <div class="image" style="background-image: url(<%= URI.encode(@about.quote_background_image["imgix_url"]) %>)"></div>
-  </div>
-
-  <div class="section">
-    <%= raw(@about.section_three) %>
-  </div>
-
-  <div style="width: 100%; max-width: 600px; margin-top: 50px; margin-bottom: 50px;">
-    <%= render "volunteer-form.html", assigns %>
-  </div>
 </div>
+
+<%= for chunk <- ["early-life", "experience-v2", "moving-forward-v2"] do %>
+  <div class="bio-chunk" data-kind="<%= chunk %>" id="about-chunk-<%= chunk %>">
+    <%= render "about-#{chunk}.html", assigns %>
+  </div>
+<% end %>
+
+
+<%= for chunk <- ["volunteer", "endorsements"] do %>
+  <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
+    <%= render "chunk-#{chunk}.html", assigns %>
+  </div>
+<% end %>
 
 <%= render "footer.html", assigns %>
