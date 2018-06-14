@@ -9,8 +9,7 @@
     <div id="hero-text-container">
       <div id="hero-header-container">
         <h1 id="hero-header-text">
-          <!-- <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %> -->
-          <%= @name %>'s Platform
+          Meet <%= "#{@name |> String.split(" ") |> List.first()}" %>
         </h1>
       </div>
 
@@ -40,7 +39,14 @@
   </div>
 </div>
 
-<%= for chunk <- ["issues-v2", "endorsements", "volunteer"] do %>
+<%= for chunk <- ["early-life", "experience-v2", "moving-forward-v2"] do %>
+  <div class="bio-chunk" data-kind="<%= chunk %>" id="about-chunk-<%= chunk %>">
+    <%= render "about-#{chunk}.html", assigns %>
+  </div>
+<% end %>
+
+
+<%= for chunk <- ["volunteer", "endorsements"] do %>
   <div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
     <%= render "chunk-#{chunk}.html", assigns %>
   </div>
