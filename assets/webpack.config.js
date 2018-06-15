@@ -32,7 +32,7 @@ module.exports = (env) => {
     output: {
       path: path.resolve(__dirname, "../priv/static"),
       filename: 'js/[name].js',
-      publicPath: 'https://localhost:8080/'
+      publicPath: 'http://localhost:8080/'
     },
 
     devServer: {
@@ -82,8 +82,8 @@ module.exports = (env) => {
           exclude: /node_modules/,
           options: {
             name: "[name].[ext]",
-            outputPath: "../fonts/",
-            publicPath: "../fonts/"
+            publicPath: '/',
+            outputPath: 'fonts/'
           },
           loader: "file-loader"
         },
