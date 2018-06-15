@@ -81,7 +81,7 @@ module.exports = (env) => {
           test: /\.(ttf|woff2?|eot|svg)$/,
           exclude: /node_modules/,
           options: {
-            name: "[name].[ext]"
+            name: "[name].[ext]",
             outputPath: "../fonts/",
             publicPath: "../fonts/"
           },
