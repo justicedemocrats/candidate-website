@@ -12,7 +12,7 @@ defmodule CandidateWebsite.PageController do
     %{enabled: %{about: about_enabled}, data: assigns} = Map.take(conn.assigns, [:data, :enabled])
 
     # if about_enabled do
-      render(conn, "about.html", Enum.into(assigns, []))
+    render(conn, "about.html", Enum.into(assigns, []))
     # else
     #   redirect(conn, to: "/#about")
     # end
@@ -163,6 +163,11 @@ defmodule CandidateWebsite.PageController do
       end
 
     redirect(conn, external: destination)
+  end
+
+  def info(conn, _) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "info.html", assigns)
   end
 
   def nice_tag(tag) do
