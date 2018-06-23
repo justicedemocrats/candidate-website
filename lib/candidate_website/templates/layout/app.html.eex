@@ -63,6 +63,7 @@
         gtag('js', new Date());
 
         gtag('config', '<%= assigns[:google_analytics_id] %>'<%= if assigns[:google_optimize_id] != nil do %>, { 'optimize_id': '<%= assigns[:google_optimize_id] %>' }<% end %>);
+        gtag('config', 'AW-806508837');
         </script>
     <% end %>
   </head>
