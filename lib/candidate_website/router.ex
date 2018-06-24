@@ -28,11 +28,10 @@ defmodule CandidateWebsite.Router do
     get("/", PageController, :index)
     get("/about", PageController, :about)
     get("/platform", PageController, :platform)
-    get("/press", PageController, :press)
+    get("/press", PageController, :info)
     get("/news", PageController, :press)
     get("/endorsements", PageController, :endorsements)
     get("/issues", PageController, :platform)
-    get("/info", PageController, :info)
 
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)
