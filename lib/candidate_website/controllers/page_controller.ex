@@ -170,6 +170,11 @@ defmodule CandidateWebsite.PageController do
     render(conn, "info.html", assigns)
   end
 
+  def get_volunteer(conn, _) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "volunteer.html", assigns)
+  end
+
   def nice_tag(tag) do
     tag
     |> String.split("_")

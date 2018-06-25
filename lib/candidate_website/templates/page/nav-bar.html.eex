@@ -14,7 +14,7 @@
               <button class="nav-item" onclick="window.location='/#chunk-endorsements';"><%= gettext "Endorsements" %></button>
               <button class="nav-item" onclick="window.location='/store';"><%= gettext "Store" %></button>
               <button class="nav-item" onclick="window.location='/polling-place';"><%= gettext "Polling Place" %></button>
-              <button class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>" onclick="window.location='/#chunk-volunteer';">
+              <button class="nav-item volunteer" style="color: <%= @highlight_color %>; 	border: 2px solid <%= @highlight_color %>" onclick="window.location='/volunteer';">
                 <%= gettext "Volunteer" %>
               </button>
               <button class="nav-item" onclick="window.location='/?lang=<%= gettext "es" %>';"> <%= gettext "¿Español?" %> </button>
