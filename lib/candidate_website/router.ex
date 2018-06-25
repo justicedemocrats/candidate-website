@@ -32,6 +32,8 @@ defmodule CandidateWebsite.Router do
     get("/news", PageController, :press)
     get("/endorsements", PageController, :endorsements)
     get("/issues", PageController, :platform)
+    get("/info", PageController, :info)
+    get("/volunteer", PageController, :get_volunteer)
 
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)

@@ -1,0 +1,62 @@
+<div id="about-hero-wrapper">
+  <div id="about-hero-container">
+
+    <div id="hero-text-container">
+      <div id="hero-header-container">
+        <h1 id="hero-header-text">
+          <%= gettext "Let's Get Out the Vote!" %>
+        </h1>
+      </div>
+
+      <div id="hero-divider-container">
+        <div id="hero-divider-left-container">
+          <hr id="hero-divider-left"/>
+        </div>
+        <div id="hero-divider-star-container">
+          <div id="hero-divider-star">
+            &#9733;
+          </div>
+        </div>
+        <div id="hero-divider-right-container">
+          <hr id="hero-divider-right"/>
+        </div>
+      </div>
+
+      <!-- Subheadline Text in the Hero block -->
+      <div id="hero-subheader-container">
+        <h2 id="hero-subheader-text">
+          We Need All Volunteers to Help Win This!
+        </h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div>
+  <div style="font-size: 34px; font-weight: bold; font-family: Roboto Slab; color: #3c2d82; padding: 100px;">
+  <ul>
+    <li>
+      If you're in New York, come to one of our field locations on Tuesday, June 26th, for one final day of campaigning.
+    </li>
+    <div>
+      <iframe src="https://map.ocasio2018.com" style="width: 100%; height: 600px;" frameBorder="0">
+      </iframe>
+    </div>
+
+      <br/>
+
+    <li>
+      <a style="text-decoration: none; color: inherit;" href="https://ocasio2018.com/call"> If you're far away, grab a friend an phonebank from home! </a>
+    </li>
+      <br/>
+      <div style="display: flex; justify-content: center;">
+        <a href="https://ocasio2018.com/call" class="button"
+          style="background-color: #3c2d82 !important; padding: 1em 2em 2em 2em !important; font-family: Metropolis !important; font-weight: 600 !important; text-align: center !important;
+            font-size: 20px !important; white-space: normal !important; line-height: 1.3 !important; height: auto !important; padding: 1em 2em 1em 2em !important;">
+            Make Calls from Home </a>
+      </div>
+
+  </ul>
+</div>
+
