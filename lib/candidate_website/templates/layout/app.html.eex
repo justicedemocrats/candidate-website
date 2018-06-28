@@ -43,7 +43,11 @@
       h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
       })(window,document.documentElement,'async-hide','dataLayer',4000,
+      <%= if assigns[:google_tag_manager_id] != nil do %>
+      {'<%= assigns[:google_tag_manager_id] %>':true});</script>
+      <%= else %>
       {'<%= assigns[:google_optimize_id] %>':true});</script>
+      <% end %>
     <% end %>
     <%= if assigns[:google_tag_manager_id] != nil do %>
         <!-- Google Tag Manager -->
