@@ -1,0 +1,3 @@
+<div id="splash-container" style="background-image: url('<%= @splash_image %>');">
+  <h1> We did it. </h1>
+</div>
