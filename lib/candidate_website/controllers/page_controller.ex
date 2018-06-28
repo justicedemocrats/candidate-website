@@ -3,9 +3,16 @@ defmodule CandidateWebsite.PageController do
   use CandidateWebsite, :controller
   plug(CandidateWebsite.RequirePlug)
 
+  @splash_cookie_expiry_days 3
+
   def index(conn, _params) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "index.html", Enum.into(assigns, []))
+
+    if conn.cookies["splash_visited"] do
+      render(conn, "index.html", Enum.into(assigns, []))
+    else
+      redirect(conn, to: "/splash")
+    end
   end
 
   def about(conn, _params) do
@@ -16,6 +23,18 @@ defmodule CandidateWebsite.PageController do
     # else
     #   redirect(conn, to: "/#about")
     # end
+  end
+
+  def splash(conn, _) do
+    assigns = Map.get(conn.assigns, :data)
+
+    conn
+    |> put_resp_cookie(
+      "splash_visited",
+      "true",
+      max_age: @splash_cookie_expiry_days * 86400
+    )
+    |> render("splash.html", Enum.into(assigns, []))
   end
 
   def platform(conn, _params) do

@@ -26,6 +26,7 @@ defmodule CandidateWebsite.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
+    get("/splash", PageController, :splash)
     get("/about", PageController, :about)
     get("/platform", PageController, :platform)
     get("/press", PageController, :info)
