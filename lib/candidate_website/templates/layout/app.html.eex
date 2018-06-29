@@ -36,19 +36,7 @@
 
     <%= {:safe, css_link_tag() } %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-    <%= if assigns[:google_optimize_id] != nil do %>
-      <!-- Page-hiding snippet (recommended)  -->
-      <style>.async-hide { opacity: 0 !important} </style>
-      <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-      h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-      (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-      })(window,document.documentElement,'async-hide','dataLayer',4000,
-      <%= if assigns[:google_tag_manager_id] != nil do %>
-      {'<%= assigns[:google_tag_manager_id] %>':true});</script>
-      <%= else %>
-      {'<%= assigns[:google_optimize_id] %>':true});</script>
-      <% end %>
-    <% end %>
+
     <%= if assigns[:google_tag_manager_id] != nil do %>
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
