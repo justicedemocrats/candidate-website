@@ -23,6 +23,7 @@ else: "https://now.justicedemocrats.com/events/"
   </h1>
 </div>
 
+<%= if length(@events) > 0 do %>
 <div id="events-scroll-container">
   <%= for ev <- @events do %>
   <div class="event-container">
@@ -63,6 +64,7 @@ else: "https://now.justicedemocrats.com/events/"
   </div>
   <% end %>
 </div>
+<% end %>
 
 <div id="events-host-button-container">
   <%= if host_event_url != nil do %>

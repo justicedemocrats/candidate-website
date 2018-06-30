@@ -138,7 +138,6 @@ const siteMap = [
   { text: "News", action: () => (render_and_scroll("/", "#chunk-news")) },
   { text: "Endorsements", action: () => (render_and_scroll("/", "#chunk-endorsements")) },
   { text: "Store", action: () => (window.location.pathname = "/store") },
-  { text: "Polling Place", action: () => (window.location.pathname = "/polling-place") },
   {
     text: "Volunteer",
     action: () => smoothScroll(document.querySelector("#volunteer")),
