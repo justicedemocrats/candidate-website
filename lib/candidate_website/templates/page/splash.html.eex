@@ -1,0 +1,9 @@
+<div id="splash-container">
+  <div id="splash-background">
+    <div id="text-and-form-block">
+      
+    </div>
+  </div>
+</div>
+
+<%= render "footer.html", assigns %>
