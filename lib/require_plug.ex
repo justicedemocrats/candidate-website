@@ -80,7 +80,7 @@ defmodule CandidateWebsite.RequirePlug do
                        "title" => title,
                        "slug" => slug,
                        "metadata" =>
-                         _metadata =
+                         metadata =
                            ~m(priority address_line_1 address_line_2 google_maps_api_key)
                      } ->
         priority = as_float(priority)
@@ -88,10 +88,7 @@ defmodule CandidateWebsite.RequirePlug do
         map_url =
           "https://www.google.com/maps/search/?api=1&query=#{address_line_1}, #{address_line_2}"
 
-        map_image_url =
-          "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{
-            address_line_2
-          }&zoom=15&size=400x400&key=#{google_maps_api_key}"
+        map_image_url = metadata["google_mags_image"][~s(imgix_url)] || "https://maps.googleapis.com/maps/api/staticmap?markers=color:0x3C2D82|#{address_line_1}, #{address_line_2}&zoom=15&size=400x400&key=#{google_maps_api_key}"
 
         ~m(title slug priority address_line_1 address_line_2 map_url map_image_url)a
       end)
