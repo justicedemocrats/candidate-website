@@ -15,7 +15,7 @@
         </div>
         <div class="form-row">
           <div class="same-row">
-            <input type="tel" name="phone" placeholder="<%= gettext "Phone" %>" />
+            <input type="tel" name="phone" placeholder="<%= gettext "Phone" %>" required="required" />
             <input type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
           </div>
         </div>

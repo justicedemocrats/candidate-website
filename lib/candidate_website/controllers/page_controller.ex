@@ -40,9 +40,10 @@ defmodule CandidateWebsite.PageController do
 
   def signup(conn, params) do
     data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
-    ~m(email zip name) = params
+    ~m(email zip) = params
 
     extra = if Map.has_key?(params, "phone"), do: %{phone: params["phone"]}, else: %{}
+    name = if Map.has_key?(params, "name"), do: params["name"], else: ""
 
     [given_name, family_name] =
       case String.split(name, " ") do
@@ -83,7 +84,7 @@ defmodule CandidateWebsite.PageController do
         )
 
       _ ->
-        Ak.Signup.process_signup(candidate_name, Map.merge(~m(email zip name), extra))
+        Ak.Signup.process_signup(candidate_name, Map.merge(~m(email zip), extra))
     end
 
     redirect(conn, external: donate_url)

@@ -1,6 +1,154 @@
 @require fonts
 
-#splash-container
-  #splash-background
-    background url()
-    #text-and-form-block
+#splash-page-container
+  flexbox(flex)
+  max-width 100%
+  height 100%
+
+  #splash-page-background
+    flexbox(flex)
+    flex-wrap(wrap)
+    align-items(center)
+    justify-content(center)
+    background-image url(https://cosmic-s3.imgix.net/368195f0-803e-11e8-8aa6-a7a8c35ac56f-Walking-Tour-Touchups.jpg)
+    background-size cover
+    background-repeat no-repeat
+    transition all 175ms ease-in-out
+    width 100%
+
+    @media (max-width: 767px)
+      height 100%
+      background-position 29%
+
+    @media (min-width: 768px)
+      min-height 420px
+
+    @media (min-width: 768px) and (max-width: 1440px)
+      background-position 65%
+
+
+    #splash-page-form-container
+      background linear-gradient(to right, rgba(60, 45, 130, 0), rgba(60, 45, 130, 0), rgba(60, 45, 130, 0), rgba(60, 45, 130, 0.9), rgba(60, 45, 130, 1))
+      background-size cover
+      width 100%
+      height 100%
+      flexbox(flex)
+      align-items(center)
+
+      @media (max-width: 767px)
+        background none
+
+      #splash-page-form
+        border 0
+        // Hello
+        @media (max-width: 767px)
+          width 100%
+
+        @media (min-width: 768px)
+          max-width 515px
+          padding 0
+          margin-left auto
+          margin-right 5%
+          position relative
+          z-index 99
+
+        fieldset
+          border 0
+          margin 0
+          padding 0
+
+        #splash-form-header-container
+          flexbox(flex)
+          flex-wrap(wrap)
+          //Hello
+
+          #splash-form-header
+            font-family title_font_name
+            font-size 60px
+            text-align left
+            color #ffffff
+
+            @media (max-width: 767px)
+              width 100%
+              padding 0 10%
+              margin-right 0
+              font-size 36px
+
+        #input-row
+          flexbox(flex)
+          flex-wrap(nowrap)
+          margin-top 12px
+          flex-direction(row)
+
+          @media (max-width: 767px)
+            flex-direction(column)
+
+
+          .field-input
+            opacity 0.8
+            height 60px
+            color #000
+
+          label
+            margin-bottom 3px
+            font-size 20px
+            text-transform lowercase
+            color #ffffff
+
+            @media (max-width: 767px)
+              font-size 16px
+
+          #splash-email-input
+            width 70%
+            margin-right 1%
+
+            @media (max-width: 767px)
+              width 100%
+              padding 0 10%
+              margin-right 0
+
+          #splash-zip-input
+            width 30%
+            margin-left 1%
+
+            @media (max-width: 767px)
+              width 100%
+              padding 0 10%
+              margin 4px 0
+
+        #button-row
+          flexbox(flex)
+          flex-wrap(nowrap)
+          align-items(center)
+          justify-content(space-between)
+          flex-direction(row)
+          margin-top 18px
+
+          @media (max-width: 767px)
+            flex-direction(column)
+            flex-wrap(wrap)
+            justify-content(center)
+
+          #join-submit
+            background-color #8C74FF
+            // border-radius 3px;
+            // box-shadow 0 2px 4px 0 rgba(0,0,0,0.5), 2px 2px 6px 0 rgba(0,0,0,0.5)
+            padding 1em 2em 2em 2em
+            font-family secondary_font_name
+            font-size 18px
+            font-weight 600
+            line-height 18px
+            text-align center
+            width 300px
+            &:hover
+              background-color #a974ff
+
+          #continue-to-website
+            color #ffffff
+            font-family secondary_font_name
+            font-size 20px
+            font-weight 700
+
+            @media (max-width: 767px)
+              font-size 16px
+              margin-top 16px
