@@ -1,0 +1,41 @@
+<div id="splash-page-container">
+  <div id="splash-page-background">
+    <div id="splash-page-form-container">
+      <form id="splash-page-form" method="POST" action="/signup?candidate=<%= @candidate %>">
+        <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
+        <fieldset>
+          <div id="splash-form-header-container">
+            <h1 id="splash-form-header">
+              Do You Have Alexandria's Back?
+            </h1>
+          </div>
+          <div id="input-row" class="form-row">
+            <div id="splash-email-input">
+              <label for="email" style="cursor: text; pointer-events: none;">
+                  Email Address
+              </label>
+              <input class='field-input' id='email' type="email" name="email" placeholder="<%= gettext "Email" %>*" required="required" />
+            </div>
+            <!-- <div class="input-row-divider"></div> -->
+            <div id="splash-zip-input">
+              <label for="zip" style="cursor: text; pointer-events: none;">
+                  Zip Code
+              </label>
+              <input class='field-input' id='zip' type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
+            </div>
+          </div>
+          <div id="button-row" class="form-row">
+            <button id="join-submit" type="submit">
+              <%= gettext "JOIN" %>
+            </button>
+            <a id="continue-to-website" href="./" onclick="window.location='/';">
+              Continue to Site...
+            </span>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%= render "footer.html", assigns %>
