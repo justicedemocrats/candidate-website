@@ -36,7 +36,7 @@
       align-items(center)
 
       @media (max-width: 767px)
-        background none
+        background linear-gradient(to bottom, rgba(60, 45, 130, 1), rgba(60, 45, 130, 0.40), rgba(60, 45, 130, 0), rgba(60, 45, 130, 0), rgba(60, 45, 130, 0))
 
       #splash-page-form
         border 0
@@ -74,6 +74,25 @@
               margin-right 0
               font-size 36px
 
+        #splash-form-subheader-container
+          flexbox(flex)
+          flex-wrap(wrap)
+          margin-top 14px
+          //Hello
+
+          #splash-form-subheader
+            margin 0
+            font-family secondary_font_name
+            font-weight 600
+            font-size 18px
+            text-align left
+            color #ffffff
+
+            @media (max-width: 767px)
+              width 100%
+              padding 0 10%
+              font-size 16px
+
         #input-row
           flexbox(flex)
           flex-wrap(nowrap)
@@ -91,12 +110,12 @@
 
           label
             margin-bottom 3px
-            font-size 20px
+            font-size 16px
             text-transform lowercase
             color #ffffff
 
             @media (max-width: 767px)
-              font-size 16px
+              font-size 14px
 
           #splash-email-input
             width 70%

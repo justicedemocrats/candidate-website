@@ -9,6 +9,11 @@
               Do You Have Alexandria's Back?
             </h1>
           </div>
+          <div id="splash-form-subheader-container">
+            <h2 id="splash-form-subheader">
+              I stand with Alexandria Ocasio-Cortez!
+            </h2>
+          </div>
           <div id="input-row" class="form-row">
             <div id="splash-email-input">
               <label for="email" style="cursor: text; pointer-events: none;">
