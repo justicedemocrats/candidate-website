@@ -23,10 +23,8 @@ module.exports = (env) => {
     context: __dirname,
 
     entry: {
-      app: [
-        "js/app.js",
-        "stylus/app.styl"
-      ]
+      styles: ["stylus/app.styl"],
+      app: ["js/app.js"],
     },
 
     output: {

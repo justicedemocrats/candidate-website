@@ -9,7 +9,11 @@ defmodule CandidateWebsite.LayoutView do
                 ~s(<script src="http://localhost:8080/js/app.js"></script>)
               )
 
-  @css_src Application.get_env(:candidate_website, :css_src, "")
+  @css_src Application.get_env(
+             :candidate_website,
+             :css_src,
+             ~s(<script src="http://localhost:8080/js/styles.js"></script>)
+           )
 
   def js_script_tag, do: @script_src
 
