@@ -1262,11 +1262,8 @@ button, .button, .button:hover, button:hover
       .article-container
         // flex-grow(1)
         flexbox(flex)
-        flex-direction(column)
-        justify-content(space-between)
         background-color #FFFFFF
         margin 0.75em
-        padding 2em
         width 30%
         max-width 384px
         min-height 322px
@@ -1276,6 +1273,14 @@ button, .button, .button:hover, button:hover
 
         @media (max-width: 425px)
           margin 0.75em 0
+
+        .article-container-link
+          color inherit
+          flexbox(flex)
+          flex-direction(column)
+          justify-content(space-between)
+          padding 2em
+          text-decoration none
 
         .article-thumbnail
           max-width 100%
