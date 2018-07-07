@@ -15,13 +15,15 @@ After that, assuming you've installed Git, run:
 git clone -b ocasio https://github.com/justicedemocrats/candidate-website.git
 cd candidate-website/
 mix deps.get
+
+cd assets
+npm install
+cd ..
+
 mix phx.server
 ```
 
-And then visit `http://localhost:4000/?candidate=alexandria-ocasio-cortez` in your
-browser.
-
-`?candidate=some-slug` is a required parameter.
+And then visit `http://localhost:4000/` in your browser.
 
 ## Making Changes
 
