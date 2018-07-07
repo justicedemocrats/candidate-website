@@ -33,10 +33,13 @@ defmodule CandidateWebsite.LayoutView do
       {last_num, _} = num |> String.last() |> Integer.parse()
 
       cond do
-        last_num == 1 -> "#{num}st District of #{@states[abbrev]}"
+        num == 11 -> "#{num}th District of #{@states[abbrev]}"
+        num == 12 -> "#{num}th District of #{@states[abbrev]}"
+        num == 13 -> "#{num}th District of #{@states[abbrev]}"
+        last_num == 1  -> "#{num}st District of #{@states[abbrev]}"
         last_num == 2 -> "#{num}nd District of #{@states[abbrev]}"
         last_num == 3 -> "#{num}rd District of #{@states[abbrev]}"
-        true -> "#{num}st district of #{@states[abbrev]}"
+        true -> "#{num}th district of #{@states[abbrev]}"
       end
     end
   end
