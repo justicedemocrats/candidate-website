@@ -88,7 +88,7 @@ const styles = {
     height: "100vh",
     width: "66vw",
     right: 0,
-    backgroundColor: "black",
+    backgroundColor: "#3c2d82",
     padding: 20,
     color: "white",
   },
