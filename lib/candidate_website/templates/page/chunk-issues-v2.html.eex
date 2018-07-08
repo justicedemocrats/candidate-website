@@ -1,7 +1,7 @@
 <div id="issues-container-v2">
   <div id="issues-image-container">
     <!-- <img id="issues-image" src="https://cosmic-s3.imgix.net/af464f60-5a34-11e8-a6ea-1773a2afd5cd-alex-2.png"/> -->
-    <img id="issues-image" src="https://i.imgur.com/I05dCKQ.jpg"/>
+    <img id="issues-image" src="https://cosmic-s3.imgix.net/09ed9cc0-8203-11e8-9ec0-a39094ccdb86-I05dCKQ.jpg"/>
   </div>
   <div id="issues-text-container">
     <div id="issues-header-container">
