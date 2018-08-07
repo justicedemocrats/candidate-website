@@ -85,6 +85,12 @@
     </script>
 
     <%= {:safe, js_script_tag() } %>
+
+    <%= if @name == "Cori Bush" %>
+      <!-- Tracking tag. Place in the <body> section of webpage -->
+      <!-- Privacy policy at http://tag.brandcdn.com/privacy -->
+      <script type="text/javascript" src="//tag.brandcdn.com/autoscript/coribush2018_vgtsvmvvnvjqvda9/campaignforcongress.js"></script>
+    <% end %>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flexibility/2.0.1/flexibility.js"></script>
   <script>
