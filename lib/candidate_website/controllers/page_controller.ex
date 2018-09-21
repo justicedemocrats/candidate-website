@@ -70,7 +70,7 @@ defmodule CandidateWebsite.PageController do
     activist_codes =
       Map.keys(params)
       |> MapSet.new()
-      |> MapSet.difference(MapSet.new(~w(email name phone zip _csrf_token)))
+      |> MapSet.difference(MapSet.new(~w(email name phone zip _csrf_token candidate)))
       |> MapSet.to_list()
       |> Enum.filter(fn checkbox -> Map.has_key?(params, checkbox) end)
 
@@ -95,7 +95,7 @@ defmodule CandidateWebsite.PageController do
       case candidate_name do
         "Robb" <> _ -> "https://now.brandnewcongress.org/act"
         "Marc Whit" <> _ -> "https://now.brandnewcongress.org/act"
-        _ -> "https://now.justicedemocrats.com/act"
+        _ -> "https://www.ocasio2018.com/events"
       end
 
     redirect(conn, external: destination)

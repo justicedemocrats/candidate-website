@@ -6,42 +6,46 @@ defmodule MyCampaign do
   def find_or_create_person(~m(first_name last_name email phone zip)) do
     HTTPotion.post("https://api.securevan.com/v4/people/findOrCreate",
       body:
-        Poison.encode!(%{
-          "firstName" => first_name,
-          "lastName" => last_name,
-          "emails" => [
-            %{
-              "email" => email,
-              "type" => "P",
-              "isPreferred" => true,
-              "isSubscribed" => true
-            }
-          ],
-          "phones" => [
-            %{
-              "phoneNumber" => phone,
-              "phoneType" => "C",
-              "isPreferred" => true,
-              "phoneOptInStatus" => "I"
-            }
-          ],
-          "addresses" => [
-            %{
-              "zipOrPostalCode" => zip
-            }
-          ]
-        }),
+        Poison.encode!(
+          %{
+            "firstName" => first_name,
+            "lastName" => last_name,
+            "emails" => [
+              %{
+                "email" => email,
+                "type" => "P",
+                "isPreferred" => true,
+                "isSubscribed" => true
+              }
+            ],
+            "phones" => [
+              %{
+                "phoneNumber" => phone,
+                "phoneType" => "C",
+                "isPreferred" => true,
+                "phoneOptInStatus" => "I"
+              }
+            ],
+            "addresses" => [
+              %{
+                "zipOrPostalCode" => zip
+              }
+            ]
+          }
+          |> IO.inspect()
+        ),
       headers: [
         Accept: "application/json",
         "Content-Type": "application/json"
       ],
       basic_auth: {"bpackerAPIUser", mycampaign_api_key()}
     )
+    |> IO.inspect()
   end
 
   def add_activist_codes(van_id, activist_codes, volunteer \\ false) do
     responses =
-      Enum.map(activist_codes, fn code ->
+      Enum.map(activist_codes |> IO.inspect(), fn code ->
         %{
           "activistCodeId" => mapping()[code],
           "action" => "Apply",
@@ -64,18 +68,22 @@ defmodule MyCampaign do
 
     HTTPotion.post("https://api.securevan.com/v4/people/#{van_id}/canvassResponses",
       body:
-        Poison.encode!(%{
-          "responses" => responses,
-          "canvassContext" => %{
-            contactTypeId: 8
+        Poison.encode!(
+          %{
+            "responses" => responses,
+            "canvassContext" => %{
+              contactTypeId: 8
+            }
           }
-        }),
+          |> IO.inspect()
+        ),
       headers: [
         Accept: "application/json",
         "Content-Type": "application/json"
       ],
       basic_auth: {"bpackerAPIUser", mycampaign_api_key()}
     )
+    |> IO.inspect()
   end
 
   def mapping,
