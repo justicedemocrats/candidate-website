@@ -38,3 +38,4 @@ config :actionkit,
 config :candidate_website,
   osdi_api_event_url: "${OSDI_API_EVENT_URL}",
   osdi_api_token: "${OSDI_API_TOKEN}"
+  mycampaign_api_key: "${MYCAMPAIGN_API_KEY}"
