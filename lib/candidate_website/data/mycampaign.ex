@@ -84,6 +84,10 @@ defmodule MyCampaign do
       "host_a_fundraiser" => 4_469_129,
       "knock_doors" => 4_469_079,
       "send_texts" => 4_469_132,
-      "website" => 4_470_298
+      "website" => 4_470_298,
+      "hacer_llamadas" => 4_469_130,
+      "organizar_recaudacción_de_fondos" => 4_469_129,
+      "tocar_puertas" => 4_469_079,
+      "mandar_textos" => 4_469_132
     }
 end
