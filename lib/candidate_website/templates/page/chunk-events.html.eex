@@ -2,7 +2,7 @@
 <div style="max-height: 80vh; overflow-y: scroll;" class="oa-page-embed" data-page-url="https://secure.ngpvan.com/p/CkmJY_I-f0OyqL79IdqFHg2"/> </div>
 
 <style>
-.oa-hooked {
+form.oa-hooked {
   display: none;
 }
 </style>
