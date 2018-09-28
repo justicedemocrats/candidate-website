@@ -20,7 +20,7 @@
         Se Habla Español
       </div>
       <div id="office-container">
-        <%= gettext "Visit our" %> <a id="bronx-office-link" href="https://goo.gl/maps/SSt7y1x4G7q">Bronx</a> <%= gettext "and" %> <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> <%= gettext "Offices" %>
+        <%= gettext "Visit our" %> <a id="bronx-office-link" href="https://goo.gl/maps/mg1i8U642Tw">Bronx</a> <%= gettext "and" %> <a id="queens-office-link" href="https://goo.gl/maps/kCrf3AAks6A2">Queens</a> <%= gettext "Offices" %>
       </div>
     </div>
 

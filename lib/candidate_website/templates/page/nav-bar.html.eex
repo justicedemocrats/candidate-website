@@ -9,7 +9,7 @@
               <button class="nav-item contribute" onclick="window.location='<%= @donate_url %>';"><%= gettext "Contribute" %></button>
               <button class="nav-item" onclick="window.location='/about';"><%= gettext "About" %></button>
               <button class="nav-item" onclick="window.location='/issues';"><%= gettext "Issues" %></button>
-              <button class="nav-item" onclick="window.location='/#chunk-events';"><%= gettext "Events" %></button>
+              <button class="nav-item" onclick="window.location='/events';"><%= gettext "Events" %></button>
               <button class="nav-item" onclick="window.location='/#chunk-news';"><%= gettext "News" %></button>
               <button class="nav-item" onclick="window.location='/#chunk-endorsements';"><%= gettext "Endorsements" %></button>
               <button class="nav-item" onclick="window.location='/store';"><%= gettext "Store" %></button>
