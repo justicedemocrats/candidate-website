@@ -1,75 +1,8 @@
-<%
-host_event_url = cond do
-  String.contains?(@name, "Robb") or String.contains?(@name, "Marc") ->
-    nil
-  true ->
-    "https://actionnetwork.org/events/new?event_campaign_id=5154"
-end
-%>
+<script type="text/javascript" src="https://assets.targetedaction.net/embed.js"/> </script>
+<div style="max-height: 80vh; overflow-y: scroll;" class="oa-page-embed" data-page-url="https://secure.ngpvan.com/p/CkmJY_I-f0OyqL79IdqFHg2"/> </div>
 
-<%
-host_event_base = if String.contains?(@name, "Robb") or String.contains?(@name, "Marc"),
-  do: "https://now.brandnewcongress.org/events/",
-else: "https://now.justicedemocrats.com/events/"
-%>
-
-<div id="events-header-container">
-  <h1 id="events-header-text">
-    <%= if length(@events) > 0 do %>
-      <%= gettext "Attend an Upcoming Event" %>
-    <% else %>
-      <%= gettext "We Need You to Power this Revolution" %>
-    <% end %>
-  </h1>
-</div>
-
-<%= if length(@events) > 0 do %>
-<div id="events-scroll-container">
-  <%= for ev <- @events do %>
-  <div class="event-container">
-    <div class="event-text-container">
-      <div class="event-title-container">
-        <h2 class="event-title-text">
-          <%= ev["title"] %>
-        </h2>
-      </div>
-      <div class="event-description-container">
-        <h3 class="event-description-text">
-          <%= ev["date_line"] %>
-        </h3>
-      </div>
-    </div>
-    <div class="event-button-container">
-      <div class="event-rsvp-button-container">
-        <button class="event-rsvp-button" onclick="window.open('<%= ev["browser_url"] %>')">
-          <%= gettext "Details / RSVP" %>
-        </button>
-      </div>
-      <!-- <div class="event-share-button-container">
-        <button class="event-share-button">
-          Email
-        </button>
-      </div>
-      <div class="event-share-button-container">
-        <button class="event-share-button" onclick="facebookShare('<%= ev["browser_url"] %>');">
-          Share on Facebook
-        </button>
-      </div>
-      <div class="event-share-button-container">
-        <button class="event-share-button" onclick="twitterShare('<%= ev["browser_url"] %>');">
-          Share on Twitter
-        </button>
-      </div> -->
-    </div>
-  </div>
-  <% end %>
-</div>
-<% end %>
-
-<div id="events-host-button-container">
-  <%= if host_event_url != nil do %>
-  <button id="events-host-button" onclick="location.href = '<%= host_event_url %>'" type="button">
-    <%= gettext "Host An Event for" %> <%= @name %>
-  </button>
-  <% end %>
-</div>
+<style>
+form.oa-hooked {
+  display: none;
+}
+</style>
