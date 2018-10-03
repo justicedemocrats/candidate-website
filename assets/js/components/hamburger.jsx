@@ -134,7 +134,7 @@ const siteMap = [
   },
   { text: "About", action: () => (window.location.pathname = "/about") },
   { text: "Issues", action: () => (window.location.pathname = "/issues") },
-  { text: "Events", action: () => (window.location.pathname = "/events")) },
+  { text: "Events", action: () => (window.location.pathname = "/events") },
   { text: "News", action: () => (render_and_scroll("/", "#chunk-news")) },
   { text: "Endorsements", action: () => (render_and_scroll("/", "#chunk-endorsements")) },
   { text: "Store", action: () => (window.location.pathname = "/store") },
