@@ -17,10 +17,7 @@ config :cosmic,
   slugs: [
     "alexandria-ocasio-cortez",
     "adrienne-bell",
-    "anthony-clark",
-    "chardo-richardson",
     "cori-bush",
-    "paula-jean-swearengin",
     "marc-whitmire"
   ]
 
@@ -33,13 +30,8 @@ config :candidate_website,
     "www.bell2018.com" => "adrienne-bell",
     "whitmire2018.com" => "marc-whitmire",
     "www.whitmire2018.com" => "marc-whitmire",
-    "anthonyclark2018.com" => "anthony-clark",
-    "paulajean2018.com" => "paula-jean-swearengin",
-    "www.paulajean2018.com" => "paula-jean-swearengin",
     "votecoribush.com" => "cori-bush",
-    "www.votecoribush.com" => "cori-bush",
-    "www.chardo2018.com" => "chardo-richardson",
-    "chardo2018.com" => "chardo-richardson"
+    "www.votecoribush.com" => "cori-bush"
   }
 
 config :candidate_website, CandidateWebsite.Scheduler,
