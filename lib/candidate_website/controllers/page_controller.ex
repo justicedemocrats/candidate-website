@@ -39,10 +39,10 @@ defmodule CandidateWebsite.PageController do
     render(conn, "endorsements.html", Enum.into(assigns, []))
   end
 
-  def splash(conn, _params) do
-    assigns = Map.get(conn.assigns, :data)
-    render(conn, "splash.html", Enum.into(assigns, []))
-  end
+  # def splash(conn, _params) do
+  #   assigns = Map.get(conn.assigns, :data)
+  #   render(conn, "splash.html", Enum.into(assigns, []))
+  # end
 
   def signup(conn, params) do
     data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
