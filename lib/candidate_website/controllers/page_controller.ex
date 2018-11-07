@@ -3,15 +3,15 @@ defmodule CandidateWebsite.PageController do
   use CandidateWebsite, :controller
   plug(CandidateWebsite.RequirePlug)
 
-  def index(conn, _params) do
-    if Map.has_key?(conn.cookies, "returning_visitor") do
-      assigns = Map.get(conn.assigns, :data)
-      render(conn, "index.html", Enum.into(assigns, []))
-    else
-      conn
-      |> put_resp_cookie("returning_visitor", "true", max_age: 15 * 86400)
-      |> redirect(to: "/splash")
-    end
+  # def index(conn, _params) do
+  #   if Map.has_key?(conn.cookies, "returning_visitor") do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "index.html", Enum.into(assigns, []))
+    # else
+    #   conn
+    #   |> put_resp_cookie("returning_visitor", "true", max_age: 15 * 86400)
+    #   |> redirect(to: "/splash")
+    # end
   end
 
   def about(conn, _params) do
