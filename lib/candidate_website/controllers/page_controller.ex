@@ -135,8 +135,6 @@ defmodule CandidateWebsite.PageController do
     ~m(vanId) = Poison.decode!(resp.body)
     MyCampaign.add_activist_codes(vanId, activist_codes |> Enum.concat(["website"]), false)
 
-    destination = "https://www.ocasio2018.com/"
-
-    redirect(conn, external: destination)
+    redirect(conn, to: "/")
   end
 end
