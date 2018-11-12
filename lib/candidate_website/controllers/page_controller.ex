@@ -124,7 +124,7 @@ defmodule CandidateWebsite.PageController do
     |> Enum.join(" ")
   end
 
-  def volunteer_splash(conn, params) do
+  def splash_form(conn, params) do
     activist_codes =
       Map.keys(params)
       |> MapSet.new()
@@ -133,7 +133,7 @@ defmodule CandidateWebsite.PageController do
 
     resp = MyCampaign.find_or_create_on_email(params)
     ~m(vanId) = Poison.decode!(resp.body)
-    MyCampaign.add_activist_codes(vanId, activist_codes |> Enum.concat(["website"]), true)
+    MyCampaign.add_activist_codes(vanId, activist_codes |> Enum.concat(["website"]), false)
 
     destination = "https://www.ocasio2018.com/"
 

@@ -1,7 +1,7 @@
 <div id="splash-page-container">
   <div id="splash-page-background">
     <div id="splash-page-form-container">
-      <form id="splash-page-form" method="post" action="/get_volunteer?candidate=<%= @candidate %>">
+      <form id="splash-page-form" method="post" action="/splash/form?candidate=<%= @candidate %>">
         <div id="splash-form-logo-container">
           <img id="splash-logo" src="https://cosmic-s3.imgix.net/7f2f54f0-e1c7-11e8-a78a-b55cf4487289-Ocasio2018_Logo_WHITE.png"/>
         </div>
