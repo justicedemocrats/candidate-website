@@ -92,10 +92,12 @@
           #splash-logo
             // lol
             @media (min-width 769px) and (max-width 1219px)
-              max-height: 150px
+              // max-height: 150px
+              max-width 35%
 
             @media (min-width 1220px)
-              max-height 200px
+              // max-height 200px
+              max-width 35%
 
             @media (max-width: 768px)
               max-width 35%
@@ -104,6 +106,7 @@
           border 0
           margin 0
           padding 0
+          max-height 100%
 
           @media (min-width: 769px)
             margin-top 20%
@@ -131,20 +134,17 @@
                 text-align left
                 color #ffffff
 
-                @media (max-width: 767px) and (min-height 745px)
+                @media (max-width: 767px)
                   width 100%
                   padding 0 10%
                   margin-right 0
                   font-size 36px
 
-                @media (max-width: 767px) and (max-height 745px)
-                  width 100%
-                  padding 0 10%
-                  margin-right 0
-                  font-size 28px
-
                 @media (min-width: 768px) and (max-width: 1220px)
                   font-size 40px
+
+                @media (max-height 745px)
+                  font-size 36px
 
 
             #splash-form-subheader-container
@@ -169,6 +169,7 @@
             #input-row
               flexbox(flex)
               flex-wrap(nowrap)
+              
               margin-top 12px
               flex-direction(row)
 
@@ -219,6 +220,10 @@
                   width 100%
                   padding 0 10%
                   margin 4px 0
+
+                @media (max-height 745px)
+                  // padding 0 10%
+                  // margin 4px 0
 
             #button-row
               flexbox(flex)

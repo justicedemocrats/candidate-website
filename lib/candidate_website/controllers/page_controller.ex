@@ -3,15 +3,15 @@ defmodule CandidateWebsite.PageController do
   use CandidateWebsite, :controller
   plug(CandidateWebsite.RequirePlug)
 
-  # def index(conn, _params) do
-  #   if Map.has_key?(conn.cookies, "returning_visitor") do
-    assigns = Map.get(conn.assigns, :data)
-    render(conn, "index.html", Enum.into(assigns, []))
-    # else
-    #   conn
-    #   |> put_resp_cookie("returning_visitor", "true", max_age: 15 * 86400)
-    #   |> redirect(to: "/splash")
-    # end
+  def index(conn, _params) do
+    if Map.has_key?(conn.cookies, "returning_visitor") do
+      assigns = Map.get(conn.assigns, :data)
+      render(conn, "index.html", Enum.into(assigns, []))
+    else
+      conn
+      |> put_resp_cookie("returning_visitor", "true", max_age: 15 * 86400)
+      |> redirect(to: "/splash")
+    end
   end
 
   def about(conn, _params) do
@@ -39,10 +39,10 @@ defmodule CandidateWebsite.PageController do
     render(conn, "endorsements.html", Enum.into(assigns, []))
   end
 
-  # def splash(conn, _params) do
-  #   assigns = Map.get(conn.assigns, :data)
-  #   render(conn, "splash.html", Enum.into(assigns, []))
-  # end
+  def splash(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "splash.html", Enum.into(assigns, []))
+  end
 
   def signup(conn, params) do
     data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
@@ -122,5 +122,21 @@ defmodule CandidateWebsite.PageController do
     |> String.split("_")
     |> Enum.map(&String.capitalize/1)
     |> Enum.join(" ")
+  end
+
+  def volunteer_splash(conn, params) do
+    activist_codes =
+      Map.keys(params)
+      |> MapSet.new()
+      |> MapSet.difference(MapSet.new(~w(email phone _csrf_token candidate)))
+      |> MapSet.to_list()
+
+    resp = MyCampaign.find_or_create_on_email(params)
+    ~m(vanId) = Poison.decode!(resp.body)
+    MyCampaign.add_activist_codes(vanId, activist_codes |> Enum.concat(["website"]), true)
+
+    destination = "https://www.ocasio2018.com/"
+
+    redirect(conn, external: destination)
   end
 end

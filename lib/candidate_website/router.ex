@@ -33,11 +33,12 @@ defmodule CandidateWebsite.Router do
     get("/endorsements", PageController, :endorsements)
     get("/issues", PageController, :platform)
     get("/info", PageController, :info)
-    get("/volunteer", PageController, :get_volunteer)
-    # get("/splash", PageController, :splash)
+    # get("/volunteer", PageController, :get_volunteer)
+    get("/splash", PageController, :splash)
 
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)
+    post("/get_volunteer", PageController, :volunteer_splash)
 
     get("/petition/:slug", PetitionController, :get)
     post("/petition/:slug", PetitionController, :post)

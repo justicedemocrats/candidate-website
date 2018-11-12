@@ -1,7 +1,7 @@
 <div id="splash-page-container">
   <div id="splash-page-background">
     <div id="splash-page-form-container">
-      <form id="splash-page-form" method="POST" action="/signup?candidate=<%= @candidate %>">
+      <form id="splash-page-form" method="post" action="/get_volunteer?candidate=<%= @candidate %>">
         <div id="splash-form-logo-container">
           <img id="splash-logo" src="https://cosmic-s3.imgix.net/7f2f54f0-e1c7-11e8-a78a-b55cf4487289-Ocasio2018_Logo_WHITE.png"/>
         </div>
@@ -23,20 +23,18 @@
                 <label for="email" style="cursor: text; pointer-events: none;">
                     Email Address
                 </label>
-                <input class='field-input' id='email' type="email" name="email" placeholder="<%= gettext "Email" %>*" required="required" />
+                <input type="email" class='field-input' id='email' type="email" name="email" placeholder="<%= gettext "Email" %>*" required="required" />
               </div>
               <!-- <div class="input-row-divider"></div> -->
               <div id="splash-zip-input">
                 <label for="zip" style="cursor: text; pointer-events: none;">
                     Zip Code
                 </label>
-                <input class='field-input' id='zip' type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
+                <input type="text" class='field-input' id='zip' type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
               </div>
             </div>
             <div id="button-row" class="form-row">
-              <button id="join-submit" type="submit">
-                <%= gettext "JOIN" %>
-              </button>
+              <input id="join-submit" type="submit" class="button" placeholder="<%= gettext "JOIN" %>" />
               <a id="continue-to-website" href="./" onclick="window.location='/';">
                 Continue to Site...
               </span>
