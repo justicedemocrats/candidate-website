@@ -124,7 +124,7 @@
   <div id="platform-table-of-contents-container">
     <ul id="table-of-contents">
     <%= for paragraph <- paragraphs do %>
-      <li class="chapter">
+      <li class="left-chapter">
         <a href="#<%= paragraph.slug %>">
           <%= paragraph.title %>
         </a>
