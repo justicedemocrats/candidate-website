@@ -35,7 +35,8 @@ defmodule CandidateWebsite.Router do
     get("/info", PageController, :info)
     # get("/volunteer", PageController, :get_volunteer)
     get("/splash", PageController, :splash)
-    get("/green-new-deal", PageController, :green_new_deal_temp)
+    get("/green-new-deal", PageController, :green_new_deal)
+    get("/gnd", PageController, :gnd)
 
     post("/signup", PageController, :signup)
     post("/volunteer", PageController, :volunteer)

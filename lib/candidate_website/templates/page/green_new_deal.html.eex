@@ -39,16 +39,186 @@
   </div>
 </div>
 
+<%  
+  paragraphs = [%{
+    "title": "1. ESTABLISHMENT; COMPOSITION",
+    "content": "Enter Content Here",
+    "slug": "establish",
+    "paragraphs": [
+      "(A) ESTABLISHMENT.—There is hereby established a Select Committee For A Green New Deal (hereinafter in this section referred to as the “select committee”)",
+      "(B) COMPOSITION.—The select committee shall be composed of 15 members appointed by the Speaker, of whom 6 shall be appointed on the recommendation of the Minority Leader. The Speaker shall designate one member of the select committee as its chair. A vacancy in the membership of the select committee shall be filled in the same manner as the original appointment."
+    ]
+  },
+  %{
+    "title": "2. JURISDICTION; FUNCTIONS",
+    "content": "Enter Content Here",
+    "slug": "jurisdiction",
+    "paragraphs": [
+      "(A) LEGISLATIVE JURISDICTION.—",
+      "(i) the select committee shall have authority to develop a detailed national, industrial, economic mobilization plan (hereinafter in this section referred to as the “Plan for a Green New Deal” or the “Plan”) for the transition of the United States economy to become carbon neutral and to significantly draw down and capture greenhouse gases from the atmosphere and oceans and to promote economic and environmental justice and equality. In furtherance of the foregoing, the Plan shall: <br/>
+      (a) be prepared in consultation with experts and leaders from business, labor, state and local governments, academia and broadly representative civil society groups and communities; <br/>
+      (b) be driven by the federal government, in collaboration, co-creation and partnership with business, labor, state and local governments, research institutions, and civil society groups and communities; <br/>
+      (c) be executed in no longer than 10 years from the start of execution of such Plan; <br/>
+      (d) provide opportunities for high income work, entrepreneurship and cooperative and public ownership and <br/>
+      (e) additionally, be responsive to, and in accordance with, the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality set forth in paragraph (6). ",
+      "(ii) No later than the submission of the Plan in accordance with the provisions set forth in paragraph (5)(B)(i), the select committee shall prepare draft legislation for the enactment of the Plan (hereinafter in this section referred to as the “draft legislation”), in accordance with the provisions set forth in paragraph 5(B)(ii). ",
+      "(B) INVESTIGATIVE JURISDICTION.—In  furtherance of the mandate set forth in paragraph (2)(A) above,  the select committee shall have the authority to investigate, study, make findings, convene experts and leaders from industry, academia, local communities, labor, finance, technology and any other industry or group that the select committee deems to be a relevant resource. The select committee may, at its discretion and as its members may deem appropriate, hold public hearings in connection with any aspect of its investigative functions. ",
+    ]
+  },
+  %{
+    "title": "3. PROCEDURE",
+    "content": "Enter Content Here",
+    "slug": "prudence",
+    "paragraphs": [
+      "(A) Except as specified in paragraph (2), the select committee shall have the authorities and responsibilities of, and shall be subject to the same limitations and restrictions as, a standing committee of the House, and shall be deemed a committee of the House for all purposes of law or rule.",
+      "(B)(i) Rules [TBD] (Organization of Committees) and [TBD] (Procedures of Committees and Unfinished Business) shall apply to the select committee where not inconsistent with this resolution.",
+      "(ii) Service on the select committee shall not count against the limitations on committee or subcommittee service in Rule [TBD] (Organization of Committees)."
+    ]
+  },
+  %{
+    "title": "4. FUNDING",
+    "content": "Enter Content Here",
+    "slug": "funding",
+    "paragraphs": [
+      "(A) the select committee may use the services of staff of the House and may, at its discretion and as its members may deem appropriate, use the services of external consultants or experts in furtherance of its mandate;",
+      "(B) the select committee shall be eligible for interim funding pursuant to clause [TBD] of Rule [TBD] (Interim Funding - Organization of Committees); and",
+      "(C) without limiting the foregoing, the select committee may, at any time and from time to time during the course of its mandate, apply to the House for an additional, dedicated budget to carry out its mandate."
+    ]
+  },
+  %{
+    "title": "5. INTERIM REPORTING; SUBMISSION OF THE PLAN FOR A GREEN NEW DEAL; SUBMISSION OF DRAFT LEGISLATION",
+    "content": "Enter Content Here",
+    "slug": "interim",
+    "paragraphs": [
+      "(A) The select committee may report to the House  or any House Committee it deems appropriate from time to time the results of its investigations and studies, together with such detailed findings and interim recommendations or proposed Plan or draft legislation (or portion thereof) as it may deem advisable.",
+      "(B) (i) The select committee shall complete the Plan for a Green New Deal by a date no later than January 1, 2020.",
+      "(ii) The select committee shall complete the finalized draft legislation by a date no later than March 1, 2020.",
+      "(iii) The select committee shall ensure and procure that the Plan and the draft legislation prepared in accordance with this section shall, upon completion, be made available to the public in widely accessible formats (including, without limitation, via at least one dedicated website and a print publication) by a date no later than 30 calendar days following the respective dates for completion set forth in paragraph (5)(B)(i) and (ii)."
+    ]
+  },
+  %{
+    "title": "6. SCOPE OF THE PLAN FOR A GREEN NEW DEAL",
+    "content": "Enter Content Here",
+    "slug": "scope",
+    "paragraphs": [
+      "(A) The Plan for a Green New Deal (and the draft legislation) shall be developed in order to achieve the following goals, in each case in no longer than 10 years from the start of execution of the Plan:",
+      "(i) 100% of national power generation from renewable sources;<br/>
+      (2) Building a national, energy-efficient, “smart” grid;<br/>
+      (3) Upgrading every residential and industrial building for state-of-the-art energy efficiency, comfort and safety;<br/>
+      (4) Decarbonizing the manufacturing, agricultural and other industries;<br/>
+      (5) Decarbonizing, repairing and improving transportation and other infrastructure;<br/>
+      (6) Funding massive investment in the drawdown and capture of greenhouse gases;<br/>
+      (7) Making “green” technology, industry, expertise, products and services a major export of the United States, with the aim of becoming the undisputed international leader in helping other countries transition to completely carbon neutral economies and bringing about a global Green New Deal.",
+      "(B) The Plan for a Green New Deal (and the draft legislation) shall recognize that a national, industrial, economic mobilization of this scope and scale is a historic opportunity to virtually eliminate poverty in the United States and to make prosperity, wealth and economic security available to everyone participating in the transformation. In furtherance of the foregoing, the Plan (and the draft legislation) shall: ",
+      "(i) provide all members of our society, across all regions and all communities, the opportunity, training and education to be a full and equal participant in the transition, including through a job guarantee program to assure every person who wants one, a living wage job; <br/>
+      (ii) take into account and be responsive to the historical and present-day experiences of low-income communities, communities of color, indigenous communities, rural and urban communities and the front-line communities most affected by climate change, pollution and other environmental harm; <br/>
+      (iii) mitigate deeply entrenched racial, regional and gender-based inequalities in income and wealth (including, without limitation, ensuring that federal and other investment will be equitably distributed to historically impoverished, low income, deindustrialized or other marginalized communities); <br/>
+      (iv) include additional measures such as basic income programs, universal health care programs and any others as the select committee may deem appropriate to promote economic security, labor market flexibility and entrepreneurism; and<br/>
+      (v) deeply involve national and local labor unions to take a leadership role in the process of job training and worker deployment. <br/>",
+      "(C) The Plan for a Green New Deal (and the draft legislation) shall recognize that innovative public and other financing structures are a crucial component in achieving and furthering the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality and cooperative and public ownership set forth in paragraphs (2)(A)(i) and (6)(B). The Plan (and the draft legislation) shall, accordingly, ensure that the majority of financing of the Plan shall be accomplished by the federal government, using a combination of the Federal Reserve, a new public bank or system of regional and specialized public banks, public venture funds and such other vehicles or structures that the select committee deems appropriate, in order to ensure that interest and other investment returns generated from public investments  made in connection with the Plan will be returned to the treasury, reduce taxpayer burden and allow for more investment. "
+      ]
+  }]
+%>
+
 <div id="platform-table-of-contents-wrapper">
   <div id="platform-table-of-contents-container">
     <ul id="table-of-contents">
-    <%= for issue <- @issues do %>
+    <%= for paragraph <- paragraphs do %>
       <li class="chapter">
-        <a href="#<%= issue.slug %>">
-          <%= issue.header %>
+        <a href="#<%= paragraph.slug %>">
+          <%= paragraph.title %>
         </a>
       </li>
     <% end %>
     </ul>
   </div>
 </div>
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  function dropIcon(varia) {
+    if (varia.find('.issue-carat')[0].innerHTML == "+") {
+      varia.find('.issue-carat')[0].innerHTML = "-";
+      } else {
+      varia.find('.issue-carat')[0].innerHTML = "+"
+      }
+  }
+
+  $(document).ready(function($) {
+    $('#platform-issues-container').find('.issue-container').find('.text-container').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      dropIcon($(this));
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $('.accordion-toggle').not($(this)).each(function() {$(this).find('.issue-carat')[0].innerHTML = "+";});
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
+  });
+</script>
+
+
+<div id="platform-issues-container">
+  <%= for {paragraph, i} <- Enum.with_index(paragraphs) do %>
+  <div class="issue-container" id="<%= paragraph.slug %>">
+    <!-- Icon Container -->
+    <div class="icon-container">
+      <p class="issue-number">
+        <!-- <%= i+1 %> -->
+        &#128488;
+      </p>
+    </div>
+    <!-- Text Container -->
+    <div class="text-container">
+      <!-- Header  -->
+      <div class="header-container accordion-toggle">
+        <h2 class="issue-header">
+           <%= paragraph.title %>
+        </h2>
+        <h2 class="issue-carat">+</h2>
+      </div>
+      <!-- Contents (Full-text)  -->
+      <div class="contents-container accordion-content">
+        <%= for content <- paragraph.paragraphs do %>
+        <p class="deal-content">
+          <%= raw(content) %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="issue-divider-container">
+    <hr class="issue-divider"/>
+  </div>
+  <% end %>
+</div>
+
+<!-- <div id="platform-accordion-container">
+  <ul id="platform-accordion-contents">
+    <%= for {issue, i} <- Enum.with_index(@issues) do %>
+    <li id="issue">
+      <h2 class="accordion-toggle">
+        <%= issue.header %>
+      </h2>
+      <p class="accordion-content">
+      <%= if issue.full != nil do %>
+        <%= raw(issue.full) %>
+      <% else %>
+        <%= raw(issue.intro) %>
+      <% end %>
+      </p>
+    </li>
+    <% end %>
+  </ul>
+</div> -->
+
+<%= for chunk <- ["volunteer"] do %>
+<div class="chunk" data-kind="<%= chunk %>" id="chunk-<%= chunk %>">
+  <%= render "chunk-#{chunk}.html", assigns %>
+</div>
+<% end %>
+
+<%= render "footer.html", assigns %>

@@ -46,12 +46,12 @@ defmodule CandidateWebsite.PageController do
 
   def green_new_deal(conn, _params) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "green_new_deal.html", Enum.into(assigns, []))
+    render(conn, "green_new_deal_temp.html", Enum.into(assigns, []))
   end
 
-  def green_new_deal_temp(conn, _) do
+  def gnd(conn, _) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "green_new_deal_temp.html", assigns)
+    render(conn, "green_new_deal.html", Enum.into(assigns, []))
   end
 
   def signup(conn, params) do

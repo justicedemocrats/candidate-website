@@ -33,3 +33,4 @@ cosmic_cache
 event_cache
 .elixir_ls
 .env
+.vscode
