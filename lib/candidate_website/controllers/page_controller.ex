@@ -51,7 +51,7 @@ defmodule CandidateWebsite.PageController do
 
   def gnd(conn, _) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "green_new_deal.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez"}), []))
+    render(conn, "green_new_deal.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez", intro_paragraph: "A plan to develop a detailed national, industrial, economic mobilization plan for the transition of the United States economy to become carbon neutral, to significantly draw down and capture greenhouse gases from the atmosphere and oceans, and to promote economic and environmental justice and equality."}), []))
   end
 
   def signup(conn, params) do
