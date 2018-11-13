@@ -44,6 +44,16 @@ defmodule CandidateWebsite.PageController do
     render(conn, "splash.html", Enum.into(assigns, []))
   end
 
+  def green_new_deal(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "green_new_deal.html", Enum.into(assigns, []))
+  end
+
+  def green_new_deal_temp(conn, _) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "green_new_deal_temp.html", assigns)
+  end
+
   def signup(conn, params) do
     data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip) = params

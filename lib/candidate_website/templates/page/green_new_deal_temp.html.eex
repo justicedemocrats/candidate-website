@@ -1,0 +1,9 @@
+<%= render "nav-bar.html", assigns %>
+<div id='press-container'>
+    <iframe id=google_press_document
+      frameBorder="0"
+      src="https://docs.google.com/document/d/e/2PACX-1vRToRF-MAo-6Jfd_kATPjGaL_c9Tt25ixekvQReYNzr7aP8oeUAwte2fsbi6cdxoTPISI5pbFFdmfNg/pub"
+    >
+    </iframe>
+</div>
+<%= render "footer.html", assigns %>

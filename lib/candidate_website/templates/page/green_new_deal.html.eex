@@ -1,0 +1,54 @@
+<%= render "nav-bar.html", assigns %>
+<div id="platform-hero-wrapper">
+  <div id="platform-hero-container">
+    <!-- Background Image for the Hero block -->
+    <!-- <img src=""></img> -->
+
+    <!-- Headline Text for the Hero block -->
+    <div id="hero-text-container">
+      <div id="hero-header-container">
+        <h1 id="hero-header-text">
+          <!-- <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %> -->
+          <%= gettext "Select Committee on a Green New Deal" %>
+        </h1>
+      </div>
+
+      <!-- Divider in the Hero block -->
+      <div id="hero-divider-container">
+        <div id="hero-divider-left-container">
+          <hr id="hero-divider-left"/>
+        </div>
+        <div id="hero-divider-star-container">
+          <div id="hero-divider-star">
+            &#9733;
+          </div>
+        </div>
+        <div id="hero-divider-right-container">
+          <hr id="hero-divider-right"/>
+        </div>
+      </div>
+
+      <!-- Subheadline Text in the Hero block -->
+      <div id="hero-subheader-container">
+        <h2 id="hero-subheader-text">
+          <%= gettext "DRAFT TEXT FOR PROPOSED ADDENDUM TO HOUSE RULES FOR 116TH CONGRESS OF THE UNITED STATES" %>
+        </h2>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="platform-table-of-contents-wrapper">
+  <div id="platform-table-of-contents-container">
+    <ul id="table-of-contents">
+    <%= for issue <- @issues do %>
+      <li class="chapter">
+        <a href="#<%= issue.slug %>">
+          <%= issue.header %>
+        </a>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
