@@ -46,12 +46,12 @@ defmodule CandidateWebsite.PageController do
 
   def green_new_deal(conn, _params) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "green_new_deal_temp.html", Enum.into(assigns, []))
+    render(conn, "green_new_deal_temp.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez"}), []))
   end
 
   def gnd(conn, _) do
     assigns = Map.get(conn.assigns, :data)
-    render(conn, "green_new_deal.html", Enum.into(assigns, []))
+    render(conn, "green_new_deal.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez"}), []))
   end
 
   def signup(conn, params) do
