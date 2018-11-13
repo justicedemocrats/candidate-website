@@ -44,6 +44,16 @@ defmodule CandidateWebsite.PageController do
     render(conn, "splash.html", Enum.into(assigns, []))
   end
 
+  def green_new_deal(conn, _params) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "green_new_deal_temp.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez"}), []))
+  end
+
+  def gnd(conn, _) do
+    assigns = Map.get(conn.assigns, :data)
+    render(conn, "green_new_deal.html", Enum.into(assigns |> Map.merge(%{title: "A Green New Deal | Alexandria Ocasio-Cortez", intro_paragraph: "A plan to develop a detailed national, industrial, economic mobilization plan for the transition of the United States economy to become carbon neutral, to significantly draw down and capture greenhouse gases from the atmosphere and oceans, and to promote economic and environmental justice and equality."}), []))
+  end
+
   def signup(conn, params) do
     data = %{name: candidate_name, donate_url: donate_url} = Map.get(conn.assigns, :data)
     ~m(email zip) = params
@@ -122,5 +132,19 @@ defmodule CandidateWebsite.PageController do
     |> String.split("_")
     |> Enum.map(&String.capitalize/1)
     |> Enum.join(" ")
+  end
+
+  def splash_form(conn, params) do
+    activist_codes =
+      Map.keys(params)
+      |> MapSet.new()
+      |> MapSet.difference(MapSet.new(~w(email phone _csrf_token candidate)))
+      |> MapSet.to_list()
+
+    resp = MyCampaign.find_or_create_on_email(params)
+    ~m(vanId) = Poison.decode!(resp.body)
+    MyCampaign.add_activist_codes(vanId, activist_codes |> Enum.concat(["website"]), false)
+
+    redirect(conn, to: "/")
   end
 end

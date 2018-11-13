@@ -1,41 +1,44 @@
 <div id="splash-page-container">
   <div id="splash-page-background">
     <div id="splash-page-form-container">
-      <form id="splash-page-form" method="POST" action="/signup?candidate=<%= @candidate %>">
+      <form id="splash-page-form" method="post" action="/splash_form?candidate=<%= @candidate %>">
+        <div id="splash-form-logo-container">
+          <img id="splash-logo" src="https://cosmic-s3.imgix.net/7f2f54f0-e1c7-11e8-a78a-b55cf4487289-Ocasio2018_Logo_WHITE.png"/>
+        </div>
         <input type="hidden" name="_csrf_token" value="<%= csrf_token() %>" />
         <fieldset>
-          <div id="splash-form-header-container">
-            <h1 id="splash-form-header">
-              Do You Have Alexandria's Back?
-            </h1>
-          </div>
-          <div id="splash-form-subheader-container">
-            <h2 id="splash-form-subheader">
-              I stand with Alexandria Ocasio-Cortez!
-            </h2>
-          </div>
-          <div id="input-row" class="form-row">
-            <div id="splash-email-input">
-              <label for="email" style="cursor: text; pointer-events: none;">
-                  Email Address
-              </label>
-              <input class='field-input' id='email' type="email" name="email" placeholder="<%= gettext "Email" %>*" required="required" />
+          <div id="splash-form">
+            <div id="splash-form-header-container">
+              <h1 id="splash-form-header">
+                Our fight for social, economic and racial justice continues.
+              </h1>
             </div>
-            <!-- <div class="input-row-divider"></div> -->
-            <div id="splash-zip-input">
-              <label for="zip" style="cursor: text; pointer-events: none;">
-                  Zip Code
-              </label>
-              <input class='field-input' id='zip' type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
+            <div id="splash-form-subheader-container">
+              <h2 id="splash-form-subheader">
+                Join to keep building our movement.
+              </h2>
             </div>
-          </div>
-          <div id="button-row" class="form-row">
-            <button id="join-submit" type="submit">
-              <%= gettext "JOIN" %>
-            </button>
-            <a id="continue-to-website" href="./" onclick="window.location='/';">
-              Continue to Site...
-            </span>
+            <div id="input-row" class="form-row">
+              <div id="splash-email-input">
+                <label for="email" style="cursor: text; pointer-events: none;">
+                    Email Address
+                </label>
+                <input type="email" class='field-input' id='email' type="email" name="email" placeholder="<%= gettext "Email" %>*" required="required" />
+              </div>
+              <!-- <div class="input-row-divider"></div> -->
+              <div id="splash-zip-input">
+                <label for="zip" style="cursor: text; pointer-events: none;">
+                    Zip Code
+                </label>
+                <input type="text" class='field-input' id='zip' type="text" name="zip" placeholder="<%= gettext "Zip" %>" />
+              </div>
+            </div>
+            <div id="button-row" class="form-row">
+              <input id="join-submit" type="submit" class="button" placeholder="<%= gettext "JOIN" %>" />
+              <a id="continue-to-website" href="./" onclick="window.location='/';">
+                Continue to Site...
+              </span>
+            </div>
           </div>
         </fieldset>
       </form>

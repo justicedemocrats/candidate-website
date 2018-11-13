@@ -43,6 +43,36 @@ defmodule MyCampaign do
     |> IO.inspect()
   end
 
+  def find_or_create_on_email(~m(email zip)) do
+    HTTPotion.post("https://api.securevan.com/v4/people/findOrCreate",
+      body:
+        Poison.encode!(
+          %{
+            "emails" => [
+              %{
+                "email" => email,
+                "type" => "P",
+                "isPreferred" => true,
+                "isSubscribed" => true
+              }
+            ],
+            "addresses" => [
+              %{
+                "zipOrPostalCode" => zip
+              }
+            ]
+          }
+          |> IO.inspect()
+        ),
+      headers: [
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      ],
+      basic_auth: {"bpackerAPIUser", mycampaign_api_key()}
+    )
+    |> IO.inspect()
+  end
+
   def add_activist_codes(van_id, activist_codes, volunteer \\ false) do
     responses =
       Enum.map(activist_codes |> IO.inspect(), fn code ->
