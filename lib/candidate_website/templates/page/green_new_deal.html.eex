@@ -9,7 +9,7 @@
       <div id="hero-header-container">
         <h1 id="hero-header-text">
           <!-- <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %> -->
-          <%= gettext "Select Committee on a Green New Deal" %>
+          <%= gettext "Select Committee for a Green New Deal" %>
         </h1>
       </div>
 
