@@ -26,7 +26,20 @@ defmodule CandidateWebsite.ShortenerController do
         {_, destination} -> destination
       end
 
-    redirect(conn, external: https_prefix(destination))
+    [url, existing_query] =
+      case String.split(destination, "?") do
+        [url, existing_query] -> [url, existing_query]
+        [url] -> [url, ""]
+      end
+
+    query =
+      existing_query
+      |> URI.decode_query()
+      |> Map.merge(params)
+      |> Map.drop(~w(path))
+      |> URI.encode_query()
+
+    redirect(conn, external: https_prefix(url <> "?" <> query))
   end
 
   defp matches({regex, _destination}, path) do
