@@ -1,4 +1,13 @@
 @require fonts
+desktop-h2-font-size = 34px
+
+paragraph-font-size = 20px
+subtext-font-size = 18px
+
+@media (max-width 960px)
+  paragraph-font-size = 18px
+  subtext-font-size = 16px
+
 // Hero Container //
 #platform-hero-wrapper
   width 100%
@@ -157,7 +166,7 @@
       font-family primary_font_name // Fixed
       text-align left
       font-weight bold
-      padding-right 4px
+      padding-right 8px
     
       a
         color #3C2D82
@@ -298,11 +307,33 @@
           display block !important
 
         .issue-content
-          font-size 20px
+          font-size paragraph-font-size
 
-        .deal-content
-          font-size 20px
-          margin-bottom 20px
+        ol
+          margin 0 0 0 1em
+          font-size paragraph-font-size
+
+        ul
+          margin 0 0 0 1em
+          font-size paragraph-font-size
+
+        li
+          padding-left 1em
+          padding-bottom 0.5em
+
+          a
+            vertical-align baseline
+
+        // The "UL" tag for the body tags
+        .deal-content-list
+          margin-top 20px
+
+        // The "UL" tag for the subtext
+        .deal-content-sublist
+          font-size subtext-font-size
+          margin-top 20px
+          // margin-bottom 20px
+          // test
 
         .default
           display block
@@ -318,3 +349,6 @@
 
     .default
       display block
+
+
+  

@@ -9,7 +9,7 @@
       <div id="hero-header-container">
         <h1 id="hero-header-text">
           <!-- <%= "#{@name |> String.split(" ") |> List.first()}'s Platform" %> -->
-          <%= gettext "Select Committee on a Green New Deal" %>
+          <%= gettext "Select Committee for a Green New Deal" %>
         </h1>
       </div>
 
@@ -45,8 +45,8 @@
     "content": "Enter Content Here",
     "slug": "establish",
     "paragraphs": [
-      "(A) ESTABLISHMENT.—There is hereby established a Select Committee For A Green New Deal (hereinafter in this section referred to as the “select committee”)",
-      "(B) COMPOSITION.—The select committee shall be composed of 15 members appointed by the Speaker, of whom 6 shall be appointed on the recommendation of the Minority Leader. The Speaker shall designate one member of the select committee as its chair. A vacancy in the membership of the select committee shall be filled in the same manner as the original appointment."
+      "ESTABLISHMENT — There is hereby established a Select Committee For A Green New Deal (hereinafter in this section referred to as the “select committee”).</li>",
+      "COMPOSITION — The select committee shall be composed of 15 members appointed by the Speaker, of whom 6 may be appointed on the recommendation of the Minority Leader. The Speaker shall designate one member of the select committee as its chair. A vacancy in the membership of the select committee shall be filled in the same manner as the original appointment"
     ]
   },
   %{
@@ -54,15 +54,32 @@
     "content": "Enter Content Here",
     "slug": "jurisdiction",
     "paragraphs": [
-      "(A) LEGISLATIVE JURISDICTION.—",
-      "(i) the select committee shall have authority to develop a detailed national, industrial, economic mobilization plan (hereinafter in this section referred to as the “Plan for a Green New Deal” or the “Plan”) for the transition of the United States economy to become carbon neutral and to significantly draw down and capture greenhouse gases from the atmosphere and oceans and to promote economic and environmental justice and equality. In furtherance of the foregoing, the Plan shall: <br/>
-      (a) be prepared in consultation with experts and leaders from business, labor, state and local governments, academia and broadly representative civil society groups and communities; <br/>
-      (b) be driven by the federal government, in collaboration, co-creation and partnership with business, labor, state and local governments, research institutions, and civil society groups and communities; <br/>
-      (c) be executed in no longer than 10 years from the start of execution of such Plan; <br/>
-      (d) provide opportunities for high income work, entrepreneurship and cooperative and public ownership and <br/>
-      (e) additionally, be responsive to, and in accordance with, the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality set forth in paragraph (6). ",
-      "(ii) No later than the submission of the Plan in accordance with the provisions set forth in paragraph (5)(B)(i), the select committee shall prepare draft legislation for the enactment of the Plan (hereinafter in this section referred to as the “draft legislation”), in accordance with the provisions set forth in paragraph 5(B)(ii). ",
-      "(B) INVESTIGATIVE JURISDICTION.—In  furtherance of the mandate set forth in paragraph (2)(A) above,  the select committee shall have the authority to investigate, study, make findings, convene experts and leaders from industry, academia, local communities, labor, finance, technology and any other industry or group that the select committee deems to be a relevant resource. The select committee may, at its discretion and as its members may deem appropriate, hold public hearings in connection with any aspect of its investigative functions. ",
+      "LEGISLATIVE JURISDICTION.
+      <ol type=i class=deal-content-list>
+      <li>
+      The select committee shall have authority to develop a detailed national, industrial, economic mobilization plan (hereinafter in this section referred to as the “Plan for a Green New Deal” or the “Plan”) for the transition of the United States economy to become carbon neutral and to significantly draw down and capture greenhouse gases from the atmosphere and oceans and to promote economic and environmental justice and equality. In furtherance of the foregoing, the Plan shall:
+      <ol type=a class=deal-content-sublist>
+      <li>
+      be prepared in consultation with experts and leaders from business, labor, state and local governments, academia and broadly representative civil society groups and communities;
+      </li>
+      <li>
+      be driven by the federal government, in collaboration, co-creation and partnership with business, labor, state and local governments, research institutions and civil society groups and communities;
+      </li>
+      <li>
+      be executed in no longer than 10 years from the start of execution of such Plan;
+      </li>
+      <li>
+      provide opportunities for high income work, entrepreneurship and cooperative and public ownership; and
+      </li>
+      <li>
+      additionally, be responsive to, and in accordance with, the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality set forth in paragraph
+      </li>
+      </ol>
+      <li>
+      In addition to preparing the Plan as set forth in paragraph (2)(A)(i), the select committee shall prepare draft legislation for the enactment of the Plan (hereinafter in this section referred to as the “draft legislation”), in accordance with this section. Such draft legislation may be prepared concurrently with the development of the Plan, or as the select committee may otherwise deem appropriate, provided that such finalized draft legislation shall be completed in accordance with the timing set forth in paragraph (5)(B)(ii).
+      </li>
+      </ol>",
+      "INVESTIGATIVE JURISDICTION — In furtherance of the mandate set forth in paragraph (2)(A), the select committee shall have the authority to investigate, study, make findings, convene experts and leaders from industry, academia, local communities, labor, finance, technology and any other industry or group that the select committee deems to be a relevant resource. The select committee may, at its discretion and as its members may deem appropriate, hold public hearings in connection with any aspect of its investigative functions."
     ]
   },
   %{
@@ -70,9 +87,16 @@
     "content": "Enter Content Here",
     "slug": "prudence",
     "paragraphs": [
-      "(A) Except as specified in paragraph (2), the select committee shall have the authorities and responsibilities of, and shall be subject to the same limitations and restrictions as, a standing committee of the House, and shall be deemed a committee of the House for all purposes of law or rule.",
-      "(B)(i) Rules [TBD] (Organization of Committees) and [TBD] (Procedures of Committees and Unfinished Business) shall apply to the select committee where not inconsistent with this resolution.",
-      "(ii) Service on the select committee shall not count against the limitations on committee or subcommittee service in Rule [TBD] (Organization of Committees)."
+      "Except as specified in paragraph (2), the select committee shall have the authorities and responsibilities of, and shall be subject to the same limitations and restrictions as, a standing committee of the House, and shall be deemed a committee of the House for all purposes of law or rule.",
+      " 
+      <ol type=i class=deal-content-list>
+      <li>
+      Rules [to be confirmed by reference to overall House Rules package] (Organization of Committees) and [to be confirmed by reference to overall House Rules package] (Procedures of Committees and Unfinished Business) shall apply to the select committee where not inconsistent with this resolution.
+      </li>
+      <li>
+      Service on the select committee shall not count against the limitations on committee or subcommittee service in Rule [to be confirmed by reference to overall House Rules package] (Organization of Committees).
+      </li>
+      </ol>"
     ]
   },
   %{
@@ -80,9 +104,9 @@
     "content": "Enter Content Here",
     "slug": "funding",
     "paragraphs": [
-      "(A) the select committee may use the services of staff of the House and may, at its discretion and as its members may deem appropriate, use the services of external consultants or experts in furtherance of its mandate;",
-      "(B) the select committee shall be eligible for interim funding pursuant to clause [TBD] of Rule [TBD] (Interim Funding - Organization of Committees); and",
-      "(C) without limiting the foregoing, the select committee may, at any time and from time to time during the course of its mandate, apply to the House for an additional, dedicated budget to carry out its mandate."
+      "The select committee may use the services of staff of the House and may, at its discretion and as its members may deem appropriate, use the services of external consultants or experts in furtherance of its mandate;",
+      "The select committee shall be eligible for interim funding pursuant to clause [to be confirmed by reference to overall House Rules package] of Rule [to be confirmed by reference to overall House Rules package] (Interim Funding - Organization of Committees); and",
+      "Without limiting the foregoing, the select committee may, at any time and from time to time during the course of its mandate, apply to the House for an additional, dedicated budget to carry out its mandate."
     ]
   },
   %{
@@ -90,33 +114,256 @@
     "content": "Enter Content Here",
     "slug": "interim",
     "paragraphs": [
-      "(A) The select committee may report to the House  or any House Committee it deems appropriate from time to time the results of its investigations and studies, together with such detailed findings and interim recommendations or proposed Plan or draft legislation (or portion thereof) as it may deem advisable.",
-      "(B) (i) The select committee shall complete the Plan for a Green New Deal by a date no later than January 1, 2020.",
-      "(ii) The select committee shall complete the finalized draft legislation by a date no later than March 1, 2020.",
-      "(iii) The select committee shall ensure and procure that the Plan and the draft legislation prepared in accordance with this section shall, upon completion, be made available to the public in widely accessible formats (including, without limitation, via at least one dedicated website and a print publication) by a date no later than 30 calendar days following the respective dates for completion set forth in paragraph (5)(B)(i) and (ii)."
+      "The select committee may report to the House  or any House Committee it deems appropriate from time to time the results of its investigations and studies, together with such detailed findings and interim recommendations or proposed Plan or draft legislation (or portion thereof) as it may deem advisable. ",
+      " 
+      <ol type=i class=deal-content-list>
+      <li>
+      The select committee shall complete the Plan for a Green New Deal by a date no later than January 1, 2020.
+      </li>
+      <li>
+      The select committee shall complete the finalized draft legislation by a date no later than the date that is 90 calendar days after the select committee has completed the Plan in accordance with paragraph (5)(B)(i) and, in any event, no later than March 1, 2020.
+      </li>
+      <li>
+      The select committee shall ensure and procure that the Plan and the draft legislation prepared in accordance with this section shall, upon completion in accordance with paragraphs (5)(B)(i) and (ii), be made available to the general public in widely accessible formats (including, without limitation, via at least one dedicated website and a print publication) by a date no later than 30 calendar days following the respective dates for completion set forth in paragraphs (5)(B)(i) and (ii).
+      </li>
+      </ol>"
     ]
   },
   %{
-    "title": "6. SCOPE OF THE PLAN FOR A GREEN NEW DEAL",
+    "title": "6. SCOPE OF THE PLAN FOR A GREEN NEW DEAL AND THE DRAFT LEGISLATION.",
     "content": "Enter Content Here",
     "slug": "scope",
     "paragraphs": [
-      "(A) The Plan for a Green New Deal (and the draft legislation) shall be developed in order to achieve the following goals, in each case in no longer than 10 years from the start of execution of the Plan:",
-      "(i) 100% of national power generation from renewable sources;<br/>
-      (2) Building a national, energy-efficient, “smart” grid;<br/>
-      (3) Upgrading every residential and industrial building for state-of-the-art energy efficiency, comfort and safety;<br/>
-      (4) Decarbonizing the manufacturing, agricultural and other industries;<br/>
-      (5) Decarbonizing, repairing and improving transportation and other infrastructure;<br/>
-      (6) Funding massive investment in the drawdown and capture of greenhouse gases;<br/>
-      (7) Making “green” technology, industry, expertise, products and services a major export of the United States, with the aim of becoming the undisputed international leader in helping other countries transition to completely carbon neutral economies and bringing about a global Green New Deal.",
-      "(B) The Plan for a Green New Deal (and the draft legislation) shall recognize that a national, industrial, economic mobilization of this scope and scale is a historic opportunity to virtually eliminate poverty in the United States and to make prosperity, wealth and economic security available to everyone participating in the transformation. In furtherance of the foregoing, the Plan (and the draft legislation) shall: ",
-      "(i) provide all members of our society, across all regions and all communities, the opportunity, training and education to be a full and equal participant in the transition, including through a job guarantee program to assure every person who wants one, a living wage job; <br/>
-      (ii) take into account and be responsive to the historical and present-day experiences of low-income communities, communities of color, indigenous communities, rural and urban communities and the front-line communities most affected by climate change, pollution and other environmental harm; <br/>
-      (iii) mitigate deeply entrenched racial, regional and gender-based inequalities in income and wealth (including, without limitation, ensuring that federal and other investment will be equitably distributed to historically impoverished, low income, deindustrialized or other marginalized communities); <br/>
-      (iv) include additional measures such as basic income programs, universal health care programs and any others as the select committee may deem appropriate to promote economic security, labor market flexibility and entrepreneurism; and<br/>
-      (v) deeply involve national and local labor unions to take a leadership role in the process of job training and worker deployment. <br/>",
-      "(C) The Plan for a Green New Deal (and the draft legislation) shall recognize that innovative public and other financing structures are a crucial component in achieving and furthering the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality and cooperative and public ownership set forth in paragraphs (2)(A)(i) and (6)(B). The Plan (and the draft legislation) shall, accordingly, ensure that the majority of financing of the Plan shall be accomplished by the federal government, using a combination of the Federal Reserve, a new public bank or system of regional and specialized public banks, public venture funds and such other vehicles or structures that the select committee deems appropriate, in order to ensure that interest and other investment returns generated from public investments  made in connection with the Plan will be returned to the treasury, reduce taxpayer burden and allow for more investment. "
+      "The Plan for a Green New Deal (and the draft legislation) shall be developed in order to achieve the following goals, in each case in no longer than 10 years from the start of execution of the Plan:
+      <ol type=i class=deal-content-sublist>
+      <li>
+      100% of national power generation from renewable sources;
+      </li>
+      <li>
+      building a national, energy-efficient, “smart” grid;<br/>
+      </li>
+      <li>
+      upgrading every residential and industrial building for state-of-the-art energy efficiency, comfort and safety;<br/>
+      </li>
+      <li>
+      decarbonizing the manufacturing, agricultural and other industries;
+      </li>
+      <li>
+      decarbonizing, repairing and improving transportation and other infrastructure;
+      </li>
+      <li>
+      funding massive investment in the drawdown and capture of greenhouse gases;
+      </li>
+      <li>
+      making “green” technology, industry, expertise, products and services a major export of the United States, with the aim of becoming the undisputed international leader in helping other countries transition to completely carbon neutral economies and bringing about a global Green New Deal.
+      </li>
+      </ol>",
+      "The Plan for a Green New Deal (and the draft legislation) shall recognize that a national, industrial, economic mobilization of this scope and scale is a historic opportunity to virtually eliminate poverty in the United States and to make prosperity, wealth and economic security available to everyone participating in the transformation. In furtherance of the foregoing, the Plan (and the draft legislation) shall:
+      <ol type=i class=deal-content-sublist>
+      <li>
+      provide all members of our society, across all regions and all communities, the opportunity, training and education to be a full and equal participant in the transition, including through a job guarantee program to assure a living wage job to every person who wants one;
+      </li>
+      <li>
+      take into account and be responsive to the historical and present-day experiences of low-income communities, communities of color, indigenous communities, rural and urban communities and the front-line communities most affected by climate change, pollution and other environmental harm;
+      </li>
+      <li>
+      mitigate deeply entrenched racial, regional and gender-based inequalities in income and wealth (including, without limitation, ensuring that federal and other investment will be equitably distributed to historically impoverished, low income, deindustrialized or other marginalized communities);
+      </li>
+      <li>
+      include additional measures such as basic income programs, universal health care programs and any others as the select committee may deem appropriate to promote economic security, labor market flexibility and entrepreneurism; and>
+      </li>
+      <li>
+      deeply involve national and local labor unions to take a leadership role in the process of job training and worker deployment.
+      </li>
+      </ol>",
+      "The Plan for a Green New Deal (and the draft legislation) shall recognize that innovative public and other financing structures are a crucial component in achieving and furthering the goals and guidelines relating to social, economic, racial, regional and gender-based justice and equality and cooperative and public ownership set forth in paragraphs (2)(A)(i) and (6)(B). The Plan (and the draft legislation) shall, accordingly, ensure that the majority of financing of the Plan shall be accomplished by the federal government, using a combination of the Federal Reserve, a new public bank or system of regional and specialized public banks, public venture funds and such other vehicles or structures that the select committee deems appropriate, in order to ensure that interest and other investment returns generated from public investments  made in connection with the Plan will be returned to the treasury, reduce taxpayer burden and allow for more investment."
       ]
+  },
+  %{
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "content": "Enter Content Here",
+    "slug": "faq",
+    "paragraphs": [
+      "Why do we need a sweeping Green New Deal investment program? Why can’t we just rely on regulations and taxes alone, such as a carbon tax or an eventual ban on fossil fuels?
+      <ul class=deal-content-list>
+      <li>
+      Regulations and taxes can, indeed, change some behavior. It’s certainly possible to  argue that, if we had put in place targeted regulations and progressively increasing carbon and similar taxes several decades ago, the economy could have transformed itself by now. But whether or not that is true, we did not do that, and now time has run out.  
+      </li>
+      <li>
+      Given the magnitude of the current challenge, the tools of regulation and taxation, used in isolation, will not be enough to quickly and smoothly accomplish the transformation that we need to see.
+      </li>
+      <li>
+      Simply put, we don’t need to just stop doing some things we are doing (like using fossil fuels for energy needs); we also need to start doing new things (like overhauling whole industries or retrofitting all buildings to be energy efficient). Starting to do new things requires some upfront investment. In the same way that a company that is trying to change how it does business may need to make big upfront capital investments today in order to reap future benefits (for e.g., building a new factory to increase production or buying new hardware and software to totally modernize its IT system), a country that is trying to change how its economy works will need to make big investments today to jump-start and develop new projects and sectors to power the new economy.
+      </li>
+      <li>
+      The draft resolution sets out a (non-exhaustive) list of several major projects that need to be completed fast. These include upgrading virtually every home and building for energy efficiency, building a 100% carbon neutral power generation system, decarbonizing industry and agriculture and more. These projects will all require investment. 
+      </li>
+      <li>
+      We’re not saying that there is no place for regulation and taxes (and these will continue to be important tools); we’re saying we need to add some new tools to the toolkit. 
+      </li>
+      </ul>",
+      "Why should the government have a big role in driving and making any required investments? Why not just incentivize the private sector to invest through, for e.g., tax subsidies and such?
+      <ul class=deal-content-list>
+      <li>
+      Two main reasons: (1) scale and (2) time. 
+      <ul class=deal-content-sublist>
+      <li>
+      First - scale. The level of investment required will be massive. Even if all the billionaires and companies came together and were willing to pour all the resources at their disposal into this investment, the aggregate value of the investments they could make would not be sufficient.  For example, the “$1 trillion over 10 years” plan for investment in the green economy that has been floated by some policy makers has been criticized by climate experts as a wholly inadequate level of investment - $1 trillion is the entire market cap of Amazon, one of the biggest companies of all time (and it is far ahead of its closest competitors in terms of market size). 
+      </li>
+      <li>
+      Second - time. The speed of investment required will be massive. Even if all the billionaires and companies could make the investments required, they would not be able to pull together a coordinated response in the narrow window of time required to jump-start major new projects and major new sectors. 
+      <ul class=deal-content-sublist>
+      <li>
+      Time-horizons matter in another way - by their nature, private companies are wary of making massive investments in unproven research and technologies; the government, however, has the time horizon to be able to patiently make investments in new tech and R&D, without necessarily having a commercial outcome or application in mind at the time the investment is made. Major examples of government investments in “new” tech that subsequently spurred a boom in the private section include DARPA-projects, the creation of the internet - and, perhaps most recently, the government’s investment in Tesla.
+      </li>
+      </ul>
+      </li>
+      </ul>
+      </li>
+      <li>
+      We’ve also seen that merely incentivizing the private sector doesn’t work - e.g. the tax incentives and subsidies given to wind and solar projects have been a valuable spur to growth in the US renewables industry but, even with such investment-promotion subsidies, the present level of such projects is simply inadequate to transition to a fully carbon neutral economy as quickly as needed. 
+      </li>
+      <li>
+      Once again, we’re not saying that there isn’t a role for private sector investments; we’re just saying that the level of investment required will need every actor to pitch in and that the government is best placed to be the prime driver. 
+      </li>
+      </ul>",
+      "How will the government pay for these investments?
+      <ul class=deal-content-list>
+      <li>
+      Many will say, “Massive government investment! How in the world can we pay for this?” The answer is: in the same ways that we paid for the 2008 bank bailout and extended quantitative easing programs, the same ways we paid for World War II and many other wars. The Federal Reserve can extend credit to power these projects and investments, new public banks can be created (as in WWII) to extend credit and a combination of various taxation tools (including taxes on carbon and other emissions and progressive wealth taxes) can be employed.  
+      </li>
+      <li>
+      In addition to traditional debt tools, there is also a space for the government to take an equity role in projects, as several government and government-affiliated institutions already do. 
+      </li>
+      </ul>",
+      "Why do we need a select committee? We already have committees with jurisdiction over the subject matter e.g. Energy and Commerce, Natural Resources and Science, Space and Technology.  Just creating another committee seems unnecessary.
+      <ul class=deal-content-list>
+      <li>
+      This is a big problem with lots of parts to it. The very fact that multiple committees have jurisdiction over parts of the problem means that it’s hard for any one of those existing committees to generate a comprehensive and coherent plan that will actually work to transform America’s economy to become carbon neutral in the time we have left.
+      </li>
+      <li>
+      Not having a full 360° view of, and approach to, the issue (and only having authority over a part of the issue) means that standing committee solutions would be piecemeal, given the size and scope of the problem. A Democratic administration and Congress in 2020 will not have the time to sort through and combine all those solutions in the brief window of opportunity they will have to act. 
+      </li>
+      <li>
+      Select committees, in the Congressional Research Services’ own words, serve the specific function of “examin[ing] emerging issues that do not fit clearly within existing standing committee jurisdictions or cut across jurisdictional boundaries. ”(see: <a href='https://www.senate.gov/CRSpubs/312b4df4-9797-41bf-b623-a8087cc91d74.pdf'>https://www.senate.gov/CRSpubs/312b4df4-9797-41bf-b623-a8087cc91d74.pdf</a>)
+      </li>
+      <li>
+      The challenges that the Select Committee For A Green New Deal is mandated to meet fit squarely within this space.
+      </li>
+      <li>
+      This does not need to be a zero sum proposition between committees. Just as Markey-Waxman was collaborative between the head of the Select Committee and standing Energy & Commerce committee, this can also be collaborative. More is more. A select committee ensures constant focus on climate change as the standing committee deals with that and many other issues of the day -- such as <a href='https://democrats-energycommerce.house.gov/subcommittees/environment-115th-congress'>wild fires in California, Infrastructure, clean water issues, etc.</a>
+      </li>
+      </ul>",
+      "Why should we not be satisfied with the same approach the  previous select committee used (i.e. the Select Committee on Energy Independence and Global Warming)? Why do we need a new approach?
+      <ul class=deal-content-list>
+      <li>
+      The previous select committee did not have a mandate to develop a plan for the transformation of our economy to become carbon neutral. It mainly held hearings to draw attention to the problem of climate change. That was already too little too late in 2007-11 when the committee was active. 
+      </li>
+      <li>
+      The previous select committee’s work can be summarized as follows (see: <a href='https://www.congress.gov/bill/111th-congress/house-resolution/5/text'>https://www.congress.gov/bill/111th-congress/house-resolution/5/text</a>, the old select committee is established in Section 4 ):
+      <ul class=deal-content-sublist>
+      <li>
+      First, it was set up so that it specifically “shall not have legislative jurisdiction and shall have no authority to take legislative action on any bill or resolution.” This means that the old committee didn’t have the authority to start doing something concrete (in the sense of moving the ball forward to make actual changes to our laws) about the subject matter it covered. 
+      </li>
+      <li>
+      Second, the “sole authority” it did have was to “investigate, study, make findings, and develop recommendations on policies, strategies, technologies and other innovations, intended to reduce the dependence of the United States on foreign sources of energy and achieve substantial and permanent reductions in emissions and other activities that contribute to climate change and global warming.” 
+      </li>
+      <li>
+      From March 2007 to December 2010 - a full 3.5 years - they did the job that they were tasked to do and held hearings and prepared reports (see: <a href='https://www.congress.gov/committee/house-energy-independence-and-global/hlgw00 and https://www.markey.senate.gov/GlobalWarming/index.html'>https://www.congress.gov/committee/house-energy-independence-and-global/hlgw00</a> and <a href='https://www.markey.senate.gov/GlobalWarming/index.html'>https://www.markey.senate.gov/GlobalWarming/index.html</a> (in fact, they held 80 hearings and briefings)
+      </li>
+      <li>
+      Per their website, they “engage[d] in oversight and educational activities through hearings, reports, briefings and other means intended to highlight the importance of adopting policies which reduce our dependence on foreign oil and our emissions of global warming pollution.”   
+      </li>
+      </ul>
+      </li>
+      <li>
+      So there has already been a select committee that did the investigating to highlight that it was important to have some action on this issue - it’s now time to move on from investigating and reporting to action.
+      </li>
+      <li>
+      The old select committee also had (even within its limited investigative mandate) the limitation that it focused on strategies for reducing foreign energy dependence and reducing emissions - rather than treating climate issues as the integrated social, economic, scientific challenge that it is.
+      </li>
+      </ul>",
+      "Why does this new select committee need to prepare draft legislation?  Isn’t investigation, hearings, briefings and reporting enough?
+      <ul class=deal-content-list>
+      <li>
+      The old select committee was mandated merely to investigate and  prepare reports for other people and House Committees to read and act on.
+      </li>
+      <li>
+      The idea was that (as per the old select committees website) “each Member of the Select Committee sits on legislative committees which process legislation and amendments affecting energy independence and global warming issues in other committees” and presumably, that those members would take the work of the select committee and come up with legislation in their own committees.
+      </li>
+      <li>
+      However, this approach did not make a big impact relative to the scale of the problem we face. The one piece of legislation that eventually came out of the old select committtees work - the American Clean Energy and Security Act of 2009 (ACES) <a href='https://www.markey.senate.gov/GlobalWarming/legislation/index.html'>https://www.markey.senate.gov/GlobalWarming/legislation/index.html</a>) was a cap-and-trade bill that was wholly insufficent for the scale of the problem. 
+      </li>
+      <li>
+      The House had a chance (from 2007 to 2010) to try a version of a select committee that investigated an issue and then passed along preparation of legislation to other committees - the result of that process doesn’t inspire any confidence that the same process should be followed again if we wish to draft a plan to tackle the scale of the problem we face. 
+      </li>
+      <li>
+      The new select committee will also continue to have investigative jurisdiction, so the new proposal isn’t taking anything away from the old one - it is adding things on to make the select committee more effective. 
+      </li>
+      </ul>",
+      "What’s an example of a select committee with abilities to prepare legislation? Does the new Select Committee For A Green New Deal seem to fit on that list?
+      <ul class=deal-content-list>
+      <li>
+      Recent examples for select committees in the House include: Ad Hoc Select Committee on the Outer Continental Shelf (94th-95th Congresses), Ad Hoc Select Committee on Energy (95th Congress), Select Committee on Homeland Security (107th Congress), and Select Committee on Homeland Security (108th Congress).
+      </li>
+      <li>
+      The Congressional Research Service notes (in discussing these four recent select committees with legislative jurisdiction) that “The principal explanation offered in creating each of the four select committees with legislative authority was that their creation solved jurisdictional problems. The proponents in each case indicated that multiple committees claimed jurisdiction over a subject and that the House would be unable to legislate, or at least to legislate efficiently, in the absence of a select committee.” (see: <a href='https://www.everycrsreport.com/reports/R40233.html#_Toc228679963'>https://www.everycrsreport.com/reports/R40233.html#_Toc228679963</a>) 
+      </li>
+      <li>
+      The proposed subject matter and mandate for the Select Committee For A Green New Deal sits squarely within this general description for a select committee with the ability and mandate to prepare legislation. 
+      </li>
+      </ul>",
+      "Doesn’t this select committee take away jurisdictional power from the other (standing i.e. permanent) committees that have jurisdiction over at least part of the issue?
+      <ul class=deal-content-list>
+      <li>
+      All of the relevant standing committees will be able to provide input to and make their wishes known to the select committee during the creation of both the plan as well as the draft legislation, and then in a future Congress, when it comes to crafting and passing the final legislation, that Congress can take a decision on the best mechanism for bringing that final legislation to a floor vote and passage.
+      </li>
+      <li>
+      Allowing the select committee to draft legislation doesn’t take any jurisdiction away from current standing committees, it is entirely additive. 
+      </li>
+      <li>
+      The legislation developed by the select committee would still need to be referred to and pass through the permanent House Committees that have jurisdiction over parts of the subject matter.
+      </li>
+      <li>
+      For example, the legislation drafted by the Select Committee on Homeland Security needed to pass through the permanent committees on Agriculture; Appropriations; Armed Services; Energy and Commerce; Financial Services; Government Reform; Intelligence (Permanent Select); International Relations; Judiciary; Science; Transportation and Infrastructure; Ways and Means (see: <a href='https://www.congress.gov/bill/107th-congress/house-bill/5005/committees'>https://www.congress.gov/bill/107th-congress/house-bill/5005/committees</a>) 
+      </li>
+      <li>
+      The benefit of a select committee in this case would also be that there would be a single forum that could act as a quarterback in working through and resolving any comments or issues brought up by the other House Committees, which would streamline the process of drafting this legislation.
+      </li>
+      </ul>",
+      "But a select committee only exists for the congressional session that created it! So even if this select committee prepares legislation, it likely won’t get passed in this session by a Republican-held Senate and White House, so why does having a select committee now even matter?
+      <ul class=deal-content-list>
+      <li>
+      The proposed new select committee would work in two stages (which wouldn’t necessarily have to be sequential):
+      <ul class=deal-content-sublist>
+      <li>
+      First, they would put together the overall plan for a Green New Deal - they would have a year to get the plan together, with the plan to be completed by January 1, 2020. The plan itself could be in the form of a report or several reports. 
+      </li>
+      <li>
+      Second, they would also put together the draft legislation that actually implements the plan - they could work on the draft legislation concurrently with the plan (after they get an initial outline of the plan going) and would need to complete the draft legislation within 90 days of completing the plan (i.e. by March 1, 2020 at the latest) 
+      </li>
+      <li>
+      The select committee is also required to make the plan and the draft legislation publicly accessible within 30 days of completing each part 
+      </li>
+      </ul>
+      </li>
+      <li>
+      The plan and the draft legislation won’t be developed in secret - they are specifically required to be developed with wide and broad consultation and input and the select committee can share drafts or any portions of their work with the other House Committees at any time and from time to time, so their work will be conducted in the open, with lots of opportunities to give input along the way.
+      </li>
+      <li>gi
+      The idea is that between (a) developing the plan and the draft legislation (and holding public hearings and briefings along the way as needed), (b) the plan coming out in Jan 2020 and (c) the draft legislation coming out in March 2020, the relevant permanent House Committees, House members, experts and public will have time to engage with, discuss, revise the draft legislation between March 2020 and the end of the 116th Congress so that, by the end of this congressional term, there is a comprehensive plan and enacting legislation all lined up as soon as the new (Democratic) Congress convenes in January 2021. 
+      </li>
+      </ul>",
+      "What’s wrong with the other proposed legislation on climate change? Can’t we just pass one of the other climate bills that have been introduced in the past? Why prepare a whole new one?
+      <ul class=deal-content-list>
+      <li>
+      The shortest and most accurate response is that (1) none of them recognize the extent to which climate and other social and economic issues are deeply inter-related and (2) even if looking at climate as a stand-alone issue, none of them are scaled to the magnitude of the problem.
+      </li>
+      <li>
+      Of the other proposed legislation, the OFF Act could be a good starting point.
+      </li>
+      </ul>"
+    ]
   }]
 %>
 
@@ -182,11 +429,15 @@
       </div>
       <!-- Contents (Full-text)  -->
       <div class="contents-container accordion-content">
-        <%= for content <- paragraph.paragraphs do %>
-        <p class="deal-content">
-          <%= raw(content) %>
-        </p>
-        <% end %>
+          <ol type="A">
+          <%= for content <- paragraph.paragraphs do %>
+            <li>
+            <p class="deal-content">
+              <%= raw(content) %>
+            </p>
+            </li>
+          <% end %>
+          </ol>
       </div>
     </div>
   </div>
