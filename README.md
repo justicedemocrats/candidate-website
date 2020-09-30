@@ -21,7 +21,7 @@ mix phx.server
 And then visit `http://localhost:4000/?candidate=alexandria-ocasio-cortez` in your
 browser.
 
-`?candidate=some-slug` is a required parameter.
+`?candidate=some-slug` is a required parameters.
 
 ## Making Changes
 
