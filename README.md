@@ -5,7 +5,8 @@ https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, h
 
 ## Running Locally
 
-You must have Elixir 1.5+ installed (1.6 would be great for auto-formatting).
+You must have Elixir 1.5+ installed before 
+ (1.6 would be great for auto-formatting).
 
 To do that, visit https://elixir-lang.org/install.html and follow the instructions
 for your operating system.
@@ -25,7 +26,7 @@ browser.
 
 ## Making Changes
 
-To make changes, modify the templates in `/lib/candidate_website/templates`, or the [Stylus](http://stylus-lang.com/) in `/assets/stylus`, and your changes will hot-reload.
+To make changes, modify the templates in the  `/lib/candidate_website/templates`, or the [Stylus](http://stylus-lang.com/) in `/assets/stylus`, and your changes will be hot-reload.
 
 ## What's Happening
 
