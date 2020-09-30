@@ -3,6 +3,8 @@
 This is a template for our candidate sites – you can find them deployed at
 https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, https://bell2018.com, https://anthonyclark2018.com, https://paulajean2018.com, https://votecoribush.com, and https://chardo2018.com.
 
+Nice website bro..
+
 ## Running Locally
 
 You must have Elixir 1.5+ installed (1.6 would be great for auto-formatting).
