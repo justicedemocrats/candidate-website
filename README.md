@@ -23,11 +23,11 @@ browser.
 
 `?candidate=some-slug` is a required parameter.
 
-## Making Changes
+### Making Changes
 
 To make changes, modify the templates in `/lib/candidate_website/templates`, or the [Stylus](http://stylus-lang.com/) in `/assets/stylus`, and your changes will hot-reload.
 
-## What's Happening
+#### What's Happening
 
 This is a barebones Elixir/Phoenix app which fetches content from [CosmicJS](http://cosmicjs.com/), which is an API first CMS.
 
