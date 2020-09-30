@@ -3,7 +3,7 @@ defmodule App.Mixfile do
 
   def project do
     [
-      app: :candidate_website,
+      app: :totally mad website,
       version: "0.1.10",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
