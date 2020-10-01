@@ -23,7 +23,7 @@ browser.
 
 `?candidate=some-slug` is a required parameter.
 
-## Making Changes
+## Making Changes in templates
 
 To make changes, modify the templates in `/lib/candidate_website/templates`, or the [Stylus](http://stylus-lang.com/) in `/assets/stylus`, and your changes will hot-reload.
 
