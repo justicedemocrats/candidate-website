@@ -31,5 +31,6 @@ To make changes, modify the templates in `/lib/candidate_website/templates`, or 
 
 This is a barebones Elixir/Phoenix app which fetches content from [CosmicJS](http://cosmicjs.com/), which is an API first CMS.
 
-
+enjoy your day 
+thank you!
 
