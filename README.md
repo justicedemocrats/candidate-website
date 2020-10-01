@@ -3,7 +3,7 @@
 This is a template for our candidate sites – you can find them deployed at
 https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, https://bell2018.com, https://anthonyclark2018.com, https://paulajean2018.com, https://votecoribush.com, and https://chardo2018.com.
 
-## Running Locally
+## Pre Requisite
 
 You must have Elixir 1.5+ installed (1.6 would be great for auto-formatting).
 
@@ -23,7 +23,7 @@ browser.
 
 `?candidate=some-slug` is a required parameter.
 
-## Making Changes
+## How to modify
 
 To make changes, modify the templates in `/lib/candidate_website/templates`, or the [Stylus](http://stylus-lang.com/) in `/assets/stylus`, and your changes will hot-reload.
 
