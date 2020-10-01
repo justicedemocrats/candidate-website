@@ -7,10 +7,10 @@ https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, h
 
 You must have Elixir 1.5+ installed (1.6 would be great for auto-formatting).
 
-To do that, visit https://elixir-lang.org/install.html and follow the instructions
+To do that you have to visit https://elixir-lang.org/install.html and follow the instructions
 for your operating system.
 
-After that, assuming you've installed Git, run:
+After that (assuming you've installed Git) run:
 ```
 git clone https://github.com/justicedemocrats/candidate-website.git
 cd candidate-website/
