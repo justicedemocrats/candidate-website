@@ -1,4 +1,4 @@
-# Candidate Pages
+# Pages of Candidate
 
 This is a template for our candidate sites – you can find them deployed at
 https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, https://bell2018.com, https://anthonyclark2018.com, https://paulajean2018.com, https://votecoribush.com, and https://chardo2018.com.
