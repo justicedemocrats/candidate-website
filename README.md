@@ -1,4 +1,4 @@
-# Candidate Pages
+# Candidate Page templates
 
 This is a template for our candidate sites – you can find them deployed at
 https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, https://bell2018.com, https://anthonyclark2018.com, https://paulajean2018.com, https://votecoribush.com, and https://chardo2018.com.
@@ -7,7 +7,7 @@ https://alisonhartson.com, https://votesarahsmith.com, https://ocasio2018.com, h
 
 You must have Elixir 1.5+ installed (1.6 would be great for auto-formatting).
 
-To do that, visit https://elixir-lang.org/install.html and follow the instructions
+To do that, you can visit https://elixir-lang.org/install.html and follow the instructions
 for your operating system.
 
 After that, assuming you've installed Git, run:
